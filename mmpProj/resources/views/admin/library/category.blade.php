@@ -110,6 +110,32 @@
                                         </td>
 
                                     </tr>
+                                    <tr>
+                                        <th scope="row">4</th>
+                                        <td>emad</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm"><i class="fa fa-edit"></i> Edit
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-danger btn-sm"><i class="fa fa-remove"></i> Delete
+                                            </button>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">5</th>
+                                        <td>mohammed</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm"><i class="fa fa-edit"></i> Edit
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-danger btn-sm"><i class="fa fa-remove"></i> Delete
+                                            </button>
+                                        </td>
+
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>

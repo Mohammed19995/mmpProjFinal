@@ -57,3 +57,8 @@ Route::get('adminApp/lib/addBook'  , function () {
 Route::get('adminApp/lib/viewBook'  , function () {
     return view('admin.library.viewBook');
 });
+
+
+Route::get('ff' , function() {
+    return "dffffffff";
+});

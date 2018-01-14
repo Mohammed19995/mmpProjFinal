@@ -70,3 +70,7 @@ Route::post('testImg2' , function(\Illuminate\Http\Request $request) {
 });
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

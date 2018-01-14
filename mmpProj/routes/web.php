@@ -58,7 +58,15 @@ Route::get('adminApp/lib/viewBook'  , function () {
     return view('admin.library.viewBook');
 });
 
+///////////////  Add Category form admin  /////////////////////////
 
-Route::get('ff' , function() {
-    return "dffffffff";
+Route::post('addCategory' ,'AdminCon@addCategory' );
+
+/////////////////////////////////////////
+
+Route::post('testImg2' , function(\Illuminate\Http\Request $request) {
+  //  echo $_FILES['file']['name'] . " " . $request->name1 . " " . $request->file->getClientOriginalName();
+    $request->file->store('public/ff');
 });
+
+

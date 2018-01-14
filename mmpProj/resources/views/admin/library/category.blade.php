@@ -26,7 +26,7 @@
                                 <h3 class="h4">Add Category</h3>
                             </div>
                             <div class="card-body">
-                                <form class="form-inline" style="margin-left: 50px">
+                                <form method="post" action="{{url('addCategory')}}" class="form-inline" style="margin-left: 50px">
                                     <div class="form-group">
 
                                         <input id="inlineFormInput" type="text" placeholder="Enter your category"

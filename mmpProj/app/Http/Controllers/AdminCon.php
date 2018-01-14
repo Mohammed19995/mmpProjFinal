@@ -6,7 +6,5 @@ use Illuminate\Http\Request;
 
 class AdminCon extends Controller
 {
-    public function addCategory() {
 
-    }
 }

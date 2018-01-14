@@ -48,9 +48,6 @@ Route::get('adminApp' , function () {
 Route::get('adminApp/home'  , function () {
     return view('admin.index');
 });
-Route::get('adminApp/lib/cat'  , function () {
-    return view('admin.library.category');
-});
 Route::get('adminApp/lib/addBook'  , function () {
     return view('admin.library.addBook');
 });
@@ -59,9 +56,11 @@ Route::get('adminApp/lib/viewBook'  , function () {
 });
 
 ///////////////  Add Category form admin  /////////////////////////
-
-Route::post('addCategory' ,'AdminCon@addCategory' );
-
+///
+Route::get('adminApp/lib/cat'  , 'LibraryCon@index');
+Route::post('addCategory' ,'LibraryCon@addCategory' );
+Route::get('editCat' ,'LibraryCon@editCat' );
+Route::get('delCat' , 'LibraryCon@delCat');
 /////////////////////////////////////////
 
 Route::post('testImg2' , function(\Illuminate\Http\Request $request) {

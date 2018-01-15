@@ -115,8 +115,12 @@ class FatawiCon extends Controller
     public function getIndex(Request $request){
         $allCat= \App\fatawiCat::all();
         $allAnswer = fatawi::where('answer','<>',"")->get();
-        $userId= Auth::user()->id;
-        $userFatwa = fatawi::where('user_id' ,$userId)->where('answer','<>',"")->where('private',1)->get();
+        $userFatwa ="";
+        if (Auth::check()) {
+            $userId = Auth::user()->id;
+            $userFatwa = fatawi::where('user_id' ,$userId)->where('answer','<>',"")->where('private',1)->get();
+        }
+
 
         return view('mmpApp.fatwa.fatwa',['allCat'=>$allCat , 'allAnswer'=>$allAnswer , 'userFatwa'=>$userFatwa]);
     }

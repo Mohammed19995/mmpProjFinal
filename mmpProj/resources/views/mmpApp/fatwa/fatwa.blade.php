@@ -74,6 +74,7 @@
                                     </div>
                                 </div>
                             </div>
+                            @if(auth()->check())
                             <?php
                             foreach ($userFatwa as $i=>$arr2){ ?>
 
@@ -92,7 +93,7 @@
                                 </div>
                             </div>
                             <?php  }       ?>
-
+                            @endif
                             <?php
                             foreach ($allAnswer as $arr){ ?>
 

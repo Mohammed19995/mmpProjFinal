@@ -48,19 +48,19 @@ Route::get('adminApp' , function () {
 Route::get('adminApp/home'  , function () {
     return view('admin.index');
 });
-Route::get('adminApp/lib/addBook'  , function () {
-    return view('admin.library.addBook');
-});
+
 Route::get('adminApp/lib/viewBook'  , function () {
     return view('admin.library.viewBook');
 });
 
 ///////////////  Add Category form admin  /////////////////////////
 ///
+Route::get('adminApp/lib/addBook'  ,'LibraryCon@viewAddBook' );
 Route::get('adminApp/lib/cat'  , 'LibraryCon@index');
 Route::post('addCategory' ,'LibraryCon@addCategory' );
 Route::get('editCat' ,'LibraryCon@editCat' );
 Route::get('delCat' , 'LibraryCon@delCat');
+Route::post('addBook' , 'LibraryCon@addBook');
 /////////////////////////////////////////
 Route::get('adminApp/fatawi/cat'  ,  'FatawiCon@index');
 Route::post('addFatawiCat' ,'FatawiCon@addCategory' );

@@ -11,12 +11,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mmpProj/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="526">
-              <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="220">
+              <caret line="66" column="54" lean-forward="false" selection-start-line="66" selection-start-column="54" selection-end-line="66" selection-end-column="54" />
+              <folding>
+                <marker date="1516031781776" expanded="true" signature="2243:2451" ph="..." />
+                <marker date="1516031781776" expanded="true" signature="2301:2450" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -31,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FatawiCon.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FatawiCon.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/FatawiCon.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="101" column="38" lean-forward="true" selection-start-line="101" selection-start-column="38" selection-end-line="101" selection-end-column="38" />
+            <state relative-caret-position="305">
+              <caret line="116" column="71" lean-forward="false" selection-start-line="116" selection-start-column="71" selection-end-line="116" selection-end-column="71" />
               <folding>
                 <element signature="e#40#55#0#PHP" expanded="true" />
               </folding>
@@ -46,9 +49,60 @@
       <file leaf-file-name="fatwa.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/fatwa.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="628">
-              <caret line="247" column="7" lean-forward="false" selection-start-line="247" selection-start-column="7" selection-end-line="247" selection-end-column="7" />
-              <folding />
+            <state relative-caret-position="629">
+              <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+              <folding>
+                <marker date="1516031781766" expanded="true" signature="4428:5466" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="4486:5458" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="4551:5421" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="4611:5067" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="4672:5028" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="4788:4804" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="4807:4986" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="4919:4940" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="5126:5142" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="5177:5386" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="5238:5347" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="5285:5304" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="5602:6140" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="5643:6121" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="5762:6007" ph="..." />
+                <marker date="1516031781766" expanded="false" signature="6179:6198" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="6199:8168" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="6296:8104" ph="..." />
+                <marker date="1516031781766" expanded="false" signature="6343:6379" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="6380:6497" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="6536:8081" ph="..." />
+                <marker date="1516031781766" expanded="false" signature="6617:6644" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="6645:6714" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="6742:8054" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="6792:7832" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="7118:7574" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="7237:7535" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="7300:7497" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="7403:7418" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="7427:7444" ph="..." />
+                <marker date="1516031781766" expanded="false" signature="7634:7650" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="7651:7800" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="7878:8026" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="8274:10832" ph="..." />
+                <marker date="1516031781766" expanded="true" signature="8315:10816" ph="{...}" />
+                <marker date="1516031781766" expanded="true" signature="8357:8653" ph="{...}" />
+                <marker date="1516031781766" expanded="true" signature="8531:8637" ph="{...}" />
+                <marker date="1516031781766" expanded="true" signature="8902:10413" ph="{...}" />
+                <marker date="1516031781766" expanded="true" signature="9162:9211" ph="{...}" />
+                <marker date="1516031781766" expanded="true" signature="9216:9266" ph="{...}" />
+                <marker date="1516031781766" expanded="true" signature="9296:9453" ph="{...}" />
+                <marker date="1516031781766" expanded="true" signature="9327:9435" ph="{...}" />
+                <marker date="1516031781766" expanded="true" signature="9479:10396" ph="{&quot;url&quot;: &quot;{{url('addMessege')}}&quot;...}" />
+                <marker date="1516031781766" expanded="true" signature="9709:10377" ph="{...}" />
+                <marker date="1516031781766" expanded="true" signature="9742:9830" ph="{...}" />
+                <marker date="1516031781766" expanded="true" signature="9835:10352" ph="{...}" />
+                <marker date="1516031781766" expanded="true" signature="9894:10236" ph="{...}" />
+                <marker date="1516031781766" expanded="true" signature="10242:10327" ph="{...}" />
+                <marker date="1516031781766" expanded="true" signature="10513:10636" ph="{...}" />
+                <marker date="1516031781766" expanded="true" signature="10687:10804" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -93,8 +147,8 @@
         <option value="$PROJECT_DIR$/mmpProj/database/migrations/2018_01_15_104454_create_fatawis_table.php" />
         <option value="$PROJECT_DIR$/mmpProj/app/fatawi.php" />
         <option value="$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/fatwa.blade.php" />
-        <option value="$PROJECT_DIR$/mmpProj/app/Http/Controllers/FatawiCon.php" />
         <option value="$PROJECT_DIR$/mmpProj/routes/web.php" />
+        <option value="$PROJECT_DIR$/mmpProj/app/Http/Controllers/FatawiCon.php" />
       </list>
     </option>
   </component>
@@ -294,7 +348,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30914000" />
+    <option name="totallyTimeSpent" value="30936000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -332,30 +386,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mmpProj/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/library/category.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2091">
-          <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -526,18 +556,319 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="65" column="54" lean-forward="true" selection-start-line="65" selection-start-column="54" selection-end-line="65" selection-end-column="54" />
+          <folding>
+            <marker date="1516031781776" expanded="true" signature="2243:2451" ph="..." />
+            <marker date="1516031781776" expanded="true" signature="2301:2450" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/fatwa.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="628">
-          <caret line="247" column="7" lean-forward="false" selection-start-line="247" selection-start-column="7" selection-end-line="247" selection-end-column="7" />
-          <folding />
+        <state relative-caret-position="357">
+          <caret line="95" column="34" lean-forward="false" selection-start-line="95" selection-start-column="34" selection-end-line="95" selection-end-column="34" />
+          <folding>
+            <marker date="1516031781766" expanded="true" signature="4428:5466" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="4486:5458" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="4551:5421" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="4611:5067" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="4672:5028" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="4788:4804" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="4807:4986" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="4919:4940" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="5126:5142" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="5177:5386" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="5238:5347" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="5285:5304" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="5602:6140" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="5643:6121" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="5762:6007" ph="..." />
+            <marker date="1516031781766" expanded="false" signature="6179:6198" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="6199:8168" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="6296:8104" ph="..." />
+            <marker date="1516031781766" expanded="false" signature="6343:6379" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="6380:6497" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="6536:8081" ph="..." />
+            <marker date="1516031781766" expanded="false" signature="6617:6644" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="6645:6714" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="6742:8054" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="6792:7832" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="7118:7574" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="7237:7535" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="7300:7497" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="7403:7418" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="7427:7444" ph="..." />
+            <marker date="1516031781766" expanded="false" signature="7634:7650" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="7651:7800" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="7878:8026" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="8274:10832" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="8315:10816" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="8357:8653" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="8531:8637" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="8902:10413" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="9162:9211" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="9216:9266" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="9296:9453" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="9327:9435" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="9479:10396" ph="{&quot;url&quot;: &quot;{{url('addMessege')}}&quot;...}" />
+            <marker date="1516031781766" expanded="true" signature="9709:10377" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="9742:9830" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="9835:10352" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="9894:10236" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="10242:10327" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="10513:10636" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="10687:10804" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/FatawiCon.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="101" column="38" lean-forward="true" selection-start-line="101" selection-start-column="38" selection-end-line="101" selection-end-column="38" />
+        <state relative-caret-position="271">
+          <caret line="117" column="8" lean-forward="false" selection-start-line="117" selection-start-column="8" selection-end-line="117" selection-end-column="23" />
+          <folding>
+            <element signature="e#40#55#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/library/category.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2091">
+          <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="41" lean-forward="false" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/database/migrations/2014_10_12_000000_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/auth/register.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-765">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/Auth/RegisterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="934">
+          <caret line="67" column="37" lean-forward="false" selection-start-line="67" selection-start-column="37" selection-end-line="67" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/Auth/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="27" column="42" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="45" column="50" lean-forward="false" selection-start-line="45" selection-start-column="50" selection-end-line="45" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="59" column="18" lean-forward="false" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/addBook.blade.php" />
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/auth/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="92" lean-forward="false" selection-start-line="10" selection-start-column="63" selection-end-line="10" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1291">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/database/migrations/2018_01_14_133812_create_categories_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/database/migrations/2018_01_15_085019_create_fatawi_cats_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="173" column="41" lean-forward="false" selection-start-line="173" selection-start-column="41" selection-end-line="173" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/library/category.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="230" column="43" lean-forward="false" selection-start-line="230" selection-start-column="43" selection-end-line="230" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/app/fatawiCat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/LibraryCon.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="60" column="74" lean-forward="true" selection-start-line="48" selection-start-column="7" selection-end-line="60" selection-end-column="74" />
+          <folding>
+            <element signature="e#40#57#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/app/category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="24" lean-forward="true" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/database/migrations/2018_01_15_104454_create_fatawis_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Middleware/adminPage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/app/fatawi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="31" lean-forward="false" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/category.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3041">
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/fatwa.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+          <folding>
+            <marker date="1516031781766" expanded="true" signature="4428:5466" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="4486:5458" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="4551:5421" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="4611:5067" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="4672:5028" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="4788:4804" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="4807:4986" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="4919:4940" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="5126:5142" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="5177:5386" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="5238:5347" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="5285:5304" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="5602:6140" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="5643:6121" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="5762:6007" ph="..." />
+            <marker date="1516031781766" expanded="false" signature="6179:6198" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="6199:8168" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="6296:8104" ph="..." />
+            <marker date="1516031781766" expanded="false" signature="6343:6379" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="6380:6497" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="6536:8081" ph="..." />
+            <marker date="1516031781766" expanded="false" signature="6617:6644" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="6645:6714" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="6742:8054" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="6792:7832" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="7118:7574" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="7237:7535" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="7300:7497" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="7403:7418" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="7427:7444" ph="..." />
+            <marker date="1516031781766" expanded="false" signature="7634:7650" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="7651:7800" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="7878:8026" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="8274:10832" ph="..." />
+            <marker date="1516031781766" expanded="true" signature="8315:10816" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="8357:8653" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="8531:8637" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="8902:10413" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="9162:9211" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="9216:9266" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="9296:9453" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="9327:9435" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="9479:10396" ph="{&quot;url&quot;: &quot;{{url('addMessege')}}&quot;...}" />
+            <marker date="1516031781766" expanded="true" signature="9709:10377" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="9742:9830" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="9835:10352" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="9894:10236" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="10242:10327" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="10513:10636" ph="{...}" />
+            <marker date="1516031781766" expanded="true" signature="10687:10804" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/FatawiCon.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="116" column="71" lean-forward="false" selection-start-line="116" selection-start-column="71" selection-end-line="116" selection-end-column="71" />
           <folding>
             <element signature="e#40#55#0#PHP" expanded="true" />
           </folding>
@@ -546,9 +877,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="220">
+          <caret line="66" column="54" lean-forward="false" selection-start-line="66" selection-start-column="54" selection-end-line="66" selection-end-column="54" />
+          <folding>
+            <marker date="1516031781776" expanded="true" signature="2243:2451" ph="..." />
+            <marker date="1516031781776" expanded="true" signature="2301:2450" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

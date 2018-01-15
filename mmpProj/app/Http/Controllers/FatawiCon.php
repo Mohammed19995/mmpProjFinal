@@ -114,7 +114,7 @@ class FatawiCon extends Controller
     }
     public function getIndex(Request $request){
         $allCat= \App\fatawiCat::all();
-        $allAnswer = fatawi::where('answer','<>',"")->get();
+        $allAnswer = fatawi::where('answer','<>',"")->where('private',0)->get();
         $userId= Auth::user()->id;
         $userFatwa = fatawi::where('user_id' ,$userId)->where('answer','<>',"")->where('private',1)->get();
 

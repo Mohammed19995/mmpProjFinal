@@ -39,7 +39,7 @@
 @section('content')
     <header class="page-header" style="margin-bottom: 50px">
         <div class="container-fluid">
-            <h2 class="no-margin-bottom">Add Book</h2>
+            <h3 class="no-margin-bottom">Add Book</h3>
         </div>
     </header>
 

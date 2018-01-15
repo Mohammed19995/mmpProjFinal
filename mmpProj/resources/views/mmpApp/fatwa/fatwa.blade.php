@@ -2,7 +2,14 @@
 
 
 @section('content')
-
+    <style>
+        .hidden {
+            display: none;
+        }
+        #gallery-grid-header{
+            cursor: pointer;
+        }
+    </style>
     <!-- BEGIN PAGE TITLE/BREADCRUMB -->
     <div id="page-title" class="parallax dark-bg" data-stellar-background-ratio="0.5">
         <div class="container">
@@ -49,9 +56,12 @@
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div id="gallery-grid-header">
-                                        <a href="#" class="active">All</a>
-                                        <a href="#">public</a>
-                                        <a href="#">private</a>
+
+                                        <a class="publicFatwa">public</a>
+                                        @if(auth()->check())
+                                        <a  class="privateFatwa">private</a>
+
+                                            @endif
                                     </div>
                                 </div>
                                 <div class="col-sm-4"></div>
@@ -64,72 +74,45 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="panel">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapsed">
-                                            Mauris aliquam fermentum metus, at scelerisque sapien suspendisse in volutpat ipsum?
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="collapseOne" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam fermentum metus, at scelerisque sapien. Suspendisse in volutpat ipsum. Mauris sit amet imperdiet purus, sed placerat leo. Nullam pharetra sollicitudin consectetur. Suspendisse sapien dolor, ullamcorper eget ultrices ut, mattis et urna.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="panel">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed">
-                                            Praesent venenatis nec nisi sit amet placerat nulla vitae justo eget enim elementum aliquam morbi nec turpis nunc?
-                                        </a>
-
-                                    </h4>
-                                </div>
-                                <div id="collapseTwo" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent scelerisque purus odio, non molestie nibh pretium id. Donec at lectus at sem aliquet dignissim. Nulla consectetur odio non diam accumsan viverra. Curabitur vel ante purus.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="panel">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapsed">
-                                            Aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos pellentesque adipiscing justo eu luctus congue?
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="collapseThree" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        Sed tincidunt justo eget neque accumsan, eget tristique dui dapibus. Mauris est elit, vestibulum et lorem ultrices, posuere sagittis diam. Morbi aliquam turpis lacinia, ultrices sapien a, ullamcorper sapien. Sed pellentesque iaculis erat non consequat.
-                                    </div>
-                                </div>
-                            </div>
                             <?php
-                            for ($x = 0; $x <= 6; $x++) {
-                                ?>
-                            <div class="panel">
+                            foreach ($userFatwa as $i=>$arr2){ ?>
+
+                            <div class="panel private hidden">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $x;?>" class="collapsed">
-                                            Aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos pellentesque adipiscing justo eu luctus congue?
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne2<?php echo $i+1; ?>"
+                                           class="collapsed">
+                                            <?php  echo $arr2->question?>
                                         </a>
                                     </h4>
                                 </div>
-                                <div id="collapse<?php echo $x;?>" class="panel-collapse collapse">
+                                <div id="collapseOne2<?php echo $i+1; ?>" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        Sed tincidunt justo eget neque accumsan, eget tristique dui dapibus. Mauris est elit, vestibulum et lorem ultrices, posuere sagittis diam. Morbi aliquam turpis lacinia, ultrices sapien a, ullamcorper sapien. Sed pellentesque iaculis erat non consequat.
-                                    </div>
+                                        <?php  echo $arr2->answer?>                                    </div>
                                 </div>
                             </div>
-                          <?php  }
-                            ?>
+                            <?php  }       ?>
+
+                            <?php
+                            foreach ($allAnswer as $arr){ ?>
+
+                            <div class="panel public hidden">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne<?php echo $arr->id; ?>"
+                                           class="collapsed">
+                                            <?php  echo $arr->question?>
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne<?php echo $arr->id; ?>" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <?php  echo $arr->answer?>                                    </div>
+                                </div>
+                            </div>
+                            <?php  }       ?>
+
+
 
                         </div>
 
@@ -158,16 +141,33 @@
                     </div>
 
                     <div class="row">
+                        <div class="alert alert-danger print-error-msg" style="display:none; margin: 10px;">
+                            <ul></ul>
+                        </div>
+
                     <form>
 
 
                         <div class="col-sm-12">
                             <input type="text" name="Subject" placeholder="Subject" class="form-control required subject"  />
-                            <textarea name="Message" placeholder="Message" class="form-control required"></textarea>
+                            <textarea name="Message" placeholder="Message" class="form-control required Message"></textarea>
+                            <select class="form-control "  id="optionCat">
+                                <option value="0">Select your Category</option>
+                                <?php
+                                    foreach ($allCat as $arr){
+                                        ?>
+                                        <option value=<?php echo $arr->id ?> ><?php echo $arr->name ?></option>
+                                <?php    }
+                                    ?>
+                            </select>
+                            <div class="checkbox " style="margin-top: 30px">
+                                <label><input type="checkbox"  id="myCheckbox" value="cc">private Message</label>
+                            </div>
+
                         </div>
 
                         <div class="center">
-                            <button type="submit" class="btn btn-default submit_form"> Send Message</button>
+                            <input type="button" class="btn btn-default submit_form sendFatwa" value="Send Message">
                         </div>
                     </form>
                     </div>
@@ -184,6 +184,13 @@
 
     <script >
         $(document).ready(function () {
+            function printErrorMsg(msg) {
+                $(".print-error-msg").find("ul").html('');
+                $(".print-error-msg").css('display', 'block');
+                $.each(msg, function (key, value) {
+                    $(".print-error-msg").find("ul").append('<li>' + value + '</li>');
+                });
+            }
 
             $('.rd-navbar-nav-wrap ul li').each(function (e , v) {
                 $(this).removeClass('active');
@@ -192,6 +199,59 @@
             $('.rd-navbar-nav-wrap li.fatwa ').addClass('active');
 
 
+
+            $('.sendFatwa').click(function () {
+                var subject = $('.subject').val();
+                var message = $('.Message').val();
+                var category = $('select#optionCat option:selected').val();
+                var private;
+               if($('#myCheckbox').is(':checked') ){
+                  private = 1;
+               }else {
+                   private = 0;
+               }
+
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                $.ajax({
+                    url: "{{url('addMessege')}}",
+                    method: "get",
+                    data: {subject: subject, message: message, category: category ,private:private},
+                    success: function (e) {
+                       if(e==1){
+                           window.location="{{url('login')}}"
+                       }else {
+                           if ($.isEmptyObject(e.error)) {
+                               alert(e.success);
+                               $('.subject').val("");
+                               $('.Message').val("");
+                               $('select#optionCat option[value="0"]').attr("selected",true);
+                               $(".print-error-msg").hide();
+                           } else {
+                               printErrorMsg(e.error);
+                           }
+                       }
+
+
+
+                    }
+
+                });
+
+            });
+            $('.public').removeClass('hidden');
+            $('.privateFatwa').click(function () {
+
+                     $('.public').addClass('hidden');
+                $('.private').removeClass('hidden');
+            });
+            $('.publicFatwa').click(function () {
+                $('.public').removeClass('hidden');
+                $('.private').addClass('hidden');
+            });
         });
 
     </script>

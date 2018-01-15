@@ -37,9 +37,8 @@ Route::get('mmpApp/library' , function () {
 Route::get('mmpApp/libraryDetail' , function () {
     return view('mmpApp.library.libraryDetail');
 });
-Route::get('mmpApp/fatwa' , function () {
-    return view('mmpApp.fatwa.fatwa');
-});
+
+Route::get('mmpApp/fatwa' ,'FatawiCon@getIndex');
 
 Route::get('adminApp' , function () {
     return view('admin.app');
@@ -61,13 +60,17 @@ Route::get('adminApp/lib/cat'  , 'LibraryCon@index');
 Route::post('addCategory' ,'LibraryCon@addCategory' );
 Route::get('editCat' ,'LibraryCon@editCat' );
 Route::get('delCat' , 'LibraryCon@delCat');
-/////////////////////////////////////////
+////////////////////    Fatawi     /////////////////////
+                /////// addCategory //////////////
 Route::get('adminApp/fatawi/cat'  ,  'FatawiCon@index');
 Route::post('addFatawiCat' ,'FatawiCon@addCategory' );
 Route::get('delFatawiCat' ,'FatawiCon@delCategory' );
 Route::get('editFatawiCat' ,'FatawiCon@editCategory' );
 
-
+                 //////////  ask question   /////////////
+Route::get('addMessege' ,'FatawiCon@addMessage' );
+Route::get('getUserFatwa' ,'FatawiCon@getUserFatwa' );
+////////////////////////////////////////////////////////////
 Route::post('testImg2' , function(\Illuminate\Http\Request $request) {
   //  echo $_FILES['file']['name'] . " " . $request->name1 . " " . $request->file->getClientOriginalName();
     $request->file->store('public/ff');

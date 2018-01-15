@@ -11,103 +11,75 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/auth/login.blade.php">
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mmpProj/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="10" column="92" lean-forward="false" selection-start-line="10" selection-start-column="63" selection-end-line="10" selection-end-column="92" />
+            <state relative-caret-position="390">
+              <caret line="67" column="25" lean-forward="false" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/Auth/LoginController.php">
+      <file leaf-file-name="category.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/library/category.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="27" column="42" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="42" />
+            <state relative-caret-position="223">
+              <caret line="230" column="43" lean-forward="false" selection-start-line="230" selection-start-column="43" selection-end-line="230" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthenticatesUsers.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php">
+      <file leaf-file-name="FatawiCon.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/FatawiCon.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="45" column="50" lean-forward="false" selection-start-line="45" selection-start-column="50" selection-end-line="45" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminPage.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Middleware/adminPage.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="45" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="45" />
+            <state relative-caret-position="441">
+              <caret line="52" column="65" lean-forward="false" selection-start-line="52" selection-start-column="62" selection-end-line="52" selection-end-column="65" />
               <folding>
-                <element signature="e#39#51#0#PHP" expanded="true" />
+                <element signature="e#40#58#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mmpProj/routes/web.php">
+      <file leaf-file-name="LibraryCon.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/LibraryCon.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="47" column="12" lean-forward="true" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="25" />
+            <state relative-caret-position="459">
+              <caret line="60" column="74" lean-forward="true" selection-start-line="48" selection-start-column="7" selection-end-line="60" selection-end-column="74" />
+              <folding>
+                <element signature="e#40#57#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="category.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/category.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="226" column="23" lean-forward="false" selection-start-line="226" selection-start-column="16" selection-end-line="226" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Kernel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Kernel.php">
+      <file leaf-file-name="fatawiCat.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mmpProj/app/fatawiCat.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="59" column="18" lean-forward="false" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="18" />
+            <state relative-caret-position="407">
+              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/app/User.php">
+      <file leaf-file-name="category.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mmpProj/app/category.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="17" column="41" lean-forward="false" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegisterController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/Auth/RegisterController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="934">
-              <caret line="67" column="37" lean-forward="false" selection-start-line="67" selection-start-column="37" selection-end-line="67" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2014_10_12_000000_create_users_table.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/database/migrations/2014_10_12_000000_create_users_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/auth/register.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-765">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="305">
+              <caret line="31" column="24" lean-forward="true" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -115,13 +87,17 @@
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>print-error-msg</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/library/category.blade.php" />
         <option value="$PROJECT_DIR$/mmpProj/.env" />
         <option value="$PROJECT_DIR$/mmpProj/database/migrations/2014_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/mmpProj/app/Http/Controllers/Auth/LoginController.php" />
@@ -130,7 +106,14 @@
         <option value="$PROJECT_DIR$/mmpProj/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" />
         <option value="$PROJECT_DIR$/mmpProj/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/mmpProj/app/Http/Middleware/adminPage.php" />
+        <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/app.blade.php" />
+        <option value="$PROJECT_DIR$/mmpProj/app/Http/Controllers/LibraryCon.php" />
+        <option value="$PROJECT_DIR$/mmpProj/database/migrations/2018_01_15_085019_create_fatawi_cats_table.php" />
         <option value="$PROJECT_DIR$/mmpProj/routes/web.php" />
+        <option value="$PROJECT_DIR$/mmpProj/app/fatawiCat.php" />
+        <option value="$PROJECT_DIR$/mmpProj/app/Http/Controllers/FatawiCon.php" />
+        <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/category.blade.php" />
+        <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/library/category.blade.php" />
       </list>
     </option>
   </component>
@@ -201,14 +184,6 @@
               <item name="mmpProjFinal" type="b2602c69:ProjectViewProjectNode" />
               <item name="mmpProjFinal" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="mmpProj" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Middleware" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="mmpProjFinal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mmpProjFinal" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="mmpProj" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -246,7 +221,7 @@
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="library" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="fatawi" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="mmpProjFinal" type="b2602c69:ProjectViewProjectNode" />
@@ -254,7 +229,8 @@
               <item name="mmpProj" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="auth" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="library" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="mmpProjFinal" type="b2602c69:ProjectViewProjectNode" />
@@ -280,6 +256,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\mmpProjFinal\mmpProj\resources\views\admin" />
       <recent name="C:\xampp\htdocs\mmpProjFinal\mmpProj" />
     </key>
   </component>
@@ -306,18 +283,18 @@
       <option name="presentableId" value="Default" />
       <updated>1515847664165</updated>
       <workItem from="1515847665638" duration="376000" />
-      <workItem from="1515939567658" duration="4971000" />
+      <workItem from="1515939567658" duration="11879000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5347000" />
+    <option name="totallyTimeSpent" value="12255000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19288956" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2708018" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -359,101 +336,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2091">
           <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
-          <folding>
-            <marker date="1515940059604" expanded="false" signature="954:971" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="972:1584" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="1033:1268" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="1149:1225" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="1330:1544" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="1412:1501" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="1802:6618" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="1844:6599" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="1878:6580" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="1971:6555" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="2014:6528" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="2095:2192" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="2244:6497" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="2312:6462" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="2356:2708" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="2397:2663" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="2752:6421" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="2793:3476" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="2955:3170" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="3039:3124" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="3215:3433" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="3298:3387" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="3517:4200" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="3679:3894" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="3763:3848" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="3939:4157" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="4022:4111" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="4241:4924" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="4403:4618" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="4487:4572" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="4663:4881" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="4746:4835" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="4965:5648" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="5127:5342" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="5211:5296" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="5387:5605" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="5470:5559" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="5689:6376" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="5855:6070" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="5939:6024" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="6115:6333" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="6198:6287" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/library/category.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
-          <folding>
-            <marker date="1515940059604" expanded="false" signature="954:971" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="972:1584" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="1033:1268" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="1149:1225" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="1330:1544" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="1412:1501" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="1802:6618" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="1844:6599" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="1878:6580" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="1971:6555" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="2014:6528" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="2095:2192" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="2244:6497" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="2312:6462" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="2356:2708" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="2397:2663" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="2752:6421" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="2793:3476" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="2955:3170" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="3039:3124" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="3215:3433" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="3298:3387" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="3517:4200" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="3679:3894" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="3763:3848" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="3939:4157" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="4022:4111" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="4241:4924" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="4403:4618" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="4487:4572" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="4663:4881" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="4746:4835" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="4965:5648" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="5127:5342" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="5211:5296" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="5387:5605" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="5470:5559" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="5689:6376" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="5855:6070" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="5939:6024" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="6115:6333" ph="..." />
-            <marker date="1515940059604" expanded="true" signature="6198:6287" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -497,14 +380,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="92" lean-forward="false" selection-start-line="10" selection-start-column="63" selection-end-line="10" selection-end-column="92" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/Auth/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -529,20 +404,120 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/addBook.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Middleware/adminPage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="45" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="45" />
           <folding>
-            <element signature="e#39#51#0#PHP" expanded="true" />
+            <element signature="e#39#51#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/auth/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="92" lean-forward="false" selection-start-line="10" selection-start-column="63" selection-end-line="10" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1291">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/database/migrations/2018_01_14_133812_create_categories_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/app/fatawiCat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="47" column="12" lean-forward="true" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="25" />
+        <state relative-caret-position="390">
+          <caret line="67" column="25" lean-forward="false" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/app/category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="31" column="24" lean-forward="true" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/LibraryCon.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="60" column="74" lean-forward="true" selection-start-line="48" selection-start-column="7" selection-end-line="60" selection-end-column="74" />
+          <folding>
+            <element signature="e#40#57#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/database/migrations/2018_01_15_085019_create_fatawi_cats_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="173" column="41" lean-forward="false" selection-start-line="173" selection-start-column="41" selection-end-line="173" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/FatawiCon.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="52" column="65" lean-forward="false" selection-start-line="52" selection-start-column="62" selection-end-line="52" selection-end-column="65" />
+          <folding>
+            <element signature="e#40#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/category.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="226" column="23" lean-forward="false" selection-start-line="226" selection-start-column="16" selection-end-line="226" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/library/category.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="230" column="43" lean-forward="false" selection-start-line="230" selection-start-column="43" selection-end-line="230" selection-end-column="43" />
           <folding />
         </state>
       </provider>

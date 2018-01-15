@@ -116,7 +116,7 @@
                                 @endif
 
 
-                                <form method="post" action="{{url('addCategory')}}" class="form-inline"
+                                <form method="post" action="{{url('addFatawiCat')}}" class="form-inline"
                                       style="margin-left: 50px">
                                     {{ csrf_field() }}
                                     <div class="form-group">
@@ -239,7 +239,7 @@
                     }
                 });
                 $.ajax({
-                    url: "{{url('editCat')}}",
+                    url: "{{url('editFatawiCat')}}",
                     method: "get",
                     data: {id_hidden: id_hidden, m_name: m_name},
                     success: function (e) {
@@ -265,7 +265,7 @@
                         }
                     });
                     $.ajax({
-                        url: "{{url('delCat')}}",
+                        url: "{{url('delFatawiCat')}}",
                         method: "get",
                         data: {id_hiddenToDel: id_hiddenToDel},
                         success: function (e) {
@@ -275,7 +275,7 @@
 
                     });
                 } else {
-
+                       alert('The Category has not deleted')
                 }
 
             });

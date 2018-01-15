@@ -62,6 +62,11 @@ Route::post('addCategory' ,'LibraryCon@addCategory' );
 Route::get('editCat' ,'LibraryCon@editCat' );
 Route::get('delCat' , 'LibraryCon@delCat');
 /////////////////////////////////////////
+Route::get('adminApp/fatawi/cat'  ,  'FatawiCon@index');
+Route::post('addFatawiCat' ,'FatawiCon@addCategory' );
+Route::get('delFatawiCat' ,'FatawiCon@delCategory' );
+Route::get('editFatawiCat' ,'FatawiCon@editCategory' );
+
 
 Route::post('testImg2' , function(\Illuminate\Http\Request $request) {
   //  echo $_FILES['file']['name'] . " " . $request->name1 . " " . $request->file->getClientOriginalName();

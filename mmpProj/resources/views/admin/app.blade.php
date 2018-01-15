@@ -23,7 +23,7 @@
 
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
- @yield('css')
+    @yield('css')
 </head>
 
 <body>
@@ -161,13 +161,30 @@
                 <li><a href="#dashvariants" aria-expanded="false" data-toggle="collapse"> <i
                                 class="fa fa-book"></i>Library </a>
                     <ul id="dashvariants" class="collapse list-unstyled">
-                        <li> <a href="{{url('adminApp/lib/cat')}}"><i class="fa fa-tags"></i> Category</a></li>
-                        <li><a href="{{url('adminApp/lib/addBook')}}"><i class="fa fa-plus-circle"></i> Add Book</a></li>
+                        <li><a href="{{url('adminApp/lib/cat')}}"><i class="fa fa-tags"></i> Category</a></li>
+                        <li><a href="{{url('adminApp/lib/addBook')}}"><i class="fa fa-plus-circle"></i> Add Book</a>
+                        </li>
                         <li><a href="{{url('adminApp/lib/viewBook')}}"><i class="fa fa-eye"></i> View Books</a></li>
+
+
+                    </ul>
+                </li>
+                <li><a href="#dashvariants2" aria-expanded="false" data-toggle="collapse"> <i
+                                class="fa fa-plus"></i>Fatawi </a>
+                    <ul id="dashvariants2" class="collapse list-unstyled">
+                        <li><a href="{{url('adminApp/fatawi/cat')}}"><i class="fa fa-tags"></i> Category</a></li>
+
+
+
                     </ul>
                 </li>
 
             </ul>
+
+            </li>
+
+            </ul>
+
             <span class="heading">Extras</span>
             <ul class="list-unstyled">
                 <li><a href="#"> <i class="icon-flask"></i>Demo </a></li>
@@ -180,7 +197,7 @@
         <div class="content-inner">
             <!-- Page Header-->
 
-           @yield('content')
+            @yield('content')
 
         </div>
     </div>

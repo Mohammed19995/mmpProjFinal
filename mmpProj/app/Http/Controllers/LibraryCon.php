@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Author;
+use App\Book;
 use App\category;
+use App\Filebook;
 use App\Filelang;
 use App\Filetype;
+use App\Keyword;
+use App\Outline;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
@@ -14,12 +19,15 @@ class LibraryCon extends Controller
     protected $obj;
     protected $objFileLang;
     protected $objFiletype;
+    protected $objBook;
+
 
     public function __construct()
     {
         $this->obj = new category();
         $this->objFileLang = new Filelang();
         $this->objFiletype = new Filetype();
+        $this->objBook = new Book();
     }
 
     /*         Category       */
@@ -109,8 +117,8 @@ class LibraryCon extends Controller
             'checkDataLang' => 'not_in:0',
 
 
-        ] , [
-            'checkImgBook.not_in' => "The image book is required." ,
+        ], [
+            'checkImgBook.not_in' => "The image book is required.",
             'checkDataLang.not_in' => "Language fields is required"
         ]);
         $attributeNames = array(
@@ -119,15 +127,59 @@ class LibraryCon extends Controller
 
         );
         $validator->setAttributeNames($attributeNames);
-        /*
-       $arrFileLength = $request->arrFileLength;
-       $a = [];
-       for($i=0; $i<$arrFileLength ; $i++) {
-           $fileName = "arrFile".$i;
-           array_push($a , $request->$fileName);
-       }
-*/
+
+
         if ($validator->passes()) {
+
+            $nameBook = $request->nameBook;
+            $editionBook = $request->editionBook;
+            $summary = $request->summary;
+            $file = $request->file;
+            $selCatVal = $request->selCatVal;
+            $datePublish = $request->datePublish;
+
+            $pathImgBook = $file->store('public/book/img');
+            $bookIsNowAdded = $this->objBook->addBook($nameBook, $selCatVal, $editionBook, $summary, $pathImgBook, $datePublish);
+
+            $author = explode("," , $request->author);
+            $keyword = explode("," , $request->keyword);
+            $outline = explode("," ,$request->outline );
+
+            $objAuthor = new Author();
+            for($i=0; $i < count($author) ; $i++) {
+                $objAuthor->addAuthor($bookIsNowAdded->id , $author[$i]);
+            }
+
+
+            $objKeyword = new Keyword();
+            for($i=0; $i < count($keyword) ; $i++) {
+                $objKeyword->addKeyword($bookIsNowAdded->id , $keyword[$i]);
+            }
+
+            $objOutline = new Outline();
+            for($i=0; $i < count($outline) ; $i++) {
+                $objOutline->addOutline($bookIsNowAdded->id , $outline[$i]);
+            }
+
+
+                        $arrFileLength = $request->arrFileLength;
+                        $arrFileLangPath = [];
+
+                        for ($i = 0; $i < $arrFileLength; $i++) {
+                            $fileName = "arrFile" . $i;
+                            array_push($arrFileLangPath, $request->$fileName);
+                        }
+
+                        $fileType = explode(',', $request->arrTypeFile);
+                        $fileLang = explode(',', $request->arrLang);
+
+                        $bojFileBook = new Filebook();
+                        for ($j=0 ; $j<count($arrFileLangPath) ; $j++) {
+
+                            $pathTypeFileLang = $arrFileLangPath[$j]->store('public/book/typeFile');
+                            $bojFileBook->addFileBook($bookIsNowAdded->id ,$fileType[$j] , $fileLang[$j] ,$pathTypeFileLang);
+                        }
+
 
             return response()->json(['success' => 1]);
         }

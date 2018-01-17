@@ -33,6 +33,49 @@
             display: none;
         }
 
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite; /* Safari */
+            animation: spin 2s linear infinite;
+        }
+
+        /* Safari */
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .bd-example-modal-lg .modal-dialog {
+            display: table;
+            position: relative;
+            margin: 0 auto;
+            top: calc(30% - 24px);
+
+        }
+
+        .bd-example-modal-lg .modal-dialog .modal-content {
+            background-color: transparent;
+            border: none;
+
+        }
+
     </style>
 
 @endsection
@@ -42,8 +85,16 @@
             <h3 class="no-margin-bottom">Add Book</h3>
         </div>
     </header>
+    <div class="modal  bd-example-modal-lg" id="myModal" data-backdrop="static" data-keyboard="false" tabindex="-1">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content" style="width: 48px">
 
+                <div class="loader"></div>
+            </div>
+        </div>
+    </div>
     <div class="container">
+
 
         <!-- Forms Section-->
 
@@ -63,6 +114,10 @@
                             <div class="card-body">
                                 <div class="alert alert-danger print-error-msg" style="display:none; margin: 10px;">
                                     <ul></ul>
+                                </div>
+
+                                <div class="successMsg alert alert-success hidden">
+                                    The adding is done
                                 </div>
                                 <!-- <form class="form-horizontal"> -->
                                 <form method="post" id="addBookForm" enctype="multipart/form-data">
@@ -192,7 +247,7 @@
                                             <label class="col-sm-2 form-control-label">Language</label>
 
                                             <div class="col-sm-3 ">
-                                                <select  class="form-control selFileLang">
+                                                <select class="form-control selFileLang">
                                                     <?php foreach ($getAllLang as $p) {
                                                     ?>
                                                     <option value="<?php echo $p->id;?>"><?php echo $p->name;?></option>
@@ -259,6 +314,7 @@
         $(document).ready(function () {
 
             function printErrorMsg(msg) {
+                $('.successMsg').addClass('hidden');
                 $(".print-error-msg").find("ul").html('');
                 $(".print-error-msg").css('display', 'block');
                 $.each(msg, function (key, value) {
@@ -267,8 +323,8 @@
             }
 
             var dataLang = [];
-            var dataLangId =[];
-            $('.addNewLang .selFileLang option').each(function( k , v){
+            var dataLangId = [];
+            $('.addNewLang .selFileLang option').each(function (k, v) {
                 dataLang.push($(this).text());
                 dataLangId.push($(this).val());
 
@@ -276,8 +332,8 @@
 
 
             var datatype = [];
-            var dataTypeId =[];
-            $('.addNewLang .selTypeFile option').each(function( k , v){
+            var dataTypeId = [];
+            $('.addNewLang .selTypeFile option').each(function (k, v) {
                 datatype.push($(this).text());
                 dataTypeId.push($(this).val());
 
@@ -339,7 +395,6 @@
             $('.addNewBook').click(function () {
 
 
-
                 var file_data = $('#fileImg').prop('files')[0];
                 var form_data = new FormData();
 
@@ -350,59 +405,59 @@
                 var datePublish = $('#datePublish').val();
                 var summary = $('#summary').val();
                 var author = $("#author").val().split(',');
-                var keyword =$("#keyword").val().split(',');
-                var outline =$("#outline").val().split(',');
+                var keyword = $("#keyword").val().split(',');
+                var outline = $("#outline").val().split(',');
 
                 var arrLang = [];
                 var arrTypeFile = [];
-                var arrFile =[];
-                $('.addNewLang .imm').each(function() {
-                    arrLang.push($(this).find('select.selFileLang option:selected').text());
-                    arrTypeFile.push($(this).find('select.selTypeFile option:selected').text());
-                    arrFile.push($(this).find('.fileLangType').prop('files')[0] );
+                var arrFile = [];
+                $('.addNewLang .imm').each(function () {
+                    arrLang.push($(this).find('select.selFileLang option:selected').val());
+                    arrTypeFile.push($(this).find('select.selTypeFile option:selected').val());
+                    arrFile.push($(this).find('.fileLangType').prop('files')[0]);
                 });
 //
                 var checkFile = 1;
-                for(var i=0 ; i< arrFile.length ; i++) {
-                    if(arrFile[i] == null) {
+                for (var i = 0; i < arrFile.length; i++) {
+                    if (arrFile[i] == null) {
                         checkFile = 0;
                     }
                 }
 
 
-
-
-                for(var f=0 ; f< arrFile.length ; f++) {
-                    form_data.append('arrFile'+f , arrFile[f]);
+                for (var f = 0; f < arrFile.length; f++) {
+                    form_data.append('arrFile' + f, arrFile[f]);
                 }
 
 
                 var checkDataLang = 1;
                 var checkImgBook = 1;
-                if(checkFile == 0 || datatype.length == 0 || dataLang.length == 0) {
-                   //$('.msgErrorLang').removeClass('hidden');
+                if (checkFile == 0 || datatype.length == 0 || dataLang.length == 0) {
+                    //$('.msgErrorLang').removeClass('hidden');
                     checkDataLang = 0;
-                   // printErrorMsg(["Language fields must all required"]);
+                    // printErrorMsg(["Language fields must all required"]);
                 }
-                if(file_data == null) {
+                if (file_data == null) {
                     checkImgBook = 0;
                 }
 
                 form_data.append('file', file_data);
-                form_data.append('nameBook' , nameBook);
-                form_data.append('editionBook' , editionBook);
-                form_data.append('summary' , summary);
-                form_data.append('selCatVal' , selCatVal);
-                form_data.append('selCattext' , selCattext);
-                form_data.append('datePublish' , datePublish);
-                form_data.append('author' , author);
-                form_data.append('keyword' , keyword);
-                form_data.append('outline' , nameBook);
-                form_data.append('arrLang' , arrLang);
-                form_data.append('arrTypeFile' , arrTypeFile);
-                form_data.append('arrFileLength' , f);
-                form_data.append('checkDataLang' , checkDataLang);
-                form_data.append('checkImgBook' , checkImgBook);
+                form_data.append('nameBook', nameBook);
+                form_data.append('editionBook', editionBook);
+                form_data.append('summary', summary);
+                form_data.append('selCatVal', selCatVal);
+                form_data.append('selCattext', selCattext);
+                form_data.append('datePublish', datePublish);
+                form_data.append('author', author);
+                form_data.append('keyword', keyword);
+                form_data.append('outline', outline);
+                form_data.append('arrLang', arrLang);
+                form_data.append('arrTypeFile', arrTypeFile);
+                form_data.append('arrFileLength', f);
+                form_data.append('checkDataLang', checkDataLang);
+                form_data.append('checkImgBook', checkImgBook);
+
+                $('#myModal').modal('show');
                 $.ajaxSetup({
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -418,10 +473,38 @@
                     data: form_data,
                     type: 'post',
                     success: function (e) {
+
+                        $('#myModal').modal('hide');
+
                         var jsonVar = $.parseJSON(e);
-                        if(jsonVar.success == 1) {
+                        if (jsonVar.success == 1) {
+
                             alert("is done");
-                        }else {
+                            $('#nameBook').val('');
+                            $('#editionBook').val('');
+                            $('#fileImg').val('');
+                            $('#datePublish').val('');
+                            $('#summary').val('');
+                            $("#author").tagsinput('removeAll');
+                            $("#keyword").tagsinput('removeAll');
+                            $("#outline").tagsinput('removeAll');
+
+                            $('.addNewLang .imm').each(function (i , v) {
+                                if(i == 0) {
+                                    $(this).find('.fileLangType').val('')
+                                }
+                                if(i != 0) {
+                                    $(this).remove();
+                                }
+                            });
+
+                            $('html, body').animate({
+                                scrollTop: $(".card-header").offset().top
+                            }, 2000);
+                            $('.successMsg').removeClass('hidden');
+                            $(".print-error-msg").hide();
+                        } else {
+
                             $('html, body').animate({
                                 scrollTop: $(".card-header").offset().top
                             }, 2000);
@@ -429,10 +512,8 @@
                         }
 
 
-
                     }
                 });
-
 
 
             });

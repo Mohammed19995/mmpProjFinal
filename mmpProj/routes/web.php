@@ -71,6 +71,11 @@ Route::get('editFatawiCat' ,'FatawiCon@editCategory' );
                  //////////  ask question   /////////////
 Route::get('addMessege' ,'FatawiCon@addMessage' );
 Route::get('getUserFatwa' ,'FatawiCon@getUserFatwa' );
+
+                ///////////// add question ////////////
+Route::get('adminApp/addFatwa' ,'FatawiCon@addFatwa' );
+
+
 ////////////////////////////////////////////////////////////
 Route::post('testImg2' , function(\Illuminate\Http\Request $request) {
   //  echo $_FILES['file']['name'] . " " . $request->name1 . " " . $request->file->getClientOriginalName();

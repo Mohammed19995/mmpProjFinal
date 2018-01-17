@@ -76,50 +76,61 @@ class FatawiCon extends Controller
 
 
     }
+
     /////////////////////////////////////////////////////////////////////////////
 
     public function addMessage(Request $request)
     {
-        $subject = $request->subject;
+
         $message = $request->message;
         $category = $request->category;
         $private = $request->private;
 
         $validator = Validator::make($request->all(), [
-            'subject' => 'required',
+
             'message' => 'required',
             'category' => 'required',
 
 
         ]);
         $attributeNames = array(
-            'subject' => 'subject',
+
 
         );
         $validator->setAttributeNames($attributeNames);
-        if ($validator->passes()) {
-            if (Auth::check()) {
+        if (Auth::check()) {
+            if ($validator->passes()) {
+
                 $a = Auth::user()->id;
-                $this->obj2->addFatwa($subject, $message, $a, $category, $private);
+                $this->obj2->addFatwa( $message, $a, $category, $private);
 
-            } else {
-                echo 1;
+
+                return response()->json(['success' => 'The masseg has been send']);
             }
-            return response()->json(['success' => 'The masseg has been send']);
+            return response()->json(['error' => $validator->errors()->all()]);
+        } else {
+            echo 1;
+
+
         }
-        return response()->json(['error' => $validator->errors()->all()]);
+    }
 
+       public function getIndex(Request $request)
+        {
+            $allCat = \App\fatawiCat::all();
+            $allAnswer = fatawi::where('answer', '<>', "")->where('private', 0)->get();
+            $userFatwa = "";
+            if (Auth::check()) {
+                $userId = Auth::user()->id;
+                $userFatwa = fatawi::where('user_id', $userId)->where('answer', '<>', "")->where('private', 1)->get();
+            }
+            return view('mmpApp.fatwa.fatwa', ['allCat' => $allCat, 'allAnswer' => $allAnswer, 'userFatwa' => $userFatwa]);
+        }
+
+        public function addFatwa(){
+
+        return view('admin.fatawi.addFatwa');
+        }
 
 
     }
-    public function getIndex(Request $request){
-        $allCat= \App\fatawiCat::all();
-        $allAnswer = fatawi::where('answer','<>',"")->where('private',0)->get();
-        $userId= Auth::user()->id;
-        $userFatwa = fatawi::where('user_id' ,$userId)->where('answer','<>',"")->where('private',1)->get();
-
-        return view('mmpApp.fatwa.fatwa',['allCat'=>$allCat , 'allAnswer'=>$allAnswer , 'userFatwa'=>$userFatwa]);
-    }
-
-
-}

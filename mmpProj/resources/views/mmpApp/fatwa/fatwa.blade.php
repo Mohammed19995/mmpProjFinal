@@ -74,6 +74,7 @@
                                     </div>
                                 </div>
                             </div>
+                            @if(auth()->check())
                             <?php
                             foreach ($userFatwa as $i=>$arr2){ ?>
 
@@ -92,6 +93,7 @@
                                 </div>
                             </div>
                             <?php  }       ?>
+                            @endif
 
                             <?php
                             foreach ($allAnswer as $arr){ ?>
@@ -149,7 +151,7 @@
 
 
                         <div class="col-sm-12">
-                            <input type="text" name="Subject" placeholder="Subject" class="form-control required subject"  />
+
                             <textarea name="Message" placeholder="Message" class="form-control required Message"></textarea>
                             <select class="form-control "  id="optionCat">
                                 <option value="0">Select your Category</option>

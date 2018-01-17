@@ -15,7 +15,7 @@ class CreateFatawisTable extends Migration
     {
         Schema::create('fatawis', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('subject');
+
             $table->string('question');
             $table->string('answer');
             $table->integer('user_id');

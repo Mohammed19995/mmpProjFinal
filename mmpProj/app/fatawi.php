@@ -7,11 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class fatawi extends Model
 {
     protected $table = "fatawis";
-    protected $fillable = ['subject','question','answer','user_id','cat_id','private'];
+    protected $fillable = ['question','answer','user_id','cat_id','private'];
 
-    public function addFatwa($subject , $question ,$user_id ,$cat_id ,$private){
+    public function addFatwa(  $question ,$user_id ,$cat_id ,$private){
         $this::create([
-            'subject'=>$subject,
             'question'=>$question,
             'answer'=>$answer="",
             'user_id'=>$user_id,

@@ -324,6 +324,7 @@ use App\Http\Controllers\FatawiCon;
                     extend: 'pdfHtml5',
                     exportOptions: {
                         rows: ':visible',
+                        columns:':visible'
 
                     },
 

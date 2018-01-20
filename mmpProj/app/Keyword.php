@@ -15,4 +15,13 @@ class Keyword extends Model
             'word' => $word
         ]);
     }
+
+    public function getKeywordBook($id) {
+        return $this::where('book_id' , $id)->get();
+    }
+
+    public function removeKeywordBook($id) {
+
+        $this::where('book_id' ,$id)->delete();
+    }
 }

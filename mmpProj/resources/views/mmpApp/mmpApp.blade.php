@@ -73,11 +73,11 @@
 
         .services .item:hover img {
 
-
         }
 
     </style>
 
+    @yield('css')
 </head>
 <body>
 

@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Illuminate\Support\Facades\Response;
 
 Route::get('/', function () {
     return view('welcome');
@@ -31,12 +32,8 @@ Route::get('mmpApp/galleryDetail' , function () {
     return view('mmpApp.galleryDetail');
 });
 
-Route::get('mmpApp/library' , function () {
-    return view('mmpApp.library.library');
-});
-Route::get('mmpApp/libraryDetail' , function () {
-    return view('mmpApp.library.libraryDetail');
-});
+
+
 
 Route::get('mmpApp/fatwa' ,'FatawiCon@getIndex');
 
@@ -48,9 +45,7 @@ Route::get('adminApp/home'  , function () {
     return view('admin.index');
 });
 
-Route::get('adminApp/lib/viewBook'  , function () {
-    return view('admin.library.viewBook');
-});
+
 
 ///////////////  Add Category form admin  /////////////////////////
 ///
@@ -59,7 +54,27 @@ Route::get('adminApp/lib/cat'  , 'LibraryCon@index');
 Route::post('addCategory' ,'LibraryCon@addCategory' );
 Route::get('editCat' ,'LibraryCon@editCat' );
 Route::get('delCat' , 'LibraryCon@delCat');
+
+/////////////////////  library admin  ///////////////////////////////////////
 Route::post('addBook' , 'LibraryCon@addBook');
+Route::get('adminApp/lib/viewBook'  ,'LibraryCon@viewBook' );
+Route::post('editBook' , 'LibraryCon@editBook');
+Route::get('deleteBook' , 'LibraryCon@deleteBook');
+Route::get('getPlusData' , 'LibraryCon@getPlusData');
+Route::get('editFileTypeLang' ,'LibraryCon@editFileTypeLang');
+Route::get('delFileDetail' , 'LibraryCon@delFileDetail');
+Route::post('addNewFileBookPlus' , 'LibraryCon@addNewFileBookPlus');
+
+Route::get('downloadFile/{name}' , function($name) {
+    $a = public_path()."/storage/book/typeFile/".$name;
+    return response()->download($a);
+});
+
+/////////////////////   library user    //////////////////////////////
+Route::get('mmpApp/library' , 'LibraryCon@ViewBookUser');
+Route::get('mmpApp/library/{cat_id}' , 'LibraryCon@ViewBookCatUser');
+Route::get('mmpApp/libraryDetail/{id}' , 'LibraryCon@viewUniqueBook');
+Route::post('resultSearch' , 'LibraryCon@resultSearch');
 ////////////////////    Fatawi     /////////////////////
 ///
                 /////// addCategory //////////////

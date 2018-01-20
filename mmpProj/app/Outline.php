@@ -15,4 +15,13 @@ class Outline extends Model
             'outline' => $outline
         ]);
     }
+
+    public function getOutlineBook($id) {
+        return $this::where('book_id' , $id)->get();
+    }
+
+    public function removeOutlineBook($id) {
+
+        $this::where('book_id' ,$id)->delete();
+    }
 }

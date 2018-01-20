@@ -26,6 +26,9 @@ class category extends Model
         return $allCat;
     }
 
+    public function getCategory($id) {
+        return $this::where('id' ,$id)->get();
+    }
     public function editCat($id , $name) {
         $cat = $this::findOrFail($id);
       return  $cat->update([
@@ -36,5 +39,12 @@ class category extends Model
 
     public function delCat($id) {
        return $this::find($id)->delete();
+    }
+
+    public static function getNameCatForBookId($booId) {
+        return category::find($booId);
+    }
+    public static function countBookForCat($catId) {
+        return count(Book::where('cat_id' , $catId)->get());
     }
 }

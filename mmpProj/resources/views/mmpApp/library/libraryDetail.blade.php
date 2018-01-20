@@ -29,16 +29,19 @@
                 <!-- BEGIN SIDEBAR -->
                 <div class="main col-sm-8">
 
-                    <img class="blog-main-image" src="http://placehold.it/765x362" alt=""/>
+                    <?php
+                    $path = str_replace('public', '', $getBook->img);
+                    ?>
+                    <img class="blog-main-image" style="width: 700px; height: 500px;" src="{{asset('storage')."/".$path}}" alt=""/>
 
                     <ul class="blog-metas">
-                        <li><i class="fa fa-pencil"></i> By John Doe</li>
-                        <li><i class="fa fa-calendar"></i> July 30, 2017</li>
+                        <li><i class="fa fa-pencil"></i><?php echo $getBook->name;?></li>
+                        <li><i class="fa fa-calendar"></i> {{$getBook->publish->format('M-d-Y')}}</li>
                         <li><i class="fa fa-comments-o"></i> 3 Comments</li>
                         <li><i class="fa fa-tags"></i> Tips, Travel, Best Deals</li>
                     </ul>
 
-                    <h1 class="blog-title">How to Start a Travel Blog – A Step by Step Guide</h1>
+                    <h1 class="blog-title"><?php echo $getBook->name;?></h1>
 
 
                 </div>
@@ -47,53 +50,87 @@
                 <div class="sidebar project-details col-sm-4">
 
                     <h1 class="section-title">Book <strong>Details</strong></h1>
-                    <div class="project-cats">Digital | Web Design</div>
 
-                    <p>Phasellus varius fermentum tortor, sit amet molestie elit faucibus sed. Cras euismod tincidunt
-                        risus, vel accumsan lacus aliquet vitae. Morbi in dignissim libero. Cras sed scelerisque est
-                        praesent.</p>
+                    <p><?php echo $getBook->summary;?></p>
 
                     <ul class="meta-attributes">
-                        <li>
-                            <div class="attr-name">Client:</div>
-                            <div class="attr-detail">Wisely Themes</div>
-                        </li>
+
                         <li>
                             <div class="attr-name">Date:</div>
-                            <div class="attr-detail">August 2017</div>
-                        </li>
-                        <li>
-                            <div class="attr-name">Skills:</div>
-                            <div class="attr-detail">HTML, CSS, JavaScript, Wordpress</div>
+                            <div class="attr-detail">{{$getBook->publish->format('M-d-Y')}}</div>
                         </li>
                         <li>
                             <div class="attr-name">Category:</div>
-                            <div class="attr-detail">Web Design</div>
+                            <div class="attr-detail"><?php echo $nameCat->name;?></div>
+                        </li>
+                        <li>
+                            <div class="attr-name">Authors:</div>
+                            <?php foreach ($author as $a) {
+                            ?>
+                            <div class="attr-detail"><?php echo $a->author . " ,";?></div>
+                            <?php } ?>
+
+                        </li>
+
+                        <li>
+                            <div class="attr-name">Outlines:</div>
+                            <?php foreach ($outline as $a) {
+                            ?>
+                            <div class="attr-detail"><?php echo $a->outline . ",";?></div>
+                            <?php } ?>
+
+                        </li>
+
+                        <li>
+                            <div class="attr-name">Keywords:</div>
+                            <?php foreach ($keyword as $a) {
+                            ?>
+                            <div class="attr-detail"><?php echo $a->word . " ,";?></div>
+                            <?php } ?>
+
                         </li>
                         <li>
                             <div class="row">
                                 <div class="col-sm-3">
                                     <div class="attr-name">Language:</div>
                                 </div>
-                                <div class="col-sm-3">
+                                <div class="col-sm-9">
                                     <div class="attr-detail">
 
-
                                         <form>
-                                            <select>
-                                                <option>Arabic</option>
-                                                <option>English</option>
-                                                <option>Franch</option>
+                                            <select class="form-control selLang" style="width:200px; ">
+                                                <option value="-1">---</option>
+                                                <?php
+                                                foreach ( $getAllLang as $item) {
+                                                ?>
+                                                <option value="<?php echo $item->id;?>"><?php echo $item->name;?></option>
+                                                <?php }
+                                                ?>
+
+
                                             </select>
                                         </form>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <img src="{{asset('icons/library/pdf.ico')}}  " style="margin-right: 5px" height="30" width="30">
-                                    <img src="{{asset('icons/library/power.ico')}} " style="margin-right: 5px" height="30" width="30">
-                                    <img src="{{asset('icons/library/word.ico')}} " height="30" width="30">
-                                </div>
+                                <?php
+                                foreach ($getFileBookData as $item) {
+                                foreach ($getAllType as $itemType) {
+                                if($item->type_id == $itemType->id) {
+                                    $path = str_replace('public/book/typeFile/' , '' , $item->path);
 
+                                ?>
+                                <div  style="margin-top: 10px; " class="col-sm-2 getIcon  hidden getIconDownload<?php echo $item->lang_id;?>">
+                                    <a target="_blank" href="{{asset('downloadFile')."/".$path}}">
+                                    <img src="{{asset('icons/library/'.$itemType->name.'.ico')}}  "
+                                         style="margin-right: 5px" height="30" width="30">
+                                    </a>
+                                </div>
+                            <?php
+                            }
+                            }
+                            }
+
+                            ?>
 
                             </div>
                         </li>
@@ -117,11 +154,11 @@
                     <div id="blog-listing" class="grid-style clearfix">
                         <div class="row">
                             <div class="item col-xs-12 col-sm-6 col-md-3">
-                                <div class="image" >
+                                <div class="image">
                                     <a href={{asset("mmpApp/libraryDetail")}}>
                                         <i class="fa fa-file-text-o"></i>
                                     </a>
-                                    <img src="{{asset('images/library/book2.jpg')}}" alt="" />
+                                    <img src="{{asset('images/library/book2.jpg')}}" alt=""/>
                                 </div>
                                 <div class="info-blog">
                                     <ul class="top-info">
@@ -139,7 +176,7 @@
                                     <a href={{asset("mmpApp/libraryDetail")}}>
                                         <i class="fa fa-file-text-o"></i>
                                     </a>
-                                    <img src="{{asset('images/library/book1.jpg')}}"  alt="" />
+                                    <img src="{{asset('images/library/book1.jpg')}}" alt=""/>
                                 </div>
 
                                 <div class="info-blog">
@@ -158,7 +195,7 @@
                                     <a href={{asset("mmpApp/libraryDetail")}}>
                                         <i class="fa fa-file-text-o"></i>
                                     </a>
-                                    <img src="{{asset('images/library/book3.jpg')}}" alt="" />
+                                    <img src="{{asset('images/library/book3.jpg')}}" alt=""/>
                                 </div>
 
                                 <div class="info-blog">
@@ -177,7 +214,7 @@
                                     <a href={{asset("mmpApp/libraryDetail")}}>
                                         <i class="fa fa-file-text-o"></i>
                                     </a>
-                                    <img src="{{asset('images/library/book4.jpg')}}" alt="" />
+                                    <img src="{{asset('images/library/book4.jpg')}}" alt=""/>
                                 </div>
 
                                 <div class="info-blog">
@@ -202,21 +239,29 @@
             </div>
         </div>
 
-        </div>
+    </div>
     </div>
     <!-- END CONTENT WRAPPER -->
 @endsection
 
 
 @section('script')
-    <script >
+    <script>
         $(document).ready(function () {
 
-            $('.rd-navbar-nav-wrap ul li').each(function (e , v) {
+            $('.rd-navbar-nav-wrap ul li').each(function (e, v) {
                 $(this).removeClass('active');
             });
 
             $('.rd-navbar-nav-wrap li.library ').addClass('active');
+
+            $('.selLang').on('change' , function() {
+               var thisVal = $(this).val();
+               $('.getIcon').each(function() {
+                   $(this).addClass('hidden');
+               });
+               $('.getIconDownload'+thisVal).removeClass('hidden');
+            });
         });
 
     </script>

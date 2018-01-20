@@ -1,22 +1,33 @@
 @extends('mmpApp.mmpApp')
 
+@section('css')
+    <style>
+        .active {
+            color: #0d3625;
+        }
+    </style>
+@endsection
+<?php
+use App\category;
+?>
+
 
 @section('content')
 
     <!-- BEGIN PAGE TITLE/BREADCRUMB -->
     <div id="page-title-2" class=" parallax dark-bg" data-stellar-background-ratio="0.5">
-    <div class="container"   >
-        <div class="row">
-            <div class="col-sm-12">
-                <h1 class="page-title">Library</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="page-title">Library</h1>
 
-                <ul class="breadcrumb">
-                    <li><a href="index.html">Home </a></li>
-                    <li><a href="blog-listing1.html">library</a></li>
-                </ul>
+                    <ul class="breadcrumb">
+                        <li><a href="index.html">Home </a></li>
+                        <li><a href="blog-listing1.html">library</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
     </div>
     <!-- END PAGE TITLE/BREADCRUMB -->
 
@@ -29,24 +40,41 @@
                 <div class="sidebar col-sm-3">
 
                     <div class="widget widget_search">
-                        <form id="searchform" role="search" method="get" action="">
-                            <input id="s" class="search" value="" placeholder="Search.." name="s" type="text">
+                        <form id="searchform" role="search" method="post" action="{{url('resultSearch')}}">
+                            {{ csrf_field() }}
+                            <input id="s" class="search" value="" placeholder="Search.." name="search" type="text">
                             <button id="submit_btn" class="search-submit" type="submit"><i class="fa fa-search"></i>
                             </button>
                         </form>
                     </div>
 
 
+                    <input type="hidden" value="<?php echo $cat;?>" class="catIdHidden">
                     <div class="widget widget_categories">
                         <h2 class="section-title"><strong>Categories</strong></h2>
                         <ul class="categories">
-                            <li><a href="#">Travel tips <span>(2)</span></a></li>
-                            <li><a href="#">Photography <span>(1)</span></a></li>
-                            <li><a href="#">Travel gear <span>(3)</span></a></li>
-                            <li><a href="#">Europe <span>(2)</span></a></li>
-                            <li><a href="#">America <span>(6)</span></a></li>
-                            <li><a href="#">Asia <span>(1)</span></a></li>
-                            <li><a href="#">Blogging advice <span>(1)</span></a></li>
+
+
+                            <a  href="{{url('mmpApp/library')}}" style="cursor: pointer;"
+                               data-class="allCat">
+                                <li>All</li>
+
+                            </a>
+                            <?php
+
+                            foreach ($getAllCat as $c) {
+                            $countBook = category::countBookForCat($c->id);
+                            $dataClass = "." . "cat" . $c->id;
+
+                            ?>
+                            <a class="" href="{{url('mmpApp/library')."/".$c->id}}" style="cursor: pointer;"
+                               data-class="<?php echo $dataClass;?>">
+                                <li><?php echo $c->name;?>
+                                    <span>(<?php echo $countBook;?>)</span>
+                                </li>
+                            </a>
+                            <?php }
+                            ?>
                         </ul>
                     </div>
 
@@ -128,256 +156,49 @@
                     <!-- BEGIN BLOG LISTING -->
                     <div id="blog-listing" class="grid-style clearfix">
                         <div class="row">
-                            <div class="item col-xs-12 col-sm-6 col-md-3">
-                                <div class="image">
-                                    <a href={{asset("mmpApp/libraryDetail")}}>
-                                        <i class="fa fa-file-text-o"></i>
-                                    </a>
-                                    <img src="{{asset('images/library/book2.jpg')}}" alt=""/>
-                                </div>
-                                <div class="info-blog">
-                                    <ul class="top-info">
-                                        <li><i class="fa fa-calendar"></i> July 30, 2017</li>
-                                        <li><i class="fa fa-comments-o"></i> 2</li>
-                                        <li><i class="fa fa-tags"></i> Travel, Photography, Budget</li>
-                                    </ul>
-                                    <h3>
-                                        <a href="blog-detail.html">How to Start a Travel Blog – A Step by Step Guide</a>
-                                    </h3>
-                                </div>
-                            </div>
-                            <div class="item col-xs-12 col-sm-6 col-md-3">
-                                <div class="image">
-                                    <a href={{asset("mmpApp/libraryDetail")}}>
-                                        <i class="fa fa-file-text-o"></i>
-                                    </a>
-                                    <img src="{{asset('images/library/book1.jpg')}}" alt=""/>
-                                </div>
+                            <?php
+                            foreach ($paginateBook as $p) {
+                            $path = str_replace("public/", "", $p->img);
+                            $catName = category::getNameCatForBookId($p->cat_id);
+                            $classCat = "cat" . $p->cat_id;
+                            ?>
 
-                                <div class="info-blog">
-                                    <ul class="top-info">
-                                        <li><i class="fa fa-calendar"></i> July 30, 2017</li>
-                                        <li><i class="fa fa-comments-o"></i> 2</li>
-                                        <li><i class="fa fa-tags"></i> Travel, Photography, Budget</li>
-                                    </ul>
-                                    <h3>
-                                        <a href="blog-detail.html">How to Start a Travel Blog – A Step by Step Guide</a>
-                                    </h3>
-                                </div>
-                            </div>
-                            <div class="item col-xs-12 col-sm-6 col-md-3">
+                            <div class="item col-xs-12 col-sm-6 col-md-3  <?php echo $classCat;?>">
                                 <div class="image">
-                                    <a href={{asset("mmpApp/libraryDetail")}}>
+                                    <a href={{asset("mmpApp/libraryDetail")."/".$p->id}}>
                                         <i class="fa fa-file-text-o"></i>
                                     </a>
-                                    <img src="{{asset('images/library/book3.jpg')}}" alt=""/>
-                                </div>
+                                    <img src="{{asset('storage')."/".$path}}" style="width: 180px; height: 200px;"
+                                         alt=""/>
 
+                                </div>
                                 <div class="info-blog">
                                     <ul class="top-info">
-                                        <li><i class="fa fa-calendar"></i> July 30, 2017</li>
+                                        <li><i class="fa fa-calendar"></i> {{$p->publish->format('M-d-Y')}}</li>
                                         <li><i class="fa fa-comments-o"></i> 2</li>
-                                        <li><i class="fa fa-tags"></i> Travel, Photography, Budget</li>
+                                        <li><i class="fa fa-tags"></i> <?php echo $catName->name; ?></li>
                                     </ul>
                                     <h3>
-                                        <a href="blog-detail.html">How to Start a Travel Blog – A Step by Step Guide</a>
+                                        <a href="{{asset("mmpApp/libraryDetail")."/".$p->id}}"><?php echo $p->name; ?></a>
                                     </h3>
                                 </div>
                             </div>
-                            <div class="item col-xs-12 col-sm-6 col-md-3">
-                                <div class="image">
-                                    <a href={{asset("mmpApp/libraryDetail")}}>
-                                        <i class="fa fa-file-text-o"></i>
-                                    </a>
-                                    <img src="{{asset('images/library/book4.jpg')}}" alt=""/>
-                                </div>
+                            <?php }
+                            ?>
 
-                                <div class="info-blog">
-                                    <ul class="top-info">
-                                        <li><i class="fa fa-calendar"></i> July 30, 2017</li>
-                                        <li><i class="fa fa-comments-o"></i> 2</li>
-                                        <li><i class="fa fa-tags"></i> Travel, Photography, Budget</li>
-                                    </ul>
-                                    <h3>
-                                        <a href="blog-detail.html">How to Start a Travel Blog – A Step by Step Guide</a>
-                                    </h3>
-                                </div>
-                            </div>
 
                         </div>
-                        <div class="row">
-                            <div class="item col-xs-12 col-sm-6 col-md-3">
-                                <div class="image">
-                                    <a href={{asset("mmpApp/libraryDetail")}}>
-                                        <i class="fa fa-file-text-o"></i>
-                                    </a>
-                                    <img src="http://placehold.it/550x520" alt=""/>
-                                </div>
-                                <div class="info-blog">
-                                    <ul class="top-info">
-                                        <li><i class="fa fa-calendar"></i> July 30, 2017</li>
-                                        <li><i class="fa fa-comments-o"></i> 2</li>
-                                        <li><i class="fa fa-tags"></i> Travel, Photography, Budget</li>
-                                    </ul>
-                                    <h3>
-                                        <a href="blog-detail.html">How to Start a Travel Blog – A Step by Step Guide</a>
-                                    </h3>
-                                </div>
-                            </div>
-                            <div class="item col-xs-12 col-sm-6 col-md-3">
-                                <div class="image">
-                                    <a href={{asset("mmpApp/libraryDetail")}}>
-                                        <i class="fa fa-file-text-o"></i>
-                                    </a>
-                                    <img src="http://placehold.it/550x520" alt=""/>
-                                </div>
 
-                                <div class="info-blog">
-                                    <ul class="top-info">
-                                        <li><i class="fa fa-calendar"></i> July 30, 2017</li>
-                                        <li><i class="fa fa-comments-o"></i> 2</li>
-                                        <li><i class="fa fa-tags"></i> Travel, Photography, Budget</li>
-                                    </ul>
-                                    <h3>
-                                        <a href="blog-detail.html">How to Start a Travel Blog – A Step by Step Guide</a>
-                                    </h3>
-                                </div>
-                            </div>
-                            <div class="item col-xs-12 col-sm-6 col-md-3">
-                                <div class="image">
-                                    <a href={{asset("mmpApp/libraryDetail")}}>
-                                        <i class="fa fa-file-text-o"></i>
-                                    </a>
-                                    <img src="http://placehold.it/550x520" alt=""/>
-                                </div>
-
-                                <div class="info-blog">
-                                    <ul class="top-info">
-                                        <li><i class="fa fa-calendar"></i> July 30, 2017</li>
-                                        <li><i class="fa fa-comments-o"></i> 2</li>
-                                        <li><i class="fa fa-tags"></i> Travel, Photography, Budget</li>
-                                    </ul>
-                                    <h3>
-                                        <a href="blog-detail.html">How to Start a Travel Blog – A Step by Step Guide</a>
-                                    </h3>
-                                </div>
-                            </div>
-                            <div class="item col-xs-12 col-sm-6 col-md-3">
-                                <div class="image">
-                                    <a href={{asset("mmpApp/libraryDetail")}}>
-                                        <i class="fa fa-file-text-o"></i>
-                                    </a>
-                                    <img src="http://placehold.it/550x520" alt=""/>
-                                </div>
-
-                                <div class="info-blog">
-                                    <ul class="top-info">
-                                        <li><i class="fa fa-calendar"></i> July 30, 2017</li>
-                                        <li><i class="fa fa-comments-o"></i> 2</li>
-                                        <li><i class="fa fa-tags"></i> Travel, Photography, Budget</li>
-                                    </ul>
-                                    <h3>
-                                        <a href="blog-detail.html">How to Start a Travel Blog – A Step by Step Guide</a>
-                                    </h3>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="row">
-                            <div class="item col-xs-12 col-sm-6 col-md-3">
-                                <div class="image">
-                                    <a href={{asset("mmpApp/libraryDetail")}}>
-                                        <i class="fa fa-file-text-o"></i>
-                                    </a>
-                                    <img src="http://placehold.it/550x520" alt=""/>
-                                </div>
-                                <div class="info-blog">
-                                    <ul class="top-info">
-                                        <li><i class="fa fa-calendar"></i> July 30, 2017</li>
-                                        <li><i class="fa fa-comments-o"></i> 2</li>
-                                        <li><i class="fa fa-tags"></i> Travel, Photography, Budget</li>
-                                    </ul>
-                                    <h3>
-                                        <a href="blog-detail.html">How to Start a Travel Blog – A Step by Step Guide</a>
-                                    </h3>
-                                </div>
-                            </div>
-                            <div class="item col-xs-12 col-sm-6 col-md-3">
-                                <div class="image">
-                                    <a href={{asset("mmpApp/libraryDetail")}}>
-                                        <i class="fa fa-file-text-o"></i>
-                                    </a>
-                                    <img src="http://placehold.it/550x520" alt=""/>
-                                </div>
-
-                                <div class="info-blog">
-                                    <ul class="top-info">
-                                        <li><i class="fa fa-calendar"></i> July 30, 2017</li>
-                                        <li><i class="fa fa-comments-o"></i> 2</li>
-                                        <li><i class="fa fa-tags"></i> Travel, Photography, Budget</li>
-                                    </ul>
-                                    <h3>
-                                        <a href="blog-detail.html">How to Start a Travel Blog – A Step by Step Guide</a>
-                                    </h3>
-                                </div>
-                            </div>
-                            <div class="item col-xs-12 col-sm-6 col-md-3">
-                                <div class="image">
-                                    <a href={{asset("mmpApp/libraryDetail")}}>
-                                        <i class="fa fa-file-text-o"></i>
-                                    </a>
-                                    <img src="http://placehold.it/550x520" alt=""/>
-                                </div>
-
-                                <div class="info-blog">
-                                    <ul class="top-info">
-                                        <li><i class="fa fa-calendar"></i> July 30, 2017</li>
-                                        <li><i class="fa fa-comments-o"></i> 2</li>
-                                        <li><i class="fa fa-tags"></i> Travel, Photography, Budget</li>
-                                    </ul>
-                                    <h3>
-                                        <a href="blog-detail.html">How to Start a Travel Blog – A Step by Step Guide</a>
-                                    </h3>
-                                </div>
-                            </div>
-                            <div class="item col-xs-12 col-sm-6 col-md-3">
-                                <div class="image">
-                                    <a href={{asset("mmpApp/libraryDetail")}}>
-                                        <i class="fa fa-file-text-o"></i>
-                                    </a>
-                                    <img src="http://placehold.it/550x520" alt=""/>
-                                </div>
-
-                                <div class="info-blog">
-                                    <ul class="top-info">
-                                        <li><i class="fa fa-calendar"></i> July 30, 2017</li>
-                                        <li><i class="fa fa-comments-o"></i> 2</li>
-                                        <li><i class="fa fa-tags"></i> Travel, Photography, Budget</li>
-                                    </ul>
-                                    <h3>
-                                        <a href="blog-detail.html">How to Start a Travel Blog – A Step by Step Guide</a>
-                                    </h3>
-                                </div>
-                            </div>
-
-                        </div>
 
                     </div>
                     <!-- END BLOG LISTING -->
 
 
                     <!-- BEGIN PAGINATION -->
-                    <div class="pagination">
-                        <div id="previous"><a href="#"><i class="fa fa-angle-left"></i></a></div>
-                        <ul>
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                        </ul>
-                        <div id="next"><a href="#"><i class="fa fa-angle-right"></i></a></div>
-                    </div>
-                    <!-- END PAGINATION -->
+
+                {{$paginateBook->links()}}
+
+                <!-- END PAGINATION -->
 
                 </div>
                 <!-- END MAIN CONTENT -->
@@ -399,6 +220,27 @@
             });
 
             $('.rd-navbar-nav-wrap li.library ').addClass('active');
+
+            $('.widget_categories .categories a').each(function() {
+                $(this).removeClass('active');
+            });
+
+            $('.widget_categories .categories a').each(function() {
+                var catIdHidden = $('.catIdHidden').val();
+
+                if(catIdHidden == 'all') {
+                    if($(this).data('class') == catIdHidden+"Cat"){
+                        $(this).addClass('active');
+                    }
+
+                }else {
+                   // alert(catIdHidden);
+                    if($(this).data('class') == ".cat"+catIdHidden){
+                       $(this).addClass('active');
+                    }
+                }
+              //
+            });
         });
 
     </script>

@@ -12,4 +12,8 @@ class Filetype extends Model
     public function getAllType() {
         return $this::all();
     }
+
+    public function getName($id) {
+        return $this::find($id);
+    }
 }

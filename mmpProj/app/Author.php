@@ -15,4 +15,25 @@ class Author extends Model
             'author' => $author
         ]);
     }
+
+    public function getAuthorBook($id) {
+      return $this::where('book_id' , $id)->get();
+    }
+
+    public function removeAuhtorBook($id) {
+
+        $this::where('book_id' ,$id)->delete();
+    }
+
+    public function scopeSearchByKeyword($query, $keyword)
+    {
+        if ($keyword!='') {
+            $query->where(function ($query) use ($keyword) {
+                $query->where("author", "LIKE","%$keyword%");
+
+            });
+        }
+        return $query;
+    }
+
 }

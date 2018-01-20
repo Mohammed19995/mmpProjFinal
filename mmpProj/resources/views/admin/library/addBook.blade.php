@@ -163,7 +163,8 @@
 
                                         <label class="col-sm-2 form-control-label">Image </label>
                                         <div class="col-sm-8">
-                                            <input name="fileImg" id="fileImg" type="file" class="form-control">
+                                            <input name="fileImg" id="fileImg" type="file" accept="image/*"
+                                                   class="form-control">
                                         </div>
 
 
@@ -269,7 +270,8 @@
                                             <div class="col-sm-4">
                                                 <input type="file"
                                                        class="form-control fileLangType"
-                                                       placeholder="upload your img..">
+                                                       placeholder="upload your img.."  >
+
                                             </div>
 
                                             <div class="col-sm-1">
@@ -284,7 +286,7 @@
                                     <div class="line"></div>
                                     <div class="form-group row">
                                         <div class="col-sm-4 offset-sm-3">
-                                            <button type="button" class="btn btn-primary addNewBook">Save changes
+                                            <button type="button" class="btn btn-primary addNewBook">Add book
                                             </button>
                                         </div>
                                     </div>
@@ -317,8 +319,15 @@
                 $('.successMsg').addClass('hidden');
                 $(".print-error-msg").find("ul").html('');
                 $(".print-error-msg").css('display', 'block');
+                var arrError = [];
                 $.each(msg, function (key, value) {
-                    $(".print-error-msg").find("ul").append('<li>' + value + '</li>');
+                    arrError.push(value);
+                    if(key != 0 && arrError[key] == arrError[key-1] ) {
+
+                    }else {
+                        $(".print-error-msg").find("ul").append('<li>' + value + '</li>');
+                    }
+
                 });
             }
 
@@ -384,6 +393,7 @@
                         datatype[i] +
                         ' </option>');
                 }
+
                 $('.hide-img').click(function () {
                     $(this).parents('.imm').remove();
 
@@ -489,11 +499,11 @@
                             $("#keyword").tagsinput('removeAll');
                             $("#outline").tagsinput('removeAll');
 
-                            $('.addNewLang .imm').each(function (i , v) {
-                                if(i == 0) {
+                            $('.addNewLang .imm').each(function (i, v) {
+                                if (i == 0) {
                                     $(this).find('.fileLangType').val('')
                                 }
-                                if(i != 0) {
+                                if (i != 0) {
                                     $(this).remove();
                                 }
                             });

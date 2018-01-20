@@ -18,4 +18,25 @@ class Filebook extends Model
             'path' => $path,
         ]);
     }
+
+    public function getAllType($id) {
+        return $this::where('book_id' , $id)->get();
+    }
+
+    public function updateFileBook($id , $type_id ,$lang_id ) {
+        $this::find($id)->update([
+            'type_id' => $type_id ,
+            'lang_id' => $lang_id
+        ]);
+    }
+
+    public function deleteFileBook($id) {
+        $this::find($id)->delete();
+    }
+    public function getDataFileBook($id) {
+        return $this::find($id);
+    }
+    public function getDataFileForBook($booId) {
+        return $this::where('book_id' , $booId)->get();
+    }
 }

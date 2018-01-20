@@ -12,4 +12,7 @@ class Filelang extends Model
     public function getAllLang() {
         return $this::all();
     }
+    public function getName($id) {
+        return $this::find($id);
+    }
 }

@@ -258,7 +258,7 @@ use App\Http\Controllers\FatawiCon;
                                             echo $userName['name'];
                                             ?></span>
                                         <span class="privacy hidden"><?php $privacyName = FatawiCon::getPrivacy($arr->private);
-                                            echo $privacyName->name;
+                                            echo $privacyName['name'];
                                             ?> </span>
                                         <span class="created_at hidden"><?php echo $arr->created_at ?></span>
                                     </td>

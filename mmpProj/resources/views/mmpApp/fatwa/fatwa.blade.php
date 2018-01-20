@@ -15,11 +15,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <h1 class="page-title">Fatwa</h1>
+                    <h1 class="page-title">Advisory</h1>
 
                     <ul class="breadcrumb">
                         <li><a href="index.html">Home </a></li>
-                        <li><a href="blog-listing1.html">Fatwa</a></li>
+                        <li><a href="blog-listing1.html">advisory </a></li>
                     </ul>
                 </div>
             </div>
@@ -52,7 +52,7 @@
 
                         <div id="accordion" class="panel-group">
 
-                            <h3> Fatwa</h3>
+                            <h3> Advisory opinion</h3>
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div id="gallery-grid-header">

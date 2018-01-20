@@ -174,7 +174,7 @@
                                     <li><a href="#">Courses</a>
                                     </li>
 
-                                    <li class="fatwa"><a href="{{asset('mmpApp/fatwa')}}">Fatwa</a>
+                                    <li class="fatwa"><a href="{{asset('mmpApp/fatwa')}}">Advisory </a>
 
                                     </li>
                                     <li class="gallery"><a href="#">Activity</a>

@@ -39,7 +39,7 @@
 @section('content')
     <header class="page-header" style="margin-bottom: 50px">
         <div class="container-fluid">
-            <h3 class="no-margin-bottom">Add Fatwa</h3>
+            <h3 class="no-margin-bottom">Add Advisory</h3>
         </div>
     </header>
 
@@ -57,7 +57,7 @@
                         <div class="card">
 
                             <div class="card-header d-flex align-items-center">
-                                <h3 class="h4">Add Fatwa</h3>
+                                <h3 class="h4">Add Advisory</h3>
                             </div>
 
                             <div class="card-body">
@@ -66,30 +66,21 @@
                                 </div>
                                 <!-- <form class="form-horizontal"> -->
                                 <form method="post" id="addBookForm" enctype="multipart/form-data">
+                                    {{ csrf_field() }}
+
                                     <div class="form-group row">
-
-                                        {{ csrf_field() }}
-                                        <label class="col-sm-2 form-control-label ">Subject</label>
+                                        <label class="col-sm-2 form-control-label ">Question </label>
                                         <div class="col-sm-8">
-                                            <input type="text" id="nameBook" name="nameBook" class="form-control">
-                                        </div>
-
-
-                                    </div>
-                                    <div class="line"></div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-2 form-control-label">Question </label>
-                                        <div class="col-sm-8">
-                                            <textarea class="form-control" id="summary"></textarea></div>
+                                            <textarea class="form-control question" name="question" id="summary"></textarea></div>
                                         <div class="col-sm-2"></div>
                                         <div class="col-sm-2"></div>
                                     </div>
                                     <div class="line"></div>
                                     <div class="form-group row">
 
-                                        <label class="col-sm-2 form-control-label">Answer </label>
+                                        <label class="col-sm-2 form-control-label ">Answer </label>
                                         <div class="col-sm-8">
-                                            <textarea class="form-control" id="summary"></textarea></div>
+                                            <textarea class="form-control answer" name="answer"></textarea></div>
                                         <div class="col-sm-2"></div>
                                     </div>
 
@@ -97,21 +88,37 @@
                                     <div class="form-group row">
                                         <label class="col-sm-2 form-control-label">Category </label>
                                         <div class="col-sm-8">
-                                            <select class="form-control">
-
+                                            <select class="form-control "  id="optionCat">
+                                                <option class="default"> </option>
+                                                <?php
+                                                foreach ($allCat as $arr){
+                                                ?>
+                                                <option value=<?php echo $arr->id ?> ><?php echo $arr->name ?></option>
+                                                <?php    }
+                                                ?>
                                             </select>
                                         </div>
                                         <div class="col-sm-2"></div>
                                     </div>
+                                    <div class="line"></div>
+                                    <div class="form-group row">
 
+                                        <label class="col-sm-2 form-control-label ">Mufti Name</label>
+                                        <div class="col-sm-8">
+                                            <input type="text"  name="mufti" class="form-control mufti">
+                                        </div>
+
+
+                                    </div>
 
                                     <div class="line"></div>
                                     <div class="form-group row">
                                         <div class="col-sm-4 offset-sm-3">
-                                            <button type="button" class="btn btn-primary addNewBook">Save changes
+                                            <button type="button" class="btn btn-primary addNewFatwa">Save changes
                                             </button>
                                         </div>
                                     </div>
+
 
                                 </form>
                             </div>
@@ -123,6 +130,7 @@
                 </div>
             </div>
         </section>
+
 
         <!-- Page Footer-->
     </div>
@@ -145,6 +153,47 @@
                 });
             }
 
+$('.addNewFatwa').click(function () {
+    var question = $('.question').val();
+    var answer = $('.answer').val();
+    var category = $('select#optionCat option:selected').val();
+    var  mufti= $('.mufti').val();
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $.ajax({
+        url: "{{url('addFatwa')}}",
+        method: "get",
+        data: {question: question, answer: answer, category: category ,mufti:mufti},
+        success: function (e) {
+
+            if(e==1){
+                alert("we must wait ElBana you must login")
+            }else {
+                if ($.isEmptyObject(e.error)) {
+                    alert(e.success);
+                    $('.question').val("");
+                    $('.answer').val("");
+                    $('select#optionCat option[class="default"]').attr("selected",true);
+                    $('.mufti').val("");
+                    $(".print-error-msg").hide();
+                } else {
+                    printErrorMsg(e.error);
+                }
+            }
+            }
+
+
+
+
+
+
+    });
+
+
+});
 
         });
     </script>

@@ -57,6 +57,7 @@ Route::get('delCat' , 'LibraryCon@delCat');
 
 /////////////////////  library admin  ///////////////////////////////////////
 Route::post('addBook' , 'LibraryCon@addBook');
+
 Route::get('adminApp/lib/viewBook'  ,'LibraryCon@viewBook' );
 Route::post('editBook' , 'LibraryCon@editBook');
 Route::get('deleteBook' , 'LibraryCon@deleteBook');
@@ -75,6 +76,47 @@ Route::get('mmpApp/library' , 'LibraryCon@ViewBookUser');
 Route::get('mmpApp/library/{cat_id}' , 'LibraryCon@ViewBookCatUser');
 Route::get('mmpApp/libraryDetail/{id}' , 'LibraryCon@viewUniqueBook');
 Route::post('resultSearch' , 'LibraryCon@resultSearch');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ////////////////////    Fatawi     /////////////////////
 ///
                 /////// addCategory //////////////
@@ -88,7 +130,15 @@ Route::get('addMessege' ,'FatawiCon@addMessage' );
 Route::get('getUserFatwa' ,'FatawiCon@getUserFatwa' );
 
                 ///////////// add question ////////////
-Route::get('adminApp/addFatwa' ,'FatawiCon@addFatwa' );
+Route::get('adminApp/addFatwa' ,'FatawiCon@addFatwaIndex' );
+Route::get('addFatwa' ,'FatawiCon@addFatwa' );
+Route::get('adminApp/showNotAnswer' ,'FatawiCon@showNotAnswer' );
+Route::get('editAnswer' ,'FatawiCon@editAnswer' );
+Route::get('adminApp/showAnswer' ,'FatawiCon@showAdvisory' );
+Route::get('getData2' ,'FatawiCon@getData2' );
+Route::get('editAdvisory' ,'FatawiCon@editAdvisory' );
+Route::get('delAdvisory' ,'FatawiCon@delAdvisory' );
+Route::get('getMufti' ,'FatawiCon@getMufti' );
 
 
 ////////////////////////////////////////////////////////////

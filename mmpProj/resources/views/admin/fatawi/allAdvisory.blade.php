@@ -28,6 +28,15 @@
         .fa-plus:hover, .fa-minus:hover {
             cursor: pointer;
         }
+        #example_wrapper .dt-buttons{
+            margin-top: 30px;
+        }
+        #example_filter label input{
+            margin-right: 600px;
+            margin-top: 25px;
+        }
+
+
 
     </style>
 
@@ -40,7 +49,16 @@ use App\Http\Controllers\FatawiCon;
 @section('content')
     <header class="page-header" style="margin-bottom: 20px">
         <div class="container-fluid">
-            <h2 class="no-margin-bottom">View Advisory</h2>
+            <div class="row">
+                <div class="col-sm-4"><h2 class="no-margin-bottom">View Advisory</h2></div>
+                <div class="col-sm-5"></div>
+
+                <div class="col-sm-3">
+                    <input type="submit" class="btn btn-info" value="visit advisory user"
+                           onclick="window.location='{{asset('mmpApp/advisory')}}';"/>
+                </div>
+
+            </div>
         </div>
     </header>
     <div class="modal fade" id="myModal" role="dialog">
@@ -58,6 +76,9 @@ use App\Http\Controllers\FatawiCon;
                 </div>
                 <div class="modal-body">
 
+                    <div class="row" style="margin-left: 30% ; margin-top: 10px" >
+                        <div class="alert alert-success success hidden">The Added is done</div>
+                    </div>
 
                     <div class="row">
                         <div class="alert alert-danger print-error-msg" style="display:none; margin-left: 120px ">
@@ -233,7 +254,8 @@ use App\Http\Controllers\FatawiCon;
                                     <th>Answer</th>
                                     <th>Category</th>
                                     <th>Mufti</th>
-                                    <th>Action</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
 
                                 </tr>
                                 </thead>
@@ -244,7 +266,8 @@ use App\Http\Controllers\FatawiCon;
                                     <th>Answer</th>
                                     <th>Category</th>
                                     <th>Mufti</th>
-                                    <th>Action</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
                                 </tr>
                                 </tfoot>
                                 <tbody>
@@ -277,11 +300,12 @@ use App\Http\Controllers\FatawiCon;
                                         <button class="btn btn-primary edit" data-toggle="modal"
                                                 data-target="#exampleModal"><i
                                                     class="fa fa-edit"> Detail & Edit</i></button>
-
-                                        <button class="btn btn-danger delete" style="margin-top: 10px"><i
-                                                    class="fa fa-remove"> Delete</i></button>
                                     </td>
+                                    <td>
+                                        <button class="btn btn-danger delete" ><i
+                                                    class="fa fa-remove"> Delete</i></button>
 
+                                    </td>
 
                                 </tr>
                                 <?php }
@@ -316,17 +340,26 @@ use App\Http\Controllers\FatawiCon;
 
     <script>
         $(document).ready(function () {
+            $('.success').addClass('hidden');
             var table = $('#example').DataTable({
+                aLengthMenu: [
+                    [25, 50, 100, 200, -1],
+                    [25, 50, 100, 200, "All"]
+                ],
 
+                iDisplayLength: -1,
                 "scrollX": true,
+                language : {search:""},
                 dom: 'Bfrtip',
                 buttons: [{
                     extend: 'pdfHtml5',
+
                     exportOptions: {
                         rows: ':visible',
                         columns:':visible'
 
                     },
+
 
 
                 }],
@@ -369,7 +402,7 @@ use App\Http\Controllers\FatawiCon;
                         var advisory = $.parseJSON(e);
                         $.each(advisory, function (tk, tv) {
 
-                            $('#example tr').each(function (k, v) {
+                            $('#example tbody tr').each(function (k, v) {
                                 var idCol = $(this).find('.id_hidden').text();
 
                                 if (idCol == tv.id) {
@@ -433,7 +466,7 @@ use App\Http\Controllers\FatawiCon;
             var e_answer;
             var mufti2;
             var category2;
-            $('.edit').click(function () {
+            $('#example tbody').on('click', 'tr .edit', function ()  {
                 $(".print-error-msg").hide();
                 $("#myModal").modal();
                 var question = $(this).parent().parent().find('.question').text();
@@ -494,7 +527,13 @@ use App\Http\Controllers\FatawiCon;
                             mufti2.text(e_mufti);
                             answer2.text(e_answer);
                             category2.text(e_cat2);
-                            $("#myModal").modal('hide');
+                         //   $("#myModal").modal('hide');
+                            $('.success').removeClass('hidden');
+                            $('.success').show('slow');
+                            setTimeout(function() { $(".success").hide('slow'); }, 2000);
+                            setTimeout(function() {
+                                $('#myModal').modal('hide');
+                            }, 3000);
                             $(".print-error-msg").hide();
                         } else {
                             printErrorMsg(e.error);

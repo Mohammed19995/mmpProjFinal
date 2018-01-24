@@ -11,21 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="fatawi.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fatawi.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mmpProj/app/fatawi.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="56" column="30" lean-forward="false" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fatawiCat.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/app/fatawiCat.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="31" />
+            <state relative-caret-position="832">
+              <caret line="67" column="120" lean-forward="false" selection-start-line="67" selection-start-column="120" selection-end-line="67" selection-end-column="120" />
               <folding />
             </state>
           </provider>
@@ -34,11 +24,52 @@
       <file leaf-file-name="FatawiCon.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/FatawiCon.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-239">
-              <caret line="230" column="54" lean-forward="false" selection-start-line="230" selection-start-column="54" selection-end-line="230" selection-end-column="54" />
+            <state relative-caret-position="-873">
+              <caret line="92" column="118" lean-forward="false" selection-start-line="92" selection-start-column="118" selection-end-line="92" selection-end-column="118" />
               <folding>
                 <element signature="e#40#55#0#PHP" expanded="true" />
+                <element signature="e#747#1569#0#PHP" expanded="false" />
+                <element signature="e#3580#3699#0#PHP" expanded="false" />
+                <element signature="e#4318#4470#0#PHP" expanded="false" />
+                <element signature="e#4476#4941#0#PHP" expanded="false" />
+                <element signature="e#4947#5205#0#PHP" expanded="false" />
+                <element signature="e#5211#5847#0#PHP" expanded="false" />
+                <element signature="e#6014#6174#0#PHP" expanded="false" />
+                <element signature="e#6180#7100#0#PHP" expanded="false" />
+                <element signature="e#7278#7518#0#PHP" expanded="false" />
+                <element signature="e#7523#8460#0#PHP" expanded="false" />
+                <element signature="e#8663#8911#0#PHP" expanded="false" />
+                <element signature="e#8916#9104#0#PHP" expanded="false" />
+                <element signature="e#9109#9304#0#PHP" expanded="false" />
+                <element signature="e#9309#10240#0#PHP" expanded="false" />
+                <element signature="e#10245#10369#0#PHP" expanded="false" />
+                <element signature="e#10567#10699#0#PHP" expanded="false" />
+                <element signature="e#10840#10970#0#PHP" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fatwa.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/fatwa.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="184" column="85" lean-forward="false" selection-start-line="184" selection-start-column="85" selection-end-line="184" selection-end-column="85" />
+              <folding>
+                <element signature="e#1959#1983#0#HTML" expanded="true" />
+                <element signature="e#8046#8219#0#HTML" expanded="true" />
+                <element signature="e#8391#8438#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="resultSearchAdvisory.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/resultSearchAdvisory.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="366">
+              <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -46,22 +77,9 @@
       <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mmpProj/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="140" column="20" lean-forward="false" selection-start-line="140" selection-start-column="12" selection-end-line="140" selection-end-column="20" />
+            <state relative-caret-position="312">
+              <caret line="131" column="28" lean-forward="false" selection-start-line="131" selection-start-column="28" selection-end-line="131" selection-end-column="28" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdvisoryNotAnswer.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/AdvisoryNotAnswer.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="620">
-              <caret line="304" column="26" lean-forward="false" selection-start-line="304" selection-start-column="26" selection-end-line="304" selection-end-column="26" />
-              <folding>
-                <element signature="e#1352#1377#0#HTML" expanded="true" />
-                <element signature="e#1503#1547#0#HTML" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -69,33 +87,8 @@
       <file leaf-file-name="allAdvisory.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/allAdvisory.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="326" column="42" lean-forward="false" selection-start-line="326" selection-start-column="42" selection-end-line="326" selection-end-column="42" />
-              <folding>
-                <element signature="e#943#970#0#HTML" expanded="true" />
-                <element signature="e#1351#1377#0#HTML" expanded="true" />
-                <element signature="e#1503#1547#0#HTML" expanded="true" />
-                <element signature="e#11504#11528#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Book.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/app/Book.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Author.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/app/Author.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-205">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="379">
+              <caret line="35" column="26" lean-forward="false" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -104,8 +97,18 @@
       <file leaf-file-name="addFatwa.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/addFatwa.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="903">
-              <caret line="102" column="52" lean-forward="false" selection-start-line="102" selection-start-column="48" selection-end-line="102" selection-end-column="52" />
+            <state relative-caret-position="474">
+              <caret line="47" column="78" lean-forward="false" selection-start-line="47" selection-start-column="78" selection-end-line="47" selection-end-column="78" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adminPage.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Middleware/adminPage.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -115,26 +118,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>su</find>
-      <find>subj</find>
-      <find>publish</find>
-      <find>se</find>
-      <find>fa</find>
-      <find>cat</find>
-      <find>ca</find>
-      <find>m_category</find>
-      <find>addFatwa</find>
-      <find>print-error-msg</find>
-      <find>getData</find>
-      <find>e_question</find>
-      <find>m_question</find>
-      <find>m_mufti</find>
-      <find>mufti</find>
-      <find>get</find>
-      <find>line</find>
       <find>m_category2</find>
       <find>myModal</find>
       <find>m_category3</find>
+      <find>advisory</find>
+      <find>count</find>
+      <find>mmpApp/fatwa</find>
+      <find>sta</find>
+      <find>mmpApp/advisory</find>
+      <find>getin</find>
+      <find>getIndex</find>
+      <find>getpa</find>
+      <find>pag</find>
+      <find>mmpApp/adviso</find>
+      <find>created</find>
+      <find>label</find>
+      <find>edi</find>
+      <find>userFa</find>
+      <find>getUserFatwa</find>
+      <find>catIdHidden</find>
+      <find>$cat</find>
+      <find>widget_categories</find>
+      <find>addCategory</find>
+      <find>links</find>
+      <find>$userFatwa</find>
+      <find>accordion</find>
+      <find>se</find>
+      <find>sea</find>
+      <find>red</find>
+      <find>re</find>
+      <find>viewAdvisoryCat</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -154,19 +167,22 @@
         <option value="$PROJECT_DIR$/mmpProj/app/Http/Controllers/LibraryCon.php" />
         <option value="$PROJECT_DIR$/mmpProj/database/migrations/2018_01_15_085019_create_fatawi_cats_table.php" />
         <option value="$PROJECT_DIR$/mmpProj/app/fatawiCat.php" />
-        <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/category.blade.php" />
         <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/library/category.blade.php" />
-        <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/addFatwa.blade.php" />
-        <option value="$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mmpApp.blade.php" />
         <option value="$PROJECT_DIR$/mmpProj/database/migrations/2018_01_17_145109_create_privacies_table.php" />
         <option value="$PROJECT_DIR$/mmpProj/database/migrations/2018_01_15_104454_create_fatawis_table.php" />
-        <option value="$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/fatwa.blade.php" />
         <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/app.blade.php" />
-        <option value="$PROJECT_DIR$/mmpProj/app/fatawi.php" />
-        <option value="$PROJECT_DIR$/mmpProj/routes/web.php" />
-        <option value="$PROJECT_DIR$/mmpProj/app/Http/Controllers/FatawiCon.php" />
+        <option value="$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mmpApp.blade.php" />
+        <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/library/addBook.blade.php" />
+        <option value="$PROJECT_DIR$/mmpProj/resources/views/mmpApp/library/library.blade.php" />
+        <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/category.blade.php" />
         <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/AdvisoryNotAnswer.blade.php" />
+        <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/addFatwa.blade.php" />
+        <option value="$PROJECT_DIR$/mmpProj/app/fatawi.php" />
+        <option value="$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/resultSearchAdvisory.blade.php" />
         <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/allAdvisory.blade.php" />
+        <option value="$PROJECT_DIR$/mmpProj/routes/web.php" />
+        <option value="$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/fatwa.blade.php" />
+        <option value="$PROJECT_DIR$/mmpProj/app/Http/Controllers/FatawiCon.php" />
       </list>
     </option>
   </component>
@@ -313,6 +329,15 @@
               <item name="mmpProjFinal" type="b2602c69:ProjectViewProjectNode" />
               <item name="mmpProjFinal" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="mmpProj" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="mmpApp" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="library" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="mmpProjFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mmpProjFinal" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="mmpProj" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -334,6 +359,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\mmpProjFinal\mmpProj\resources\views\mmpApp\fatwa" />
       <recent name="C:\xampp\htdocs\mmpProjFinal\mmpProj\resources\views\admin\fatawi" />
       <recent name="C:\xampp\htdocs\mmpProjFinal\mmpProj\resources\views\admin" />
       <recent name="C:\xampp\htdocs\mmpProjFinal\mmpProj" />
@@ -365,27 +391,28 @@
       <workItem from="1515939567658" duration="30538000" />
       <workItem from="1516176923464" duration="24938000" />
       <workItem from="1516275407620" duration="7282000" />
-      <workItem from="1516439043616" duration="20423000" />
+      <workItem from="1516439043616" duration="21181000" />
+      <workItem from="1516615335969" duration="53854000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84603000" />
+    <option name="totallyTimeSpent" value="139215000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31240544" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28009084" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.022913257" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1767594" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -399,19 +426,19 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.022913257" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29500756" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1767594" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28009084" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,58 +449,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/LibraryCon.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="60" column="74" lean-forward="true" selection-start-line="48" selection-start-column="7" selection-end-line="60" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/app/category.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="24" lean-forward="true" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/database/migrations/2018_01_15_104454_create_fatawis_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Middleware/adminPage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/app/fatawi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="31" lean-forward="false" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/category.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3041">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -486,7 +466,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="95" column="34" lean-forward="false" selection-start-line="95" selection-start-column="34" selection-end-line="95" selection-end-column="34" />
-          <folding />
+          <folding>
+            <element signature="e#1959#1983#0#HTML" expanded="true" />
+            <element signature="e#8046#8219#0#HTML" expanded="true" />
+            <element signature="e#8391#8438#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -579,20 +563,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Middleware/adminPage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/category.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/database/migrations/2018_01_15_085019_create_fatawi_cats_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -619,41 +589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/library/addBook.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="135" column="42" lean-forward="true" selection-start-line="123" selection-start-column="36" selection-end-line="135" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1496">
-          <caret line="178" column="39" lean-forward="false" selection-start-line="178" selection-start-column="37" selection-end-line="178" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-596">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="23" lean-forward="true" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mmpApp.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-340">
-          <caret line="176" column="99" lean-forward="false" selection-start-line="176" selection-start-column="99" selection-end-line="176" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1428">
@@ -677,28 +612,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/LibraryCon.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="46" column="2" lean-forward="true" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/library/category.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-379">
           <caret line="230" column="43" lean-forward="false" selection-start-line="230" selection-start-column="43" selection-end-line="230" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/library/viewBook.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="171" column="11" lean-forward="true" selection-start-line="171" selection-start-column="11" selection-end-line="171" selection-end-column="38" />
-          <folding>
-            <marker date="1516459340606" expanded="true" signature="7255:7300" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -710,81 +627,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/app/category.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/app.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
           <caret line="177" column="100" lean-forward="false" selection-start-line="177" selection-start-column="100" selection-end-line="177" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/database/migrations/2018_01_15_104454_create_fatawis_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="21" column="49" lean-forward="false" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/fatwa.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-545">
-          <caret line="194" column="13" lean-forward="false" selection-start-line="194" selection-start-column="13" selection-end-line="194" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/addFatwa.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="903">
-          <caret line="102" column="52" lean-forward="false" selection-start-line="102" selection-start-column="48" selection-end-line="102" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="140" column="20" lean-forward="false" selection-start-line="140" selection-start-column="12" selection-end-line="140" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/FatawiCon.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-239">
-          <caret line="230" column="54" lean-forward="false" selection-start-line="230" selection-start-column="54" selection-end-line="230" selection-end-column="54" />
-          <folding>
-            <element signature="e#40#55#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/AdvisoryNotAnswer.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="304" column="26" lean-forward="false" selection-start-line="304" selection-start-column="26" selection-end-line="304" selection-end-column="26" />
-          <folding>
-            <element signature="e#1352#1377#0#HTML" expanded="true" />
-            <element signature="e#1503#1547#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/allAdvisory.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="326" column="42" lean-forward="false" selection-start-line="326" selection-start-column="42" selection-end-line="326" selection-end-column="42" />
-          <folding>
-            <element signature="e#943#970#0#HTML" expanded="true" />
-            <element signature="e#1351#1377#0#HTML" expanded="true" />
-            <element signature="e#1503#1547#0#HTML" expanded="true" />
-            <element signature="e#11504#11528#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/app/Book.php">
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/galleryDetail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -792,9 +650,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/app/Author.php">
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/gallery.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-205">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -808,19 +666,220 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/database/migrations/2018_01_15_104454_create_fatawis_table.php">
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="21" column="49" lean-forward="false" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+        <state relative-caret-position="0">
+          <caret line="0" column="23" lean-forward="true" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-936">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/app/category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/app/Author.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/app/Book.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="36" column="45" lean-forward="true" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/library/viewBook.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="9" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="19" selection-end-column="9" />
+          <folding>
+            <marker date="1516459340606" expanded="true" signature="19696:19722" ph="..." />
+            <marker date="1516459340606" expanded="true" signature="21552:21570" ph="..." />
+            <marker date="1516459340606" expanded="true" signature="21927:21945" ph="..." />
+            <marker date="1516459340606" expanded="true" signature="22305:22323" ph="..." />
+            <marker date="1516459340606" expanded="true" signature="22684:22702" ph="..." />
+            <marker date="1516459340606" expanded="true" signature="40713:40732" ph="..." />
+            <marker date="1516459340606" expanded="true" signature="41586:41597" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/library/addBook.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="512" column="37" lean-forward="true" selection-start-line="510" selection-start-column="27" selection-end-line="512" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/AdminCon.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/LibraryCon.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="412" column="120" lean-forward="false" selection-start-line="412" selection-start-column="116" selection-end-line="412" selection-end-column="120" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3026">
+          <caret line="178" column="39" lean-forward="false" selection-start-line="178" selection-start-column="37" selection-end-line="178" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/AdvisoryNotAnswer.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="40" column="55" lean-forward="false" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="55" />
+          <folding>
+            <element signature="e#1022#1436#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mmpApp.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="176" column="91" lean-forward="false" selection-start-line="176" selection-start-column="63" selection-end-line="176" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/library/library.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="38" lean-forward="true" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Middleware/adminPage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/category.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="129" column="54" lean-forward="true" selection-start-line="127" selection-start-column="31" selection-end-line="129" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/addFatwa.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="47" column="78" lean-forward="false" selection-start-line="47" selection-start-column="78" selection-end-line="47" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/library/resultSearch.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-376">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/resultSearchAdvisory.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/allAdvisory.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="35" column="26" lean-forward="false" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/app/fatawi.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="56" column="30" lean-forward="false" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
+        <state relative-caret-position="832">
+          <caret line="67" column="120" lean-forward="false" selection-start-line="67" selection-start-column="120" selection-end-line="67" selection-end-column="120" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="131" column="28" lean-forward="false" selection-start-line="131" selection-start-column="28" selection-end-line="131" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/FatawiCon.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-873">
+          <caret line="92" column="118" lean-forward="false" selection-start-line="92" selection-start-column="118" selection-end-line="92" selection-end-column="118" />
+          <folding>
+            <element signature="e#40#55#0#PHP" expanded="true" />
+            <element signature="e#747#1569#0#PHP" expanded="false" />
+            <element signature="e#3580#3699#0#PHP" expanded="false" />
+            <element signature="e#4318#4470#0#PHP" expanded="false" />
+            <element signature="e#4476#4941#0#PHP" expanded="false" />
+            <element signature="e#4947#5205#0#PHP" expanded="false" />
+            <element signature="e#5211#5847#0#PHP" expanded="false" />
+            <element signature="e#6014#6174#0#PHP" expanded="false" />
+            <element signature="e#6180#7100#0#PHP" expanded="false" />
+            <element signature="e#7278#7518#0#PHP" expanded="false" />
+            <element signature="e#7523#8460#0#PHP" expanded="false" />
+            <element signature="e#8663#8911#0#PHP" expanded="false" />
+            <element signature="e#8916#9104#0#PHP" expanded="false" />
+            <element signature="e#9109#9304#0#PHP" expanded="false" />
+            <element signature="e#9309#10240#0#PHP" expanded="false" />
+            <element signature="e#10245#10369#0#PHP" expanded="false" />
+            <element signature="e#10567#10699#0#PHP" expanded="false" />
+            <element signature="e#10840#10970#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/fatwa.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="184" column="85" lean-forward="false" selection-start-line="184" selection-start-column="85" selection-end-line="184" selection-end-column="85" />
+          <folding>
+            <element signature="e#1959#1983#0#HTML" expanded="true" />
+            <element signature="e#8046#8219#0#HTML" expanded="true" />
+            <element signature="e#8391#8438#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

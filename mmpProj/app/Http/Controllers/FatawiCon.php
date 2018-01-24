@@ -16,14 +16,115 @@ class FatawiCon extends Controller
     protected $obj;
     protected $obj2;
 
-
+   ///////////////// create object from fatewi_category  and fatwi//////////////////////////
     public function __construct()
     {
         $this->obj = new fatawiCat();
         $this->obj2 = new fatawi();
     }
 
-    ////////////////////////////////////////////////////////////////////
+
+
+    /////////////////////////    start user section         //////////////////////////////////
+
+                     ////////////////  Add Message when user asked/////////////////////////////
+    public function addMessage(Request $request)
+    {
+
+        $message = $request->message;
+        $category = $request->category;
+        $private = $request->private;
+
+        $validator = Validator::make($request->all(), [
+
+            'message' => 'required',
+            'category' => 'required',
+
+
+        ]);
+        $attributeNames = array();
+        $validator->setAttributeNames($attributeNames);
+        if (Auth::check()) {
+            if ($validator->passes()) {
+
+                $a = Auth::user()->id;
+                $this->obj2->addFatwa($message, $a, $category, $private);
+
+
+                return response()->json(['success' => 'The masseg has been send']);
+            }
+            return response()->json(['error' => $validator->errors()->all()]);
+        } else {
+            echo 1;
+
+
+        }
+    }
+                    ////////////////////// get index user page/////////////////////////////////
+    public function getIndex(Request $request)
+    {
+        $allCat = \App\fatawiCat::all();
+        $allAnswer = fatawi::where('answer', '<>', "")->where('private', 0)->paginate(10);
+        $id_cat = 0;
+        $userFatwa = "";
+        if (Auth::check()) {
+            $userId = Auth::user()->id;
+            $userFatwa = fatawi::where('user_id', $userId)->where('answer', '<>', "")->where('private', 1)->get();
+        }
+        return view('mmpApp.fatwa.fatwa', ['allCat' => $allCat, 'allAnswer' => $allAnswer, 'userFatwa' => $userFatwa, 'id_cat' => $id_cat]);
+    }
+                    ////////////////////// get index user page with spacific category/////////////
+    public function  viewAdvisoryCat ($id_cat)
+    {
+        $allCat = \App\fatawiCat::all();
+        $allAnswer = fatawi::where('answer', '<>', "")->where('private', 0)->where('cat_id',$id_cat)->paginate(10);
+        $userFatwa = "";
+        if (Auth::check()) {
+            $userId = Auth::user()->id;
+            $userFatwa = fatawi::where('user_id', $userId)->where('answer', '<>', "")->where('private', 1)->get();
+        }
+
+        return view('mmpApp.fatwa.fatwa', ['allCat' => $allCat, 'allAnswer' => $allAnswer ,'userFatwa'=>$userFatwa , 'id_cat'=>$id_cat]);
+
+    }
+
+    public function viewAdvisoryMufti($mufti_name){
+        $allCat = \App\fatawiCat::all();
+        $allAnswer = fatawi::where('answer', '<>', "")->where('private', 0)->where('mufti',$mufti_name)->paginate(10);
+        $userFatwa = "";
+        if (Auth::check()) {
+            $userId = Auth::user()->id;
+            $userFatwa = fatawi::where('user_id', $userId)->where('answer', '<>', "")->where('private', 1)->get();
+        }
+
+        return view('mmpApp.fatwa.fatwa', ['allCat' => $allCat, 'allAnswer' => $allAnswer ,'userFatwa'=>$userFatwa,'id_cat'=>0 ]);
+
+
+    }
+                    ////////////////////// count advisory in category ////////////////////
+
+    public static function countAdvisoryCat($id_cat){
+
+        return count( fatawi::where('cat_id',$id_cat)->get());
+    }
+
+                //////////////////// search section /////////////////////////////
+      public function resultSearch(Request $request)
+{
+
+$keyword = $request->search;
+$result = fatawi::SearchByKeyword($keyword)->get();
+return view('mmpApp.fatwa.resultSearchAdvisory',['result'=>$result] );
+
+}
+
+    //////////////////////////////////////////   End user section ///////////////////////////////////////////////
+
+
+    //////////////////////////////////////////   start admin section ///////////////////////////////////////////////
+
+
+                 //////////////   category section in admin       /////////////////
     public function index()
     {
         $allCat = $this->obj->getAllCategory();
@@ -79,53 +180,9 @@ class FatawiCon extends Controller
 
     }
 
-    /////////////////////////////////////////////////////////////////////////////
+                 ////////////////  End category section      //////////////////
 
-    public function addMessage(Request $request)
-    {
-
-        $message = $request->message;
-        $category = $request->category;
-        $private = $request->private;
-
-        $validator = Validator::make($request->all(), [
-
-            'message' => 'required',
-            'category' => 'required',
-
-
-        ]);
-        $attributeNames = array();
-        $validator->setAttributeNames($attributeNames);
-        if (Auth::check()) {
-            if ($validator->passes()) {
-
-                $a = Auth::user()->id;
-                $this->obj2->addFatwa($message, $a, $category, $private);
-
-
-                return response()->json(['success' => 'The masseg has been send']);
-            }
-            return response()->json(['error' => $validator->errors()->all()]);
-        } else {
-            echo 1;
-
-
-        }
-    }
-
-    public function getIndex(Request $request)
-    {
-        $allCat = \App\fatawiCat::all();
-        $allAnswer = fatawi::where('answer', '<>', "")->where('private', 0)->get();
-        $userFatwa = "";
-        if (Auth::check()) {
-            $userId = Auth::user()->id;
-            $userFatwa = fatawi::where('user_id', $userId)->where('answer', '<>', "")->where('private', 1)->get();
-        }
-        return view('mmpApp.fatwa.fatwa', ['allCat' => $allCat, 'allAnswer' => $allAnswer, 'userFatwa' => $userFatwa]);
-    }
-
+                 /////////////////// start add section  ///////////////////////
     public function addFatwaIndex()
     {
         $allCat = $this->obj->getAllCategory();
@@ -159,44 +216,35 @@ class FatawiCon extends Controller
             echo 1;
         }
     }
+                 /////////////////// End add section  ///////////////////////
 
+                ///////////////////// start operation from advisory Not answer///////////////
     public function showNotAnswer()
     {
         $allCat = $this->obj->getAllCategory();
         $allNotA = $this->obj2->getNotAnswer();
         return view('admin.fatawi.AdvisoryNotAnswer', ['allCat' => $allCat, 'allNotA' => $allNotA]);
     }
-
-    public static function getNameCat($catId)
-    {
-        $data = fatawiCat::where('id', $catId)->first();
-        return $data;
-    }
-
-    public static function getPrivacy($priId)
-    {
-        $data = privacy::where('id', $priId)->first();
-        return $data;
-    }
-    public static function getUserName($userId)
-    {
-        $data = User::where('id', $userId)->first();
-        return $data;
-    }
     public function editAnswer(Request $request)
     {
+        $e_question = $request->e_question;
         $e_id_hidden = $request->e_id_hidden;
         $e_answer = $request->e_answer;
         $e_mufti = $request->e_mufti;
         $e_cat = $request->e_cat;
 
         $validator = Validator::make($request->all(), [
+            'e_question' => 'required',
             'e_answer' => 'required',
             'e_mufti' => 'required',
 
 
+
         ]);
         $attributeNames = array(
+            'e_question' => 'question',
+            'e_answer' => 'answer',
+            'e_mufti' => 'mufti',
 
 
         );
@@ -213,6 +261,9 @@ class FatawiCon extends Controller
 
 
     }
+                 ///////////////////// End operation from advisory Not answer///////////////
+
+               ///////////////////////// start operation from advisory  answered///////////////////////
     public function showAdvisory()
     {
         $allCat = $this->obj->getAllCategory();
@@ -266,6 +317,28 @@ class FatawiCon extends Controller
         $id = $request->id_hide;
         $this->obj2->delAdvisory($id);
     }
+                   ////////////////End operation from advisory  answered//////////////////////////
+
+                      //////////////////// get spacific name from Id ///////////////////////
+    public static function getNameCat($catId)
+    {
+        $data = fatawiCat::where('id', $catId)->first();
+        return $data;
+    }
+
+    public static function getPrivacy($priId)
+    {
+        $data = privacy::where('id', $priId)->first();
+        return $data;
+    }
+    public static function getUserName($userId)
+    {
+        $data = User::where('id', $userId)->first();
+        return $data;
+    }
+    //////////////////////////////////////////   End  admin section ///////////////////////////////////////////////
+    ///
+    ///
 
 
 }

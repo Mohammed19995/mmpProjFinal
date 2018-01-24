@@ -35,7 +35,7 @@ Route::get('mmpApp/galleryDetail' , function () {
 
 
 
-Route::get('mmpApp/fatwa' ,'FatawiCon@getIndex');
+Route::get('mmpApp/advisory' ,'FatawiCon@getIndex');
 
 Route::get('adminApp' , function () {
     return view('admin.app');
@@ -120,25 +120,28 @@ Route::get('resultSearchAuhtor/{author}' , 'LibraryCon@resultSearchAuthor');
 ////////////////////    Fatawi     /////////////////////
 ///
                 /////// addCategory //////////////
-Route::get('adminApp/fatawi/cat'  ,  'FatawiCon@index');
-Route::post('addFatawiCat' ,'FatawiCon@addCategory' );
-Route::get('delFatawiCat' ,'FatawiCon@delCategory' );
-Route::get('editFatawiCat' ,'FatawiCon@editCategory' );
+Route::get('adminApp/fatawi/cat'  ,  'FatawiCon@index')->middleware('adminPage');
+Route::post('addFatawiCat' ,'FatawiCon@addCategory' )->middleware('adminPage');
+Route::get('delFatawiCat' ,'FatawiCon@delCategory' )->middleware('adminPage');
+Route::get('editFatawiCat' ,'FatawiCon@editCategory' )->middleware('adminPage');
 
-                 //////////  ask question   /////////////
+                 //////////  user section   /////////////
 Route::get('addMessege' ,'FatawiCon@addMessage' );
 Route::get('getUserFatwa' ,'FatawiCon@getUserFatwa' );
+Route::get('mmpApp/advisory/{cat_id}' , 'FatawiCon@viewAdvisoryCat');
+Route::get('mmpApp/advisory2/{mufti_name}' , 'FatawiCon@viewAdvisoryMufti');
+Route::post('resultSearch' ,'FatawiCon@resultSearch' );
 
                 ///////////// add question ////////////
-Route::get('adminApp/addFatwa' ,'FatawiCon@addFatwaIndex' );
-Route::get('addFatwa' ,'FatawiCon@addFatwa' );
-Route::get('adminApp/showNotAnswer' ,'FatawiCon@showNotAnswer' );
-Route::get('editAnswer' ,'FatawiCon@editAnswer' );
-Route::get('adminApp/showAnswer' ,'FatawiCon@showAdvisory' );
-Route::get('getData2' ,'FatawiCon@getData2' );
-Route::get('editAdvisory' ,'FatawiCon@editAdvisory' );
-Route::get('delAdvisory' ,'FatawiCon@delAdvisory' );
-Route::get('getMufti' ,'FatawiCon@getMufti' );
+Route::get('adminApp/addFatwa' ,'FatawiCon@addFatwaIndex' )->middleware('adminPage');
+Route::get('addFatwa' ,'FatawiCon@addFatwa' )->middleware('adminPage');
+Route::get('adminApp/showNotAnswer' ,'FatawiCon@showNotAnswer' )->middleware('adminPage');
+Route::get('editAnswer' ,'FatawiCon@editAnswer' )->middleware('adminPage');
+Route::get('adminApp/showAnswer' ,'FatawiCon@showAdvisory' )->middleware('adminPage');
+Route::get('getData2' ,'FatawiCon@getData2' )->middleware('adminPage');
+Route::get('editAdvisory' ,'FatawiCon@editAdvisory' )->middleware('adminPage');
+Route::get('delAdvisory' ,'FatawiCon@delAdvisory' )->middleware('adminPage');
+Route::get('getMufti' ,'FatawiCon@getMufti' )->middleware('adminPage');
 
 
 ////////////////////////////////////////////////////////////

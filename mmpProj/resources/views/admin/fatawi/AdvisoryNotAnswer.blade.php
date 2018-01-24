@@ -38,10 +38,21 @@ use App\Http\Controllers\FatawiCon;
 ?>
 
 @section('content')
-    <header class="page-header" style="margin-bottom: 50px">
+    <header class="page-header" style="margin-bottom: 10px">
         <div class="container-fluid">
-            <h2 class="no-margin-bottom">View Advisory</h2>
+            <div class="row">
+                <div class="col-sm-4"><h2 class="no-margin-bottom">View Advisory</h2></div>
+                <div class="col-sm-5"></div>
+
+                <div class="col-sm-3">
+                    <input type="submit" class="btn btn-info" value="visit advisory user"
+                           onclick="window.location='{{asset('mmpApp/advisory')}}';"/>
+                </div>
+
+            </div>
         </div>
+
+
     </header>
     <div class="modal fade" id="myModal2" role="dialog">
         <div class="modal-dialog">
@@ -54,9 +65,16 @@ use App\Http\Controllers\FatawiCon;
                     </button>
                     <h3 style="margin-right: 30% ; margin-top: 40px"><span class="fa fa-edit"></span> Add Answer <span
                                 class="nameProdModel"></span></h3>
+
+
                 </div>
+
+
                 <div class="modal-body">
 
+                    <div class="row" style="margin-left: 30% ; margin-top: 10px">
+                        <div class="alert alert-success success hidden">The Added is done</div>
+                    </div>
 
 
                     <div class="row">
@@ -111,12 +129,12 @@ use App\Http\Controllers\FatawiCon;
                         <div class="col-sm-8">
                             <div class="form-group ">
 
-                                <select class="form-control  "  id="m_category" >
+                                <select class="form-control  " id="m_category">
 
                                     <?php
                                     foreach ($allCat as $arr){
                                     ?>
-                                    <option value="<?php echo $arr->id; ?>" ><?php echo $arr->name; ?></option>
+                                    <option value="<?php echo $arr->id; ?>"><?php echo $arr->name; ?></option>
                                     <?php    }
                                     ?>
                                 </select>
@@ -135,6 +153,22 @@ use App\Http\Controllers\FatawiCon;
                             <div class="form-group ">
 
                                 <input disabled type="text" name="mufti" id="m_privacy" class="form-control ">
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4" style="padding-right: 30px"><h3
+                                    style=" font-size: 15px ; padding-left :15px ;margin-top: 7px"> Created at </h3>
+                        </div>
+
+                        <div class="col-sm-8">
+                            <div class="form-group ">
+
+                                <input disabled type="text" name="created" id="m_created" class="form-control ">
 
 
                             </div>
@@ -175,7 +209,7 @@ use App\Http\Controllers\FatawiCon;
                             <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                 <thead>
                                 <tr>
-
+                                    <th class="hidden"></th>
                                     <th>Qustion</th>
                                     <th>Category name</th>
                                     <th>Privacy</th>
@@ -185,7 +219,7 @@ use App\Http\Controllers\FatawiCon;
                                 </thead>
                                 <tfoot>
                                 <tr>
-
+                                    <th class="hidden"></th>
                                     <th>Qustion</th>
                                     <th>Category name</th>
                                     <th>Privacy</th>
@@ -197,8 +231,13 @@ use App\Http\Controllers\FatawiCon;
                                 foreach ($allNotA as $arr){?>
                                 <tr class="aa">
 
-                                    <td class="question"><span class="id_hidden" ><?php echo $arr->id ?></span><?php  echo $arr->question ?></td>
-                                    <td class="category"><span class="id_cat hidden" ><?php echo $arr->cat_id ?></span>
+                                    <td class="hidden">
+                                        <span class="id_hidden "><?php echo $arr->id ?></span>
+
+                                        <span class="created"><?php  echo $arr->created_at ?></span>
+                                    </td>
+                                    <td class="question"><?php  echo $arr->question ?></td>
+                                    <td class="category"><span class="id_cat hidden"><?php echo $arr->cat_id ?></span>
                                         <?php
 
                                         $catName = FatawiCon::getNameCat($arr->cat_id);
@@ -207,10 +246,10 @@ use App\Http\Controllers\FatawiCon;
                                         ?></td>
                                     <td class="privacy"><?php
                                         $privacyName = FatawiCon::getPrivacy($arr->private);
-                                       echo $privacyName->name;
+                                        echo $privacyName->name;
                                         ?></td>
 
-                                    <span class="hidden"><?php  echo $arr->created_at ?></span>
+
                                     <td><input type="button" value="Add Answer " class="btn btn-success show"></td>
                                 </tr>
                                 <?php }
@@ -242,6 +281,7 @@ use App\Http\Controllers\FatawiCon;
 
     <script>
         $(document).ready(function () {
+            $('.success').addClass('hidden');
             var table = $('#example').DataTable({
 
                 "scrollX": true,
@@ -249,6 +289,7 @@ use App\Http\Controllers\FatawiCon;
                     {"bSearchable": false, "aTargets": [0]}
                 ]
             });
+
             function printErrorMsg(msg) {
                 $(".print-error-msg").find("ul").html('');
                 $(".print-error-msg").css('display', 'block');
@@ -257,7 +298,7 @@ use App\Http\Controllers\FatawiCon;
                 });
             }
 
-var thisRow;
+            var thisRow;
             $('.show').click(function () {
 
                 $("#myModal2").modal();
@@ -266,6 +307,7 @@ var thisRow;
                 var mufti = $(this).parent().parent().find('.mufti').text();
                 var category = $(this).parent().parent().find('.category').text();
                 var privacy = $(this).parent().parent().find('.privacy').text();
+                var created = $(this).parent().parent().find('.created').text();
                 var id_cat = $(this).parent().parent().find('.id_cat').text();
                 var id_hidden = $(this).parent().parent().find('.id_hidden').text();
                 $(".print-error-msg").hide();
@@ -281,12 +323,15 @@ var thisRow;
                     })
                     .prop('selected', true);
                 $('#m_id_hide').val(id_hidden);
-                 thisRow = $(this).parent().parent();
+                $('#m_created').val(created);
+                thisRow = $(this).parent().parent();
             });
+
             $('.save').click(function () {
-                var e_answer=   $('#m_answer').val();
-                var e_mufti =   $('#m_mufti').val();
-                var e_cat =    $('select#m_category option:selected').val();
+                var e_question = $('#m_question').val();
+                var e_answer = $('#m_answer').val();
+                var e_mufti = $('#m_mufti').val();
+                var e_cat = $('select#m_category option:selected').val();
                 var e_id_hidden = $('#m_id_hide').val();
 
                 $.ajaxSetup({
@@ -297,12 +342,27 @@ var thisRow;
                 $.ajax({
                     url: "{{url('editAnswer')}}",
                     method: "get",
-                    data: {e_id_hidden:e_id_hidden ,e_answer:e_answer,e_mufti:e_mufti,e_cat:e_cat },
+                    data: {
+                        e_id_hidden: e_id_hidden,
+                        e_question: e_question,
+                        e_answer: e_answer,
+                        e_mufti: e_mufti,
+                        e_cat: e_cat
+                    },
                     success: function (e) {
                         if ($.isEmptyObject(e.error)) {
                             alert(e.success);
-                           thisRow.hide('slow');
-                           $("#myModal2").modal('hide');
+                            thisRow.hide('slow');
+                            // $("#myModal2").modal('hide');
+                            $('.success').removeClass('hidden');
+                            $('.success').show('slow');
+                            setTimeout(function () {
+                                $(".success").hide('slow');
+                            }, 2000);
+                            setTimeout(function () {
+                                $('#myModal2').modal('hide');
+                            }, 3000);
+
                             $(".print-error-msg").hide();
                         } else {
                             printErrorMsg(e.error);
@@ -311,10 +371,10 @@ var thisRow;
                     }
 
 
+                });
 
             });
-
-        });            });
+        });
 
 
     </script>

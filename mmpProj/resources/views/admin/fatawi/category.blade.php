@@ -35,7 +35,16 @@
 @section('content')
     <header class="page-header" style="margin-bottom: 50px">
         <div class="container-fluid">
-            <h2 class="no-margin-bottom">Category</h2>
+           <div class="row">
+               <div class="col-sm-4"> <h2 class="no-margin-bottom">Category</h2></div>
+               <div class="col-sm-5">  </div>
+
+               <div class="col-sm-3">
+                   <input type="submit" class="btn btn-info" value="visit advisory user"
+                          onclick="window.location='{{asset('mmpApp/advisory')}}';"/>
+               </div>
+
+           </div>
         </div>
     </header>
     <div class="content-inner">

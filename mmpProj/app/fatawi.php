@@ -61,5 +61,16 @@ class fatawi extends Model
         return $this::find($id)->delete();
 
     }
+    public function scopeSearchByKeyword($query, $keyword)
+    {
+        if ($keyword != '') {
+            $query->where(function ($query) use ($keyword) {
+                $query->where("question", "LIKE", "%$keyword%")->orwhere("answer", "LIKE", "%$keyword%")->orwhere("mufti", "LIKE", "%$keyword%");
+
+            });
+        }
+        return $query;
+    }
+
 
 }

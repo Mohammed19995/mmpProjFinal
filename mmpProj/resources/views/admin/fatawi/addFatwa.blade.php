@@ -39,7 +39,17 @@
 @section('content')
     <header class="page-header" style="margin-bottom: 50px">
         <div class="container-fluid">
-            <h3 class="no-margin-bottom">Add Advisory</h3>
+            <div class="row">
+                <div class="col-sm-4"> <h3 class="no-margin-bottom">Add Advisory</h3></div>
+                <div class="col-sm-5"></div>
+
+                <div class="col-sm-3">
+                    <input type="submit" class="btn btn-info" value="visit advisory user"
+                           onclick="window.location='{{asset('mmpApp/advisory')}}';"/>
+                </div>
+
+            </div>
+
         </div>
     </header>
 
@@ -56,9 +66,15 @@
                     <div class="col-lg-10">
                         <div class="card">
 
+
+
                             <div class="card-header d-flex align-items-center">
                                 <h3 class="h4">Add Advisory</h3>
                             </div>
+                            <div class="row" style="margin-left: 35% ; margin-top: 20px" >
+                                <div class="alert alert-success success hidden">The Added is done</div>
+                            </div>
+
 
                             <div class="card-body">
                                 <div class="alert alert-danger print-error-msg" style="display:none; margin: 10px;">
@@ -144,7 +160,7 @@
 
     <script>
         $(document).ready(function () {
-
+           $('.success').addClass('hidden');
             function printErrorMsg(msg) {
                 $(".print-error-msg").find("ul").html('');
                 $(".print-error-msg").css('display', 'block');
@@ -154,6 +170,7 @@
             }
 
 $('.addNewFatwa').click(function () {
+
     var question = $('.question').val();
     var answer = $('.answer').val();
     var category = $('select#optionCat option:selected').val();
@@ -178,7 +195,14 @@ $('.addNewFatwa').click(function () {
                     $('.answer').val("");
                     $('select#optionCat option[class="default"]').attr("selected",true);
                     $('.mufti').val("");
+                    $('.success').removeClass('hidden');
+                    $('.success').show('slow');
+                    setTimeout(function() { $(".success").hide('slow'); }, 3000);
+                    $('html, body').animate({
+                        scrollTop: $(".card-header").offset().top
+                    }, 1000);
                     $(".print-error-msg").hide();
+
                 } else {
                     printErrorMsg(e.error);
                 }

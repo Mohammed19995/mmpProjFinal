@@ -5,10 +5,27 @@
         .active {
             color: #0d3625;
         }
+
+        .search {
+            position: relative;
+            font-size: 16px;
+        }
+
+        .search button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            border: none;
+            background-color: inherit;
+        }
+
     </style>
+
 @endsection
+
 <?php
 use App\category;
+use App\Http\Controllers\LibraryCon;
 ?>
 
 
@@ -34,19 +51,50 @@ use App\category;
     <!-- BEGIN CONTENT WRAPPER -->
     <div class="content">
         <div class="container">
-            <div class="row">
 
-                <!-- BEGIN SIDEBAR -->
-                <div class="sidebar col-sm-3">
+            <div class="row" style="margin-top: 30px;">
 
-                    <div class="widget widget_search">
-                        <form id="searchform" role="search" method="post" action="{{url('resultSearch')}}">
-                            {{ csrf_field() }}
-                            <input id="s" class="search" value="" placeholder="Search.." name="search" type="text">
-                            <button id="submit_btn" class="search-submit" type="submit"><i class="fa fa-search"></i>
-                            </button>
-                        </form>
+                <form id="searchform" role="search" method="post" action="{{url('resultSearch')}}">
+                    {{ csrf_field() }}
+                    <div class="col-sm-3"></div>
+
+
+                    <div class="col-sm-7">
+
+                        <div class="search">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                            <input class="form-control" value=""
+                                   placeholder="Search in book name , author , outline and keyword." name="search"
+                                   type="text">
+                        </div>
+
+                        <!--    <div class="widget widget_search">
+
+                                <input class="form-control" value=""
+                                       placeholder="Search in book name , author , outline and keyword." name="search"
+                                       type="text"><span><i class="fa fa-address-book-o"></i></span>
+
+                        </div> -->
+
+
                     </div>
+                    <div class="col-sm-2">
+                        <select class="form-control selLang" name="selSearch">
+                            <option value="-1">All</option>
+                            <option value="1">Book name</option>
+                            <option value="2">Author</option>
+                            <option value="3">Outline</option>
+                            <option value="4">Keyword</option>
+
+                        </select>
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="row">
+                <!-- BEGIN SIDEBAR sidebar -->
+                <div class="sidebar col-sm-3">
 
 
                     <input type="hidden" value="<?php echo $cat;?>" class="catIdHidden">
@@ -55,7 +103,7 @@ use App\category;
                         <ul class="categories">
 
 
-                            <a  href="{{url('mmpApp/library')}}" style="cursor: pointer;"
+                            <a href="{{url('mmpApp/library')}}" style="cursor: pointer;"
                                data-class="allCat">
                                 <li>All</li>
 
@@ -77,73 +125,43 @@ use App\category;
                             ?>
                         </ul>
                     </div>
-
-
                     <div class="widget widget_archives">
                         <h2 class="section-title"><strong>Archives</strong></h2>
                         <div id="accordion" class="panel-group">
+                            <?php
+                            foreach ($getAllYear as $d) {
+                            $getAllBookForYear = LibraryCon::getBookFromAllYear($d);
+                            ?>
                             <div class="panel">
                                 <div class="panel-heading">
                                     <div class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="">
-                                            <i class="fa fa-chevron-right"></i> 2017 (15)
+                                        <a data-toggle="collapse" data-parent="#accordion"
+                                           href="#collapseOne<?php echo $d;?>" class="">
+                                            <i class="fa fa-chevron-right"></i><?php echo $d;?>
                                         </a>
                                     </div>
                                 </div>
-                                <div id="collapseOne" class="panel-collapse collapse in">
+                                <div id="collapseOne<?php echo $d;?>" class="panel-collapse collapse in">
                                     <div class="panel-body">
                                         <ul>
-                                            <li><a href="#">July (3)</a></li>
-                                            <li><a href="#">June (4)</a></li>
-                                            <li><a href="#">May (1)</a></li>
-                                            <li><a href="#">April (2)</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                                            <?php
+                                            foreach ($getAllBookForYear as $r) {
+                                            ?>
+                                            <li>
+                                                <a href={{asset("mmpApp/libraryDetail")."/".$r->id}}><?php echo $r->name;?></a>
+                                            </li>
+                                            <?php }
+                                            ?>
 
-                            <div class="panel">
-                                <div class="panel-heading">
-                                    <div class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
-                                           class="collapsed">
-                                            <i class="fa fa-chevron-right"></i> 2016 (6)
-                                        </a>
-                                    </div>
-                                </div>
-                                <div id="collapseTwo" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <ul>
-                                            <li><a href="#">May (1)</a></li>
-                                            <li><a href="#">April (2)</a></li>
-                                            <li><a href="#">March (1)</a></li>
-                                            <li><a href="#">February (2)</a></li>
-                                            <li><a href="#">January (1)</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
+                            <?php }
 
-                            <div class="panel">
-                                <div class="panel-heading">
-                                    <div class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
-                                           class="collapsed">
-                                            <i class="fa fa-chevron-right"></i> 2015 (5)
-                                        </a>
-                                    </div>
-                                </div>
-                                <div id="collapseThree" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <ul>
-                                            <li><a href="#">April (1)</a></li>
-                                            <li><a href="#">March (1)</a></li>
-                                            <li><a href="#">February (2)</a></li>
-                                            <li><a href="#">January (1)</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                            ?>
+
+
                         </div>
                     </div>
 
@@ -196,9 +214,15 @@ use App\category;
 
                     <!-- BEGIN PAGINATION -->
 
-                {{$paginateBook->links()}}
+                    <div class="row">
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-4">
+                            {{$paginateBook->links()}}
+                        </div>
+                        <div class="col-sm-4"></div>
 
-                <!-- END PAGINATION -->
+
+                    </div>                <!-- END PAGINATION -->
 
                 </div>
                 <!-- END MAIN CONTENT -->
@@ -221,25 +245,25 @@ use App\category;
 
             $('.rd-navbar-nav-wrap li.library ').addClass('active');
 
-            $('.widget_categories .categories a').each(function() {
+            $('.widget_categories .categories a').each(function () {
                 $(this).removeClass('active');
             });
 
-            $('.widget_categories .categories a').each(function() {
+            $('.widget_categories .categories a').each(function () {
                 var catIdHidden = $('.catIdHidden').val();
 
-                if(catIdHidden == 'all') {
-                    if($(this).data('class') == catIdHidden+"Cat"){
+                if (catIdHidden == 'all') {
+                    if ($(this).data('class') == catIdHidden + "Cat") {
                         $(this).addClass('active');
                     }
 
-                }else {
-                   // alert(catIdHidden);
-                    if($(this).data('class') == ".cat"+catIdHidden){
-                       $(this).addClass('active');
+                } else {
+                    // alert(catIdHidden);
+                    if ($(this).data('class') == ".cat" + catIdHidden) {
+                        $(this).addClass('active');
                     }
                 }
-              //
+                //
             });
         });
 

@@ -24,4 +24,15 @@ class Outline extends Model
 
         $this::where('book_id' ,$id)->delete();
     }
+
+    public function scopeSearchByKeyword($query, $keyword)
+    {
+        if ($keyword!='') {
+            $query->where(function ($query) use ($keyword) {
+                $query->where("outline", "LIKE","%$keyword%");
+
+            });
+        }
+        return $query;
+    }
 }

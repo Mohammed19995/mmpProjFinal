@@ -24,4 +24,15 @@ class Keyword extends Model
 
         $this::where('book_id' ,$id)->delete();
     }
+
+    public function scopeSearchByKeyword($query, $keyword)
+    {
+        if ($keyword!='') {
+            $query->where(function ($query) use ($keyword) {
+                $query->where("word", "LIKE","%$keyword%");
+
+            });
+        }
+        return $query;
+    }
 }

@@ -154,7 +154,6 @@ use App\Http\Controllers\LibraryCon;
                         <div class="col-sm-9">
                             <div class="form-group ">
                                 <input type="date" class="form-control" id="m_publish">
-
                             </div>
 
                         </div>
@@ -374,13 +373,14 @@ use App\Http\Controllers\LibraryCon;
                                 ?>
                                 <tr>
 
+
                                     <input type="hidden" class="bookId" value="<?php echo $p->id;?>">
                                     <input type="hidden" class="img" value="<?php echo $p->img;?>">
                                     <input type="hidden" class="summaryBook" value="<?php echo $p->summary;?>">
                                     <input type="hidden" class="catId" value="<?php echo $p->cat_id;?>">
-                                    <input type="hidden" class="publish" value="<?php echo $p->publish;?>">
+                                    <input type="hidden" class="publish" value="<?php echo $p->publish->format('Y-m-d');?>">
 
-                                    <td class="plusData">
+                                    <td class="plusData" data-placement="left" data-toggle="tooltip" href="#" data-original-title="more details">
                                         <i class="fa fa-plus"></i>
                                         <i class="fa fa-spinner fa-spin hidden" style="font-size:24px"></i>
                                     </td>
@@ -467,6 +467,9 @@ use App\Http\Controllers\LibraryCon;
                 $(".print-error-msg2").css('display', 'block');
                 var arrErrors = [];
                 $.each(msg, function (key, value) {
+                    $(".print-error-msg2").find("ul").append('<li>' + value + '</li>');
+
+                    /*
                     arrErrors.push(value.replace('file' + key, 'file'));
                     if (key != 0 && arrErrors[key] == arrErrors[key - 1]) {
 
@@ -474,6 +477,7 @@ use App\Http\Controllers\LibraryCon;
                         $(".print-error-msg2").find("ul").append('<li>' + value.replace('file' + key, 'file') + '</li>');
 
                     }
+                    */
                 });
             }
 
@@ -494,7 +498,7 @@ use App\Http\Controllers\LibraryCon;
                 initComplete: function () {
                     this.api().columns(4).every(function () {
                         var column = this;
-                        var select = $('<select class="form-control selCatOption" style="width: 200px;float: right;"><option value=""></option></select>')
+                        var select = $('<select class="form-control selCatOption" style="width: 200px;float: right;"><option value="">select category</option></select>')
                             .prependTo($('#example_filter'))
                             .on('change', function () {
                                 var val = $.fn.dataTable.util.escapeRegex(
@@ -774,7 +778,11 @@ use App\Http\Controllers\LibraryCon;
 
             });
 
+            $('#example tbody tr .plusData').hover(function() {
+                $(this).tooltip('show');
+            });
             $('#example tbody').on('click', 'tr .plusData', function () {
+
 
                 var thisRowToDel = $(this).parents('tr');
                 var idBook = $(this).parents('tr').find('.bookId').val();
@@ -965,7 +973,6 @@ use App\Http\Controllers\LibraryCon;
                         data: {fileBookIdInc: fileBookIdInc},
                         success: function (e) {
                             alert("done");
-                            alert(e);
                             thisRowToDelFileBook.remove();
                         }
 
@@ -1052,6 +1059,7 @@ use App\Http\Controllers\LibraryCon;
                 var arrLangFilePlus = [];
                 var arrTypeFilePlus = [];
                 var arrFilePlus = [];
+                var arrTypeTextFilePlus = [];
 
 
                 var form_data = new FormData();
@@ -1061,6 +1069,7 @@ use App\Http\Controllers\LibraryCon;
                     arrTypeFilePlus.push($(this).find('select.selTypeFile option:selected').val());
                     arrFilePlus.push($(this).find('.fileLangType').prop('files')[0]);
                     form_data.append('file' + f, $(this).find('.fileLangType').prop('files')[0]);
+                    arrTypeTextFilePlus.push($(this).find('select.selTypeFile option:selected').text().trim());
                     f = f + 1;
                 });
 
@@ -1074,6 +1083,7 @@ use App\Http\Controllers\LibraryCon;
                 form_data.append('idBook', idBook);
                 form_data.append('lang', arrLangFilePlus);
                 form_data.append('type', arrTypeFilePlus);
+                form_data.append('arrTypeTextFilePlus', arrTypeTextFilePlus);
                 form_data.append('checkFileBookAttr', checkFileBookAttr);
                 form_data.append('f', f);
                 // form_data.append('file' ,arrFilePlus);
@@ -1100,6 +1110,7 @@ use App\Http\Controllers\LibraryCon;
                         thisButton.find('.loaddingAddNewPlusFile').addClass('hidden');
                         if (jsonData.success == 1) {
                             alert("done");
+                            $(".print-error-msg2").hide();
                             $('.getAllTypeLangBook').html('');
                           //  var link = "{{asset('storage')}}";
                             $.each(jsonData.fileBook, function (k, v) {

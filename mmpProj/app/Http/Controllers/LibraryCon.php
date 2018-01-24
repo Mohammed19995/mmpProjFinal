@@ -129,9 +129,22 @@ class LibraryCon extends Controller
         );
 
         $arrFileLengthToValidate = $request->arrFileLength;
+        $arrTypeText = explode(',', $request->arrTypeText);
+
         for ($i = 0; $i < $arrFileLengthToValidate; $i++) {
-            $rules["arrFile" . $i] = 'mimes:pdf,doc,docx,pptx';
-            $attributeNames["arrFile" . $i] = 'file';
+
+            if (strtolower($arrTypeText[$i]) == "pdf") {
+                $rules["arrFile" . $i] = 'mimes:pdf';
+            } else if (strtolower($arrTypeText[$i]) == "word") {
+                $rules["arrFile" . $i] = 'mimes:doc,docx';
+            } else if (strtolower($arrTypeText[$i]) == "power") {
+                $rules["arrFile" . $i] = 'mimes:pptx';
+            } else {
+                $rules["arrFile" . $i] = 'mimes:pdf,doc,docx,pptx';
+            }
+
+            $numFile = $i + 1;
+            $attributeNames["arrFile" . $i] = 'file' . $numFile;
         }
 
 
@@ -191,7 +204,7 @@ class LibraryCon extends Controller
             $bojFileBook = new Filebook();
             for ($j = 0; $j < count($arrFileLangPath); $j++) {
 
-                $pathTypeFileLang = $arrFileLangPath[$j]->store('public/book/typeFile');
+                $pathTypeFileLang = $arrFileLangPath[$j]->storeAs('public/book/typeFile', $arrFileLangPath[$j]->getClientOriginalName());
                 $bojFileBook->addFileBook($bookIsNowAdded->id, $fileType[$j], $fileLang[$j], $pathTypeFileLang);
             }
 
@@ -342,9 +355,20 @@ class LibraryCon extends Controller
             array_push($arrFile, $request->$fileIndex);
         }
 
-        $rules = [];
+        $arrTypeText = explode(',', $request->arrTypeTextFilePlus);
+        $rule = [];
         for ($i = 0; $i < count($arrFile); $i++) {
-            $rule['file' . $i] = 'mimes:pdf,doc,docx,pptx';
+
+            if (strtolower($arrTypeText[$i]) == "pdf") {
+                $rule['file' . $i] = 'mimes:pdf';
+            } else if (strtolower($arrTypeText[$i]) == "word") {
+                $rule['file' . $i] = 'mimes:doc,docx';
+            } else if (strtolower($arrTypeText[$i]) == "power") {
+                $rule['file' . $i] = 'mimes:pptx';
+            } else {
+                $rule['file' . $i] = 'mimes:pdf,doc,docx,pptx';
+            }
+
         }
 
         $rule['checkFileBookAttr'] = 'not_in:0';
@@ -365,7 +389,7 @@ class LibraryCon extends Controller
 
             for ($j = 0; $j < count($arrFile); $j++) {
 
-                $pathTypeFileLang = $arrFile[$j]->store('public/book/typeFile');
+                $pathTypeFileLang = $arrFile[$j]->storeAs('public/book/typeFile', $arrFile[$j]->getClientOriginalName());
                 $objFileBook->addFileBook($idBook, $arrType[$j], $arrLang[$j], $pathTypeFileLang);
             }
 
@@ -393,6 +417,11 @@ class LibraryCon extends Controller
         return $objOutline->getOutlineBook($id);
     }
 
+    public static function getBookFromAllYear($year)
+    {
+        $objBook = new Book();
+        return $objBook->getAllBookForYear($year);
+    }
 
     //////////////     End Admin      ///////////////////////////////////////////////////////////////////////////
 
@@ -403,14 +432,26 @@ class LibraryCon extends Controller
     {
         $paginateBook = $this->objBook->getPaginateBook();
         $getAllCat = $this->obj->getAllCategory();
-        return view('mmpApp.library.library', ['paginateBook' => $paginateBook, 'getAllCat' => $getAllCat, 'cat' => 'all']);
+        $getAllYear = $this->getAllYear();
+        return view('mmpApp.library.library', ['paginateBook' => $paginateBook,'getAllYear'=>$getAllYear , 'getAllCat' => $getAllCat, 'cat' => 'all']);
     }
 
+    public function getAllYear() {
+        $getAllBook = $this->objBook->getAllBook();
+        $arrYear = [];
+        foreach ($getAllBook as $p) {
+           array_push($arrYear , $p->publish->format('Y'));
+        }
+        $arrYear = array_unique($arrYear);
+
+        return $arrYear;
+    }
     public function ViewBookCatUser($cat_id)
     {
         $paginateBook = $this->objBook->getPaginateBookByCat($cat_id);
         $getAllCat = $this->obj->getAllCategory();
-        return view('mmpApp.library.library', ['paginateBook' => $paginateBook, 'getAllCat' => $getAllCat, 'cat' => $cat_id]);
+        $getAllYear = $this->getAllYear();
+        return view('mmpApp.library.library', ['paginateBook' => $paginateBook,'getAllYear'=>$getAllYear , 'getAllCat' => $getAllCat, 'cat' => $cat_id]);
     }
 
     public function viewUniqueBook($id)
@@ -429,22 +470,118 @@ class LibraryCon extends Controller
         $keyword = $objKeyword->getKeywordBook($id);
         $nameCat = $this->obj->getNameCatForBookId($getBook->cat_id);
         $getFileBookData = $objFileBook->getDataFileForBook($id);
+        $similarBooks = $this->resultSearchSimilarBook($getBook->id, $getBook->cat_id);
 
-        return view('mmpApp.library.libraryDetail', ['getBook' => $getBook , 'author' =>$author,'outline' =>$outline , 'keyword' => $keyword , 'nameCat' =>$nameCat , 'getAllLang' =>$getAllLang ,
-            'getAllType' =>$getAllType , 'getFileBookData' =>$getFileBookData]);
+        return view('mmpApp.library.libraryDetail', ['getBook' => $getBook, 'author' => $author, 'outline' => $outline, 'keyword' => $keyword, 'nameCat' => $nameCat, 'getAllLang' => $getAllLang,
+            'getAllType' => $getAllType, 'getFileBookData' => $getFileBookData, 'similarBooks' => $similarBooks]);
     }
 
-    public function resultSearch(Request $request) {
+
+    public function resultSearch(Request $request)
+    {
+
+
+        $keyword = Input::get('search', '');
+        $valSelect = $request->selSearch;
+
+        if ($valSelect == -1) {
+            $resultBook = Book::SearchByKeyword($keyword)->get();
+            $resultAuthor = Author::SearchByKeyword($keyword)->get();
+            $resultKeyword = Keyword::SearchByKeyword($keyword)->get();
+            $resultOutline = Outline::SearchByKeyword($keyword)->get();
+
+            $arrResult = [];
+            foreach ($resultBook as $p) {
+                array_push($arrResult, $p->id);
+            }
+            foreach ($resultAuthor as $p) {
+                array_push($arrResult, $p->book_id);
+            }
+            foreach ($resultKeyword as $p) {
+                array_push($arrResult, $p->book_id);
+            }
+            foreach ($resultOutline as $p) {
+                array_push($arrResult, $p->book_id);
+            }
+
+        } else if ($valSelect == 1) {
+            $resultBook = Book::SearchByKeyword($keyword)->get();
+
+            $arrResult = [];
+            foreach ($resultBook as $p) {
+                array_push($arrResult, $p->id);
+            }
+
+        } else if ($valSelect == 2) {
+
+            $resultAuthor = Author::SearchByKeyword($keyword)->get();
+
+            $arrResult = [];
+
+            foreach ($resultAuthor as $p) {
+                array_push($arrResult, $p->book_id);
+            }
+
+        } else if ($valSelect == 3) {
+
+            $resultOutline = Outline::SearchByKeyword($keyword)->get();
+
+            $arrResult = [];
+            foreach ($resultOutline as $p) {
+                array_push($arrResult, $p->book_id);
+            }
+        } else {
+
+            $resultKeyword = Keyword::SearchByKeyword($keyword)->get();
+            $arrResult = [];
+            foreach ($resultKeyword as $p) {
+                array_push($arrResult, $p->book_id);
+            }
+        }
+
+
+        $arrResult = array_unique($arrResult);
+        $getBookData = [];
+        foreach ($arrResult as $item) {
+            array_push($getBookData, $this->objBook->getBookData($item));
+        }
+
+
+        return view('mmpApp.library.resultSearch', ['paginateBook' => $getBookData, 'keyword' => $keyword]);
+
+    }
+
+    public function resultSearchAuthor($author)
+    {
 
         //return $request->search;
-        $keyword =  Input::get('search' , '');
-        $resultBook = Book::SearchByKeyword($keyword)->get();
+
+        $keyword = $author;
+
         $resultAuthor = Author::SearchByKeyword($keyword)->get();
 
-        $result = $resultBook->union($resultAuthor);
 
-       // $paginateBook = $this->objBook->getPaginateBook();
-       // return view('mmpApp.library.resultSearch' , ['paginateBook' => $result]);
+        $arrResult = [];
+
+        foreach ($resultAuthor as $p) {
+            array_push($arrResult, $p->book_id);
+        }
+
+
+        $arrResult = array_unique($arrResult);
+        $getBookData = [];
+        foreach ($arrResult as $item) {
+            array_push($getBookData, $this->objBook->getBookData($item));
+        }
+
+
+        return view('mmpApp.library.resultSearch', ['paginateBook' => $getBookData, 'keyword' => $keyword]);
+
+    }
+
+    public function resultSearchSimilarBook($id, $cat_id)
+    {
+        return $this->objBook->getBookByCat($id, $cat_id);
     }
     ///
 }

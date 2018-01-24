@@ -40,7 +40,7 @@ use App\category;
                 <div class="col-sm-1"></div>
                 <!-- BEGIN MAIN CONTENT -->
                 <div class="main col-sm-9">
-
+                    <h1>Result search for <span style="color: rgba(253,73,101,0.82);font-weight: bold;"> <?php echo $keyword; ?></span></h1>
                     <!-- BEGIN BLOG LISTING -->
                     <div id="blog-listing" class="grid-style clearfix">
                         <div class="row">

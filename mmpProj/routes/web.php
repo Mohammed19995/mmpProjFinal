@@ -76,7 +76,7 @@ Route::get('mmpApp/library' , 'LibraryCon@ViewBookUser');
 Route::get('mmpApp/library/{cat_id}' , 'LibraryCon@ViewBookCatUser');
 Route::get('mmpApp/libraryDetail/{id}' , 'LibraryCon@viewUniqueBook');
 Route::post('resultSearch' , 'LibraryCon@resultSearch');
-
+Route::get('resultSearchAuhtor/{author}' , 'LibraryCon@resultSearchAuthor');
 
 
 

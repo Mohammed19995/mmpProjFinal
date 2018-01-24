@@ -321,13 +321,15 @@
                 $(".print-error-msg").css('display', 'block');
                 var arrError = [];
                 $.each(msg, function (key, value) {
+                    /*
                     arrError.push(value);
                     if(key != 0 && arrError[key] == arrError[key-1] ) {
 
                     }else {
                         $(".print-error-msg").find("ul").append('<li>' + value + '</li>');
                     }
-
+*/
+                    $(".print-error-msg").find("ul").append('<li>' + value + '</li>');
                 });
             }
 
@@ -352,7 +354,7 @@
             $('.add-img').click(function () {
 
 
-                var a = " <div class='row imm' style='margin-bottom: 10px'>" +
+                var a = " <div class='row imm immPlus' style='margin-bottom: 10px'>" +
                     "<label class='col-sm-2 form-control-label'>Language</label>" +
 
                     "<div class='col-sm-3 '>" +
@@ -394,6 +396,7 @@
                         ' </option>');
                 }
 
+
                 $('.hide-img').click(function () {
                     $(this).parents('.imm').remove();
 
@@ -419,12 +422,16 @@
                 var outline = $("#outline").val().split(',');
 
                 var arrLang = [];
+                var arrTypeText = [];
                 var arrTypeFile = [];
                 var arrFile = [];
+
+
                 $('.addNewLang .imm').each(function () {
                     arrLang.push($(this).find('select.selFileLang option:selected').val());
                     arrTypeFile.push($(this).find('select.selTypeFile option:selected').val());
                     arrFile.push($(this).find('.fileLangType').prop('files')[0]);
+                    arrTypeText.push($(this).find('select.selTypeFile option:selected').text().trim());
                 });
 //
                 var checkFile = 1;
@@ -466,6 +473,7 @@
                 form_data.append('arrFileLength', f);
                 form_data.append('checkDataLang', checkDataLang);
                 form_data.append('checkImgBook', checkImgBook);
+                form_data.append('arrTypeText', arrTypeText);
 
                 $('#myModal').modal('show');
                 $.ajaxSetup({

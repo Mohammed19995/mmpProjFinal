@@ -325,6 +325,12 @@
 <script src="{{asset('mmp/js/common.js')}}"></script>
 <script src="{{asset('mmp/js/jquery.prettyPhoto.js')}}"></script>
 <script src="{{asset('mmp/js/owl.carousel.min.js')}}"></script>
+<script src="{{asset('mmp/js/infobox.min.js')}}"></script>
+<script src="{{asset('mmp/js/richmarker.js')}}"></script>
+<script src="{{asset('mmp/js/countUp.min.js')}}"></script>
+<script src="{{asset('mmp/js/variables.js')}}"></script>
+<script src="{{asset('mmp/js/scripts.js')}}"></script>
+<script src="{{asset('mmp/js/offices.js')}}"></script>
 
 
 <!-- SLIDER REVOLUTION JS FILES -->

@@ -493,7 +493,8 @@ use App\Http\Controllers\LibraryCon;
                     'pdfHtml5'
                 ],
 
-                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+               // "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                "pageLength": 10,
 
                 initComplete: function () {
                     this.api().columns(4).every(function () {
@@ -765,8 +766,11 @@ use App\Http\Controllers\LibraryCon;
                         method: "get",
                         data: {idBook: idBook},
                         success: function (e) {
-                            thisRowToDel.remove();
-
+                           // thisRowToDel.remove();
+                            table
+                                .row(thisRowToDel )
+                                .remove()
+                                .draw();
                         }
 
                     });
@@ -778,9 +782,10 @@ use App\Http\Controllers\LibraryCon;
 
             });
 
-            $('#example tbody tr .plusData').hover(function() {
+            $('#example tbody ').on('mouseenter' , 'tr .plusData',function() {
                 $(this).tooltip('show');
             });
+
             $('#example tbody').on('click', 'tr .plusData', function () {
 
 
@@ -855,7 +860,7 @@ use App\Http\Controllers\LibraryCon;
                                 "</div>" +
                                 "<div class='col-sm-3'>" +
                                 " <div class='form-group '>" +
-                                "<select class='form-control fileType' >" +
+                                "<select class='form-control fileType' disabled>" +
                                 "</select>" +
                                 " </div>" +
                                 "</div>" +
@@ -934,20 +939,190 @@ use App\Http\Controllers\LibraryCon;
                 var typeId = $(this).parents('.row').find('select.fileType option:selected').val();
                 var bookId = $(this).parents('.row').find('.fileBookId').val();
 
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
+                var arrLangCheck = [];
+                var arrTypeCheck = [];
+                $('.getAllTypeLangBook .row').each(function (k, v) {
+                    var langId = $(this).find('select.fileLang option:selected').val();
+                    var typeId = $(this).find('select.fileType option:selected').val();
+                    arrLangCheck.push(langId);
+                    arrTypeCheck.push(typeId);
                 });
-                $.ajax({
-                    url: "{{url('editFileTypeLang')}}",
-                    method: "get",
-                    data: {bookId: bookId, typeId: typeId, langId: langId},
-                    success: function (e) {
-                        alert("done");
-                    }
 
-                });
+
+                /*             */
+
+                var arrCheckTwo = [];
+                for (var t = 0; t < arrLangCheck.length; t++) {
+                    arrCheckTwo.push(arrLangCheck[t]+""+arrTypeCheck[t]);
+                }
+
+                var numCheckTwo = [];
+                for (var m = 0; m < arrCheckTwo.length; m++) {
+                    var numOccurences = $.grep(arrCheckTwo, function (elem) {
+                        return elem === arrCheckTwo[m];
+                    }).length;
+                    numCheckTwo.push(numOccurences);
+                }
+
+
+                var finalCheckTwo = 1;
+                for (var m = 0; m < numCheckTwo.length; m++) {
+                    if(numCheckTwo[m] > 1) {
+                        finalCheckTwo = 0;
+                        break;
+                    }
+                }
+
+
+                if(finalCheckTwo != 1) {
+                    alert('There is duplicate in language fields');
+
+                    var idbookModalHidden = $('#myModal2 .fileBookIdIncHidden').val();
+
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        url: "{{url('getPlusData')}}",
+                        method: "get",
+                        data: {idBook: idbookModalHidden},
+                        success: function (e) {
+
+                            var jsonData = $.parseJSON(e);
+
+                            $('.getAllTypeLangBook').html('');
+                            var link = "{{asset('storage')}}";
+                            $.each(jsonData.fileBook, function (k, v) {
+                                var path = v.path;
+                                //   var newPath = path.replace('public/', '');
+                                var newPath2 = path.replace('public/book/typeFile/', '');
+
+                                var urlPath = "{{url('downloadFile')}}"+"/"+newPath2;
+                                $('.getAllTypeLangBook').append(" <div class='row'>" +
+
+                                    "<div class='col-sm-2'>" +
+                                    "<a target='_blank' href='" +
+                                    urlPath +
+                                    "' >" +
+
+                                    "<i class='fa fa-download fa-lg'  aria-hidden='true'></i>" +
+                                    "</a>" +
+
+                                    "" +
+                                    "<input type='hidden' class='fileBookIdInc' value='" +
+                                    v.id +
+                                    "'>" +
+                                    "" +
+                                    "<input type='hidden' class='langId' value='" +
+                                    v.lang_id +
+                                    "'>" +
+                                    "" +
+
+                                    "<input type='hidden' class='fileBookId' value='" +
+                                    v.id +
+                                    "'>" +
+                                    "" +
+                                    "<input type='hidden' class='typeId' value='" +
+                                    v.type_id +
+                                    "'>" +
+                                    "" +
+                                    "<div class='form-group '>" +
+                                    "</div>" +
+                                    "</div>" +
+                                    "<div class='col-sm-3'>" +
+                                    "<div class='form-group '>" +
+                                    "<select class='form-control fileLang'>" +
+                                    "</select>" +
+                                    "</div>" +
+                                    "</div>" +
+                                    "<div class='col-sm-3'>" +
+                                    " <div class='form-group '>" +
+                                    "<select class='form-control fileType' disabled>" +
+                                    "</select>" +
+                                    " </div>" +
+                                    "</div>" +
+                                    " <div class='col-sm-2'>" +
+                                    " <div class='form-group '>" +
+                                    "<button class='btn btn-primary editFileDetail'><i class='fa fa-save'></i></button>" +
+                                    "</div>" +
+                                    "</div>" +
+                                    "<div class='col-sm-1'>" +
+                                    "<div class='form-group '>" +
+                                    "<button class='btn btn-danger delFileDetail'><i class='fa fa-remove'></i></button>" +
+                                    "</div>" +
+                                    "</div>" +
+                                    "</div>" +
+                                    ""
+                                )
+                                ;
+
+                            });
+
+
+                            $.each(jsonData.fileLang, function (k, v) {
+
+                                $('.getAllTypeLangBook .fileLang').append("" +
+                                    "<option value='" +
+                                    v.id +
+                                    "'>" +
+                                    v.name +
+                                    "</option>" +
+                                    "");
+                            });
+
+                            $.each(jsonData.fileType, function (k, v) {
+
+                                $('.getAllTypeLangBook .fileType').append("" +
+                                    "<option value='" +
+                                    v.id +
+                                    "'>" +
+                                    v.name +
+                                    "</option>" +
+                                    "");
+                            });
+
+                            $('.getAllTypeLangBook .row').each(function (k, v) {
+                                var langId = $(this).find('.langId').val();
+                                var typeId = $(this).find('.typeId').val();
+
+                                $(this).find('.fileLang option')
+                                    .filter(function (index) {
+                                        return $(this).val() === langId;
+                                    })
+                                    .prop('selected', true);
+
+                                $(this).find('.fileType option')
+                                    .filter(function (index) {
+                                        return $(this).val() === typeId;
+                                    })
+                                    .prop('selected', true);
+                            });
+
+                        }
+
+                    });
+
+
+                }else {
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        url: "{{url('editFileTypeLang')}}",
+                        method: "get",
+                        data: {bookId: bookId, typeId: typeId, langId: langId},
+                        success: function (e) {
+                            alert("done");
+                        }
+
+                    });
+
+                }
+                /*             */
 
 
             });
@@ -1080,12 +1255,42 @@ use App\Http\Controllers\LibraryCon;
                 }
 
 
+                var arrCheckTwo = [];
+                $('.getAllTypeLangBook .row').each(function (k, v) {
+                    var langId = $(this).find('select.fileLang option:selected').val();
+                    var typeId = $(this).find('select.fileType option:selected').val();
+                    arrCheckTwo.push(langId+""+typeId);
+                });
+
+
+                for (var t = 0; t < arrLangFilePlus.length; t++) {
+                    arrCheckTwo.push(arrLangFilePlus[t]+""+arrTypeFilePlus[t]);
+                }
+
+                var numCheckTwo = [];
+                for (var m = 0; m < arrCheckTwo.length; m++) {
+                    var numOccurences = $.grep(arrCheckTwo, function (elem) {
+                        return elem === arrCheckTwo[m];
+                    }).length;
+                    numCheckTwo.push(numOccurences);
+                }
+
+
+                var finalCheckTwo = 1;
+                for (var m = 0; m < numCheckTwo.length; m++) {
+                    if(numCheckTwo[m] > 1) {
+                        finalCheckTwo = 0;
+                        break;
+                    }
+                }
+
                 form_data.append('idBook', idBook);
                 form_data.append('lang', arrLangFilePlus);
                 form_data.append('type', arrTypeFilePlus);
                 form_data.append('arrTypeTextFilePlus', arrTypeTextFilePlus);
                 form_data.append('checkFileBookAttr', checkFileBookAttr);
                 form_data.append('f', f);
+                form_data.append('finalCheckTwo', finalCheckTwo);
                 // form_data.append('file' ,arrFilePlus);
 
 

@@ -151,14 +151,16 @@
                 <div class="avatar"><img src="{{asset('admin/img/avatar-1.jpg')}}" alt="..."
                                          class="img-fluid rounded-circle"></div>
                 <div class="title">
-                    <h1 class="h4">Mark Stephen</h1>
-                    <p>Web Designer</p>
+                    <h1 class="h4">Mohammed AlBanna</h1>
+                    <p>Admin</p>
                 </div>
             </div>
             <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
             <ul class="list-unstyled">
                 <li class="active"><a href="{{url('adminApp/home')}}"><i class="fa fa-home"></i>Home</a></li>
-                <li><a href="#dashvariants" aria-expanded="false" data-toggle="collapse"> <i
+
+                <li>
+                    <a href="#dashvariants" aria-expanded="false" data-toggle="collapse"> <i
                                 class="fa fa-book"></i>Library </a>
                     <ul id="dashvariants" class="collapse list-unstyled">
                         <li><a href="{{url('adminApp/lib/cat')}}"><i class="fa fa-tags"></i> Category</a></li>
@@ -169,8 +171,15 @@
 
                     </ul>
                 </li>
+<<<<<<< HEAD
                 <li><a href="#dashvariants2" aria-expanded="false" data-toggle="collapse"> <i
                                 class="icon-mail"></i>Fatwa </a>
+=======
+
+                <li>
+                    <a href="#dashvariants2" aria-expanded="false" data-toggle="collapse"> <i
+                                class="icon-mail"></i>Advisory opinion </a>
+>>>>>>> e4a15f31c8b732dbcee7ff9844aefbc6db0966f3
                     <ul id="dashvariants2" class="collapse list-unstyled">
                         <li><a href="{{url('adminApp/fatawi/cat')}}"><i class="fa fa-tags"></i> Category</a></li>
                         <li><a href="{{url('adminApp/addFatwa')}}"><i class="fa fa-plus-circle"></i> Add Fatwa</a></li>
@@ -181,7 +190,17 @@
 
                     </ul>
                 </li>
+                <li>
 
+                    <a href="#dashvariants3" aria-expanded="false" data-toggle="collapse"> <i
+                                class="fa fa-book"></i>Mosque </a>
+                    <ul id="dashvariants3" class="collapse list-unstyled">
+                        <li><a href="{{url('adminApp/mosque/addMosque')}}"><i class="fa fa-tags"></i> Add mosque</a></li>
+
+
+
+                    </ul>
+                </li>
             </ul>
 
             </li>

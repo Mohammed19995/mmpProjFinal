@@ -29,6 +29,9 @@ class category extends Model
     public function getCategory($id) {
         return $this::where('id' ,$id)->get();
     }
+    public function getCategory2($id) {
+        return $this::where('id' ,$id)->first();
+    }
     public function editCat($id , $name) {
         $cat = $this::findOrFail($id);
       return  $cat->update([
@@ -44,7 +47,14 @@ class category extends Model
     public static function getNameCatForBookId($booId) {
         return category::find($booId);
     }
-    public static function countBookForCat($catId) {
-        return count(Book::where('cat_id' , $catId)->get());
+    public static function countBookForCat($catId , $year) {
+        if($year == 0) {
+            return count(Book::where('cat_id' , $catId)->get());
+        }else {
+            return count(Book::where('cat_id' , $catId)
+                ->whereYear('publish', '=', $year)
+                ->get());
+        }
+
     }
 }

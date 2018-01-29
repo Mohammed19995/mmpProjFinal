@@ -40,15 +40,19 @@ use App\category;
                 <div class="col-sm-1"></div>
                 <!-- BEGIN MAIN CONTENT -->
                 <div class="main col-sm-9">
-                    <h1>Result search for <span style="color: rgba(253,73,101,0.82);font-weight: bold;"> <?php echo $keyword; ?></span></h1>
+                    <h1>Result search for <span
+                                style="color: rgba(253,73,101,0.82);font-weight: bold;"> <?php echo $keyword; ?></span>
+                    </h1>
                     <!-- BEGIN BLOG LISTING -->
                     <div id="blog-listing" class="grid-style clearfix">
                         <div class="row">
                             <?php
+                            $rowNum = 0;
                             foreach ($paginateBook as $p) {
                             $path = str_replace("public/", "", $p->img);
                             $catName = category::getNameCatForBookId($p->cat_id);
                             $classCat = "cat" . $p->cat_id;
+                            $rowNum = $rowNum + 1;
                             ?>
 
                             <div class="item col-xs-12 col-sm-6 col-md-3  <?php echo $classCat;?>">
@@ -71,6 +75,10 @@ use App\category;
                                     </h3>
                                 </div>
                             </div>
+                                <?php if($rowNum %4 == 0) {
+                                    echo "</div>";
+                                    echo "<div class='row'>";
+                                } ?>
                             <?php }
                             ?>
 
@@ -85,7 +93,7 @@ use App\category;
                     <!-- BEGIN PAGINATION -->
 
 
-                <!-- END PAGINATION -->
+                    <!-- END PAGINATION -->
 
                 </div>
                 <!-- END MAIN CONTENT -->

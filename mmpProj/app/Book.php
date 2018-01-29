@@ -47,6 +47,15 @@ class Book extends Model
         return $this::whereYear('publish', '=', $year)->get();
     }
 
+    public function getPaginateBookArchiveYear($year) {
+        return $this::whereYear('publish', '=', $year)
+            ->paginate(8);
+    }
+    public function getPaginateBookArchive($year , $cat_id) {
+        return $this::whereYear('publish', '=', $year)
+               ->where('cat_id' , $cat_id)
+               ->paginate(8);
+    }
     public function updateBookWithImg($id, $name, $cat_id, $edition, $summary, $img, $publish)
     {
 

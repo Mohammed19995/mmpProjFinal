@@ -93,9 +93,8 @@
             </div>
         </div>
     </div>
+
     <div class="container">
-
-
         <!-- Forms Section-->
 
         <section class="forms">
@@ -270,7 +269,7 @@
                                             <div class="col-sm-4">
                                                 <input type="file"
                                                        class="form-control fileLangType"
-                                                       placeholder="upload your img.."  >
+                                                       placeholder="upload your img..">
 
                                             </div>
 
@@ -442,6 +441,29 @@
                 }
 
 
+
+                var arrCheckTwo = [];
+                for (var t = 0; t < arrLang.length; t++) {
+                    arrCheckTwo.push(arrLang[t]+""+arrTypeFile[t]);
+                }
+
+                var numCheckTwo = [];
+                for (var m = 0; m < arrCheckTwo.length; m++) {
+                    var numOccurences = $.grep(arrCheckTwo, function (elem) {
+                        return elem === arrCheckTwo[m];
+                    }).length;
+                    numCheckTwo.push(numOccurences);
+                }
+
+
+                var finalCheckTwo = 1;
+                for (var m = 0; m < numCheckTwo.length; m++) {
+                    if(numCheckTwo[m] > 1) {
+                        finalCheckTwo = 0;
+                        break;
+                    }
+                }
+
                 for (var f = 0; f < arrFile.length; f++) {
                     form_data.append('arrFile' + f, arrFile[f]);
                 }
@@ -474,6 +496,7 @@
                 form_data.append('checkDataLang', checkDataLang);
                 form_data.append('checkImgBook', checkImgBook);
                 form_data.append('arrTypeText', arrTypeText);
+                form_data.append('finalCheckTwo', finalCheckTwo);
 
                 $('#myModal').modal('show');
                 $.ajaxSetup({

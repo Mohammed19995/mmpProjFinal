@@ -2,8 +2,9 @@
 
 @section('css')
     <style>
+
         .active {
-            color: #0d3625;
+            color: #0d3625!important;
         }
 
         .search {
@@ -39,8 +40,11 @@ use App\Http\Controllers\LibraryCon;
                     <h1 class="page-title">Library</h1>
 
                     <ul class="breadcrumb">
-                        <li><a href="index.html">Home </a></li>
-                        <li><a href="blog-listing1.html">library</a></li>
+                        <li><a href="">Home </a></li>
+                        <li><a href="#">Library</a></li>
+                        @if($moreDetail != 0)
+                            <li><a href="">Archives <?php echo $moreDetail;?></a></li>
+                        @endif
                     </ul>
                 </div>
             </div>
@@ -54,7 +58,7 @@ use App\Http\Controllers\LibraryCon;
 
             <div class="row" style="margin-top: 30px;">
 
-                <form id="searchform" role="search" method="post" action="{{url('resultSearch')}}">
+                <form id="searchform" role="search" method="post" action="{{url('resultSearchLib')}}">
                     {{ csrf_field() }}
                     <div class="col-sm-3"></div>
 
@@ -66,6 +70,7 @@ use App\Http\Controllers\LibraryCon;
                             <input class="form-control" value=""
                                    placeholder="Search in book name , author , outline and keyword." name="search"
                                    type="text">
+
                         </div>
 
                         <!--    <div class="widget widget_search">
@@ -92,6 +97,11 @@ use App\Http\Controllers\LibraryCon;
 
             </div>
 
+            <div class="row" style="margin-top: 25px;">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-9">
+                </div>
+            </div>
             <div class="row">
                 <!-- BEGIN SIDEBAR sidebar -->
                 <div class="sidebar col-sm-3">
@@ -103,19 +113,39 @@ use App\Http\Controllers\LibraryCon;
                         <ul class="categories">
 
 
+                            <?php
+                            if ($moreDetail == 0) {
+                            ?>
                             <a href="{{url('mmpApp/library')}}" style="cursor: pointer;"
                                data-class="allCat">
                                 <li>All</li>
 
                             </a>
                             <?php
+                            } else {
+                            ?>
+                            <a href="{{url('mmpApp/libraryAchive')."/".$moreDetail}}" style="cursor: pointer;"
+                               data-class="allCat">
+                                <li>All</li>
+
+                            </a>
+                            <?php }
+                            ?>
+
+                            <?php
 
                             foreach ($getAllCat as $c) {
-                            $countBook = category::countBookForCat($c->id);
+                            $countBook = category::countBookForCat($c->id, $moreDetail);
                             $dataClass = "." . "cat" . $c->id;
+                            if ($moreDetail == 0) {
+                                $moreUrl = $c->id;
+                            } else {
+                                $moreUrl = $moreDetail . "/" . $c->id;
+                            }
+
 
                             ?>
-                            <a class="" href="{{url('mmpApp/library')."/".$c->id}}" style="cursor: pointer;"
+                            <a class="" href="{{url('mmpApp/library')."/".$moreUrl}}" style="cursor: pointer;"
                                data-class="<?php echo $dataClass;?>">
                                 <li><?php echo $c->name;?>
                                     <span>(<?php echo $countBook;?>)</span>
@@ -128,34 +158,36 @@ use App\Http\Controllers\LibraryCon;
                     <div class="widget widget_archives">
                         <h2 class="section-title"><strong>Archives</strong></h2>
                         <div id="accordion" class="panel-group">
-                            <?php
-                            foreach ($getAllYear as $d) {
-                            $getAllBookForYear = LibraryCon::getBookFromAllYear($d);
-                            ?>
                             <div class="panel">
                                 <div class="panel-heading">
                                     <div class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion"
-                                           href="#collapseOne<?php echo $d;?>" class="">
-                                            <i class="fa fa-chevron-right"></i><?php echo $d;?>
+                                        <a href="{{url('mmpApp/library')}}" class="{{$moreDetail == 0 ? 'active':''}}">
+                                            <i class="fa fa-chevron-right"></i> All
                                         </a>
                                     </div>
                                 </div>
-                                <div id="collapseOne<?php echo $d;?>" class="panel-collapse collapse in">
+                            </div>
+                            <?php
+                            foreach ($getAllYear as $d) {
+
+                            ?>
+                            <div class="panel ">
+                                <div class="panel-heading">
+                                    <div class="panel-title ">
+                                        <a class="{{$moreDetail == $d ? 'active':''}}"
+                                                href="{{url('mmpApp/libraryAchive')."/".$d}}" >
+                                            <i class="fa fa-chevron-right "></i> <?php echo $d;?>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!--
+                                <div id="collapseOne" class="panel-collapse collapse ">
                                     <div class="panel-body">
                                         <ul>
-                                            <?php
-                                            foreach ($getAllBookForYear as $r) {
-                                            ?>
-                                            <li>
-                                                <a href={{asset("mmpApp/libraryDetail")."/".$r->id}}><?php echo $r->name;?></a>
-                                            </li>
-                                            <?php }
-                                            ?>
-
                                         </ul>
                                     </div>
                                 </div>
+                                -->
                             </div>
                             <?php }
 
@@ -173,12 +205,14 @@ use App\Http\Controllers\LibraryCon;
 
                     <!-- BEGIN BLOG LISTING -->
                     <div id="blog-listing" class="grid-style clearfix">
+                        <?php $numCol = 0; ?>
                         <div class="row">
                             <?php
                             foreach ($paginateBook as $p) {
                             $path = str_replace("public/", "", $p->img);
                             $catName = category::getNameCatForBookId($p->cat_id);
                             $classCat = "cat" . $p->cat_id;
+                            $numCol= $numCol+1;
                             ?>
 
                             <div class="item col-xs-12 col-sm-6 col-md-3  <?php echo $classCat;?>">
@@ -201,6 +235,10 @@ use App\Http\Controllers\LibraryCon;
                                     </h3>
                                 </div>
                             </div>
+                                <?php if($numCol % 4 == 0) {
+                                    echo "</div>";
+                                    echo "<div class='row'>";
+                                } ?>
                             <?php }
                             ?>
 
@@ -215,14 +253,55 @@ use App\Http\Controllers\LibraryCon;
                     <!-- BEGIN PAGINATION -->
 
                     <div class="row">
-                        <div class="col-sm-4"></div>
-                        <div class="col-sm-4">
-                            {{$paginateBook->links()}}
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-6">
+                            @if ($paginateBook->hasPages())
+                                <ul class="pagination pagination">
+                                    {{-- Previous Page Link --}}
+                                    @if ($paginateBook->onFirstPage())
+                                        <li class="disabled"><span>&laquo;</span></li>
+                                    @else
+                                        <li><a href="{{ $paginateBook->previousPageUrl() }}" rel="prev">&laquo;</a></li>
+                                    @endif
+
+                                    @if($paginateBook->currentPage() > 3)
+                                        <li class="hidden-xs"><a href="{{ $paginateBook->url(1) }}">1</a></li>
+                                    @endif
+                                    @if($paginateBook->currentPage() > 4)
+                                        <li class="disabled hidden-xs"><span>...</span></li>
+                                    @endif
+                                    @foreach(range(1, $paginateBook->lastPage()) as $i)
+                                        @if($i >= $paginateBook->currentPage() - 2 && $i <= $paginateBook->currentPage() + 2)
+                                            @if ($i == $paginateBook->currentPage())
+                                                <li class="active"><span>{{ $i }}</span></li>
+                                            @else
+                                                <li><a href="{{ $paginateBook->url($i) }}">{{ $i }}</a></li>
+                                            @endif
+                                        @endif
+                                    @endforeach
+                                    @if($paginateBook->currentPage() < $paginateBook->lastPage() - 3)
+                                        <li class="disabled hidden-xs"><span>...</span></li>
+                                    @endif
+                                    @if($paginateBook->currentPage() < $paginateBook->lastPage() - 2)
+                                        <li class="hidden-xs"><a
+                                                    href="{{ $paginateBook->url($paginateBook->lastPage()) }}">{{ $paginateBook->lastPage() }}</a>
+                                        </li>
+                                    @endif
+
+                                    {{-- Next Page Link --}}
+                                    @if ($paginateBook->hasMorePages())
+                                        <li><a href="{{ $paginateBook->nextPageUrl() }}" rel="next">&raquo;</a></li>
+                                    @else
+                                        <li class="disabled"><span>&raquo;</span></li>
+                                    @endif
+                                </ul>
+                            @endif
                         </div>
-                        <div class="col-sm-4"></div>
+                        <div class="col-sm-3"></div>
 
 
                     </div>                <!-- END PAGINATION -->
+
 
                 </div>
                 <!-- END MAIN CONTENT -->

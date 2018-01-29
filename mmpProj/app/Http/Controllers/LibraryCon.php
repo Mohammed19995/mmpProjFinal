@@ -120,6 +120,7 @@ class LibraryCon extends Controller
             'keyword' => 'required',
             'outline' => 'required',
             'checkDataLang' => 'not_in:0',
+            'finalCheckTwo' => 'not_in:0'
         ];
 
         $attributeNames = array(
@@ -150,7 +151,8 @@ class LibraryCon extends Controller
 
         $validator = Validator::make($request->all(), $rules, [
             'checkImgBook.not_in' => "The image book is required.",
-            'checkDataLang.not_in' => "Language fields is required"
+            'checkDataLang.not_in' => "Language fields is required",
+            'finalCheckTwo.not_in' => "There is duplicate in language fields"
         ]);
 
 
@@ -372,10 +374,12 @@ class LibraryCon extends Controller
         }
 
         $rule['checkFileBookAttr'] = 'not_in:0';
+        $rule['finalCheckTwo'] ='not_in:0';
 
 
         $validator = Validator::make($request->all(), $rule, [
-            'checkFileBookAttr' => 'The language and type is required'
+            'checkFileBookAttr' => 'The language and type is required' ,
+            'finalCheckTwo.not_in' => 'There is duplicate in language fields'
         ]);
 
 
@@ -433,25 +437,71 @@ class LibraryCon extends Controller
         $paginateBook = $this->objBook->getPaginateBook();
         $getAllCat = $this->obj->getAllCategory();
         $getAllYear = $this->getAllYear();
-        return view('mmpApp.library.library', ['paginateBook' => $paginateBook,'getAllYear'=>$getAllYear , 'getAllCat' => $getAllCat, 'cat' => 'all']);
+        $moreDetail = 0;
+        return view('mmpApp.library.library', ['paginateBook' => $paginateBook, 'getAllYear' => $getAllYear, 'getAllCat' => $getAllCat, 'cat' => 'all', 'moreDetail' => $moreDetail]);
     }
 
-    public function getAllYear() {
+    public function ViewBookArchive($year)
+    {
+
+        $paginateBook = $this->objBook->getPaginateBookArchiveYear($year);
+
+        // $getAllCat = $this->obj->getAllCategory();
+        $getAllCat = $this->getCatForYear($year);
+        $getAllYear = $this->getAllYear();
+        $moreDetail = $year;
+        return view('mmpApp.library.library', ['paginateBook' => $paginateBook, 'getAllYear' => $getAllYear, 'getAllCat' => $getAllCat, 'cat' => 'all', 'moreDetail' => $moreDetail]);
+
+    }
+
+    public function ViewBookCatYear($year, $cat_id)
+    {
+        $paginateBook = $this->objBook->getPaginateBookArchive($year, $cat_id);
+        //$getAllCat = $this->obj->getAllCategory();
+        $getAllCat = $this->getCatForYear($year);
+        $getAllYear = $this->getAllYear();
+        $moreDetail = $year;
+        return view('mmpApp.library.library', ['paginateBook' => $paginateBook, 'getAllYear' => $getAllYear, 'getAllCat' => $getAllCat, 'cat' => $cat_id, 'moreDetail' => $moreDetail]);
+    }
+
+    public function getAllYear()
+    {
         $getAllBook = $this->objBook->getAllBook();
         $arrYear = [];
         foreach ($getAllBook as $p) {
-           array_push($arrYear , $p->publish->format('Y'));
+            array_push($arrYear, $p->publish->format('Y'));
         }
         $arrYear = array_unique($arrYear);
 
         return $arrYear;
     }
+
     public function ViewBookCatUser($cat_id)
     {
         $paginateBook = $this->objBook->getPaginateBookByCat($cat_id);
         $getAllCat = $this->obj->getAllCategory();
         $getAllYear = $this->getAllYear();
-        return view('mmpApp.library.library', ['paginateBook' => $paginateBook,'getAllYear'=>$getAllYear , 'getAllCat' => $getAllCat, 'cat' => $cat_id]);
+        $moreDetail = 0;
+        return view('mmpApp.library.library', ['paginateBook' => $paginateBook, 'getAllYear' => $getAllYear, 'getAllCat' => $getAllCat, 'cat' => $cat_id, 'moreDetail' => $moreDetail]);
+    }
+
+    public function getCatForYear($year)
+    {
+        $arr = [];
+        $arr2 = [];
+        $objBook = new Book();
+        $objCat = new category();
+
+        foreach ($objBook->getAllBookForYear($year) as $a) {
+            array_push($arr, $a->cat_id);
+        }
+
+        $arr = array_unique($arr);
+        foreach ($arr as $p) {
+            array_push($arr2, $objCat->getCategory2($p));
+        }
+        return $arr2;
+
     }
 
     public function viewUniqueBook($id)
@@ -474,6 +524,12 @@ class LibraryCon extends Controller
 
         return view('mmpApp.library.libraryDetail', ['getBook' => $getBook, 'author' => $author, 'outline' => $outline, 'keyword' => $keyword, 'nameCat' => $nameCat, 'getAllLang' => $getAllLang,
             'getAllType' => $getAllType, 'getFileBookData' => $getFileBookData, 'similarBooks' => $similarBooks]);
+    }
+
+    public static function getCatName($id)
+    {
+        $objCat = new category();
+        return $objCat->getCategory($id);
     }
 
 

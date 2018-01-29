@@ -74,17 +74,18 @@ Route::get('downloadFile/{name}' , function($name) {
 /////////////////////   library user    //////////////////////////////
 Route::get('mmpApp/library' , 'LibraryCon@ViewBookUser');
 Route::get('mmpApp/library/{cat_id}' , 'LibraryCon@ViewBookCatUser');
+Route::get('mmpApp/library/{year}/{cat_id}' , 'LibraryCon@ViewBookCatYear');
+Route::get('mmpApp/libraryAchive/{year}' , 'LibraryCon@ViewBookArchive');
 Route::get('mmpApp/libraryDetail/{id}' , 'LibraryCon@viewUniqueBook');
-Route::post('resultSearch' , 'LibraryCon@resultSearch');
+Route::post('resultSearchLib' , 'LibraryCon@resultSearch');
 Route::get('resultSearchAuhtor/{author}' , 'LibraryCon@resultSearchAuthor');
+Route::get('d/{year}' ,'LibraryCon@getCatForYear');
+
+//////////////////////  Mosque admin    ////////////////////////
+Route::get('adminApp/mosque/addMosque' ,'MosqueCon@addMosque');
 
 
-
-
-
-
-
-
+/////////////////////////////////////////////////////////////
 
 
 

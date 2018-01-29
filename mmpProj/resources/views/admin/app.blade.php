@@ -171,15 +171,15 @@
 
                     </ul>
                 </li>
-<<<<<<< HEAD
+
                 <li><a href="#dashvariants2" aria-expanded="false" data-toggle="collapse"> <i
                                 class="icon-mail"></i>Fatwa </a>
-=======
+
 
                 <li>
                     <a href="#dashvariants2" aria-expanded="false" data-toggle="collapse"> <i
                                 class="icon-mail"></i>Advisory opinion </a>
->>>>>>> e4a15f31c8b732dbcee7ff9844aefbc6db0966f3
+
                     <ul id="dashvariants2" class="collapse list-unstyled">
                         <li><a href="{{url('adminApp/fatawi/cat')}}"><i class="fa fa-tags"></i> Category</a></li>
                         <li><a href="{{url('adminApp/addFatwa')}}"><i class="fa fa-plus-circle"></i> Add Fatwa</a></li>

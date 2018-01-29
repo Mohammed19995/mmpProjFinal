@@ -40,7 +40,7 @@
                <div class="col-sm-5">  </div>
 
                <div class="col-sm-3">
-                   <input type="submit" class="btn btn-info" value="visit advisory user"
+                   <input type="submit" class="btn btn-info" value="visit Fatwa user"
                           onclick="window.location='{{asset('mmpApp/advisory')}}';"/>
                </div>
 
@@ -267,7 +267,8 @@
                 var id_hiddenToDel = $(this).parents('tr').find('.id_hidden').val();
                 var this_row = $(this).parents('tr');
                 var r = confirm("Are you sure");
-                if (r == true) {
+                var h = confirm("That will delete all fatwa in this Category...?");
+                if (r == true && h== true) {
                     $.ajaxSetup({
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

@@ -5,6 +5,9 @@
         .active {
             color: #0d3625;
         }
+        .panel-body .muft a{
+            text-decoration:none;
+        }
     </style>
 @endsection
 <?php
@@ -19,11 +22,12 @@ use App\category;
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <h1 class="page-title">Advisory</h1>
+                    <h1 class="page-title">Fatwa</h1>
 
                     <ul class="breadcrumb">
                         <li><a href="index.html">Home </a></li>
-                        <li><a href="blog-listing1.html">Advisory</a></li>
+                        <li><a href="blog-listing1.html">Fatwa</a></li>
+                        <li><a href="#">Search</a></li>
                     </ul>
                 </div>
             </div>
@@ -42,6 +46,9 @@ use App\category;
 
                 </div>
                 <div class="col-sm-8">
+                    <div class="row" style="margin-top: 15px ;  ">
+                    <h1>Result search for <span style="color: rgba(253,73,101,0.82);font-weight: bold;"> <?php echo $keyword; ?></span></h1>
+                    </div>
                     <div class="row">
 
                         <div id="accordion" class="panel-group">
@@ -66,7 +73,24 @@ use App\category;
                                 </div>
                                 <div id="collapseOne<?php echo $arr->id; ?>" class="panel-collapse collapse">
                                     <div class="panel-body">
-                                        <?php  echo $arr->answer?>                                    </div>
+                                        <div class="row">
+
+                                            <div class="col-sm-12">
+                                                <?php   echo $arr->answer?>
+
+                                            </div>
+                                        </div>
+                                        <div class="row muft">
+                                            <div class="col-sm-3" style="  cursor: pointer; border-left: 6px solid #02baa6;
+                                                 background-color: lightgrey; margin-top: 10px; margin-left: 15px;">
+                                                <a  href="{{url('mmpApp/advisory2')."/".$arr->mufti}}">
+                                                        <span style="font-family: bold ; font-size: 1.075em; color: #172646;">
+                                                            <?php echo "Mufti : ".$arr->mufti?></span></a></div>
+                                            <div class="col-sm-9"></div>
+
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>
                             <?php  }       ?>

@@ -28,14 +28,19 @@
         .fa-plus:hover, .fa-minus:hover {
             cursor: pointer;
         }
-        #example_wrapper .dt-buttons{
-            margin-top: 30px;
-        }
-        #example_filter label input{
-            margin-right: 600px;
-            margin-top: 25px;
+
+        #example_wrapper .dt-buttons {
+            margin-top: 40px;
         }
 
+        #example_filter label {
+            display: block;
+            margin-top: 20px;
+        }
+
+        .card-body {
+            padding-top: 0px;
+        }
 
 
     </style>
@@ -50,11 +55,11 @@ use App\Http\Controllers\FatawiCon;
     <header class="page-header" style="margin-bottom: 20px">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-4"><h2 class="no-margin-bottom">View Advisory</h2></div>
+                <div class="col-sm-4"><h2 class="no-margin-bottom">View Fatwa</h2></div>
                 <div class="col-sm-5"></div>
 
                 <div class="col-sm-3">
-                    <input type="submit" class="btn btn-info" value="visit advisory user"
+                    <input type="submit" class="btn btn-info" value="visit Fatwa user"
                            onclick="window.location='{{asset('mmpApp/advisory')}}';"/>
                 </div>
 
@@ -76,7 +81,7 @@ use App\Http\Controllers\FatawiCon;
                 </div>
                 <div class="modal-body">
 
-                    <div class="row" style="margin-left: 30% ; margin-top: 10px" >
+                    <div class="row" style="margin-left: 30% ; margin-top: 10px">
                         <div class="alert alert-success success hidden">The Added is done</div>
                     </div>
 
@@ -203,47 +208,10 @@ use App\Http\Controllers\FatawiCon;
                     <div class="card">
 
                         <div class="card-header d-flex align-items-center">
-                            <h3 class="h4">View Advisory Answer</h3>
+                            <h3 class="h4">View Fatwa Answer</h3>
                         </div>
 
                         <div class="card-body">
-                            <div class="row" style="margin-top: 30px">
-                                <div class="col-sm-3">
-
-                                    <label> select category :</label>
-                                    <select class="form-control " id="m_category">
-                                        <option value="0">All</option>
-                                        <?php
-
-                                        foreach ($allCat as $arr){
-                                        ?>
-                                        <option value="<?php echo $arr->id?>"><?php echo $arr->name?></option>
-                                        <?php }?>
-
-                                    </select>
-                                </div>
-
-                                <div class="col-sm-3">
-                                </div>
-                                <div class="col-sm-3">
-                                </div>
-                                <div class="col-sm-3">
-
-                                    <label> select mfti name :</label>
-                                    <select class="form-control " id="m_category3">
-                                        <option value="0">All</option>
-                                        <?php
-
-                                        foreach ($allAdvisory as $arr){
-                                        ?>
-
-                                        <option value="<?php echo $arr->id?>"><?php echo $arr->mufti?></option>
-                                        <?php }?>
-
-                                    </select>
-                                </div>
-
-                            </div>
 
 
                             <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -272,9 +240,12 @@ use App\Http\Controllers\FatawiCon;
                                 </tfoot>
                                 <tbody>
                                 <?php
-                                foreach ($allAdvisory as $arr){?>
+                                foreach ($allAdvisory as $arr){
+                                $catName = FatawiCon::getNameCat($arr->cat_id);
+                                ?>
                                 <tr class="rr">
                                     <td class="hidden">
+                                        <span class="id_cat hidden"><?php echo $arr->cat_id ?></span>
                                         <span class="id_hidden hidden"><?php echo $arr->id ?></span>
                                         <span class="id_user hidden"><?php
                                             $userName = FatawiCon::getUserName($arr->user_id);
@@ -287,13 +258,10 @@ use App\Http\Controllers\FatawiCon;
                                     </td>
                                     <td class="question"><?php  echo $arr->question ?></td>
                                     <td class="answer"><?php  echo $arr->answer ?></td>
-                                    <td class="category"><span class="id_cat hidden"><?php echo $arr->cat_id ?></span>
-                                        <?php
+                                    <td class="category">
+                                        <?php echo $catName->name;?></td>
 
-                                        $catName = FatawiCon::getNameCat($arr->cat_id);
-                                        echo $catName->name;
 
-                                        ?></td>
                                     <td class="mufti"><?php  echo $arr->mufti ?></td>
 
                                     <td>
@@ -302,7 +270,7 @@ use App\Http\Controllers\FatawiCon;
                                                     class="fa fa-edit"> Detail & Edit</i></button>
                                     </td>
                                     <td>
-                                        <button class="btn btn-danger delete" ><i
+                                        <button class="btn btn-danger delete"><i
                                                     class="fa fa-remove"> Delete</i></button>
 
                                     </td>
@@ -337,40 +305,174 @@ use App\Http\Controllers\FatawiCon;
     <script src="{{asset('admin/dataTable/js/dataTablePdfMake.js')}}"></script>
     <script src="{{asset('admin/dataTable/js/dataTableFonts.js')}}"></script>
     <script src="{{asset('admin/dataTable/js/dataTableBtnHtml.js')}}"></script>
+    <script src="{{asset('admin/js/tagsinput.js')}}"></script>
 
     <script>
         $(document).ready(function () {
+
+            function filterColumn(i) {
+                $('#example').DataTable().column(i).search(
+                    $('#col' + i + '_filter').val()
+                ).draw();
+            }
+
+            function filterGlobal() {
+                $('#example').DataTable().search(
+                    $('#global_filter').val()
+                ).draw();
+            }
+
             $('.success').addClass('hidden');
             var table = $('#example').DataTable({
-                aLengthMenu: [
-                    [25, 50, 100, 200, -1],
-                    [25, 50, 100, 200, "All"]
-                ],
 
-                iDisplayLength: -1,
                 "scrollX": true,
-                language : {search:""},
+                language: {search: ""},
                 dom: 'Bfrtip',
-                buttons: [{
-                    extend: 'pdfHtml5',
 
+                buttons: [{
+
+                    extend: 'pdfHtml5',
                     exportOptions: {
                         rows: ':visible',
-                        columns:':visible'
+                        columns: ':visible'
 
                     },
 
-
-
                 }],
 
-                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
+
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                initComplete: function () {
+                    this.api().columns(3).every(function () {
+                        var column = this;
+                        var select = $('<select class="form-control selCatOption" style="width: 260px; margin-left:20px;float: right;"><option value="">select category</option></select>')
+                            .prependTo($('#example_filter'))
+                            .on('change', function () {
+                                var val = $.fn.dataTable.util.escapeRegex(
+                                    $(this).val()
+                                );
+                                column
+                                    .search(val ? '^' + val + '$' : '', true, false)
+                                    .draw();
+                            });
+
+
+                        $('#myModal #m_category2 option').each(function (d, j) {
+                            var selVal = $(this).val();
+                            var selText = $(this).text();
+                            select.append('<option value="' + selText + '">' + selText + '</option>')
+                        });
+                    });
+
+                }
+
+
+            });
+
+            $('#example_filter').append('' +
+                '<div class="row"  style="margin-bottom: 10px; margin-top: 10px;" >' +
+                '<div class="col-sm-12"  id="filter_global">' +
+                ' <input type="text"placeholder="Search by All" class="global_filter form-control" id="global_filter">' +
+                ' </div>' +
+                ' </div>' +
+                '<div class="row">' +
+                '<div class="col-sm-4 tr" id="filter_col2" data-column="1">' +
+                '<input type="text" placeholder="Search by Question"' +
+                'class="column_filter form-control "   id="col1_filter">' +
+                '</div>' +
+                '  <div class="col-sm-4 tr" id="filter_col2" data-column="2">' +
+                '<input type="text" placeholder="Search by Answer"' +
+                'class="column_filter form-control " id="col2_filter">' +
+                '</div>' +
+                '<div class="col-sm-4 tr" id="filter_col2" data-column="4">' +
+                '<input type="text" placeholder="Search by Mufti"' +
+                'class="column_filter form-control " id="col4_filter">' +
+                ' </div>' +
+                ' </div>' +
+
+                ''
+            );
+            $('input.column_filter').on('keyup click', function () {
+                filterColumn($(this).parents('.tr').attr('data-column'));
+            });
+            $('input.global_filter').on('keyup click', function () {
+                filterGlobal();
             });
 
             $('a.dt-button').text('');
             $('a.buttons-pdf').append("<img src='{{asset('icons/library/pdf.ico')}}' style= height='30' width='30' />");
 
-            $('#example_filter').find('label input').attr('placeholder', 'Search');
+            $('#example_filter').find('label input').hide();
+
+
+            $('#example_filter').append('<div class="container">' +
+                '<div class="row visibleCol">' +
+
+                '<label class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0" style="margin-right: 5px;">' +
+                '<input type="checkbox" checked class="custom-control-input">' +
+                '<span class="custom-control-indicator"></span>' +
+                '<span class="custom-control-description colName" >Question</span>' +
+                '</label>' +
+
+                '<label class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0" style="margin-left: 10px;">' +
+                '<input type="checkbox" checked class="custom-control-input">' +
+                '<span class="custom-control-indicator"></span>' +
+                '<span class="custom-control-description colName">Answer</span>' +
+                '</label>' +
+
+                '<label class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0"  style="margin-left: 10px;">' +
+                '<input type="checkbox" checked class="custom-control-input">' +
+                '<span class="custom-control-indicator"></span>' +
+                '<span class="custom-control-description colName">category</span>' +
+                '</label>' +
+
+                '<label class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0"  style="margin-left: 10px;">' +
+                '<input type="checkbox" checked class="custom-control-input">' +
+                '<span class="custom-control-indicator"></span>' +
+                '<span class="custom-control-description colName">Mufti</span>' +
+                '</label>' +
+
+                '</div>' +
+                '</div>' +
+                '');
+
+
+            $('#example_filter').on('change', '.visibleCol label:nth-child(1)', function () {
+                if ($(this).find('input').is(':checked')) {
+                    var column = table.column(1);
+                    column.visible(!column.visible());
+                } else {
+                    var column = table.column(1);
+                    column.visible(!column.visible());
+                }
+            });
+            $('#example_filter').on('change', '.visibleCol label:nth-child(2)', function () {
+                if ($(this).find('input').is(':checked')) {
+                    var column = table.column(2);
+                    column.visible(!column.visible());
+                } else {
+                    var column = table.column(2);
+                    column.visible(!column.visible());
+                }
+            });
+            $('#example_filter').on('change', '.visibleCol label:nth-child(3)', function () {
+                if ($(this).find('input').is(':checked')) {
+                    var column = table.column(3);
+                    column.visible(!column.visible());
+                } else {
+                    var column = table.column(3);
+                    column.visible(!column.visible());
+                }
+            });
+            $('#example_filter').on('change', '.visibleCol label:nth-child(4)', function () {
+                if ($(this).find('input').is(':checked')) {
+                    var column = table.column(4);
+                    column.visible(!column.visible());
+                } else {
+                    var column = table.column(4);
+                    column.visible(!column.visible());
+                }
+            });
 
             function printErrorMsg(msg) {
                 $(".print-error-msg").find("ul").html('');
@@ -381,92 +483,12 @@ use App\Http\Controllers\FatawiCon;
             }
 
 
-            $('#m_category').on('change', function () {
-
-                $('.rr').addClass('hidden');
-                var m_supCat = $(this).find('option:selected').val();
-                if (m_supCat == 0) {
-                    $('.rr').removeClass('hidden');
-                }
-
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
-                $.ajax({
-                    url: "{{url('getData2')}}",
-                    method: "get",
-                    data: {m_supCat: m_supCat},
-                    success: function (e) {
-                        var advisory = $.parseJSON(e);
-                        $.each(advisory, function (tk, tv) {
-
-                            $('#example tbody tr').each(function (k, v) {
-                                var idCol = $(this).find('.id_hidden').text();
-
-                                if (idCol == tv.id) {
-                                    $(this).filter('.hidden').removeClass('hidden');
-
-                                }
-
-                            });
-                        });
-
-                    }
-
-
-                });
-
-
-            });
-            $('#m_category3').on('change', function () {
-
-                $('.rr').addClass('hidden');
-                var muftiSelect = $(this).find('option:selected').text();
-                if (muftiSelect == "All") {
-                    $('.rr').removeClass('hidden');
-                }
-
-
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
-                $.ajax({
-                    url: "{{url('getMufti')}}",
-                    method: "get",
-                    data: {muftiSelect: muftiSelect},
-                    success: function (e) {
-                        var mufti = $.parseJSON(e);
-                        $.each(mufti, function (tk, tv) {
-
-
-                            $('#example tr').each(function (k, v) {
-                                var muftiName = $(this).find('.mufti').text();
-
-                                if (muftiName == tv.mufti) {
-                                    $(this).filter('.hidden').removeClass('hidden');
-
-                                }
-
-                            });
-                        });
-
-                    }
-
-
-                });
-
-
-            });
             var thisRow;
             var question2;
             var e_answer;
             var mufti2;
             var category2;
-            $('#example tbody').on('click', 'tr .edit', function ()  {
+            $('#example tbody').on('click', 'tr .edit', function () {
                 $(".print-error-msg").hide();
                 $("#myModal").modal();
                 var question = $(this).parent().parent().find('.question').text();
@@ -527,13 +549,15 @@ use App\Http\Controllers\FatawiCon;
                             mufti2.text(e_mufti);
                             answer2.text(e_answer);
                             category2.text(e_cat2);
-                         //   $("#myModal").modal('hide');
+                            //   $("#myModal").modal('hide');
                             $('.success').removeClass('hidden');
                             $('.success').show('slow');
-                            setTimeout(function() { $(".success").hide('slow'); }, 2000);
-                            setTimeout(function() {
+                            setTimeout(function () {
+                                $(".success").hide('slow');
+                            }, 1000);
+                            setTimeout(function () {
                                 $('#myModal').modal('hide');
-                            }, 3000);
+                            }, 2000);
                             $(".print-error-msg").hide();
                         } else {
                             printErrorMsg(e.error);
@@ -552,7 +576,7 @@ use App\Http\Controllers\FatawiCon;
                 var id_hide = $(this).parent().parent().find('.id_hidden').text();
                 var thisRow = $(this).parent().parent();
 
-                var r = confirm("Are you sure to delete Advisory...?");
+                var r = confirm("Are you sure to delete Fatwa...?");
                 if (r == true) {
                     $.ajaxSetup({
                         headers: {
@@ -573,7 +597,7 @@ use App\Http\Controllers\FatawiCon;
 
                 } else {
 
-                    alert("The Advisory not deleted")
+                    alert("The Fatwa not deleted")
                 }
 
             });

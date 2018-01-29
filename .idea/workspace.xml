@@ -11,65 +11,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="fatawi.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/app/fatawi.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="832">
-              <caret line="67" column="120" lean-forward="false" selection-start-line="67" selection-start-column="120" selection-end-line="67" selection-end-column="120" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FatawiCon.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/FatawiCon.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-873">
-              <caret line="92" column="118" lean-forward="false" selection-start-line="92" selection-start-column="118" selection-end-line="92" selection-end-column="118" />
-              <folding>
-                <element signature="e#40#55#0#PHP" expanded="true" />
-                <element signature="e#747#1569#0#PHP" expanded="false" />
-                <element signature="e#3580#3699#0#PHP" expanded="false" />
-                <element signature="e#4318#4470#0#PHP" expanded="false" />
-                <element signature="e#4476#4941#0#PHP" expanded="false" />
-                <element signature="e#4947#5205#0#PHP" expanded="false" />
-                <element signature="e#5211#5847#0#PHP" expanded="false" />
-                <element signature="e#6014#6174#0#PHP" expanded="false" />
-                <element signature="e#6180#7100#0#PHP" expanded="false" />
-                <element signature="e#7278#7518#0#PHP" expanded="false" />
-                <element signature="e#7523#8460#0#PHP" expanded="false" />
-                <element signature="e#8663#8911#0#PHP" expanded="false" />
-                <element signature="e#8916#9104#0#PHP" expanded="false" />
-                <element signature="e#9109#9304#0#PHP" expanded="false" />
-                <element signature="e#9309#10240#0#PHP" expanded="false" />
-                <element signature="e#10245#10369#0#PHP" expanded="false" />
-                <element signature="e#10567#10699#0#PHP" expanded="false" />
-                <element signature="e#10840#10970#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="fatwa.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/fatwa.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="184" column="85" lean-forward="false" selection-start-line="184" selection-start-column="85" selection-end-line="184" selection-end-column="85" />
+            <state relative-caret-position="374">
+              <caret line="175" column="60" lean-forward="false" selection-start-line="175" selection-start-column="60" selection-end-line="175" selection-end-column="60" />
               <folding>
-                <element signature="e#1959#1983#0#HTML" expanded="true" />
-                <element signature="e#8046#8219#0#HTML" expanded="true" />
-                <element signature="e#8391#8438#0#HTML" expanded="true" />
+                <element signature="e#1551#1576#0#HTML" expanded="true" />
+                <element signature="e#2837#2861#0#HTML" expanded="true" />
+                <element signature="e#6175#6330#0#HTML" expanded="true" />
+                <element signature="e#6503#6565#0#HTML" expanded="true" />
+                <element signature="e#6828#6985#0#HTML" expanded="true" />
+                <element signature="e#7050#7112#0#HTML" expanded="true" />
+                <element signature="e#9529#9684#0#HTML" expanded="true" />
+                <element signature="e#9852#9914#0#HTML" expanded="true" />
+                <element signature="e#10168#10325#0#HTML" expanded="true" />
+                <element signature="e#10390#10452#0#HTML" expanded="true" />
+                <element signature="e#11575#11602#0#HTML" expanded="true" />
+                <element signature="e#11735#11779#0#HTML" expanded="true" />
+                <element signature="e#12009#12044#0#HTML" expanded="true" />
+                <element signature="e#12970#12994#0#HTML" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="resultSearchAdvisory.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/resultSearchAdvisory.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -77,38 +39,8 @@
       <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mmpProj/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="131" column="28" lean-forward="false" selection-start-line="131" selection-start-column="28" selection-end-line="131" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="allAdvisory.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/allAdvisory.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="35" column="26" lean-forward="false" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addFatwa.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/addFatwa.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="47" column="78" lean-forward="false" selection-start-line="47" selection-start-column="78" selection-end-line="47" selection-end-column="78" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminPage.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Middleware/adminPage.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="36" />
+            <state relative-caret-position="221">
+              <caret line="128" column="10" lean-forward="false" selection-start-line="128" selection-start-column="7" selection-end-line="128" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -118,36 +50,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>m_category2</find>
-      <find>myModal</find>
-      <find>m_category3</find>
-      <find>advisory</find>
-      <find>count</find>
-      <find>mmpApp/fatwa</find>
-      <find>sta</find>
-      <find>mmpApp/advisory</find>
-      <find>getin</find>
-      <find>getIndex</find>
-      <find>getpa</find>
-      <find>pag</find>
-      <find>mmpApp/adviso</find>
-      <find>created</find>
-      <find>label</find>
-      <find>edi</find>
-      <find>userFa</find>
-      <find>getUserFatwa</find>
-      <find>catIdHidden</find>
-      <find>$cat</find>
-      <find>widget_categories</find>
-      <find>addCategory</find>
-      <find>links</find>
-      <find>$userFatwa</find>
-      <find>accordion</find>
-      <find>se</find>
-      <find>sea</find>
-      <find>red</find>
-      <find>re</find>
+      <find>$paginateBook</find>
+      <find>paginate</find>
       <find>viewAdvisoryCat</find>
+      <find>advi</find>
+      <find>adv</find>
+      <find>advis</find>
+      <find>getPaginateBookByCat</find>
+      <find>ViewBookCatUser</find>
+      <find>myModal</find>
+      <find>m_category</find>
+      <find>m_category2</find>
+      <find>name</find>
+      <find>id_cat</find>
+      <find>column_filter</find>
+      <find>se</find>
+      <find>search</find>
+      <find>exc</find>
+      <find>cont</find>
+      <find>link</find>
+      <find>collapse</find>
+      <find>cre</find>
+      <find>collapse in</find>
+      <find>style</find>
+      <find>forma</find>
+      <find>disp</find>
+      <find>panel-group</find>
+      <find>aa</find>
+      <find>id_toggel2</find>
+      <find>One2</find>
+      <find>collapseTwo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -170,19 +102,20 @@
         <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/library/category.blade.php" />
         <option value="$PROJECT_DIR$/mmpProj/database/migrations/2018_01_17_145109_create_privacies_table.php" />
         <option value="$PROJECT_DIR$/mmpProj/database/migrations/2018_01_15_104454_create_fatawis_table.php" />
-        <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/app.blade.php" />
-        <option value="$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mmpApp.blade.php" />
         <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/library/addBook.blade.php" />
         <option value="$PROJECT_DIR$/mmpProj/resources/views/mmpApp/library/library.blade.php" />
-        <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/category.blade.php" />
-        <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/AdvisoryNotAnswer.blade.php" />
-        <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/addFatwa.blade.php" />
         <option value="$PROJECT_DIR$/mmpProj/app/fatawi.php" />
         <option value="$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/resultSearchAdvisory.blade.php" />
-        <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/allAdvisory.blade.php" />
-        <option value="$PROJECT_DIR$/mmpProj/routes/web.php" />
-        <option value="$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/fatwa.blade.php" />
+        <option value="$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mmpApp.blade.php" />
+        <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/app.blade.php" />
+        <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/AdvisoryNotAnswer.blade.php" />
         <option value="$PROJECT_DIR$/mmpProj/app/Http/Controllers/FatawiCon.php" />
+        <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/library/viewBook.blade.php" />
+        <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/allAdvisory.blade.php" />
+        <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/category.blade.php" />
+        <option value="$PROJECT_DIR$/mmpProj/routes/web.php" />
+        <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/addFatwa.blade.php" />
+        <option value="$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/fatwa.blade.php" />
       </list>
     </option>
   </component>
@@ -214,7 +147,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -351,11 +283,12 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../account" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -392,12 +325,13 @@
       <workItem from="1516176923464" duration="24938000" />
       <workItem from="1516275407620" duration="7282000" />
       <workItem from="1516439043616" duration="21181000" />
-      <workItem from="1516615335969" duration="53854000" />
+      <workItem from="1516615335969" duration="60124000" />
+      <workItem from="1516804758404" duration="40659000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139215000" />
+    <option name="totallyTimeSpent" value="186144000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -454,22 +388,25 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mmpProj/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="65" column="54" lean-forward="true" selection-start-line="65" selection-start-column="54" selection-end-line="65" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/fatwa.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="95" column="34" lean-forward="false" selection-start-line="95" selection-start-column="34" selection-end-line="95" selection-end-column="34" />
           <folding>
-            <element signature="e#1959#1983#0#HTML" expanded="true" />
-            <element signature="e#8046#8219#0#HTML" expanded="true" />
-            <element signature="e#8391#8438#0#HTML" expanded="true" />
+            <element signature="e#1551#1576#0#HTML" expanded="true" />
+            <element signature="e#2837#2861#0#HTML" expanded="true" />
+            <element signature="e#6175#6330#0#HTML" expanded="true" />
+            <element signature="e#6503#6565#0#HTML" expanded="true" />
+            <element signature="e#6828#6985#0#HTML" expanded="true" />
+            <element signature="e#7050#7112#0#HTML" expanded="true" />
+            <element signature="e#9529#9684#0#HTML" expanded="true" />
+            <element signature="e#9852#9914#0#HTML" expanded="true" />
+            <element signature="e#10168#10325#0#HTML" expanded="true" />
+            <element signature="e#10390#10452#0#HTML" expanded="true" />
+            <element signature="e#11575#11602#0#HTML" expanded="true" />
+            <element signature="e#11735#11779#0#HTML" expanded="true" />
+            <element signature="e#12009#12044#0#HTML" expanded="true" />
+            <element signature="e#12970#12994#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -480,6 +417,26 @@
           <caret line="117" column="8" lean-forward="false" selection-start-line="117" selection-start-column="8" selection-end-line="117" selection-end-column="23" />
           <folding>
             <element signature="e#40#55#0#PHP" expanded="true" />
+            <element signature="e#747#1569#0#PHP" expanded="false" />
+            <element signature="e#1670#2256#0#PHP" expanded="false" />
+            <element signature="e#2360#2949#0#PHP" expanded="false" />
+            <element signature="e#2955#3540#0#PHP" expanded="false" />
+            <element signature="e#3867#4113#0#PHP" expanded="false" />
+            <element signature="e#4438#4590#0#PHP" expanded="false" />
+            <element signature="e#4596#5061#0#PHP" expanded="false" />
+            <element signature="e#5067#5325#0#PHP" expanded="false" />
+            <element signature="e#5331#5967#0#PHP" expanded="false" />
+            <element signature="e#6134#6294#0#PHP" expanded="false" />
+            <element signature="e#6300#7220#0#PHP" expanded="false" />
+            <element signature="e#7398#7638#0#PHP" expanded="false" />
+            <element signature="e#7643#8580#0#PHP" expanded="false" />
+            <element signature="e#8783#9031#0#PHP" expanded="false" />
+            <element signature="e#9036#9224#0#PHP" expanded="false" />
+            <element signature="e#9229#9424#0#PHP" expanded="false" />
+            <element signature="e#9429#10360#0#PHP" expanded="false" />
+            <element signature="e#10365#10489#0#PHP" expanded="false" />
+            <element signature="e#10687#10819#0#PHP" expanded="false" />
+            <element signature="e#10960#11090#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -627,13 +584,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="177" column="100" lean-forward="false" selection-start-line="177" selection-start-column="100" selection-end-line="177" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/database/migrations/2018_01_15_104454_create_fatawis_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -646,7 +596,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -654,7 +603,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -662,22 +610,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="23" lean-forward="true" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-936">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -698,84 +630,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/app/Book.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="36" column="45" lean-forward="true" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/library/viewBook.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="9" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="19" selection-end-column="9" />
-          <folding>
-            <marker date="1516459340606" expanded="true" signature="19696:19722" ph="..." />
-            <marker date="1516459340606" expanded="true" signature="21552:21570" ph="..." />
-            <marker date="1516459340606" expanded="true" signature="21927:21945" ph="..." />
-            <marker date="1516459340606" expanded="true" signature="22305:22323" ph="..." />
-            <marker date="1516459340606" expanded="true" signature="22684:22702" ph="..." />
-            <marker date="1516459340606" expanded="true" signature="40713:40732" ph="..." />
-            <marker date="1516459340606" expanded="true" signature="41586:41597" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/library/addBook.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="512" column="37" lean-forward="true" selection-start-line="510" selection-start-column="27" selection-end-line="512" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/AdminCon.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/LibraryCon.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="412" column="120" lean-forward="false" selection-start-line="412" selection-start-column="116" selection-end-line="412" selection-end-column="120" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3026">
-          <caret line="178" column="39" lean-forward="false" selection-start-line="178" selection-start-column="37" selection-end-line="178" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/AdvisoryNotAnswer.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="40" column="55" lean-forward="false" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="55" />
-          <folding>
-            <element signature="e#1022#1436#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mmpApp.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="176" column="91" lean-forward="false" selection-start-line="176" selection-start-column="63" selection-end-line="176" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/library/library.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="38" lean-forward="true" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -788,97 +646,229 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/category.blade.php">
+    <entry file="file://$PROJECT_DIR$/mmpProj/app/fatawi.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="129" column="54" lean-forward="true" selection-start-line="127" selection-start-column="31" selection-end-line="129" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/addFatwa.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="47" column="78" lean-forward="false" selection-start-line="47" selection-start-column="78" selection-end-line="47" selection-end-column="78" />
+        <state relative-caret-position="0">
+          <caret line="67" column="120" lean-forward="false" selection-start-line="67" selection-start-column="120" selection-end-line="67" selection-end-column="120" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/library/resultSearch.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-376">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="327">
+          <caret line="42" column="140" lean-forward="true" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="140" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/resultSearchAdvisory.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+        <state relative-caret-position="476">
+          <caret line="28" column="62" lean-forward="false" selection-start-line="28" selection-start-column="62" selection-end-line="28" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/allAdvisory.blade.php">
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/app.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="35" column="26" lean-forward="false" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+        <state relative-caret-position="532">
+          <caret line="175" column="110" lean-forward="false" selection-start-line="175" selection-start-column="110" selection-end-line="175" selection-end-column="110" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/app/fatawi.php">
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/AdvisoryNotAnswer.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="67" column="120" lean-forward="false" selection-start-line="67" selection-start-column="120" selection-end-line="67" selection-end-column="120" />
+        <state relative-caret-position="178">
+          <caret line="48" column="72" lean-forward="false" selection-start-line="48" selection-start-column="69" selection-end-line="48" selection-end-column="72" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/LibraryCon.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="131" column="28" lean-forward="false" selection-start-line="131" selection-start-column="28" selection-end-line="131" selection-end-column="28" />
+        <state relative-caret-position="212">
+          <caret line="450" column="60" lean-forward="false" selection-start-line="450" selection-start-column="40" selection-end-line="450" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/FatawiCon.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-873">
-          <caret line="92" column="118" lean-forward="false" selection-start-line="92" selection-start-column="118" selection-end-line="92" selection-end-column="118" />
+        <state relative-caret-position="289">
+          <caret line="107" column="74" lean-forward="false" selection-start-line="107" selection-start-column="74" selection-end-line="107" selection-end-column="74" />
           <folding>
             <element signature="e#40#55#0#PHP" expanded="true" />
             <element signature="e#747#1569#0#PHP" expanded="false" />
-            <element signature="e#3580#3699#0#PHP" expanded="false" />
-            <element signature="e#4318#4470#0#PHP" expanded="false" />
-            <element signature="e#4476#4941#0#PHP" expanded="false" />
-            <element signature="e#4947#5205#0#PHP" expanded="false" />
-            <element signature="e#5211#5847#0#PHP" expanded="false" />
-            <element signature="e#6014#6174#0#PHP" expanded="false" />
-            <element signature="e#6180#7100#0#PHP" expanded="false" />
-            <element signature="e#7278#7518#0#PHP" expanded="false" />
-            <element signature="e#7523#8460#0#PHP" expanded="false" />
-            <element signature="e#8663#8911#0#PHP" expanded="false" />
-            <element signature="e#8916#9104#0#PHP" expanded="false" />
-            <element signature="e#9109#9304#0#PHP" expanded="false" />
-            <element signature="e#9309#10240#0#PHP" expanded="false" />
-            <element signature="e#10245#10369#0#PHP" expanded="false" />
-            <element signature="e#10567#10699#0#PHP" expanded="false" />
-            <element signature="e#10840#10970#0#PHP" expanded="false" />
+            <element signature="e#1670#2256#0#PHP" expanded="false" />
+            <element signature="e#2360#2949#0#PHP" expanded="false" />
+            <element signature="e#2955#3540#0#PHP" expanded="false" />
+            <element signature="e#3867#4113#0#PHP" expanded="false" />
+            <element signature="e#4438#4590#0#PHP" expanded="false" />
+            <element signature="e#4596#5061#0#PHP" expanded="false" />
+            <element signature="e#5067#5325#0#PHP" expanded="false" />
+            <element signature="e#5331#5967#0#PHP" expanded="false" />
+            <element signature="e#6134#6294#0#PHP" expanded="false" />
+            <element signature="e#6300#7220#0#PHP" expanded="false" />
+            <element signature="e#7398#7638#0#PHP" expanded="false" />
+            <element signature="e#7643#8580#0#PHP" expanded="false" />
+            <element signature="e#8783#9031#0#PHP" expanded="false" />
+            <element signature="e#9036#9224#0#PHP" expanded="false" />
+            <element signature="e#9229#9424#0#PHP" expanded="false" />
+            <element signature="e#9429#10360#0#PHP" expanded="false" />
+            <element signature="e#10365#10489#0#PHP" expanded="false" />
+            <element signature="e#10687#10819#0#PHP" expanded="false" />
+            <element signature="e#10960#11090#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/category.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="270" column="41" lean-forward="false" selection-start-line="270" selection-start-column="41" selection-end-line="270" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/library/addBook.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6760">
+          <caret line="512" column="33" lean-forward="true" selection-start-line="510" selection-start-column="27" selection-end-line="512" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="128" column="10" lean-forward="false" selection-start-line="128" selection-start-column="7" selection-end-line="128" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/addFatwa.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="83" column="56" lean-forward="false" selection-start-line="83" selection-start-column="56" selection-end-line="83" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/allAdvisory.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2952">
+          <caret line="340" column="17" lean-forward="false" selection-start-line="340" selection-start-column="17" selection-end-line="340" selection-end-column="17" />
+          <folding>
+            <marker date="1516884221404" expanded="true" signature="13063:13107" ph="..." />
+            <marker date="1516884221404" expanded="true" signature="14116:14153" ph="..." />
+            <marker date="1516884221404" expanded="true" signature="14116:14154" ph="..." />
+            <marker date="1516884221404" expanded="true" signature="15970:15988" ph="..." />
+            <marker date="1516884221404" expanded="true" signature="16349:16367" ph="..." />
+            <marker date="1516884221404" expanded="true" signature="16726:16744" ph="..." />
+            <marker date="1516884221404" expanded="true" signature="17105:17123" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1156">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="23" lean-forward="true" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2778">
+          <caret line="178" column="39" lean-forward="false" selection-start-line="178" selection-start-column="37" selection-end-line="178" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mmpApp.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2487">
+          <caret line="176" column="98" lean-forward="false" selection-start-line="176" selection-start-column="98" selection-end-line="176" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/app/Book.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="39" column="38" lean-forward="false" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/library/viewBook.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="391" column="78" lean-forward="false" selection-start-line="391" selection-start-column="75" selection-end-line="391" selection-end-column="78" />
+          <folding>
+            <marker date="1516798517323" expanded="true" signature="19696:19722" ph="..." />
+            <marker date="1516798517323" expanded="true" signature="19936:19962" ph="..." />
+            <marker date="1516798517323" expanded="true" signature="21552:21570" ph="..." />
+            <marker date="1516798517323" expanded="true" signature="21807:21825" ph="..." />
+            <marker date="1516798517323" expanded="true" signature="21927:21945" ph="..." />
+            <marker date="1516798517323" expanded="true" signature="22182:22200" ph="..." />
+            <marker date="1516798517323" expanded="true" signature="22305:22323" ph="..." />
+            <marker date="1516798517323" expanded="true" signature="22560:22578" ph="..." />
+            <marker date="1516798517323" expanded="true" signature="22684:22702" ph="..." />
+            <marker date="1516798517323" expanded="true" signature="22939:22957" ph="..." />
+            <marker date="1516798517323" expanded="true" signature="40713:40732" ph="..." />
+            <marker date="1516798517323" expanded="true" signature="41052:41071" ph="..." />
+            <marker date="1516798517323" expanded="true" signature="41586:41597" ph="..." />
+            <marker date="1516798517323" expanded="true" signature="41925:41936" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/library/libraryDetail.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/library/library.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="191" column="21" lean-forward="true" selection-start-line="191" selection-start-column="21" selection-end-line="191" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/fatwa.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="184" column="85" lean-forward="false" selection-start-line="184" selection-start-column="85" selection-end-line="184" selection-end-column="85" />
+        <state relative-caret-position="374">
+          <caret line="175" column="60" lean-forward="false" selection-start-line="175" selection-start-column="60" selection-end-line="175" selection-end-column="60" />
           <folding>
-            <element signature="e#1959#1983#0#HTML" expanded="true" />
-            <element signature="e#8046#8219#0#HTML" expanded="true" />
-            <element signature="e#8391#8438#0#HTML" expanded="true" />
+            <element signature="e#1551#1576#0#HTML" expanded="true" />
+            <element signature="e#2837#2861#0#HTML" expanded="true" />
+            <element signature="e#6175#6330#0#HTML" expanded="true" />
+            <element signature="e#6503#6565#0#HTML" expanded="true" />
+            <element signature="e#6828#6985#0#HTML" expanded="true" />
+            <element signature="e#7050#7112#0#HTML" expanded="true" />
+            <element signature="e#9529#9684#0#HTML" expanded="true" />
+            <element signature="e#9852#9914#0#HTML" expanded="true" />
+            <element signature="e#10168#10325#0#HTML" expanded="true" />
+            <element signature="e#10390#10452#0#HTML" expanded="true" />
+            <element signature="e#11575#11602#0#HTML" expanded="true" />
+            <element signature="e#11735#11779#0#HTML" expanded="true" />
+            <element signature="e#12009#12044#0#HTML" expanded="true" />
+            <element signature="e#12970#12994#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

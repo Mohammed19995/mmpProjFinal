@@ -69,7 +69,7 @@ class FatawiCon extends Controller
         $userFatwa = "";
         if (Auth::check()) {
             $userId = Auth::user()->id;
-            $userFatwa = fatawi::where('user_id', $userId)->where('answer', '<>', "")->where('private', 1)->get();
+            $userFatwa = fatawi::where('user_id', $userId)->where('answer', '<>', "")->where('private', 1)->paginate(10 , ['*'],'r');
         }
         return view('mmpApp.fatwa.fatwa', ['allCat' => $allCat, 'allAnswer' => $allAnswer, 'userFatwa' => $userFatwa, 'id_cat' => $id_cat]);
     }
@@ -81,7 +81,7 @@ class FatawiCon extends Controller
         $userFatwa = "";
         if (Auth::check()) {
             $userId = Auth::user()->id;
-            $userFatwa = fatawi::where('user_id', $userId)->where('answer', '<>', "")->where('private', 1)->get();
+            $userFatwa = fatawi::where('user_id', $userId)->where('answer', '<>', "")->where('private', 1)->paginate(10 , ['*'],'r');
         }
 
         return view('mmpApp.fatwa.fatwa', ['allCat' => $allCat, 'allAnswer' => $allAnswer ,'userFatwa'=>$userFatwa , 'id_cat'=>$id_cat]);
@@ -94,7 +94,7 @@ class FatawiCon extends Controller
         $userFatwa = "";
         if (Auth::check()) {
             $userId = Auth::user()->id;
-            $userFatwa = fatawi::where('user_id', $userId)->where('answer', '<>', "")->where('private', 1)->get();
+            $userFatwa = fatawi::where('user_id', $userId)->where('answer', '<>', "")->where('private', 1)->paginate(10 , ['*'],'r');
         }
 
         return view('mmpApp.fatwa.fatwa', ['allCat' => $allCat, 'allAnswer' => $allAnswer ,'userFatwa'=>$userFatwa,'id_cat'=>0 ]);
@@ -105,7 +105,7 @@ class FatawiCon extends Controller
 
     public static function countAdvisoryCat($id_cat){
 
-        return count( fatawi::where('cat_id',$id_cat)->get());
+        return count( fatawi::where('cat_id',$id_cat)->where('private', 0)->get());
     }
 
                 //////////////////// search section /////////////////////////////
@@ -113,8 +113,8 @@ class FatawiCon extends Controller
 {
 
 $keyword = $request->search;
-$result = fatawi::SearchByKeyword($keyword)->get();
-return view('mmpApp.fatwa.resultSearchAdvisory',['result'=>$result] );
+$result = fatawi::SearchByKeyword($keyword)->where('private', 0)->get();
+return view('mmpApp.fatwa.resultSearchAdvisory',['result'=>$result, 'keyword'=>$keyword] );
 
 }
 

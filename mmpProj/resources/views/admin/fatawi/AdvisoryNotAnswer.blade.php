@@ -41,11 +41,11 @@ use App\Http\Controllers\FatawiCon;
     <header class="page-header" style="margin-bottom: 10px">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-4"><h2 class="no-margin-bottom">View Advisory</h2></div>
+                <div class="col-sm-4"><h2 class="no-margin-bottom">View Fatwa</h2></div>
                 <div class="col-sm-5"></div>
 
                 <div class="col-sm-3">
-                    <input type="submit" class="btn btn-info" value="visit advisory user"
+                    <input type="submit" class="btn btn-info" value="visit Fatwa user"
                            onclick="window.location='{{asset('mmpApp/advisory')}}';"/>
                 </div>
 
@@ -201,7 +201,7 @@ use App\Http\Controllers\FatawiCon;
                     <div class="card">
 
                         <div class="card-header d-flex align-items-center">
-                            <h3 class="h4">View Advisory Not Answer</h3>
+                            <h3 class="h4">View Fawa Not Answer</h3>
                         </div>
 
                         <div class="card-body">
@@ -358,10 +358,10 @@ use App\Http\Controllers\FatawiCon;
                             $('.success').show('slow');
                             setTimeout(function () {
                                 $(".success").hide('slow');
-                            }, 2000);
+                            }, 1000);
                             setTimeout(function () {
                                 $('#myModal2').modal('hide');
-                            }, 3000);
+                            }, 2000);
 
                             $(".print-error-msg").hide();
                         } else {

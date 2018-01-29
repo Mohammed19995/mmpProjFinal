@@ -170,10 +170,10 @@
                     </ul>
                 </li>
                 <li><a href="#dashvariants2" aria-expanded="false" data-toggle="collapse"> <i
-                                class="icon-mail"></i>Advisory opinion </a>
+                                class="icon-mail"></i>Fatwa </a>
                     <ul id="dashvariants2" class="collapse list-unstyled">
                         <li><a href="{{url('adminApp/fatawi/cat')}}"><i class="fa fa-tags"></i> Category</a></li>
-                        <li><a href="{{url('adminApp/addFatwa')}}"><i class="fa fa-plus-circle"></i> Add Advisory</a></li>
+                        <li><a href="{{url('adminApp/addFatwa')}}"><i class="fa fa-plus-circle"></i> Add Fatwa</a></li>
                         <li><a href="{{url('adminApp/showNotAnswer')}}"><i class="fa fa-eye"></i> View Not Answer</a></li>
                         <li><a href="{{url('adminApp/showAnswer')}}"><i class="fa fa-eye"></i> View  Answered</a></li>
 

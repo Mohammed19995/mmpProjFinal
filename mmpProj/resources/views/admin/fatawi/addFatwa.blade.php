@@ -40,11 +40,11 @@
     <header class="page-header" style="margin-bottom: 50px">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-4"> <h3 class="no-margin-bottom">Add Advisory</h3></div>
+                <div class="col-sm-4"> <h3 class="no-margin-bottom">Add Fatwa</h3></div>
                 <div class="col-sm-5"></div>
 
                 <div class="col-sm-3">
-                    <input type="submit" class="btn btn-info" value="visit advisory user"
+                    <input type="submit" class="btn btn-info" value="visit Fatwa user"
                            onclick="window.location='{{asset('mmpApp/advisory')}}';"/>
                 </div>
 
@@ -69,7 +69,7 @@
 
 
                             <div class="card-header d-flex align-items-center">
-                                <h3 class="h4">Add Advisory</h3>
+                                <h3 class="h4">Add Fatwa</h3>
                             </div>
                             <div class="row" style="margin-left: 35% ; margin-top: 20px" >
                                 <div class="alert alert-success success hidden">The Added is done</div>
@@ -81,7 +81,7 @@
                                     <ul></ul>
                                 </div>
                                 <!-- <form class="form-horizontal"> -->
-                                <form method="post" id="addBookForm" enctype="multipart/form-data">
+                                <form action="" method="">
                                     {{ csrf_field() }}
 
                                     <div class="form-group row">
@@ -130,7 +130,7 @@
                                     <div class="line"></div>
                                     <div class="form-group row">
                                         <div class="col-sm-4 offset-sm-3">
-                                            <button type="button" class="btn btn-primary addNewFatwa">Save changes
+                                            <button type="button" id="addFatwa" class="btn btn-primary addNewFatwa">Save changes
                                             </button>
                                         </div>
                                     </div>
@@ -180,6 +180,7 @@ $('.addNewFatwa').click(function () {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+
     $.ajax({
         url: "{{url('addFatwa')}}",
         method: "get",
@@ -187,7 +188,7 @@ $('.addNewFatwa').click(function () {
         success: function (e) {
 
             if(e==1){
-                alert("we must wait ElBana you must login")
+                alert("Test to  login")
             }else {
                 if ($.isEmptyObject(e.error)) {
                     alert(e.success);
@@ -218,6 +219,7 @@ $('.addNewFatwa').click(function () {
 
 
 });
+
 
         });
     </script>

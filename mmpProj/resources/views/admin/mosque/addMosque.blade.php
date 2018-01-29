@@ -5,6 +5,7 @@
         .hand {
             cursor: pointer;
         }
+
         section {
             padding: 20px;
         }
@@ -176,6 +177,15 @@
     <div class="container">
         <!-- Forms Section-->
 
+        <input type="hidden" id="countryH1">
+        <input type="hidden" id="countryH2">
+        <input type="hidden" id="cityH1">
+        <input type="hidden" id="cityH2">
+        <input type="hidden" id="latH1">
+        <input type="hidden" id="latH2">
+        <input type="hidden" id="lngH1">
+        <input type="hidden" id="lngH2">
+
         <section class="forms">
             <div class="container-fluid">
                 <div class="row">
@@ -203,8 +213,8 @@
                                     <div class="form-group row">
 
                                         {{ csrf_field() }}
-                                        <label class="col-sm-2 form-control-label ">Name</label>
-                                        <div class="col-sm-8">
+                                        <label class="col-sm-3 form-control-label ">Name</label>
+                                        <div class="col-sm-9">
                                             <input type="text" id="nameBook" name="nameBook" class="form-control">
                                         </div>
 
@@ -212,14 +222,14 @@
                                     <div class="line"></div>
 
                                     <div class="form-group row">
-                                        <label class="col-sm-2 form-control-label ">Country</label>
-                                        <div class="col-sm-4">
-                                            <input type="text" id="nameBook" name="nameBook" class="form-control">
+                                        <label class="col-sm-3 form-control-label ">Country</label>
+                                        <div class="col-sm-3">
+                                            <input type="text" id="Country" name="Country" class="form-control">
                                         </div>
 
-                                        <label class="col-sm-1 form-control-label ">City</label>
-                                        <div class="col-sm-3">
-                                            <input type="text" id="nameBook" name="nameBook" class="form-control">
+                                        <label class="col-sm-2 form-control-label ">City</label>
+                                        <div class="col-sm-4">
+                                            <input type="text" id="City" name="City" class="form-control">
                                         </div>
                                     </div>
                                     <div class="line"></div>
@@ -231,6 +241,43 @@
                                             <input type="text" id="nameBook" name="nameBook" class="form-control">
                                         </div>
 
+                                    </div>
+                                    <div class="line"></div>
+
+                                    <div class="form-group row">
+
+                                        {{ csrf_field() }}
+                                        <label class="col-sm-2 form-control-label ">Name Imam</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" id="nameBook" name="nameBook" class="form-control">
+                                        </div>
+
+                                    </div>
+                                    <div class="line"></div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 form-control-label ">Email</label>
+                                        <div class="col-sm-3">
+                                            <input type="text" id="Country" name="Country" class="form-control">
+                                        </div>
+
+                                        <label class="col-sm-3 form-control-label ">Phone</label>
+                                        <div class="col-sm-3">
+                                            <input type="text" id="City" name="City" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="line"></div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 form-control-label ">Friday prayer</label>
+                                        <div class="col-sm-3">
+                                            <input type="text" id="Country" name="Country" class="form-control">
+                                        </div>
+
+                                        <label class="col-sm-3 form-control-label ">Woman chapel</label>
+                                        <div class="col-sm-3">
+                                            <input type="text" id="City" name="City" class="form-control">
+                                        </div>
                                     </div>
                                     <div class="line"></div>
 
@@ -264,15 +311,15 @@
                                     <div class="row">
                                         <div class="col-sm-3">
                                             <label class="custom-control custom-radio hand">
-                                                <input id="radio1" name="radio" type="radio"
-                                                       class="custom-control-input" checked>
+                                                <input value="1" id="radio1" name="radio" type="radio"
+                                                       class="custom-control-input">
                                                 <span class="custom-control-indicator"></span>
                                                 <h5>current location</h5>
                                             </label>
                                         </div>
                                         <div class="col-sm-4">
                                             <label class="custom-control custom-radio hand">
-                                                <input id="radio2" name="radio"  type="radio"
+                                                <input value="2" id="radio2" name="radio" type="radio"
                                                        class="custom-control-input">
                                                 <span class="custom-control-indicator"></span>
                                                 <h5>determine location</h5>
@@ -329,6 +376,7 @@
                 center: {lat: -34.397, lng: 150.644},
                 zoom: 6
             });
+            var geocoder = new google.maps.Geocoder;
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function (position) {
                     var pos = {
@@ -347,6 +395,37 @@
                         animation: google.maps.Animation.DROP,
                         position: {lat: position.coords.latitude, lng: position.coords.longitude}
                     });
+
+                    document.getElementById('latH1').value = position.coords.latitude;
+                    document.getElementById('lngH1').value = position.coords.longitude;
+
+                    var latlng = {lat: position.coords.latitude, lng: position.coords.longitude};
+                    geocoder.geocode({'location': latlng}, function (results, status) {
+                        if (status === 'OK') {
+                            if (results[0]) {
+
+                                console.log(results[0].address_components);
+                                for (var i = 0; i < results[0].address_components.length; i++) {
+                                    for (var j = 0; j < results[0].address_components[i].types.length; j++) {
+
+                                        if (results[0].address_components[i].types[j] == "country") {
+                                            document.getElementById('countryH1').value = results[0].address_components[i].long_name;
+                                            //alert(results[0].address_components[i].long_name + " dddd");
+                                        }
+                                        if (results[0].address_components[i].types[j] == "administrative_area_level_1") {
+                                            document.getElementById('cityH1').value = results[0].address_components[i].long_name;
+                                        }
+                                    }
+                                }
+
+                            } else {
+                                window.alert('No results found');
+                            }
+                        } else {
+                            window.alert('Geocoder failed due to: ' + status);
+                        }
+                    });
+
 
                     marker1.addListener('click', function (evt) {
                         // alert(this.position);
@@ -404,9 +483,54 @@
                     lat2 = place.geometry.location.lat();
                     lng2 = place.geometry.location.lng();
 
-                    document.getElementById('lat').value = lat2;
-                    document.getElementById('lng').value = lng2;
+                    document.getElementById('latH2').value = lat2;
+                    document.getElementById('lngH2').value = lng2;
 
+                    if (document.getElementById("radio2").checked == true) {
+
+
+                        document.getElementById('lat').value = lat2;
+                        document.getElementById('lng').value = lng2;
+                    }
+
+                    ///////////////////////////////
+
+                    var latlng = {lat: lat2, lng: lng2};
+                    geocoder.geocode({'location': latlng}, function (results, status) {
+                        if (status === 'OK') {
+                            if (results[0]) {
+
+                                console.log(results[0].address_components);
+                                for (var i = 0; i < results[0].address_components.length; i++) {
+                                    for (var j = 0; j < results[0].address_components[i].types.length; j++) {
+                                        if (results[0].address_components[i].types[j] == "country") {
+                                            document.getElementById('countryH2').value = results[0].address_components[i].long_name;
+                                            //alert(results[0].address_components[i].long_name + " dddd");
+                                            if (document.getElementById("radio2").checked == true) {
+                                                document.getElementById('Country').value =results[0].address_components[i].long_name;
+                                            }
+
+                                        }
+                                        if (results[0].address_components[i].types[j] == "administrative_area_level_1") {
+                                            document.getElementById('cityH2').value = results[0].address_components[i].long_name;
+                                            if (document.getElementById("radio2").checked == true) {
+                                                document.getElementById('City').value =results[0].address_components[i].long_name;
+                                            }
+                                        }
+                                    }
+                                }
+
+                            } else {
+                                window.alert('No results found');
+                            }
+                        } else {
+                            window.alert('Geocoder failed due to: ' + status);
+                            document.getElementById('Country').value ="";
+                            document.getElementById('City').value ="";
+                        }
+                    });
+
+                    /////////////////////////////
                     // calculateAndDisplayRoute(directionsService, directionsDisplay , latCurr , lngCurr ,lat2 , lng2 );
 
                     var infoWindow = new google.maps.InfoWindow();
@@ -422,11 +546,54 @@
                     });
 
                     google.maps.event.addListener(marker2, 'dragend', function (event) {
-                        document.getElementById("lat").value = event.latLng.lat();
-                        document.getElementById("lng").value = event.latLng.lng();
+                        document.getElementById("latH2").value = event.latLng.lat();
+                        document.getElementById("lngH2").value = event.latLng.lng();
                         // infoWindow.open(map, marker3);
                         lat2 = event.latLng.lat();
                         lng2 = event.latLng.lng();
+
+                        if (document.getElementById("radio2").checked == true) {
+
+
+                            document.getElementById('lat').value = lat2;
+                            document.getElementById('lng').value = lng2;
+                        }
+
+                        var latlng = {lat: lat2, lng: lng2};
+                        geocoder.geocode({'location': latlng}, function (results, status) {
+                            if (status === 'OK') {
+                                if (results[0]) {
+
+                                    for (var i = 0; i < results[0].address_components.length; i++) {
+                                        for (var j = 0; j < results[0].address_components[i].types.length; j++) {
+                                            if (results[0].address_components[i].types[j] == "country") {
+                                                document.getElementById('countryH2').value = results[0].address_components[i].long_name;
+                                                //alert(results[0].address_components[i].long_name + " dddd");
+                                                if (document.getElementById("radio2").checked == true) {
+                                                    document.getElementById('Country').value =results[0].address_components[i].long_name;
+                                                }
+                                            }
+                                            if (results[0].address_components[i].types[j] == "administrative_area_level_1") {
+                                                document.getElementById('cityH2').value = results[0].address_components[i].long_name;
+                                                if (document.getElementById("radio2").checked == true) {
+                                                    document.getElementById('City').value =results[0].address_components[i].long_name;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                } else {
+                                    window.alert('No results found');
+                                }
+                            } else {
+                                window.alert('Geocoder failed due to: ' + status);
+                                document.getElementById('Country').value ="";
+                                document.getElementById('City').value ="";
+
+                            }
+                        });
+
+
                     });
 
 
@@ -439,6 +606,7 @@
                 });
                 map.fitBounds(bounds);
             });
+
         }
 
         /*
@@ -476,11 +644,26 @@
 
     <script>
         $(document).ready(function () {
+            $('input[type=radio][name=radio]').change(function () {
+                if (this.value == 1) {
+                    $('#Country').val($('#countryH1').val());
+                    $('#City').val($('#cityH1').val());
+                    $('#lat').val($('#latH1').val());
+                    $('#lng').val($('#lngH1').val());
+                }
+                else if (this.value == 2) {
+                    $('#Country').val($('#countryH2').val());
+                    $('#City').val($('#cityH2').val());
+                    $('#lat').val($('#latH2').val());
+                    $('#lng').val($('#lngH2').val());
+                }
+            });
+
 
         });
 
     </script>
     <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBZMoQ-GX3fBlc1bv7DQFdlwbQp9IWoRw&libraries=places&callback=initMap">
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBZMoQ-GX3fBlc1bv7DQFdlwbQp9IWoRw&language=en&libraries=places&callback=initMap">
     </script>
 @endsection

@@ -171,11 +171,13 @@
 
                     </ul>
                 </li>
+
                 <li><a href="#dashvariants2" aria-expanded="false" data-toggle="collapse"> <i
                                 class="icon-mail"></i>Fatwa </a>
 
 
                 <li>
+
 
                     <ul id="dashvariants2" class="collapse list-unstyled">
                         <li><a href="{{url('adminApp/fatawi/cat')}}"><i class="fa fa-tags"></i> Category</a></li>

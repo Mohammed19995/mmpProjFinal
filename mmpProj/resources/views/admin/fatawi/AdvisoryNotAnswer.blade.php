@@ -91,6 +91,7 @@ use App\Http\Controllers\FatawiCon;
 
                                 <textarea class="form-control question" id="m_question"></textarea>
                                 <input type="hidden" id="m_id_hide">
+                                <input type="hidden" id="m_email">
                             </div>
 
                         </div>
@@ -235,6 +236,10 @@ use App\Http\Controllers\FatawiCon;
                                         <span class="id_hidden "><?php echo $arr->id ?></span>
 
                                         <span class="created"><?php  echo $arr->created_at ?></span>
+                                        <span class="email hidden"><?php
+                                            $userName = FatawiCon::getUserName($arr->user_id);
+                                            echo $userName['email'];
+                                            ?></span>
                                     </td>
                                     <td class="question"><?php  echo $arr->question ?></td>
                                     <td class="category"><span class="id_cat hidden"><?php echo $arr->cat_id ?></span>
@@ -310,6 +315,7 @@ use App\Http\Controllers\FatawiCon;
                 var created = $(this).parent().parent().find('.created').text();
                 var id_cat = $(this).parent().parent().find('.id_cat').text();
                 var id_hidden = $(this).parent().parent().find('.id_hidden').text();
+                var email = $(this).parent().parent().find('.email').text();
                 $(".print-error-msg").hide();
 
                 $('#m_question').val(question);
@@ -324,6 +330,7 @@ use App\Http\Controllers\FatawiCon;
                     .prop('selected', true);
                 $('#m_id_hide').val(id_hidden);
                 $('#m_created').val(created);
+                $('#m_email').val(email);
                 thisRow = $(this).parent().parent();
             });
 
@@ -333,6 +340,7 @@ use App\Http\Controllers\FatawiCon;
                 var e_mufti = $('#m_mufti').val();
                 var e_cat = $('select#m_category option:selected').val();
                 var e_id_hidden = $('#m_id_hide').val();
+                var e_email =$('#m_email').val();
 
                 $.ajaxSetup({
                     headers: {
@@ -367,6 +375,26 @@ use App\Http\Controllers\FatawiCon;
                         } else {
                             printErrorMsg(e.error);
                         }
+
+                    }
+
+
+                });
+
+                $.ajax({
+                    url: "{{url('mail')}}",
+                    method: "get",
+                    data: {
+
+                        e_question: e_question,
+                        e_answer: e_answer,
+                        e_mufti: e_mufti,
+                        e_email:e_email,
+                        e_id_hidden:e_id_hidden
+
+                    },
+                    success: function (e) {
+                      alert(e)
 
                     }
 

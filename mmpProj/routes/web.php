@@ -152,7 +152,22 @@ Route::post('testImg2' , function(\Illuminate\Http\Request $request) {
 });
 
 
+Route::get('mail' , function(\Illuminate\Http\Request $request ){
+                $question = $request->e_question;
+    $answer = $request->e_answer;
+    $mufti = $request->e_mufti;
+    $email =$request->e_email;
+    $id =$request->e_id_hidden;
 
+
+        Mail::send('email.welcome',['question'=>$question , 'answer'=>$answer , 'mufti'=>$mufti] , function($message) use($email) {
+            $message->to($email, 'USER')->subject('The question is answered ');
+            $message->from('aboserage.2015@gmail.com');
+
+        });
+ echo ("The massage email has been send");
+
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -781,6 +781,7 @@
                 if(file_data == null) {
                     checkImg = 0;
                 }
+
                 form_data.append('nameMosque',  $('#nameMosque').val());
                 form_data.append('country',  $('#Country').val());
                 form_data.append('city',  $('#City').val());

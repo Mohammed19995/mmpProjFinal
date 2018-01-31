@@ -26,4 +26,11 @@ class Mosque extends Model
             'lng' =>$lng
         ]);
     }
+
+    public function getAllBook() {
+        return $this::all();
+    }
+
 }
+
+

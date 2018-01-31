@@ -326,6 +326,9 @@ return view('mmpApp.fatwa.resultSearchAdvisory',['result'=>$result, 'keyword'=>$
         return $data;
     }
 
+
+
+
     public static function getPrivacy($priId)
     {
         $data = privacy::where('id', $priId)->first();

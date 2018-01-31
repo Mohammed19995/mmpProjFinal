@@ -118,19 +118,41 @@
                                                                                                alt=''/></a></div>
                                     </div>
                                 </div>
+                                @if(auth()->check())
+                                    <div class="info col-sm-9 text-md-right right-side">
+
+
+                                        <ul style="list-style-type: none;">
+                                            <li>
+                                                <a href="{{url('userProfile')}}" style="margin-right: 20px;"><i class="fa fa-user"></i> {{Auth::user()->name}}</a>
+                                                <a href="{{ url('/logout') }}"
+                                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                    <i class="fa fa-sign-out"></i>  Logout
+                                                </a>
+
+
+                                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                                    {{ csrf_field() }}
+                                                </form>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                @else
 
                                 <div class="cell-md-9 text-md-right right-side">
                                     <div class="row">
                                         <div class="col-sm-12">
 
-                                            <span><i class="fa fa-user-plus" aria-hidden="true"></i> Register </span>
+                                            <span><a href="{{asset('register')}}"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a> </span>
 
-                                            <span style="padding-left: 10px;"><i
-                                                        class="fa fa-sign-in"></i> login </span>
+                                            <span style="padding-left: 10px;"><a href="{{asset('login')}}"><i
+                                                            class="fa fa-sign-in"></i> login </a></span>
                                         </div>
                                     </div>
 
                                 </div>
+                                @endif
                             </div>
                         </div>
                     </div>

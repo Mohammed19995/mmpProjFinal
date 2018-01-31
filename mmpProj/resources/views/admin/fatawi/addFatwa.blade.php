@@ -81,8 +81,7 @@
                                     <ul></ul>
                                 </div>
                                 <!-- <form class="form-horizontal"> -->
-                                <form action="" method="">
-                                    {{ csrf_field() }}
+
 
                                     <div class="form-group row">
                                         <label class="col-sm-2 form-control-label ">Question </label>
@@ -136,7 +135,7 @@
                                     </div>
 
 
-                                </form>
+
                             </div>
                         </div>
                     </div>

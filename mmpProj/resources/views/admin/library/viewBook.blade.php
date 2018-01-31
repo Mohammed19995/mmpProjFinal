@@ -1033,13 +1033,13 @@ use App\Http\Controllers\LibraryCon;
                                     "<div class='form-group '>" +
                                     "</div>" +
                                     "</div>" +
-                                    "<div class='col-sm-3'>" +
+                                    "<div class='col-sm-4'>" +
                                     "<div class='form-group '>" +
                                     "<select class='form-control fileLang' style='height: 45px'>" +
                                     "</select>" +
                                     "</div>" +
                                     "</div>" +
-                                    "<div class='col-sm-4'>" +
+                                    "<div class='col-sm-3'>" +
                                     " <div class='form-group '>" +
                                     "<select class='form-control fileType' style='height: 45px' disabled>" +
                                     "</select>" +

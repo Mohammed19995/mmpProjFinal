@@ -2,15 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Activity;
 use App\Mosque;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Input;
 
 class MosqueCon extends Controller
 {
     //
 
 
+    protected $objMosque;
+    protected $objActivity;
+    public function __construct() {
+        $this->objMosque = new Mosque();
+        $this->objActivity = new Activity();
+    }
 
     public function viewAddMosque() {
         return view('admin.mosque.addMosque');
@@ -77,5 +88,36 @@ class MosqueCon extends Controller
 
     }
 
+
+    public function viewActivity() {
+
+        $getBook = $this->objMosque->getAllBook();
+        $getAllActivity = $this->objActivity->getAllActivity();
+        return view('admin.mosque.activity' , ['getBook' =>$getBook , 'getAllActivity' => $getAllActivity]);
+
+    }
+
+    public function addActivity(Request $request) {
+
+        $validator = Validator::make($request->all(), [
+            'title' => 'required' ,
+            'mosqueId' => 'required',
+            'activityName' => 'required'
+        ]);
+        $attributeNames = array(
+            'mosqueId' => 'name of mosque',
+
+        );
+        $validator->setAttributeNames($attributeNames);
+
+        if ($validator->fails()) {
+            return Redirect::back()->withErrors($validator)->withInput();
+        } else {
+
+            $this->objActivity->addActivity($request->title  , $request->mosqueId , $request->activityName);
+            return Redirect::back()->withSuccess('The adding is done');
+        }
+
+    }
 
 }

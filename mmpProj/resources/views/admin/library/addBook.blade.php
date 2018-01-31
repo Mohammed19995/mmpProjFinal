@@ -137,10 +137,10 @@
                                     <div class="form-group row">
                                         <label class="col-sm-2 form-control-label">Category </label>
                                         <div class="col-sm-8">
-                                            <select id="selCat" class="form-control">
+                                            <select id="selCat" class="form-control" style="height: 45px;">
                                                 <?php foreach ($getAllCat as $p) {
                                                 ?>
-                                                <option value="<?php echo $p->id;?>"><?php echo $p->name;?></option>
+                                                <option style="line-height: 2" value="<?php echo $p->id;?>"><?php echo $p->name;?></option>
 
                                                 <?php } ?>
 
@@ -247,7 +247,7 @@
                                             <label class="col-sm-2 form-control-label">Language</label>
 
                                             <div class="col-sm-3 ">
-                                                <select class="form-control selFileLang">
+                                                <select class="form-control selFileLang" style="height: 45px;">
                                                     <?php foreach ($getAllLang as $p) {
                                                     ?>
                                                     <option value="<?php echo $p->id;?>"><?php echo $p->name;?></option>
@@ -257,7 +257,7 @@
                                             </div>
 
                                             <div class="col-sm-2 ">
-                                                <select class="form-control selTypeFile">
+                                                <select class="form-control selTypeFile" style="height: 45px;">
                                                     <?php foreach ($getAllType as $p) {
                                                     ?>
                                                     <option value="<?php echo $p->id;?>"><?php echo $p->name;?></option>

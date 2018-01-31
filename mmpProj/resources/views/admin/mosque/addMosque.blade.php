@@ -137,6 +137,8 @@
         }
 
         #pac-input {
+
+
             background-color: #fff;
             font-family: Roboto;
             font-size: 15px;
@@ -145,6 +147,7 @@
             padding: 0 11px 0 13px;
             text-overflow: ellipsis;
             width: 400px;
+
         }
 
         #pac-input:focus {
@@ -162,7 +165,48 @@
         #target {
             width: 345px;
         }
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite; /* Safari */
+            animation: spin 2s linear infinite;
+        }
 
+        /* Safari */
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .bd-example-modal-lg .modal-dialog {
+            display: table;
+            position: relative;
+            margin: 0 auto;
+            top: calc(30% - 24px);
+
+        }
+
+        .bd-example-modal-lg .modal-dialog .modal-content {
+            background-color: transparent;
+            border: none;
+
+        }
     </style>
 @endsection
 @section('content')
@@ -173,7 +217,14 @@
             <h2 class="no-margin-bottom">Add Mosque</h2>
         </div>
     </header>
+    <div class="modal  bd-example-modal-lg" id="myModal" data-backdrop="static" data-keyboard="false" tabindex="-1">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content" style="width: 48px">
 
+                <div class="loader"></div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <!-- Forms Section-->
 
@@ -200,29 +251,29 @@
                             </div>
 
                             <div class="card-body">
+
+                                <div class="alert alert-success hidden successMsg">
+                                    The Adding is done
+                                </div>
                                 <div class="alert alert-danger print-error-msg" style="display:none; margin: 10px;">
                                     <ul></ul>
                                 </div>
 
-                                <div class="successMsg alert alert-success hidden">
-                                    The adding is done
-                                </div>
                                 <!-- <form class="form-horizontal"> -->
-                                <form method="post" id="addBookForm" enctype="multipart/form-data">
+                                <form method="post" id="addMosqueForm" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <div class="form-group row">
 
-                                        {{ csrf_field() }}
-                                        <label class="col-sm-3 form-control-label ">Name</label>
+                                        <label class="col-sm-2 form-control-label ">Name</label>
                                         <div class="col-sm-9">
-                                            <input type="text" id="nameBook" name="nameBook" class="form-control">
+                                            <input type="text" id="nameMosque" name="nameMosque" class="form-control">
                                         </div>
 
                                     </div>
                                     <div class="line"></div>
 
                                     <div class="form-group row">
-                                        <label class="col-sm-3 form-control-label ">Country</label>
+                                        <label class="col-sm-2 form-control-label ">Country</label>
                                         <div class="col-sm-3">
                                             <input type="text" id="Country" name="Country" class="form-control">
                                         </div>
@@ -238,7 +289,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-2 form-control-label ">Street</label>
                                         <div class="col-sm-8">
-                                            <input type="text" id="nameBook" name="nameBook" class="form-control">
+                                            <input type="text" id="street" name="street" class="form-control">
                                         </div>
 
                                     </div>
@@ -249,43 +300,51 @@
                                         {{ csrf_field() }}
                                         <label class="col-sm-2 form-control-label ">Name Imam</label>
                                         <div class="col-sm-8">
-                                            <input type="text" id="nameBook" name="nameBook" class="form-control">
+                                            <input type="text" id="nameImam" name="nameImam" class="form-control">
                                         </div>
 
                                     </div>
                                     <div class="line"></div>
 
                                     <div class="form-group row">
-                                        <label class="col-sm-3 form-control-label ">Email</label>
+                                        <label class="col-sm-2 form-control-label ">Email</label>
                                         <div class="col-sm-3">
-                                            <input type="text" id="Country" name="Country" class="form-control">
+                                            <input type="text" id="email" name="eamil" class="form-control">
                                         </div>
 
-                                        <label class="col-sm-3 form-control-label ">Phone</label>
+                                        <label class="col-sm-2 form-control-label ">Phone</label>
                                         <div class="col-sm-3">
-                                            <input type="text" id="City" name="City" class="form-control">
+                                            <input type="text" id="phone" name="phone" class="form-control">
                                         </div>
                                     </div>
                                     <div class="line"></div>
 
                                     <div class="form-group row">
-                                        <label class="col-sm-3 form-control-label ">Friday prayer</label>
-                                        <div class="col-sm-3">
-                                            <input type="text" id="Country" name="Country" class="form-control">
+
+                                        <div class="col-sm-2"></div>
+                                        <div class="col-sm-5">
+                                            <label class="custom-control custom-checkbox hand">
+                                                <input type="checkbox" id="friday_prayer" name="friday_prayer" class="custom-control-input">
+                                                <span class="custom-control-indicator"></span>
+                                                <h5 style="margin: 3px;font-size: 15px;">Friday prayer</h5>
+                                            </label>
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <label class="custom-control custom-checkbox hand">
+                                                <input type="checkbox" id="woman_chapel" name="woman_chapel" class="custom-control-input">
+                                                <span class="custom-control-indicator"></span>
+                                                <h5 style="margin: 3px;font-size: 15px;">Woman chapel</h5>
+                                            </label>
                                         </div>
 
-                                        <label class="col-sm-3 form-control-label ">Woman chapel</label>
-                                        <div class="col-sm-3">
-                                            <input type="text" id="City" name="City" class="form-control">
-                                        </div>
+
                                     </div>
                                     <div class="line"></div>
-
                                     <div class="form-group row">
 
                                         <label class="col-sm-2 form-control-label">Image </label>
                                         <div class="col-sm-8">
-                                            <input name="fileImg" id="fileImg" type="file" accept="image/*"
+                                            <input name="img" id="img" type="file" accept="image/*"
                                                    class="form-control">
                                         </div>
 
@@ -297,12 +356,12 @@
                                     <div class="form-group row">
                                         <label class="col-sm-2 form-control-label ">Latitude</label>
                                         <div class="col-sm-3">
-                                            <input type="text" id="lat" name="nameBook" class="form-control">
+                                            <input type="text" id="lat" name="lat" class="form-control">
                                         </div>
 
                                         <label class="col-sm-2 form-control-label ">Longitude</label>
                                         <div class="col-sm-3">
-                                            <input type="text" id="lng" name="nameBook" class="form-control">
+                                            <input type="text" id="lng" name="lat" class="form-control">
                                         </div>
                                     </div>
 
@@ -314,7 +373,7 @@
                                                 <input value="1" id="radio1" name="radio" type="radio"
                                                        class="custom-control-input">
                                                 <span class="custom-control-indicator"></span>
-                                                <h5>current location</h5>
+                                                <h5 style="margin: 3px;">current location</h5>
                                             </label>
                                         </div>
                                         <div class="col-sm-4">
@@ -322,23 +381,28 @@
                                                 <input value="2" id="radio2" name="radio" type="radio"
                                                        class="custom-control-input">
                                                 <span class="custom-control-indicator"></span>
-                                                <h5>determine location</h5>
+                                                <h5 style="margin: 3px;">determine location</h5>
                                             </label>
                                         </div>
                                     </div>
-                                    <input id="pac-input" class="controls form-control" style="padding: 5px;"
-                                           type="text" placeholder="Search Box">
-                                    <div id="map"></div>
+
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <input id="pac-input" class="controls form-control" style="padding: 5px;"
+                                                   type="text" placeholder="Search Box">
+                                            <div id="map"></div>
+                                        </div>
+                                    </div>
 
 
                                     <div class="line"></div>
-
-
                                     <div class="form-group row">
-                                        <div class="col-sm-4 offset-sm-3">
-                                            <button type="button" class="btn btn-primary addNewBook">Add mosque
+                                        <div class="col-sm-4"></div>
+                                        <div class="col-sm-4">
+                                            <button type="button" class="btn btn-primary addNewmMosque">Add mosque
                                             </button>
                                         </div>
+                                        <div class="col-sm-4"></div>
                                     </div>
 
                                 </form>
@@ -368,6 +432,7 @@
         var lng1;
         var lat2;
         var lng2;
+        var currCountry;
 
         var currPosition;
 
@@ -431,7 +496,9 @@
                         // alert(this.position);
                         // alert(evt.latLng.lat());
                         //  alert(evt.latLng.lng());
-                        infoWin.setContent('<h4>AAAAAA</h4>');
+                        infoWin.setContent('<h4>' +
+                            document.getElementById('countryH1').value +
+                            '</h4>');
                         infoWin.open(map, marker1);
                         // infoWinMap.open(map , marker);
                     });
@@ -448,7 +515,7 @@
 
             var input = document.getElementById('pac-input');
             var searchBox = new google.maps.places.SearchBox(input);
-            map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+            map.controls[google.maps.ControlPosition.TOP].push(input);
             map.addListener('bounds_changed', function () {
                 searchBox.setBounds(map.getBounds());
             });
@@ -507,14 +574,14 @@
                                             document.getElementById('countryH2').value = results[0].address_components[i].long_name;
                                             //alert(results[0].address_components[i].long_name + " dddd");
                                             if (document.getElementById("radio2").checked == true) {
-                                                document.getElementById('Country').value =results[0].address_components[i].long_name;
+                                                document.getElementById('Country').value = results[0].address_components[i].long_name;
                                             }
 
                                         }
                                         if (results[0].address_components[i].types[j] == "administrative_area_level_1") {
                                             document.getElementById('cityH2').value = results[0].address_components[i].long_name;
                                             if (document.getElementById("radio2").checked == true) {
-                                                document.getElementById('City').value =results[0].address_components[i].long_name;
+                                                document.getElementById('City').value = results[0].address_components[i].long_name;
                                             }
                                         }
                                     }
@@ -525,8 +592,8 @@
                             }
                         } else {
                             window.alert('Geocoder failed due to: ' + status);
-                            document.getElementById('Country').value ="";
-                            document.getElementById('City').value ="";
+                            document.getElementById('Country').value = "";
+                            document.getElementById('City').value = "";
                         }
                     });
 
@@ -537,20 +604,24 @@
 
                     marker2.addListener('click', function (evt) {
                         infoWindow.setContent('<h4>' +
-                            evt.latLng.lat() +
-                            ' , ' +
-                            evt.latLng.lng() +
-                            '</h4>');
+                            document.getElementById('countryH2').value +
+                            '</h4>' +
+                            '<h6>' +
+                            document.getElementById('cityH2').value +
+                            '</h6>');
                         infoWindow.open(map, marker2);
 
                     });
 
                     google.maps.event.addListener(marker2, 'dragend', function (event) {
+
                         document.getElementById("latH2").value = event.latLng.lat();
                         document.getElementById("lngH2").value = event.latLng.lng();
                         // infoWindow.open(map, marker3);
                         lat2 = event.latLng.lat();
                         lng2 = event.latLng.lng();
+
+
 
                         if (document.getElementById("radio2").checked == true) {
 
@@ -570,13 +641,13 @@
                                                 document.getElementById('countryH2').value = results[0].address_components[i].long_name;
                                                 //alert(results[0].address_components[i].long_name + " dddd");
                                                 if (document.getElementById("radio2").checked == true) {
-                                                    document.getElementById('Country').value =results[0].address_components[i].long_name;
+                                                    document.getElementById('Country').value = results[0].address_components[i].long_name;
                                                 }
                                             }
                                             if (results[0].address_components[i].types[j] == "administrative_area_level_1") {
                                                 document.getElementById('cityH2').value = results[0].address_components[i].long_name;
                                                 if (document.getElementById("radio2").checked == true) {
-                                                    document.getElementById('City').value =results[0].address_components[i].long_name;
+                                                    document.getElementById('City').value = results[0].address_components[i].long_name;
                                                 }
                                             }
                                         }
@@ -587,8 +658,8 @@
                                 }
                             } else {
                                 window.alert('Geocoder failed due to: ' + status);
-                                document.getElementById('Country').value ="";
-                                document.getElementById('City').value ="";
+                                document.getElementById('Country').value = "";
+                                document.getElementById('City').value = "";
 
                             }
                         });
@@ -643,7 +714,18 @@
     </script>
 
     <script>
+
         $(document).ready(function () {
+
+            function printErrorMsg(msg) {
+                $('.successMsg').addClass('hidden');
+                $(".print-error-msg").find("ul").html('');
+                $(".print-error-msg").css('display', 'block');
+                $.each(msg, function (key, value) {
+                    $(".print-error-msg").find("ul").append('<li>' + value + '</li>');
+                });
+            }
+
             $('input[type=radio][name=radio]').change(function () {
                 if (this.value == 1) {
                     $('#Country').val($('#countryH1').val());
@@ -658,6 +740,116 @@
                     $('#lng').val($('#lngH2').val());
                 }
             });
+
+
+            $('.addNewmMosque').click(function() {
+             //   var file_data = $('#file_to_upload').prop('files')[0];
+                var form_data = new FormData();
+                var friday_prayer = 0;
+                var woman_chapel = 0;
+
+                if ($('#friday_prayer').is(':checked')) {
+                    friday_prayer = 1;
+                }
+                if ($('#woman_chapel').is(':checked')) {
+                    woman_chapel = 1;
+                }
+
+                var checkImg = 1;
+                var checkIllegalName = 1;
+                var checkIllegalCountry = 1;
+                var checkIllegalCity = 1;
+                var checkIllegalNameImam = 1;
+
+                var file_data = $('#img').prop('files')[0];
+
+                var re = new RegExp(/[[\]\(\)=,"\/\?@\:\;\$\%\#\&\*\!]/g);
+
+                if(re.test($('#nameMosque').val())) {
+                    checkIllegalName = 0;
+                }
+                if(re.test($('#Country').val())) {
+                    checkIllegalCountry = 0;
+                }
+                if(re.test($('#City').val())) {
+                    checkIllegalCity = 0;
+                }
+                if(re.test($('#nameImam').val())) {
+                    checkIllegalNameImam = 0;
+                }
+
+                if(file_data == null) {
+                    checkImg = 0;
+                }
+                form_data.append('nameMosque',  $('#nameMosque').val());
+                form_data.append('country',  $('#Country').val());
+                form_data.append('city',  $('#City').val());
+                form_data.append('street',  $('#street').val());
+                form_data.append('nameImam',  $('#nameImam').val());
+                form_data.append('email',  $('#email').val());
+                form_data.append('phone',  $('#phone').val());
+                form_data.append('friday_prayer',  friday_prayer);
+                form_data.append('woman_chapel', woman_chapel);
+                form_data.append('file',  file_data);
+                form_data.append('lat',  $('#lat').val());
+                form_data.append('lng',  $('#lng').val());
+                form_data.append('checkImg',  checkImg);
+                form_data.append('checkIllegalName',  checkIllegalName);
+                form_data.append('checkIllegalCountry',  checkIllegalCountry);
+                form_data.append('checkIllegalCity',  checkIllegalCity);
+                form_data.append('checkIllegalNameImam',  checkIllegalNameImam);
+
+                $('#myModal').modal('show');
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+
+                });
+
+                $.ajax({
+                    url: '{{url('addMosque')}}',
+                    dataType: 'text',
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    data: form_data,
+                    type: 'post',
+                    success: function (data) {
+                        $('#myModal').modal('hide');
+                        var jsonData = $.parseJSON(data);
+                        if(jsonData.success == 1) {
+
+                            $('html, body').animate({
+                                scrollTop: $(".card-header").offset().top
+                            }, 2000);
+
+                            $('.successMsg').removeClass('hidden');
+                            $(".print-error-msg").hide();
+
+                            $('#nameMosque').val('');
+                            $('#Country').val('');
+                            $('#City').val('');
+                            $('#street').val('');
+                            $('#nameImam').val('');
+                            $('#email').val('');
+                            $('#phone').val('');
+                            $('#img').val('');
+                            $('#lat').val('');
+                            $('#lng').val('')
+
+
+                        }else {
+                            $('html, body').animate({
+                                scrollTop: $(".card-header").offset().top
+                            }, 2000);
+                            printErrorMsg(jsonData.error);
+                        }
+
+                    }
+                });
+            });
+
 
 
         });

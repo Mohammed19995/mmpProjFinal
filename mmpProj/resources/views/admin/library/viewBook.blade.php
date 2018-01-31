@@ -54,6 +54,10 @@ use App\Http\Controllers\LibraryCon;
         .hand {
             cursor: pointer;
         }
+        .bootstrap-tagsinput .badge {
+            background-color: rgba(59, 53, 253, 0.82);
+            margin: 3px;
+        }
 
     </style>
 
@@ -333,6 +337,7 @@ use App\Http\Controllers\LibraryCon;
                             <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                 <thead>
                                 <tr>
+
                                     <th></th>
                                     <th>Image</th>
                                     <th>Book name</th>
@@ -372,7 +377,6 @@ use App\Http\Controllers\LibraryCon;
                                 }
                                 ?>
                                 <tr>
-
 
                                     <input type="hidden" class="bookId" value="<?php echo $p->id;?>">
                                     <input type="hidden" class="img" value="<?php echo $p->img;?>">
@@ -486,10 +490,8 @@ use App\Http\Controllers\LibraryCon;
                 "scrollX": true,
                 dom: 'Bfrtip',
                 language: {search: ""},
+
                 buttons: [
-                    'copyHtml5',
-                    'excelHtml5',
-                    'csvHtml5',
                     'pdfHtml5'
                 ],
 
@@ -823,8 +825,8 @@ use App\Http\Controllers\LibraryCon;
                             var urlPath = "{{url('downloadFile')}}"+"/"+newPath2;
                             $('.getAllTypeLangBook').append(" <div class='row'>" +
 
-                                "<div class='col-sm-2'>" +
-                                "<a target='_blank' href='" +
+                                "<div class='col-sm-1'>" +
+                                "<a style='margin: 3px;' target='_blank' href='" +
                                 urlPath +
                                 "' >" +
 
@@ -852,15 +854,15 @@ use App\Http\Controllers\LibraryCon;
                                 "<div class='form-group '>" +
                                 "</div>" +
                                 "</div>" +
-                                "<div class='col-sm-3'>" +
-                                "<div class='form-group '>" +
-                                "<select class='form-control fileLang'>" +
+                                "<div class='col-sm-4'>" +
+                                "<div class='form-group ' >" +
+                                "<select class='form-control fileLang' style='height: 45px'>" +
                                 "</select>" +
                                 "</div>" +
                                 "</div>" +
                                 "<div class='col-sm-3'>" +
                                 " <div class='form-group '>" +
-                                "<select class='form-control fileType' disabled>" +
+                                "<select class='form-control fileType' style='height: 45px' disabled>" +
                                 "</select>" +
                                 " </div>" +
                                 "</div>" +
@@ -1002,7 +1004,7 @@ use App\Http\Controllers\LibraryCon;
                                 var urlPath = "{{url('downloadFile')}}"+"/"+newPath2;
                                 $('.getAllTypeLangBook').append(" <div class='row'>" +
 
-                                    "<div class='col-sm-2'>" +
+                                    "<div class='col-sm-1'>" +
                                     "<a target='_blank' href='" +
                                     urlPath +
                                     "' >" +
@@ -1033,13 +1035,13 @@ use App\Http\Controllers\LibraryCon;
                                     "</div>" +
                                     "<div class='col-sm-3'>" +
                                     "<div class='form-group '>" +
-                                    "<select class='form-control fileLang'>" +
+                                    "<select class='form-control fileLang' style='height: 45px'>" +
                                     "</select>" +
                                     "</div>" +
                                     "</div>" +
-                                    "<div class='col-sm-3'>" +
+                                    "<div class='col-sm-4'>" +
                                     " <div class='form-group '>" +
-                                    "<select class='form-control fileType' disabled>" +
+                                    "<select class='form-control fileType' style='height: 45px' disabled>" +
                                     "</select>" +
                                     " </div>" +
                                     "</div>" +

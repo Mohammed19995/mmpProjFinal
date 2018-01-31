@@ -82,8 +82,8 @@ Route::get('resultSearchAuhtor/{author}' , 'LibraryCon@resultSearchAuthor');
 Route::get('d/{year}' ,'LibraryCon@getCatForYear');
 
 //////////////////////  Mosque admin    ////////////////////////
-Route::get('adminApp/mosque/addMosque' ,'MosqueCon@addMosque');
-
+Route::get('adminApp/mosque/addMosque' ,'MosqueCon@viewAddMosque');
+Route::post('addMosque' ,'MosqueCon@addMosque');
 
 /////////////////////////////////////////////////////////////
 

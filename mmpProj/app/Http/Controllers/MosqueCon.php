@@ -23,6 +23,10 @@ class MosqueCon extends Controller
         $this->objActivity = new Activity();
     }
 
+    public function viewMosque() {
+        $allMosque = Mosque::all();
+        return view('admin.mosque.viewMosque' , ['allMosque'=>$allMosque]);
+    }
     public function viewAddMosque() {
         return view('admin.mosque.addMosque');
     }
@@ -117,6 +121,94 @@ class MosqueCon extends Controller
             $this->objActivity->addActivity($request->title  , $request->mosqueId , $request->activityName);
             return Redirect::back()->withSuccess('The adding is done');
         }
+
+    }
+    public function editMosque(Request $request){
+        $idMosque = $request->IdMosque;
+        $validator = Validator::make($request->all(), [
+            'nameMosque' => 'required',
+            'nameImam' => 'required',
+            'email' => 'required|email|unique:mosques,email,'.$idMosque,
+            'phone' => 'required|numeric',
+
+        ]);
+        $attributeNames = array(
+            'nameMosque' => 'Mosque Name',
+            'nameImam' => 'Imam Name',
+        );
+        $validator->setAttributeNames($attributeNames);
+
+        if ($validator->passes()) {
+
+            $idMosque = $request->IdMosque;
+            $name = $request->nameMosque;
+            $imam_name = $request->nameImam;
+            $email = $request->email;
+            $phone = $request->phone;
+            $friday_prayer = $request->friday_prayer;
+            $woman_chapel = $request->woman_chapel;
+            $image = $request->file;
+            $checkImgBook = $request->checkImgBook;
+
+            $path = 0;
+            if ($checkImgBook == 1) {
+                $pathImgBook = $image->store('public/mosque/img');
+                $this->objMosque->updateMosqueWithImg($idMosque, $name, $imam_name, $email, $phone, $friday_prayer, $woman_chapel, $pathImgBook);
+                $path = $pathImgBook;
+
+            } else {
+                $this->objMosque->updateMosqueWithoutImg($idMosque, $name, $imam_name, $email, $phone, $friday_prayer, $woman_chapel);
+
+            }
+            return response()->json(['success' => 1, 'path' => $path]);
+        }
+        return response()->json(['error'=>$validator->errors()->all()]);
+    }
+    public function deleteMosque(Request $request){
+        $idMosque = $request->idMosque;
+        $this->objMosque->deleteMosque($idMosque);
+
+    }
+    public function getUpdatLocation($id){
+             $allData = Mosque::all();
+
+        return view('admin.mosque.updatLoction' ,['idMosque'=>$id ]);
+    }
+    public static function getMosqueById($MosqueId)
+    {
+        $data =  Mosque::where('id',$MosqueId)->first();
+        return $data;
+    }
+    public function updateLocation(Request $request){
+
+        $idMosque = $request->IdMosque;
+        $validator = Validator::make($request->all(), [
+
+            'country' => 'required',
+            'city' => 'required',
+            'street' => 'required',
+            'lat' => 'required|numeric',
+            'lng' => 'required|numeric',
+        ]);
+        $attributeNames = array(
+            'lat' => 'Latitude',
+            'lng' => 'Longitude',
+        );
+        $validator->setAttributeNames($attributeNames);
+
+        if ($validator->passes()) {
+
+            $idMosque = $request->idMosque;
+            $country = $request->country;
+            $city = $request->city;
+            $street = $request->street;
+            $lat = $request->lat;
+            $lng = $request->lng;
+
+                  $this->objMosque->updateLocation($idMosque,$country,$city,$street,$lat,$lng);
+            return response()->json(['success' => 1]);
+        }
+        return response()->json(['error'=>$validator->errors()->all()]);
 
     }
 

@@ -159,3 +159,10 @@ Route::get('mail', function (\Illuminate\Http\Request $request) {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('adminApp/mosque/viewMosque', 'MosqueCon@viewMosque');
+Route::post('editMosque', 'MosqueCon@editMosque');
+Route::get('deleteMosque', 'MosqueCon@deleteMosque');
+Route::get('adminApp/mosque/getUpdatLocation/{id}', 'MosqueCon@getUpdatLocation');
+Route::post('updateLocation', 'MosqueCon@updateLocation');

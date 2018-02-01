@@ -84,7 +84,8 @@ Route::get('adminApp/mosque/addMosque', 'MosqueCon@viewAddMosque');
 Route::post('addMosque', 'MosqueCon@addMosque');
 Route::get('adminApp/mosque/activity' , 'MosqueCon@viewActivity');
 Route::post('Mosque/addActivity' , 'MosqueCon@addActivity');
-
+Route::get('editActivity' ,'MosqueCon@editActivity');
+Route::get('deleteActivity' ,'MosqueCon@deleteActivity');
 /////////////////////////////////////////////////////////////
 
 

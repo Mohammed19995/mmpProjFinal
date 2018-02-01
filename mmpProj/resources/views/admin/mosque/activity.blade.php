@@ -213,6 +213,21 @@
 
         }
 
+        .modal-header, h4, .close {
+            background-color: #5cb85c;
+            color: white !important;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .modal-footer {
+            background-color: #f9f9f9;
+        }
+
+        .modal-header .close {
+            margin: 0;
+            padding: 10px;
+        }
 
     </style>
 @endsection
@@ -234,6 +249,109 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="myModal2" role="dialog">
+        <div class="modal-dialog">
+
+            <input type="hidden" value="" class="fileBookIdIncHidden">
+            <!-- Modal content-->
+            <div class="modal-content ">
+                <div class="modal-header ">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 style="margin-right: 40%"><span class="fa fa-edit"></span> Update <span
+                                style="padding-left:10px; " id="m_title0"></span><span></span></h3>
+
+                </div>
+
+
+                <div class="modal-body">
+
+
+                    <div class="alert alert-danger print-error-msg" style="display:none; margin: 10px;">
+                        <ul></ul>
+                    </div>
+
+                    <div class="alert alert-success hidden successMsg"> the updating is done.</div>
+
+
+                    <input type="hidden" id="id_hidden">
+
+                    <div class="row">
+                        <div class="col-sm-3" style="padding-right: 30px"><h3
+                                    style=" font-size: 15px ;padding-left :15px;margin-top: 7px"> Name </h3></div>
+
+                        <div class="col-sm-9">
+                            <div class="form-group ">
+                                <input type="text" class="form-control" id="m_title">
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3" style="padding-right: 30px"><h3
+                                    style=" font-size: 15px ;padding-left :15px;margin-top: 7px"> Mosque </h3></div>
+
+                        <div class="col-sm-9">
+                            <div class="form-group ">
+
+                                <input type="hidden" id="m_mosqueId" >
+
+                                <input id="m_mosque" autocomplete="off" list="mosquesM"
+                                       class="form-control" />
+
+
+                                <datalist id="mosquesM">
+                                    <option></option>
+                                    <?php
+                                    foreach ($getBook as $p) {
+                                    ?>
+                                    <option class="dataList"
+                                            id="<?php echo $p->id;?>"
+                                            value="<?php echo $p->name;?>"></option>
+                                    <?php }
+
+                                    ?>
+                                </datalist>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3" style="padding-right: 30px"><h3
+                                    style=" font-size: 15px ;padding-left :15px;margin-top: 7px">Content</h3></div>
+
+                        <div class="col-sm-9">
+                            <div class="form-group ">
+                                <textarea class="form-control" id="m_content"
+                                          style="width: 100%;height: 80px;"></textarea>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span
+                                class="fa fa-remove"></span> Cancel
+                    </button>
+
+                    <button type="button" class="btn btn-success btn-default pull-left save"><span
+                                class=" fa fa-save saveIcon"></span><i
+                                class="fa fa-spinner fa-spin loadingUpdate hidden" style="font-size:24px"></i> save
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
     <div class="container">
         <!-- Forms Section-->
 
@@ -290,7 +408,8 @@
 
                                             <input type="hidden" id="mosqueId" name="mosqueId">
 
-                                            <input id="getMosque" name="getMosque" list="mosques" class="form-control"
+                                            <input id="getMosque" name="getMosque" autocomplete="off" list="mosques"
+                                                   class="form-control"
                                                    value="{{old('getMosque')}}"/>
 
                                             <datalist id="mosques">
@@ -313,7 +432,7 @@
 
                                         <label class="col-sm-2 form-control-label ">Content</label>
                                         <div class="col-sm-9">
-                                            <textarea name="activityName"
+                                            <textarea class="form-control" name="activityName"
                                                       style="width: 100%;height: 100px;">{{old('activityName')}}</textarea>
                                         </div>
 
@@ -384,11 +503,14 @@
                                     ?>
                                     <tr>
 
-                                        <td class="name"><?php echo $a->title;?></td>
-                                        <td class="editionBook"><?php echo $mosqueName;?></td>
-                                        <td class="catBook"><?php echo $a->content;?></td>
+                                        <input class="idHidden" type="hidden" value="<?php echo $a->id;?>">
+                                        <input type="hidden" class="mosqueId" value="<?php echo $a->mosque_id;?>">
+                                        <td class="title"><?php echo $a->title;?></td>
+                                        <td class="mosque"><?php echo $mosqueName;?></td>
+                                        <td class="content"><?php echo $a->content;?></td>
                                         <td>
-                                            <button class="btn btn-primary btn-sm edit"><i class="fa fa-edit"></i> edit
+                                            <button class="btn btn-primary btn-sm edit"><i class="fa fa-edit"></i>
+                                                Edit
                                             </button>
                                         </td>
                                         <td>
@@ -428,6 +550,21 @@
 
     <script>
         $(document).ready(function () {
+
+            function printErrorMsg(msg) {
+                $('.successMsg').addClass('hidden');
+                $('.loadingUpdate').addClass('hidden');
+                $(".print-error-msg").find("ul").html('');
+                $(".print-error-msg").css('display', 'block');
+
+                $.each(msg, function (key, value) {
+
+                    $(".print-error-msg").find("ul").append('<li>' + value + '</li>');
+
+
+                });
+            }
+
             var table = $('#example').DataTable({
 
                 "scrollX": true,
@@ -479,6 +616,107 @@
                 }
             });
 
+            $('#m_mosque').on('input', function () {
+                var selectedOption = $('option.dataList[value="' + $(this).val() + '"]');
+                if (selectedOption.length) {
+                    $('#m_mosqueId').val(selectedOption.attr('id'));
+                } else {
+                    $('#m_mosqueId').val('');
+                }
+            });
+
+            var thisRowInTable ;
+            var cellTitle;
+            var cellMosque;
+            var cellMosqueId;
+            var cellContent;
+
+            $('#example').on('click', 'tr .edit', function () {
+                thisRowInTable = $(this).parents('tr');
+                $('#myModal2').modal('show');
+                $('.successMsg').addClass('hidden');
+                $(".print-error-msg").hide();
+
+                cellTitle = table.cell($(this).parents('tr').find('.title'));
+                cellMosque = table.cell($(this).parents('tr').find('.mosque'));
+                cellContent = table.cell($(this).parents('tr').find('.content'));
+
+                var title = $(this).parents('tr').find('.title').text();
+                var mosque = $(this).parents('tr').find('.mosque').text();
+                var mosqueId = $(this).parents('tr').find('.mosqueId').val();
+                var content = $(this).parents('tr').find('.content').text();
+
+                $('#myModal2').find('#id_hidden').val($(this).parents('tr').find('.idHidden').val());
+                $('#myModal2').find('#m_title0').text(title);
+                $('#myModal2').find('#m_title').val(title);
+                $('#myModal2').find('#m_mosque').val(mosque);
+                $('#myModal2').find('#m_mosqueId').val(mosqueId);
+                $('#myModal2').find('#m_content').val(content);
+            });
+
+            $('#myModal2').on('click', '.save', function () {
+                var id_hidden = $(this).parents('#myModal2').find('#id_hidden').val();
+
+                var title = $(this).parents('#myModal2').find('#m_title').val();
+                var mosqueId = $(this).parents('#myModal2').find('#m_mosqueId').val();
+                var contentData = $(this).parents('#myModal2').find('#m_content').val();
+
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                $.ajax({
+                    url:"{{url('editActivity')}}" ,
+                    method:"get" ,
+                    data:{id_hidden:id_hidden , title:title ,mosqueId:mosqueId ,contentData:contentData } ,
+                    success:function (e) {
+
+                        if(e.success == 1) {
+
+                           $(".print-error-msg").hide();
+                           $('.successMsg').removeClass('hidden');
+                            thisRowInTable.find('.mosqueId').val($('#myModal2').find('#m_mosqueId').val());
+                            cellTitle.data($('#myModal2').find('#m_title').val());
+                            cellMosque.data($('#myModal2').find('#m_mosque').val());
+                            cellContent.data($('#myModal2').find('#m_content').val());
+                        }else {
+                            printErrorMsg(e.error);
+                        }
+
+                    }
+
+                });
+            });
+
+            $('#example').on('click', 'tr .delete', function (){
+
+
+                var thisRowToDel = $(this).parents('tr');
+                var id_hidden = $(this).parents('tr').find('.idHidden').val();
+                var r = confirm("Are you sure!");
+                if (r == true) {
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        url:"{{url('deleteActivity')}}" ,
+                        method:"get" ,
+                        data:{id_hidden:id_hidden } ,
+                        success:function (e) {
+                            alert("done");
+                            table
+                                .row(thisRowToDel )
+                                .remove()
+                                .draw();
+                        }
+
+                    });
+                }
+
+            });
         });
     </script>
 @endsection

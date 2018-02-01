@@ -1,6 +1,11 @@
 @extends('admin.app')
 @section('css')
+    <link rel="stylesheet" href="{{asset('admin/dataTable/css/dataTable.css')}}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css">
     <style>
+        #example_filter label {
+            display: block;
+        }
 
         .hand {
             cursor: pointer;
@@ -207,6 +212,8 @@
             border: none;
 
         }
+
+
     </style>
 @endsection
 @section('content')
@@ -217,6 +224,8 @@
             <h2 class="no-margin-bottom">Activity</h2>
         </div>
     </header>
+
+
     <div class="modal  bd-example-modal-lg" id="myModal" data-backdrop="static" data-keyboard="false" tabindex="-1">
         <div class="modal-dialog modal-sm">
             <div class="modal-content" style="width: 48px">
@@ -262,30 +271,41 @@
                             <!-- <form class="form-horizontal"> -->
                                 <form method="post" action="{{url('Mosque/addActivity')}}">
                                     {{ csrf_field() }}
+
                                     <div class="form-group row">
 
                                         <label class="col-sm-2 form-control-label ">Title</label>
                                         <div class="col-sm-9">
 
-                                            <input type="text" class="form-control" name="title" value="{{old('title')}}">
+                                            <input type="text" class="form-control" name="title"
+                                                   value="{{old('title')}}">
                                         </div>
 
                                     </div>
 
-                                    <div class="form-group row">
+                                    <div class="form-group row ui-widget">
 
                                         <label class="col-sm-2 form-control-label ">Mosque</label>
-                                        <div class="col-sm-9">
-                                            <select class="form-control" name="mosqueId">
+                                        <div class="col-sm-9 ">
+
+                                            <input type="hidden" id="mosqueId" name="mosqueId">
+
+                                            <input id="getMosque" name="getMosque" list="mosques" class="form-control"
+                                                   value="{{old('getMosque')}}"/>
+
+                                            <datalist id="mosques">
                                                 <option></option>
                                                 <?php
                                                 foreach ($getBook as $p) {
                                                 ?>
-                                                <option {{old('mosqueId') == $p->id ? 'selected': ''}} value="<?php echo $p->id;?>"><?php echo $p->name;?></option>
+                                                <option class="dataList"
+                                                        id="<?php echo $p->id;?>"
+                                                        value="<?php echo $p->name;?>"></option>
                                                 <?php }
 
                                                 ?>
-                                            </select>
+                                            </datalist>
+
                                         </div>
 
                                     </div>
@@ -293,7 +313,8 @@
 
                                         <label class="col-sm-2 form-control-label ">Content</label>
                                         <div class="col-sm-9">
-                                            <textarea name="activityName" style="width: 100%;height: 100px;">{{old('activityName')}}</textarea>
+                                            <textarea name="activityName"
+                                                      style="width: 100%;height: 100px;">{{old('activityName')}}</textarea>
                                         </div>
 
                                     </div>
@@ -332,18 +353,18 @@
                                        width="100%">
                                     <thead>
                                     <tr>
-                                        <th>title</th>
-                                        <th>mosque</th>
-                                        <th>content</th>
+                                        <th>Title</th>
+                                        <th>Mosque</th>
+                                        <th>Content</th>
                                         <th>Edit</th>
                                         <th>Delete</th>
                                     </tr>
                                     </thead>
                                     <tfoot>
                                     <tr>
-                                        <th>title</th>
-                                        <th>mosque</th>
-                                        <th>content</th>
+                                        <th>Title</th>
+                                        <th>Mosque</th>
+                                        <th>Content</th>
                                         <th>Edit</th>
                                         <th>Delete</th>
                                     </tr>
@@ -353,12 +374,18 @@
                                     <?php
                                     foreach ($getAllActivity as $a) {
 
-                                        
+                                    $mosqueName = '';
+                                    foreach ($getBook as $e) {
+                                        if ($e->id == $a->mosque_id) {
+                                            $mosqueName = $e->name;
+                                        }
+                                    }
+
                                     ?>
                                     <tr>
 
                                         <td class="name"><?php echo $a->title;?></td>
-                                        <td class="editionBook"><?php echo $a->mosque_id;?></td>
+                                        <td class="editionBook"><?php echo $mosqueName;?></td>
                                         <td class="catBook"><?php echo $a->content;?></td>
                                         <td>
                                             <button class="btn btn-primary btn-sm edit"><i class="fa fa-edit"></i> edit
@@ -398,6 +425,7 @@
     <script src="{{asset('admin/dataTable/js/dataTablePdfMake.js')}}"></script>
     <script src="{{asset('admin/dataTable/js/dataTableFonts.js')}}"></script>
     <script src="{{asset('admin/dataTable/js/dataTableBtnHtml.js')}}"></script>
+
     <script>
         $(document).ready(function () {
             var table = $('#example').DataTable({
@@ -408,8 +436,49 @@
                 buttons: [],
                 // "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
                 "pageLength": 10,
+                initComplete: function () {
+                    this.api().columns(1).every(function () {
+                        var column = this;
+                        var select = $('<select class="form-control selCatOption" style="width: 200px;float: right;                                              "><option value="">select mosque</option></select>')
+                            .prependTo($('#example_filter'))
+                            .on('change', function () {
+                                var val = $.fn.dataTable.util.escapeRegex(
+                                    $(this).val()
+                                );
+
+                                column
+                                    .search(val ? '^' + val + '$' : '', true, false)
+                                    .draw();
+                            });
+
+
+                        /*
+                        column.data().unique().sort().each(function (d, j) {
+                            select.append('<option value="' + d + '">' + d + '</option>')
+                        });
+
+*/
+                        $('#mosques option.dataList').each(function (d, j) {
+                            var selVal = $(this).val();
+                            select.append('<option value="' + selVal + '">' + selVal + '</option>')
+                        });
+                    });
+
+                }
 
             });
+            $('#example_filter').find('label input').attr('placeholder', 'Search');
+
+
+            $('#getMosque').on('input', function () {
+                var selectedOption = $('option.dataList[value="' + $(this).val() + '"]');
+                if (selectedOption.length) {
+                    $('#mosqueId').val(selectedOption.attr('id'));
+                } else {
+                    $('#mosqueId').val('');
+                }
+            });
+
         });
     </script>
 @endsection

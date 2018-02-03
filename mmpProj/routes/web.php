@@ -59,6 +59,7 @@ Route::post('addBook', 'LibraryCon@addBook');
 Route::get('adminApp/lib/viewBook', 'LibraryCon@viewBook');
 Route::post('editBook', 'LibraryCon@editBook');
 Route::get('deleteBook', 'LibraryCon@deleteBook');
+Route::get('deleteSelBook'  ,'LibraryCon@deleteSelBook');
 Route::get('getPlusData', 'LibraryCon@getPlusData');
 Route::get('editFileTypeLang', 'LibraryCon@editFileTypeLang');
 Route::get('delFileDetail', 'LibraryCon@delFileDetail');
@@ -86,6 +87,7 @@ Route::get('adminApp/mosque/activity' , 'MosqueCon@viewActivity');
 Route::post('Mosque/addActivity' , 'MosqueCon@addActivity');
 Route::get('editActivity' ,'MosqueCon@editActivity');
 Route::get('deleteActivity' ,'MosqueCon@deleteActivity');
+Route::get('deleteSelActivity' ,'MosqueCon@deleteSelActivity');
 /////////////////////////////////////////////////////////////
 
 

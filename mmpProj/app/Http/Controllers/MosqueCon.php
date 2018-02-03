@@ -109,8 +109,6 @@ class MosqueCon extends Controller
     }
 
 
-
-
     public function addActivity(Request $request)
     {
 
@@ -154,27 +152,34 @@ class MosqueCon extends Controller
 
         if ($validator->passes()) {
 
-            $id = $request->id_hidden ;
-            $title = $request->title ;
-            $mosqueId = $request->mosqueId ;
-            $contentData = $request->contentData ;
+            $id = $request->id_hidden;
+            $title = $request->title;
+            $mosqueId = $request->mosqueId;
+            $contentData = $request->contentData;
 
             $this->objActivity->updateActivity($id, $title, $mosqueId, $contentData);
 
-            return response()->json(['success'=>1]);
+            return response()->json(['success' => 1]);
         }
 
-        return response()->json(['error'=>$validator->errors()->all()]);
+        return response()->json(['error' => $validator->errors()->all()]);
 
     }
 
-    public function deleteActivity(Request $request) {
+    public function deleteActivity(Request $request)
+    {
         $id = $request->id_hidden;
         $this->objActivity->deleteActivity($id);
     }
 
+    public function deleteSelActivity(Request $request)
+    {
 
-
+        $arrDel = $request->id_hidden;
+        for ($i=0 ; $i<count($arrDel) ; $i++) {
+            $this->objActivity->deleteActivity($arrDel[$i]);
+        }
+    }
 
 
     public function editMosque(Request $request)

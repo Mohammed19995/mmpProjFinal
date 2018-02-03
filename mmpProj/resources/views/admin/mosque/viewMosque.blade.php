@@ -31,7 +31,6 @@ use App\Http\Controllers\LibraryCon;
             cursor: pointer;
         }
 
-
         .modal-header, h4, .close {
             background-color: #5cb85c;
             color: white !important;
@@ -111,7 +110,7 @@ use App\Http\Controllers\LibraryCon;
                     </div>
                     <div class="row">
                         <div class="col-sm-3" style="padding-right: 30px"><h3
-                                    style=" font-size: 15px ;padding-left :15px;margin-top: 7px"> Emam Name </h3></div>
+                                    style=" font-size: 15px ;padding-left :15px;margin-top: 7px"> Imam Name </h3></div>
 
                         <div class="col-sm-9">
                             <div class="form-group ">
@@ -262,13 +261,15 @@ use App\Http\Controllers\LibraryCon;
 
                                     <td class="plusData" data-placement="left" data-toggle="tooltip" href="#"
                                         data-original-title="more details">
-                                        <form method="get" action="{{url('adminApp/mosque/getUpdatLocation'."/".$p->id)}}" class="form-inline">
+                                        <form method="get"
+                                              action="{{url('adminApp/mosque/getUpdatLocation'."/".$p->id)}}"
+                                              class="form-inline">
                                             <button type="submit" class=" btn btn-primary">
                                                 <i class="fa fa-map-marker fa-1x"></i>
                                             </button>
 
                                         </form>
-                                     </td>
+                                    </td>
 
                                     <td class="imgMosque"><img width="50" height="50"
                                                                src="{{asset('storage/'.$imgPath)}}"></td>
@@ -280,8 +281,8 @@ use App\Http\Controllers\LibraryCon;
                                         <div><span class="phone fa fa-phone"> <?php echo $p->phone;?> </span></div>
                                     </td>
                                     <td>
-                                        <div class="friday_prayer2"  >
-                                            <span class="hidden friday_prayer"> <?php echo $p->friday_prayer;?> </span>
+                                        <span class="hidden friday_prayer"><?php echo $p->friday_prayer;?></span>
+                                        <div class="friday_prayer2">
                                             <?php
                                             if ($p->friday_prayer == 1) {
                                                 echo "Friday pray : yes";
@@ -290,8 +291,8 @@ use App\Http\Controllers\LibraryCon;
                                             }
 
                                             ;?></div>
+                                        <span class="hidden woman_chapel"><?php echo $p->woman_chapel;?></span>
                                         <div class="woman_chapel2">
-                                            <span class="hidden woman_chapel"> <?php echo $p->woman_chapel;?> </span>
                                             <?php
                                             if ($p->woman_chapel == 1) {
                                                 echo "Woman Chapel : yes";
@@ -378,18 +379,18 @@ use App\Http\Controllers\LibraryCon;
                 $('#m_emammName').val(emamName);
                 $('#m_email').val(email);
                 $('#m_phone').val(phone);
-                     if(friday_prayer == 1){
-                    $('#friday_prayer').attr('checked', true)
-                }else {
-                    $('#friday_prayer').attr('checked', false)
+
+                if (friday_prayer == 1) {
+                    $('#friday_prayer').prop('checked', true)
+                } else {
+                    $('#friday_prayer').prop('checked', false)
                 }
 
-                if(woman_chapel == 1){
-                    $('#woman_chapel').attr('checked', true)
-                }else {
-                    $('#woman_chapel').attr('checked', false)
+                if (woman_chapel == 1) {
+                    $('#woman_chapel').prop('checked', true)
+                } else {
+                    $('#woman_chapel').prop('checked', false)
                 }
-
 
 
             });
@@ -420,7 +421,7 @@ use App\Http\Controllers\LibraryCon;
                 form_data.append('email', $('#m_email').val());
                 form_data.append('phone', $('#m_phone').val());
                 form_data.append('friday_prayer', friday_prayer);
-                form_data.append('woman_chapel',woman_chapel);
+                form_data.append('woman_chapel', woman_chapel);
                 form_data.append('file', fileImge);
                 form_data.append('checkImgBook', checkImgBook);
 
@@ -457,27 +458,29 @@ use App\Http\Controllers\LibraryCon;
                             thisRow.find('.emamName').text($('#m_emammName').val());
                             thisRow.find('.email').text($('#m_email').val());
                             thisRow.find('.phone').text($('#m_phone').val());
-                            if($('#friday_prayer').is(':checked')){
+
+                            if ($('#friday_prayer').is(':checked')) {
                                 thisRow.find('.friday_prayer2').text("Friday pray : yes");
-                            }else {
+                                thisRow.find('.friday_prayer').text(1);
+
+                            } else {
                                 thisRow.find('.friday_prayer2').text("Friday pray : No");
+                                thisRow.find('.friday_prayer').text(0);
                             }
-                            if($('#woman_chapel').is(':checked')){
+                            if ($('#woman_chapel').is(':checked')) {
                                 thisRow.find('.woman_chapel2').text("Woman Chapel : yes");
-                            }else {
+                                thisRow.find('.woman_chapel').text(1);
+                            } else {
                                 thisRow.find('.woman_chapel2').text("Woman Chapel : No");
+                                thisRow.find('.woman_chapel').text(0);
                             }
 
 
-
-
-                        }else {
+                        } else {
                             printErrorMsg(jsonVar.error);
                         }
                     }
                 });
-
-
 
 
             });
@@ -505,7 +508,7 @@ use App\Http\Controllers\LibraryCon;
                     });
 
                 } else {
-                       alert("The mousqe has been not deleted")
+                    alert("The mousqe has been not deleted")
                 }
 
 

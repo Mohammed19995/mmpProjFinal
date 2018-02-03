@@ -467,11 +467,11 @@
                             </div>
 
                             <div class="card-body">
-
                                 <table id="example" class="table table-striped table-bordered" cellspacing="0"
                                        width="100%">
                                     <thead>
                                     <tr>
+                                        <th><input type="checkbox" class="hand checkBoxDelThead" value="all" style="height: 17px;width: 17px;"></th>
                                         <th>Title</th>
                                         <th>Mosque</th>
                                         <th>Content</th>
@@ -481,6 +481,7 @@
                                     </thead>
                                     <tfoot>
                                     <tr>
+                                        <th></th>
                                         <th>Title</th>
                                         <th>Mosque</th>
                                         <th>Content</th>
@@ -505,6 +506,7 @@
 
                                         <input class="idHidden" type="hidden" value="<?php echo $a->id;?>">
                                         <input type="hidden" class="mosqueId" value="<?php echo $a->mosque_id;?>">
+                                        <td><input type="checkbox" class="hand checkBoxDel" style="width: 100%;height: 17px;"></td>
                                         <td class="title"><?php echo $a->title;?></td>
                                         <td class="mosque"><?php echo $mosqueName;?></td>
                                         <td class="content"><?php echo $a->content;?></td>
@@ -571,10 +573,12 @@
                 dom: 'Bfrtip',
                 language: {search: ""},
                 buttons: [],
+                order: [],
+                columnDefs: [ { orderable: false, targets: [0]}],
                 // "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
                 "pageLength": 10,
                 initComplete: function () {
-                    this.api().columns(1).every(function () {
+                    this.api().columns(2).every(function () {
                         var column = this;
                         var select = $('<select class="form-control selCatOption" style="width: 200px;float: right;                                              "><option value="">select mosque</option></select>')
                             .prependTo($('#example_filter'))
@@ -604,8 +608,15 @@
                 }
 
             });
+
             $('#example_filter').find('label input').attr('placeholder', 'Search');
 
+            $('#example_filter').append('<div class="row delSelRow hidden">' +
+                '<div class="col-sm-2">' +
+                '<button class="btn btn-danger btn-sm deleteSelect ">Delete selected <i class="fa fa-remove"></i></button>' +
+                '</div>' +
+                '<div class="col-sm-8"></div>' +
+                '</div>');
 
             $('#getMosque').on('input', function () {
                 var selectedOption = $('option.dataList[value="' + $(this).val() + '"]');
@@ -715,6 +726,85 @@
 
                     });
                 }
+
+            });
+
+
+
+            $('.checkBoxDelThead').on('click' , function() {
+
+                if($(this).is(':checked')) {
+                    $('#example tbody tr').each(function(k , v) {
+                        $(this).find('.checkBoxDel').prop('checked' , true);
+                        $('#example_filter').find('.delSelRow').removeClass('hidden');
+                    });
+
+                }else {
+                    $('#example tbody tr').each(function(k , v) {
+                        $(this).find('.checkBoxDel').prop('checked' , false);
+                        $('#example_filter').find('.delSelRow').addClass('hidden');
+                    });
+                }
+            });
+
+
+            $('#example ').on('click', 'tr .checkBoxDel', function (){
+
+                $('#example_filter').find('.delSelRow').removeClass('hidden');
+                var t = 0;
+                $('#example tbody tr').each(function(k , v) {
+                    if($(this).find('.checkBoxDel').is(':checked')) {
+                        t = t +1 ;
+                    }
+                });
+
+                if(t == 0 ){
+                    $('#example_filter').find('.delSelRow').addClass('hidden');
+                }
+
+            });
+
+            $('.deleteSelect').on('click', function () {
+
+
+                var thisRowToDelArr =[] ;
+                var id_hidden = [];
+                $('#example tbody tr').each(function(k , v) {
+                    if($(this).find('.checkBoxDel').is(':checked')) {
+                        thisRowToDelArr.push($(this));
+                        id_hidden.push($(this).find('.idHidden').val());
+                    }
+                });
+
+                var r = confirm("Are you sure!");
+                if (r == true) {
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        url:"{{url('deleteSelActivity')}}" ,
+                        method:"get" ,
+                        data:{id_hidden:id_hidden } ,
+                        success:function (e) {
+                            alert("done");
+                            for(var i =0 ; i<thisRowToDelArr.length ; i++) {
+                                table
+                                    .row(thisRowToDelArr[i] )
+                                    .remove()
+                                    .draw();
+                            }
+                            $('.checkBoxDelThead').prop('checked' , false);
+                            $('#example_filter').find('.delSelRow').addClass('hidden');
+
+                        }
+
+                    });
+                }
+
+
+
 
             });
         });

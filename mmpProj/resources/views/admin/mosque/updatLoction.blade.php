@@ -230,15 +230,18 @@
     </div>
     <div class="container">
         <!-- Forms Section-->
+        <?php
 
+        $MosqueData = MosqueCon::getMosqueById($idMosque);
+        ?>
         <input type="hidden" id="countryH1">
-        <input type="hidden" id="countryH2">
+        <input type="hidden" id="countryH2" value="<?php echo $MosqueData->country;?>">
         <input type="hidden" id="cityH1">
-        <input type="hidden" id="cityH2">
+        <input type="hidden" id="cityH2" value="<?php echo $MosqueData->city;?>">
         <input type="hidden" id="latH1">
-        <input type="hidden" id="latH2">
+        <input type="hidden" id="latH2" value="<?php echo $MosqueData->lat;?>">
         <input type="hidden" id="lngH1">
-        <input type="hidden" id="lngH2">
+        <input type="hidden" id="lngH2" value="<?php echo $MosqueData->lng;?>">
 
         <section class="forms">
             <div class="container-fluid">
@@ -263,8 +266,8 @@
                                 </div>
                             <?php
 
-                                $MosqueData = MosqueCon::getMosqueById($idMosque);
-?>
+                            $MosqueData = MosqueCon::getMosqueById($idMosque);
+                            ?>
                             <!-- <form class="form-horizontal"> -->
                                 <form method="post" id="addMosqueForm" enctype="multipart/form-data">
                                     {{ csrf_field() }}
@@ -272,8 +275,10 @@
 
                                         <label class="col-sm-2 form-control-label ">Name</label>
                                         <div class="col-sm-9">
-                                            <input type="text" disabled id="nameMosque" name="nameMosque" value="<?php echo $MosqueData->name?>" class="form-control">
-                                            <input type="hidden" disabled id="idMosque" name="idMosque" value="<?php echo $MosqueData->id?>" class="form-control">
+                                            <input type="text" disabled id="nameMosque" name="nameMosque"
+                                                   value="<?php echo $MosqueData->name?>" class="form-control">
+                                            <input type="hidden" disabled id="idMosque" name="idMosque"
+                                                   value="<?php echo $MosqueData->id?>" class="form-control">
 
                                         </div>
 
@@ -283,12 +288,14 @@
                                     <div class="form-group row">
                                         <label class="col-sm-2 form-control-label ">Country</label>
                                         <div class="col-sm-3">
-                                            <input type="text" id="Country"  value="<?php echo $MosqueData->country?>" name="Country" class="form-control">
+                                            <input type="text" id="Country" value="<?php echo $MosqueData->country?>"
+                                                   name="Country" class="form-control">
                                         </div>
 
                                         <label class="col-sm-2 form-control-label ">City</label>
                                         <div class="col-sm-4">
-                                            <input type="text" id="City" value="<?php echo $MosqueData->city?>" name="City" class="form-control">
+                                            <input type="text" id="City" value="<?php echo $MosqueData->city?>"
+                                                   name="City" class="form-control">
                                         </div>
                                     </div>
                                     <div class="line"></div>
@@ -297,7 +304,8 @@
                                     <div class="form-group row">
                                         <label class="col-sm-2 form-control-label ">Street</label>
                                         <div class="col-sm-8">
-                                            <input type="text" id="street" value="<?php echo $MosqueData->street?>" name="street" class="form-control">
+                                            <input type="text" id="street" value="<?php echo $MosqueData->street?>"
+                                                   name="street" class="form-control">
                                         </div>
 
                                     </div>
@@ -307,12 +315,14 @@
                                     <div class="form-group row">
                                         <label class="col-sm-2 form-control-label ">Latitude</label>
                                         <div class="col-sm-3">
-                                            <input type="text" id="lat"  value="<?php echo $MosqueData->lat?>"name="lat" class="form-control">
+                                            <input type="text" id="lat" value="<?php echo $MosqueData->lat?>" name="lat"
+                                                   class="form-control">
                                         </div>
 
                                         <label class="col-sm-2 form-control-label ">Longitude</label>
                                         <div class="col-sm-3">
-                                            <input type="text" id="lng"  value="<?php echo $MosqueData->lng?>" name="lat" class="form-control">
+                                            <input type="text" id="lng" value="<?php echo $MosqueData->lng?>" name="lat"
+                                                   class="form-control">
                                         </div>
                                     </div>
 
@@ -371,7 +381,6 @@
 
         <!-- Page Footer-->
     </div>
-
 @endsection
 
 
@@ -386,7 +395,6 @@
         var lat2;
         var lng2;
         var currCountry;
-
         var currPosition;
 
         function initMap() {
@@ -395,14 +403,20 @@
                 zoom: 6
             });
             var geocoder = new google.maps.Geocoder;
+
+
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function (position) {
                     var pos = {
                         lat: position.coords.latitude,
                         lng: position.coords.longitude
                     };
+                    var currPosition = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
 
-                    map.setCenter(pos);
+                    //map.setCenter(pos);
                     var infoWin = new google.maps.InfoWindow();
 
                     lat1 = position.coords.latitude;
@@ -473,6 +487,88 @@
                 searchBox.setBounds(map.getBounds());
             });
 
+            var point = new google.maps.LatLng(
+                parseFloat(document.getElementById('lat').value),
+                parseFloat(document.getElementById('lng').value));
+
+            marker2 = new google.maps.Marker({
+                map: map,
+                draggable: true,
+                animation: google.maps.Animation.DROP,
+                icon: 'http://www.googlemapsmarkers.com/v1/009900/',
+                position: point
+            });
+
+            map.setCenter(point);
+            var infoWindow = new google.maps.InfoWindow();
+
+            marker2.addListener('click', function (evt) {
+                infoWindow.setContent('<h4>' +
+                    document.getElementById('Country').value +
+                    '</h4>' +
+                    '<h6>' +
+                    document.getElementById('City').value +
+                    '</h6>' +
+                    '<h7>' +
+                    'Current location of mosque' +
+                    '</h7>');
+                infoWindow.open(map, marker2);
+
+            });
+
+            google.maps.event.addListener(marker2, 'dragend', function (event) {
+
+                document.getElementById("latH2").value = event.latLng.lat();
+                document.getElementById("lngH2").value = event.latLng.lng();
+                // infoWindow.open(map, marker3);
+                lat2 = event.latLng.lat();
+                lng2 = event.latLng.lng();
+
+
+                if (document.getElementById("radio2").checked == true) {
+
+
+                    document.getElementById('lat').value = lat2;
+                    document.getElementById('lng').value = lng2;
+                }
+
+                var latlng = {lat: lat2, lng: lng2};
+                geocoder.geocode({'location': latlng}, function (results, status) {
+                    if (status === 'OK') {
+                        if (results[0]) {
+
+                            for (var i = 0; i < results[0].address_components.length; i++) {
+                                for (var j = 0; j < results[0].address_components[i].types.length; j++) {
+                                    if (results[0].address_components[i].types[j] == "country") {
+                                        document.getElementById('countryH2').value = results[0].address_components[i].long_name;
+                                        //alert(results[0].address_components[i].long_name + " dddd");
+                                        if (document.getElementById("radio2").checked == true) {
+                                            document.getElementById('Country').value = results[0].address_components[i].long_name;
+                                        }
+                                    }
+                                    if (results[0].address_components[i].types[j] == "administrative_area_level_1") {
+                                        document.getElementById('cityH2').value = results[0].address_components[i].long_name;
+                                        if (document.getElementById("radio2").checked == true) {
+                                            document.getElementById('City').value = results[0].address_components[i].long_name;
+                                        }
+                                    }
+                                }
+                            }
+
+                        } else {
+                            window.alert('No results found');
+                        }
+                    } else {
+                        window.alert('Geocoder failed due to: ' + status);
+                        document.getElementById('Country').value = "";
+                        document.getElementById('City').value = "";
+
+                    }
+                });
+
+
+            });
+
             searchBox.addListener('places_changed', function () {
                 var places = searchBox.getPlaces();
                 if (places.length == 0) {
@@ -499,6 +595,7 @@
                         icon: 'http://www.googlemapsmarkers.com/v1/009900/',
                         position: place.geometry.location
                     });
+
 
                     lat2 = place.geometry.location.lat();
                     lng2 = place.geometry.location.lng();
@@ -632,6 +729,13 @@
 
         }
 
+
+        document.getElementsByName('radio')[0].addEventListener('click' , function() {
+            map.panTo(marker1.getPosition());
+        });
+        document.getElementsByName('radio')[1].addEventListener('click' , function() {
+            map.panTo(marker2.getPosition());
+        });
         /*
         document.getElementById('getD').addEventListener('click', function () {
             alert(getDisatnce(lat1, lng1, lat2, lng2)/1000);
@@ -701,8 +805,6 @@
                 var woman_chapel = 0;
 
 
-
-
                 form_data.append('idMosque', $('#idMosque').val());
                 form_data.append('country', $('#Country').val());
                 form_data.append('city', $('#City').val());
@@ -757,4 +859,6 @@
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBZMoQ-GX3fBlc1bv7DQFdlwbQp9IWoRw&language=en&libraries=places&callback=initMap">
     </script>
+    <script src="https://cdn.klokantech.com/maptilerlayer/v1/index.js"></script>
+
 @endsection

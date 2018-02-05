@@ -169,3 +169,6 @@ Route::post('editMosque', 'MosqueCon@editMosque');
 Route::get('deleteMosque', 'MosqueCon@deleteMosque');
 Route::get('adminApp/mosque/getUpdatLocation/{id}', 'MosqueCon@getUpdatLocation');
 Route::post('updateLocation', 'MosqueCon@updateLocation');
+Route::get('mosque', function () {
+    return view('mmpApp.mosque.mosque');
+});

@@ -98,7 +98,12 @@ Route::get('seed1', function() {
     dd($query[4]);
 
 });
-Route::get('testD' , 'MosqueCon@nearestMosqueWithFridayAndWomanPrayer');
+Route::get('testD' , 'MosqueCon@testNearestMosque');
+Route::get('test' , function() {
+    return view('test');
+});
+
+
 /////////////////////////////////////////////////////////////
 
 

@@ -846,7 +846,7 @@ var Rider;
                             content: "<div class=\"marker\"><i class=\"fa " + obj.map_marker_icon + "\"></i></div>"
                         }),
 
-                        content = "<div class=\"infoWindowOffice\">" + "<h3>" + obj.title + "</h3>" + "<a href=\"" + obj.link + "\"><img src=\"" + obj.image + "\" alt=\"" + obj.title + "\"></a>" + "<div class=\"description\">" + obj.description + "</div>";
+                        content = "<div class=\"infoWindowOffice\">" + "<h3>" + obj.title + "</h3>" + "<a href=\"" + obj.link + "\"></a>" + "<div class=\"description\">" + obj.description + "</div>";
 
                     if (obj.link !== "" && obj.link !== undefined) {
                         content += "<div class=\"center\"><a class=\"btn btn-color btn-small\" href=\"" + obj.link + "\">" + $tis.map_viewMoreButton + "</a></div></div>";
@@ -860,7 +860,7 @@ var Rider;
                         alignBottom: true,
                         pixelOffset: new google.maps.Size(-85, -34),
                         closeBoxMargin: "10px 10px 10px 10px",
-                        closeBoxURL: "images/close_infobox.png",
+                      //  closeBoxURL: "images/close_infobox.png",
                         infoBoxClearance: new google.maps.Size(5, 5),
                         isHidden: false,
                         pane: "floatPane",

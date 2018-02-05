@@ -14,10 +14,11 @@
       <file leaf-file-name="MosqueCon.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/MosqueCon.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="298" column="5" lean-forward="true" selection-start-line="298" selection-start-column="5" selection-end-line="298" selection-end-column="5" />
+            <state relative-caret-position="3">
+              <caret line="297" column="5" lean-forward="true" selection-start-line="297" selection-start-column="5" selection-end-line="297" selection-end-column="5" />
               <folding>
                 <element signature="e#40#57#0#PHP" expanded="true" />
+                <marker date="1517852275975" expanded="true" signature="8622:8629" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -38,11 +39,26 @@
       <file leaf-file-name="mosque.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mosque/mosque.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="106" column="3" lean-forward="false" selection-start-line="106" selection-start-column="3" selection-end-line="106" selection-end-column="3" />
+            <state relative-caret-position="68">
+              <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
               <folding>
                 <element signature="e#445#450#0#PHP" expanded="false" />
-                <element signature="e#1290#1314#0#HTML" expanded="true" />
+                <element signature="e#3617#3641#0#HTML" expanded="true" />
+                <marker date="1517852359539" expanded="true" signature="4116:4652" ph="..." />
+                <marker date="1517852359539" expanded="true" signature="4150:4361" ph="..." />
+                <marker date="1517852359539" expanded="true" signature="4220:4236" ph="..." />
+                <marker date="1517852359539" expanded="true" signature="4237:4326" ph="..." />
+                <marker date="1517852359539" expanded="true" signature="4408:4622" ph="..." />
+                <marker date="1517852359539" expanded="true" signature="4765:5120" ph="..." />
+                <marker date="1517852359539" expanded="true" signature="4881:5090" ph="..." />
+                <marker date="1517852359539" expanded="true" signature="5233:5587" ph="..." />
+                <marker date="1517852359539" expanded="true" signature="5349:5557" ph="..." />
+                <marker date="1517852359539" expanded="true" signature="5700:6055" ph="..." />
+                <marker date="1517852359539" expanded="true" signature="5816:6025" ph="..." />
+                <marker date="1517852359539" expanded="true" signature="6623:7109" ph="..." />
+                <marker date="1517852359539" expanded="true" signature="6645:7086" ph="{...}" />
+                <marker date="1517852359539" expanded="true" signature="6714:7074" ph="{...}" />
+                <marker date="1517852359539" expanded="true" signature="6732:6820" ph="//..." />
               </folding>
             </state>
           </provider>
@@ -94,8 +110,14 @@
         <entry file="file://$PROJECT_DIR$/mmpProj/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="459">
-              <caret line="182" column="45" lean-forward="false" selection-start-line="182" selection-start-column="45" selection-end-line="182" selection-end-column="45" />
-              <folding />
+              <caret line="187" column="45" lean-forward="false" selection-start-line="187" selection-start-column="45" selection-end-line="187" selection-end-column="45" />
+              <folding>
+                <marker date="1517852276244" expanded="true" signature="5280:5490" ph="..." />
+                <marker date="1517852276244" expanded="true" signature="5338:5489" ph="..." />
+                <marker date="1517852276244" expanded="true" signature="5506:6050" ph="..." />
+                <marker date="1517852276244" expanded="true" signature="5560:6049" ph="..." />
+                <marker date="1517852276244" expanded="true" signature="5747:6000" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -407,12 +429,12 @@
       <workItem from="1516439043616" duration="21181000" />
       <workItem from="1516615335969" duration="60124000" />
       <workItem from="1516804758404" duration="57358000" />
-      <workItem from="1517422670259" duration="40017000" />
+      <workItem from="1517422670259" duration="40658000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="242860000" />
+    <option name="totallyTimeSpent" value="243501000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -845,8 +867,14 @@
     <entry file="file://$PROJECT_DIR$/mmpProj/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
-          <caret line="182" column="45" lean-forward="false" selection-start-line="182" selection-start-column="45" selection-end-line="182" selection-end-column="45" />
-          <folding />
+          <caret line="187" column="45" lean-forward="false" selection-start-line="187" selection-start-column="45" selection-end-line="187" selection-end-column="45" />
+          <folding>
+            <marker date="1517852276244" expanded="true" signature="5280:5490" ph="..." />
+            <marker date="1517852276244" expanded="true" signature="5338:5489" ph="..." />
+            <marker date="1517852276244" expanded="true" signature="5506:6050" ph="..." />
+            <marker date="1517852276244" expanded="true" signature="5560:6049" ph="..." />
+            <marker date="1517852276244" expanded="true" signature="5747:6000" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -868,10 +896,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/MosqueCon.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="298" column="5" lean-forward="true" selection-start-line="298" selection-start-column="5" selection-end-line="298" selection-end-column="5" />
+        <state relative-caret-position="3">
+          <caret line="297" column="5" lean-forward="true" selection-start-line="297" selection-start-column="5" selection-end-line="297" selection-end-column="5" />
           <folding>
             <element signature="e#40#57#0#PHP" expanded="true" />
+            <marker date="1517852275975" expanded="true" signature="8622:8629" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -936,11 +965,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mosque/mosque.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="106" column="3" lean-forward="false" selection-start-line="106" selection-start-column="3" selection-end-line="106" selection-end-column="3" />
+        <state relative-caret-position="68">
+          <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
           <folding>
             <element signature="e#445#450#0#PHP" expanded="false" />
-            <element signature="e#1290#1314#0#HTML" expanded="true" />
+            <element signature="e#3617#3641#0#HTML" expanded="true" />
+            <marker date="1517852359539" expanded="true" signature="4116:4652" ph="..." />
+            <marker date="1517852359539" expanded="true" signature="4150:4361" ph="..." />
+            <marker date="1517852359539" expanded="true" signature="4220:4236" ph="..." />
+            <marker date="1517852359539" expanded="true" signature="4237:4326" ph="..." />
+            <marker date="1517852359539" expanded="true" signature="4408:4622" ph="..." />
+            <marker date="1517852359539" expanded="true" signature="4765:5120" ph="..." />
+            <marker date="1517852359539" expanded="true" signature="4881:5090" ph="..." />
+            <marker date="1517852359539" expanded="true" signature="5233:5587" ph="..." />
+            <marker date="1517852359539" expanded="true" signature="5349:5557" ph="..." />
+            <marker date="1517852359539" expanded="true" signature="5700:6055" ph="..." />
+            <marker date="1517852359539" expanded="true" signature="5816:6025" ph="..." />
+            <marker date="1517852359539" expanded="true" signature="6623:7109" ph="..." />
+            <marker date="1517852359539" expanded="true" signature="6645:7086" ph="{...}" />
+            <marker date="1517852359539" expanded="true" signature="6714:7074" ph="{...}" />
+            <marker date="1517852359539" expanded="true" signature="6732:6820" ph="//..." />
           </folding>
         </state>
       </provider>

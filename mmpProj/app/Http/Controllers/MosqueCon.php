@@ -286,7 +286,6 @@ class MosqueCon extends Controller
 
     public static function  nearestMosque($lat, $lng)
     {
-
         $getAllMoq = Mosque::all();
         $arr = [];
         foreach ($getAllMoq as $p) {
@@ -365,6 +364,28 @@ class MosqueCon extends Controller
         return view('mmpApp.mosque.mosque',['arr'=>$allMosque]);
     }
 
+
+
+
+    public  function testNearestMosque($lat=41.871940, $lng=12.567380)
+    {
+        $getAllMoq = Mosque::all();
+        $arr = [];
+        foreach ($getAllMoq as $i=>$p) {
+            $objMosq = new MosqueCon();
+            $objJson = ['id'=>$p->id , 'name' => $p->name , 'distance' =>$objMosq->getDistance($lat, $lng, $p->lat, $p->lng, 'k')
+              , 'lat' =>$p->lat."" , 'lng' => $p->lng];
+            $getAllAct = Activity::take(2)->get();
+            $arrAct = [];
+            foreach ($getAllAct as $d) {
+                $arrAct[$d->title] = $d->content;
+            }
+            $objJson['activity'] = $arrAct;
+            $arr[$i] = $objJson;
+        }
+        asort($arr);
+        return response()->json($arr);
+    }
 
     //////////////////////////// End mosque in user /////////////////////////////
 

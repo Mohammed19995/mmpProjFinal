@@ -88,6 +88,17 @@ Route::post('Mosque/addActivity' , 'MosqueCon@addActivity');
 Route::get('editActivity' ,'MosqueCon@editActivity');
 Route::get('deleteActivity' ,'MosqueCon@deleteActivity');
 Route::get('deleteSelActivity' ,'MosqueCon@deleteSelActivity');
+Route::get('seed1', function() {
+
+    /*
+    $query = \App\Book::join('categories' , 'books.cat_id' , '=' , 'categories.id')
+            ->select('books.id As IdBook' ,'categories.name As catName' , 'categories.id As IdCat')->get();
+*/
+    $query = \App\Book::all()->groupBy('cat_id');
+    dd($query[4]);
+
+});
+Route::get('testD' , 'MosqueCon@testD');
 /////////////////////////////////////////////////////////////
 
 

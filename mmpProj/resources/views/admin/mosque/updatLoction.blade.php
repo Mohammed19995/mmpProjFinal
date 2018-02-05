@@ -653,6 +653,7 @@
                     var infoWindow = new google.maps.InfoWindow();
 
                     marker2.addListener('click', function (evt) {
+
                         infoWindow.setContent('<h4>' +
                             document.getElementById('countryH2').value +
                             '</h4>' +

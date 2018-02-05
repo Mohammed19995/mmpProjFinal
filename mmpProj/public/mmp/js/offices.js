@@ -1,4 +1,5 @@
 //List of offices
+
 var offices = [
 	{
 		"id": 0,
@@ -15,8 +16,8 @@ var offices = [
 		"title": "Rider Office 1",
 		"latitude":34.058356,
 		"longitude":-118.263621,
-		"image":"images/office-1.jpg",
-		"description":"S Lucas Ave, Los Angeles, CA <br> Phone: (123) 546-7890",
+		//"image":"images/office-1.jpg",
+		"description":"",
 		"link":"offices.html",
 		"map_marker_icon":"fa-building-o"
 	},

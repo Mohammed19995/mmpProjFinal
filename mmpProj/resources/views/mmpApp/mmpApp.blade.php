@@ -345,14 +345,17 @@
 <!-- Libs -->
 
 <script src="{{asset('mmp/js/common.js')}}"></script>
+
 <script src="{{asset('mmp/js/jquery.prettyPhoto.js')}}"></script>
 <script src="{{asset('mmp/js/owl.carousel.min.js')}}"></script>
-<script src="{{asset('mmp/js/infobox.min.js')}}"></script>
-<script src="{{asset('mmp/js/richmarker.js')}}"></script>
+
+
+
 <script src="{{asset('mmp/js/countUp.min.js')}}"></script>
 <script src="{{asset('mmp/js/variables.js')}}"></script>
+
+
 <script src="{{asset('mmp/js/scripts.js')}}"></script>
-<script src="{{asset('mmp/js/offices.js')}}"></script>
 
 
 <!-- SLIDER REVOLUTION JS FILES -->
@@ -383,10 +386,15 @@
 
 <!-- Template Scripts -->
 <script src="{{asset('mmp/js/variables.js')}}"></script>
+
 <script src="{{asset('mmp/js/scripts.js')}}"></script>
 
+
 <script src="https://livedemo00.template-help.com/wt_58977_v2/js/core.min.js"></script>
+
 <script src="{{asset('mmp/script.js')}}"></script>
+
+
 
 <span id="nav-section"></span>
 

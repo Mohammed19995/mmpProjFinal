@@ -347,4 +347,5 @@ use App\Http\Controllers\LibraryCon;
         });
 
     </script>
+
 @endsection

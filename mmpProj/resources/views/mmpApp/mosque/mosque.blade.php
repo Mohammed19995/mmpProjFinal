@@ -24,10 +24,6 @@
 
 @endsection
 
-<?php
-use App\category;
-use App\Http\Controllers\LibraryCon;
-?>
 
 
 @section('content')
@@ -54,6 +50,8 @@ use App\Http\Controllers\LibraryCon;
     <!-- END PAGE TITLE/BREADCRUMB -->
 
     <!-- BEGIN CONTENT WRAPPER -->
+
+
     <section id="our-offices" >
         <div class="container">
             <div class="row">
@@ -63,44 +61,25 @@ use App\Http\Controllers\LibraryCon;
 
                     <ul class="offices-grid">
                         <?php
-                        $catName = MosqueCon::nearestMosque(42.704090 ,-71.436649);
- var_dump($arr)
+                        $nearMosque = MosqueCon::nearestMosque(42.704090 ,-71.436649);
+                        $r=0;
+                           foreach ($nearMosque as $i=>$arr){
+                               $r++
 
-                        ?>
-                        <li class="col-md-3" data-animation-direction="from-bottom" data-animation-delay="450">
-                            <div>
-                                <img class="blog-main-image" style="  height: 250px;"
-                                     src="{{asset('images/library/book1.jpg')}}" alt=""/>
-                            </div>
-                            <div class="info">
-                                <h4>Rider Office 1 <small>Los Angeles</small></h4>
-                                <a href="offices.html" class="btn btn-default">More Details</a>
-                            </div>
-                        </li>
+?>
 
-                        <li class="col-md-3" data-animation-direction="from-bottom" data-animation-delay="650">
-                            <div id="office_map2" class="map"></div>
-                            <div class="info">
-                                <h4>Rider Office 2 <small>London</small></h4>
-                                <a href="offices.html" class="btn btn-default">More Details</a>
-                            </div>
-                        </li>
-
-                        <li class="col-md-3" data-animation-direction="from-bottom" data-animation-delay="850">
-                            <div id="office_map3" class="map"></div>
-                            <div class="info">
-                                <h4>Rider Office 3 <small>Paris</small></h4>
-                                <a href="offices.html" class="btn btn-default">More Details</a>
-                            </div>
-                        </li>
-
-                        <li class="col-md-3" data-animation-direction="from-bottom" data-animation-delay="850">
-                            <div id="office_map4" class="map"></div>
-                            <div class="info">
-                                <h4>Rider Office 4 <small>Berlin</small></h4>
-                                <a href="offices.html" class="btn btn-default">More Details</a>
-                            </div>
-                        </li>
+                            <li class="col-md-3" data-animation-direction="from-bottom" data-animation-delay="450">
+                                <div id="office_map1" class="map"></div>
+                                <div class="info">
+                                    <h4>Rider Office 1 <small>Los Angeles</small></h4>
+                                    <a href="offices.html" class="btn btn-default">More Details</a>
+                                </div>
+                            </li>
+                            <?php
+                          if($r = 4){
+                              break;
+                          }
+                           } ?>
                     </ul>
 
                 </div>
@@ -112,6 +91,19 @@ use App\Http\Controllers\LibraryCon;
 
 
 @section('script')
+    <script>
 
+        $(document).ready(function(){
+            //Create offices maps
 
+            Rider.googleMap(offices, 'office_map1', 1);
+
+        });
+
+    </script>
+    <script src="js/richmarker.js"></script>
+    <script src="js/infobox.min.js"></script>
+    <script src="js/offices.js"></script>
+   
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCBZMoQ-GX3fBlc1bv7DQFdlwbQp9IWoRw" type="text/javascript"></script>
 @endsection

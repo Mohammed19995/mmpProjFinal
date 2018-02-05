@@ -290,15 +290,48 @@ class MosqueCon extends Controller
         $getAllMoq = Mosque::all();
         $arr = [];
         foreach ($getAllMoq as $p) {
-            $arr[$p->id] = $this->getDistance($lat, $lng, $p->lat, $p->lng, 'k');
+            $objMosq = new MosqueCon();
+            $arr[$p->id] = $objMosq->getDistance($lat, $lng, $p->lat, $p->lng, 'k');
         }
         asort($arr);
-        /*
-        foreach ($arr as $i=>$v) {
-            $idMosque = $i;
-            $distance = $v;
+        return $arr;
+    }
+
+    public static function nearestMosqueWithFriday($lat, $lng)
+    {
+        $getAllMoq = Mosque::where('friday_prayer', '=', 1)->get();
+        $arr = [];
+        foreach ($getAllMoq as $p) {
+            $objMosq = new MosqueCon();
+            $arr[$p->id] = $objMosq->getDistance($lat, $lng, $p->lat, $p->lng, 'k');
         }
-        */
+        asort($arr);
+        return $arr;
+    }
+
+    public static function nearestMosqueWithWomanPrayer($lat = 41.871940, $lng = 12.567380)
+    {
+        $getAllMoq = Mosque::where('woman_chapel', '=', 1)->get();
+        $arr = [];
+        foreach ($getAllMoq as $p) {
+            $objMosq = new MosqueCon();
+            $arr[$p->id] = $objMosq->getDistance($lat, $lng, $p->lat, $p->lng, 'k');
+        }
+        asort($arr);
+        return $arr;
+    }
+
+    public static function nearestMosqueWithFridayAndWomanPrayer($lat = 41.871940, $lng = 12.567380)
+    {
+        $getAllMoq = Mosque::where('woman_chapel', '=', 1)
+            ->where('friday_prayer', '=', 1)
+            ->get();
+        $arr = [];
+        foreach ($getAllMoq as $p) {
+            $objMosq = new MosqueCon();
+            $arr[$p->id] = $objMosq->getDistance($lat, $lng, $p->lat, $p->lng, 'k');
+        }
+        asort($arr);
         return $arr;
     }
 

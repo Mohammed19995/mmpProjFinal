@@ -357,7 +357,18 @@ class MosqueCon extends Controller
     }
 
 
+
+
+
+    public function getALlMosque(){
+        $allMosque = Mosque::all();
+        return view('mmpApp.mosque.mosque',['arr'=>$allMosque]);
+    }
+
+
     //////////////////////////// End mosque in user /////////////////////////////
+
+
 
 
 }

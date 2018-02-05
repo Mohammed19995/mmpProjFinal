@@ -64,7 +64,7 @@ use App\Http\Controllers\LibraryCon;
                     <ul class="offices-grid">
                         <?php
                         $catName = MosqueCon::nearestMosque(42.704090 ,-71.436649);
-
+ var_dump($arr)
 
                         ?>
                         <li class="col-md-3" data-animation-direction="from-bottom" data-animation-delay="450">

@@ -11,11 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MosqueCon.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MosqueCon.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/MosqueCon.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1924">
-              <caret line="261" column="33" lean-forward="false" selection-start-line="261" selection-start-column="33" selection-end-line="261" selection-end-column="33" />
+            <state relative-caret-position="136">
+              <caret line="293" column="40" lean-forward="false" selection-start-line="293" selection-start-column="40" selection-end-line="293" selection-end-column="40" />
               <folding>
                 <element signature="e#40#57#0#PHP" expanded="true" />
               </folding>
@@ -23,80 +23,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Mosque.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/app/Mosque.php">
+      <file leaf-file-name="addMosque.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/mosque/addMosque.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="67" column="34" lean-forward="false" selection-start-line="67" selection-start-column="20" selection-end-line="67" selection-end-column="34" />
+            <state relative-caret-position="309">
+              <caret line="440" column="51" lean-forward="true" selection-start-line="440" selection-start-column="44" selection-end-line="440" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="172" column="24" lean-forward="false" selection-start-line="172" selection-start-column="24" selection-end-line="172" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="allAdvisory.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/allAdvisory.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="250" column="94" lean-forward="true" selection-start-line="250" selection-start-column="42" selection-end-line="250" selection-end-column="94" />
-              <folding>
-                <marker date="1517239436278" expanded="true" signature="13063:13107" ph="..." />
-                <marker date="1517239436278" expanded="true" signature="14116:14153" ph="..." />
-                <marker date="1517239436278" expanded="true" signature="14116:14154" ph="..." />
-                <marker date="1517239436278" expanded="true" signature="15970:15988" ph="..." />
-                <marker date="1517239436278" expanded="true" signature="16349:16367" ph="..." />
-                <marker date="1517239436278" expanded="true" signature="16726:16744" ph="..." />
-                <marker date="1517239436278" expanded="true" signature="17105:17123" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="updatLoction.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/mosque/updatLoction.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="261" column="50" lean-forward="false" selection-start-line="261" selection-start-column="50" selection-end-line="261" selection-end-column="50" />
-              <folding>
-                <element signature="e#6790#6825#0#HTML" expanded="true" />
-                <element signature="e#11198#11218#0#HTML" expanded="true" />
-                <element signature="e#11832#11852#0#HTML" expanded="true" />
-                <element signature="e#12235#12256#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="offices.html" pinned="false" current-in-tab="false">
-        <entry file="file://E:/htdocs/Rider-Template/Rider HTML5 Template/offices.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="224" column="8" lean-forward="false" selection-start-line="224" selection-start-column="8" selection-end-line="268" selection-end-column="18" />
-              <folding>
-                <element signature="n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mosque.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mosque.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mosque/mosque.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="58" column="63" lean-forward="false" selection-start-line="58" selection-start-column="63" selection-end-line="58" selection-end-column="63" />
+            <state relative-caret-position="312">
+              <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
               <folding>
-                <element signature="e#1709#1733#0#HTML" expanded="true" />
+                <element signature="e#1352#1376#0#HTML" expanded="true" />
+                <element signature="e#1909#1933#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fatwa.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/fatwa.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="178">
+              <caret line="105" column="34" lean-forward="false" selection-start-line="105" selection-start-column="34" selection-end-line="105" selection-end-column="76" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -192,9 +147,9 @@
         <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/app.blade.php" />
         <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/mosque/viewMosque.blade.php" />
         <option value="$PROJECT_DIR$/mmpProj/app/Mosque.php" />
-        <option value="$PROJECT_DIR$/mmpProj/app/Http/Controllers/MosqueCon.php" />
         <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/mosque/updatLoction.blade.php" />
         <option value="$PROJECT_DIR$/mmpProj/routes/web.php" />
+        <option value="$PROJECT_DIR$/mmpProj/app/Http/Controllers/MosqueCon.php" />
         <option value="$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mosque/mosque.blade.php" />
       </list>
     </option>
@@ -328,6 +283,15 @@
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="mmpApp" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="fatwa" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="mmpProjFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mmpProjFinal" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="mmpProj" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="mmpApp" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="library" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -401,18 +365,18 @@
       <workItem from="1516439043616" duration="21181000" />
       <workItem from="1516615335969" duration="60124000" />
       <workItem from="1516804758404" duration="57358000" />
-      <workItem from="1517422670259" duration="32317000" />
+      <workItem from="1517422670259" duration="33894000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="235160000" />
+    <option name="totallyTimeSpent" value="236737000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20287661" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18319455" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32853898" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -677,14 +641,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/mosque/addMosque.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-995">
-          <caret line="720" column="52" lean-forward="false" selection-start-line="720" selection-start-column="15" selection-end-line="720" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -738,14 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/fatwa.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="218" column="99" lean-forward="true" selection-start-line="218" selection-start-column="83" selection-end-line="218" selection-end-column="99" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/mosque/viewMosque.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
@@ -789,40 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/allAdvisory.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="250" column="94" lean-forward="true" selection-start-line="250" selection-start-column="42" selection-end-line="250" selection-end-column="94" />
-          <folding>
-            <marker date="1517239436278" expanded="true" signature="13063:13107" ph="..." />
-            <marker date="1517239436278" expanded="true" signature="14116:14153" ph="..." />
-            <marker date="1517239436278" expanded="true" signature="14116:14154" ph="..." />
-            <marker date="1517239436278" expanded="true" signature="15970:15988" ph="..." />
-            <marker date="1517239436278" expanded="true" signature="16349:16367" ph="..." />
-            <marker date="1517239436278" expanded="true" signature="16726:16744" ph="..." />
-            <marker date="1517239436278" expanded="true" signature="17105:17123" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/app/Mosque.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="67" column="34" lean-forward="false" selection-start-line="67" selection-start-column="20" selection-end-line="67" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/MosqueCon.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1924">
-          <caret line="261" column="33" lean-forward="false" selection-start-line="261" selection-start-column="33" selection-end-line="261" selection-end-column="33" />
-          <folding>
-            <element signature="e#40#57#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/mosque/updatLoction.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -832,6 +746,46 @@
             <element signature="e#11198#11218#0#HTML" expanded="true" />
             <element signature="e#11832#11852#0#HTML" expanded="true" />
             <element signature="e#12235#12256#0#HTML" expanded="true" />
+            <marker date="1517842674384" expanded="true" signature="13640:29427" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="21556:29414" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="21809:29359" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="25635:26026" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="26117:29052" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="26531:26706" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="26859:29026" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="26910:28724" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="26960:28583" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="27062:28548" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="27176:28510" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="27282:27871" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="27635:27825" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="27996:28468" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="28235:28422" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="28589:28694" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="28730:29000" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="29106:29248" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="29254:29341" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="29728:29886" ph="/*...*/" />
+            <marker date="1517842674384" expanded="true" signature="29918:29967" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="30023:30509" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="30590:30863" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="30892:34029" ph="..." />
+            <marker date="1517842674384" expanded="true" signature="30933:34013" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="30976:31325" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="31203:31309" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="31393:31979" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="31432:31677" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="31720:31965" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="32035:33999" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="32688:32846" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="32719:32827" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="32873:33983" ph="{&quot;url&quot;: '{{url('updateLocation')}}'...}" />
+            <marker date="1517842674384" expanded="true" signature="33197:33965" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="33361:33684" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="33416:33521" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="33690:33942" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="33744:33849" ph="{...}" />
+            <marker date="1517842674384" expanded="true" signature="34054:34216" ph="..." />
           </folding>
         </state>
       </provider>
@@ -844,14 +798,6 @@
             <element signature="n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="172" column="24" lean-forward="false" selection-start-line="172" selection-start-column="24" selection-end-line="172" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -871,12 +817,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/app/Mosque.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="183" column="37" lean-forward="false" selection-start-line="183" selection-start-column="17" selection-end-line="183" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/allAdvisory.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="250" column="94" lean-forward="true" selection-start-line="250" selection-start-column="42" selection-end-line="250" selection-end-column="94" />
+          <folding>
+            <marker date="1517239436278" expanded="true" signature="13063:13107" ph="..." />
+            <marker date="1517239436278" expanded="true" signature="14116:14153" ph="..." />
+            <marker date="1517239436278" expanded="true" signature="14116:14154" ph="..." />
+            <marker date="1517239436278" expanded="true" signature="15970:15988" ph="..." />
+            <marker date="1517239436278" expanded="true" signature="16349:16367" ph="..." />
+            <marker date="1517239436278" expanded="true" signature="16726:16744" ph="..." />
+            <marker date="1517239436278" expanded="true" signature="17105:17123" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/fatwa.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="105" column="34" lean-forward="false" selection-start-line="105" selection-start-column="34" selection-end-line="105" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/mosque/addMosque.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="440" column="51" lean-forward="true" selection-start-line="440" selection-start-column="44" selection-end-line="440" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mosque/mosque.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="58" column="63" lean-forward="false" selection-start-line="58" selection-start-column="63" selection-end-line="58" selection-end-column="63" />
+        <state relative-caret-position="312">
+          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding>
-            <element signature="e#1709#1733#0#HTML" expanded="true" />
+            <element signature="e#1352#1376#0#HTML" expanded="true" />
+            <element signature="e#1909#1933#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/MosqueCon.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="293" column="40" lean-forward="false" selection-start-line="293" selection-start-column="40" selection-end-line="293" selection-end-column="40" />
+          <folding>
+            <element signature="e#40#57#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

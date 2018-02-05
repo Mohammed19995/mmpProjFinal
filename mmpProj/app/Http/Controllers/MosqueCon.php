@@ -284,13 +284,14 @@ class MosqueCon extends Controller
 
     ///////////////////////// Mosque in user /////////////////////////////
 
-    public function nearestMosque($lat, $lng)
+    public static function  nearestMosque($lat, $lng)
     {
 
         $getAllMoq = Mosque::all();
         $arr = [];
         foreach ($getAllMoq as $p) {
-            $arr[$p->id] = $this->getDistance($lat, $lng, $p->lat, $p->lng, 'k');
+            $objMosqCon = new MosqueCon();
+            $arr[$p->id] = $objMosqCon->getDistance($lat, $lng, $p->lat, $p->lng, 'k');
         }
         asort($arr);
         /*

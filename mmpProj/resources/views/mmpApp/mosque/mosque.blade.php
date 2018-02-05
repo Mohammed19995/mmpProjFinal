@@ -31,6 +31,9 @@ use App\Http\Controllers\LibraryCon;
 
 
 @section('content')
+    <?php
+    use App\Http\Controllers\MosqueCon;
+    ?>
 
     <!-- BEGIN PAGE TITLE/BREADCRUMB -->
     <div id="page-title-2" class=" parallax dark-bg" data-stellar-background-ratio="0.5">
@@ -59,6 +62,11 @@ use App\Http\Controllers\LibraryCon;
                     <div class="center" style="margin-top: 50px"><h1 class="section-title" data-animation-direction="from-bottom" data-animation-delay="50">NEAREST  <strong>MOSQUE</strong></h1></div>
 
                     <ul class="offices-grid">
+                        <?php
+                        $catName = MosqueCon::nearestMosque(42.704090 ,-71.436649);
+
+
+                        ?>
                         <li class="col-md-3" data-animation-direction="from-bottom" data-animation-delay="450">
                             <div>
                                 <img class="blog-main-image" style="  height: 250px;"

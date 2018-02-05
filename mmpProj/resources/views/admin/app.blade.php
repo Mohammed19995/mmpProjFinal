@@ -196,6 +196,7 @@
                     <ul id="dashvariants3" class="collapse list-unstyled">
                         <li><a href="{{url('adminApp/mosque/addMosque')}}"><i class="fa fa-tags"></i> Add mosque</a></li>
                         <li><a href="{{url('adminApp/mosque/viewMosque')}}"><i class="fa fa-eye"></i> View mosque</a></li>
+                        <li><a href="{{url('adminApp/mosque/activity')}}"><i class="fa fa-eye"></i> Activity</a></li>
 
 
 

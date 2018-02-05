@@ -18,41 +18,47 @@ class MosqueCon extends Controller
 
     protected $objMosque;
     protected $objActivity;
-    public function __construct() {
+
+    public function __construct()
+    {
         $this->objMosque = new Mosque();
         $this->objActivity = new Activity();
     }
 
-    public function viewMosque() {
+    public function viewMosque()
+    {
         $allMosque = Mosque::all();
-        return view('admin.mosque.viewMosque' , ['allMosque'=>$allMosque]);
+        return view('admin.mosque.viewMosque', ['allMosque' => $allMosque]);
     }
-    public function viewAddMosque() {
+
+    public function viewAddMosque()
+    {
         return view('admin.mosque.addMosque');
     }
 
-    public function addMosque(Request $request) {
+    public function addMosque(Request $request)
+    {
 
 
         // |regex:/^[a-zA-Z0-9_ ]+$/u
         $validator = Validator::make($request->all(), [
             'nameMosque' => 'required',
-            'checkIllegalName' => 'not_in:0' ,
-            'checkIllegalCountry' => 'not_in:0' ,
-            'checkIllegalCity' => 'not_in:0' ,
-            'checkIllegalNameImam' => 'not_in:0' ,
+            'checkIllegalName' => 'not_in:0',
+            'checkIllegalCountry' => 'not_in:0',
+            'checkIllegalCity' => 'not_in:0',
+            'checkIllegalNameImam' => 'not_in:0',
             'country' => 'required',
             'city' => 'required',
             'street' => 'required',
             'nameImam' => 'required',
             'email' => 'required|email|unique:mosques,email',
             'phone' => 'required|numeric',
-            'checkImg'=>'not_in:0' ,
+            'checkImg' => 'not_in:0',
             'lat' => 'required|numeric',
             'lng' => 'required|numeric',
 
-        ] , [
-            'checkImg.not_in' => 'The field image is required' ,
+        ], [
+            'checkImg.not_in' => 'The field image is required',
             'checkIllegalName.not_in' => 'The name mosque is format invalid',
             'checkIllegalCountry.not_in' => 'The country is format invalid',
             'checkIllegalCity.not_in' => 'The city is format invalid',
@@ -82,29 +88,32 @@ class MosqueCon extends Controller
 
             $path = $request->file->store('public/mosque/img');
             $objMosque = new Mosque();
-            $objMosque->addMosque($name ,$country,$city ,$street , $imam_name ,$email ,$phone , $friday_prayer ,$woman_chapel , $path , $lat , $lng  );
+            $objMosque->addMosque($name, $country, $city, $street, $imam_name, $email, $phone, $friday_prayer, $woman_chapel, $path, $lat, $lng);
 
-            return response()->json(['success'=>1]);
+            return response()->json(['success' => 1]);
         }
 
-        return response()->json(['error'=>$validator->errors()->all()]);
+        return response()->json(['error' => $validator->errors()->all()]);
 
 
     }
 
 
-    public function viewActivity() {
+    public function viewActivity()
+    {
 
         $getBook = $this->objMosque->getAllBook();
         $getAllActivity = $this->objActivity->getAllActivity();
-        return view('admin.mosque.activity' , ['getBook' =>$getBook , 'getAllActivity' => $getAllActivity]);
+        return view('admin.mosque.activity', ['getBook' => $getBook, 'getAllActivity' => $getAllActivity]);
 
     }
 
-    public function addActivity(Request $request) {
+
+    public function addActivity(Request $request)
+    {
 
         $validator = Validator::make($request->all(), [
-            'title' => 'required' ,
+            'title' => 'required',
             'mosqueId' => 'required',
             'activityName' => 'required'
         ]);
@@ -118,17 +127,68 @@ class MosqueCon extends Controller
             return Redirect::back()->withErrors($validator)->withInput();
         } else {
 
-            $this->objActivity->addActivity($request->title  , $request->mosqueId , $request->activityName);
+            $this->objActivity->addActivity($request->title, $request->mosqueId, $request->activityName);
             return Redirect::back()->withSuccess('The adding is done');
         }
 
     }
-    public function editMosque(Request $request){
+
+    public function editActivity(Request $request)
+    {
+
+
+        //  updateActivity($id, $title, $mosque_id, $content)
+        $validator = Validator::make($request->all(), [
+            'title' => 'required',
+            'mosqueId' => 'required',
+            'contentData' => 'required'
+        ]);
+        $attributeNames = array(
+            'mosqueId' => 'name of mosque',
+
+        );
+        $validator->setAttributeNames($attributeNames);
+
+
+        if ($validator->passes()) {
+
+            $id = $request->id_hidden;
+            $title = $request->title;
+            $mosqueId = $request->mosqueId;
+            $contentData = $request->contentData;
+
+            $this->objActivity->updateActivity($id, $title, $mosqueId, $contentData);
+
+            return response()->json(['success' => 1]);
+        }
+
+        return response()->json(['error' => $validator->errors()->all()]);
+
+    }
+
+    public function deleteActivity(Request $request)
+    {
+        $id = $request->id_hidden;
+        $this->objActivity->deleteActivity($id);
+    }
+
+    public function deleteSelActivity(Request $request)
+    {
+
+        $arrDel = $request->id_hidden;
+        for ($i=0 ; $i<count($arrDel) ; $i++) {
+            $this->objActivity->deleteActivity($arrDel[$i]);
+        }
+    }
+
+
+    public function editMosque(Request $request)
+    {
         $idMosque = $request->IdMosque;
         $validator = Validator::make($request->all(), [
             'nameMosque' => 'required',
             'nameImam' => 'required',
-            'email' => 'required|email|unique:mosques,email,'.$idMosque,
+            'email' => 'required|email|unique:mosques,email,' . $idMosque,
             'phone' => 'required|numeric',
 
         ]);
@@ -162,24 +222,31 @@ class MosqueCon extends Controller
             }
             return response()->json(['success' => 1, 'path' => $path]);
         }
-        return response()->json(['error'=>$validator->errors()->all()]);
+        return response()->json(['error' => $validator->errors()->all()]);
     }
-    public function deleteMosque(Request $request){
+
+    public function deleteMosque(Request $request)
+    {
         $idMosque = $request->idMosque;
         $this->objMosque->deleteMosque($idMosque);
 
     }
-    public function getUpdatLocation($id){
-             $allData = Mosque::all();
 
-        return view('admin.mosque.updatLoction' ,['idMosque'=>$id ]);
+    public function getUpdatLocation($id)
+    {
+        $allData = Mosque::all();
+
+        return view('admin.mosque.updatLoction', ['idMosque' => $id]);
     }
+
     public static function getMosqueById($MosqueId)
     {
-        $data =  Mosque::where('id',$MosqueId)->first();
+        $data = Mosque::where('id', $MosqueId)->first();
         return $data;
     }
-    public function updateLocation(Request $request){
+
+    public function updateLocation(Request $request)
+    {
 
         $idMosque = $request->IdMosque;
         $validator = Validator::make($request->all(), [
@@ -205,10 +272,10 @@ class MosqueCon extends Controller
             $lat = $request->lat;
             $lng = $request->lng;
 
-                  $this->objMosque->updateLocation($idMosque,$country,$city,$street,$lat,$lng);
+            $this->objMosque->updateLocation($idMosque, $country, $city, $street, $lat, $lng);
             return response()->json(['success' => 1]);
         }
-        return response()->json(['error'=>$validator->errors()->all()]);
+        return response()->json(['error' => $validator->errors()->all()]);
 
     }
 

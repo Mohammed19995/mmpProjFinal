@@ -310,6 +310,14 @@ class LibraryCon extends Controller
 
     }
 
+    public function deleteSelBook(Request $request) {
+
+        $arrDel = $request->id_hidden;
+        for($i=0 ; $i<count($arrDel) ; $i++) {
+            $this->objBook->deleteBook($arrDel[$i]);
+        }
+    }
+
     public function editFileTypeLang(Request $request)
     {
 

@@ -339,6 +339,7 @@ use App\Http\Controllers\LibraryCon;
                                 <tr>
 
                                     <th></th>
+                                    <th><input type="checkbox" class="hand checkBoxDelThead" value="all" style="height: 17px;width: 17px;"></th>
                                     <th>Image</th>
                                     <th>Book name</th>
                                     <th>Edition</th>
@@ -350,6 +351,7 @@ use App\Http\Controllers\LibraryCon;
                                 </thead>
                                 <tfoot>
                                 <tr>
+                                    <th></th>
                                     <th></th>
                                     <th>Image</th>
                                     <th>Book name</th>
@@ -388,6 +390,7 @@ use App\Http\Controllers\LibraryCon;
                                         <i class="fa fa-plus"></i>
                                         <i class="fa fa-spinner fa-spin hidden" style="font-size:24px"></i>
                                     </td>
+                                    <td><input type="checkbox" class="hand checkBoxDel" style="width: 100%;height: 17px;"></td>
                                     <td class="imgBook"><img width="50" height="50"
                                                              src="{{asset('storage/'.$imgPath)}}"></td>
                                     <td class="nameBook"><?php echo $p->name;?></td>
@@ -494,12 +497,13 @@ use App\Http\Controllers\LibraryCon;
                 buttons: [
                     'pdfHtml5'
                 ],
-
+                order: [],
+                columnDefs: [ { orderable: false, targets: [1]}],
                // "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
                 "pageLength": 10,
 
                 initComplete: function () {
-                    this.api().columns(4).every(function () {
+                    this.api().columns(5).every(function () {
                         var column = this;
                         var select = $('<select class="form-control selCatOption" style="width: 200px;float: right;"><option value="">select category</option></select>')
                             .prependTo($('#example_filter'))
@@ -537,6 +541,8 @@ use App\Http\Controllers\LibraryCon;
             $('a.buttons-copy').append("<img src='{{asset('icons/library/copy.ico')}}' style= height='30' width='30' />");
 
 
+
+
             $('#example_filter').find('label input').attr('placeholder', 'Search');
 
             $('#example_filter').append('<div class="container">' +
@@ -570,6 +576,13 @@ use App\Http\Controllers\LibraryCon;
                 '</div>' +
                 '');
 
+
+            $('#example_filter').append('<div class="row delSelRow hidden" style="margin-top: 5px;">' +
+                '<div class="col-sm-2">' +
+                '<button class="btn btn-danger btn-sm deleteSelect ">Delete selected <i class="fa fa-remove"></i></button>' +
+                '</div>' +
+                '<div class="col-sm-8"></div>' +
+                '</div>');
 
             $('#example_filter').on('change', '.visibleCol label:nth-child(1)', function () {
                 if ($(this).find('input').is(':checked')) {
@@ -1441,6 +1454,78 @@ use App\Http\Controllers\LibraryCon;
                 });
 
             });
+
+
+            $('.checkBoxDelThead').on('click' , function() {
+
+                if($(this).is(':checked')) {
+                    $('#example tbody tr').each(function(k , v) {
+                        $(this).find('.checkBoxDel').prop('checked' , true);
+                        $('#example_filter').find('.delSelRow').removeClass('hidden');
+                    });
+
+                }else {
+                    $('#example tbody tr').each(function(k , v) {
+                        $(this).find('.checkBoxDel').prop('checked' , false);
+                        $('#example_filter').find('.delSelRow').addClass('hidden');
+                    });
+                }
+            });
+            $('#example ').on('click', 'tr .checkBoxDel', function (){
+
+                $('#example_filter').find('.delSelRow').removeClass('hidden');
+                var t = 0;
+                $('#example tbody tr').each(function(k , v) {
+                    if($(this).find('.checkBoxDel').is(':checked')) {
+                        t = t +1 ;
+                    }
+                });
+
+                if(t == 0 ){
+                    $('#example_filter').find('.delSelRow').addClass('hidden');
+                }
+
+            });
+            $('.deleteSelect').on('click', function () {
+
+
+                var thisRowToDelArr =[] ;
+                var id_hidden = [];
+                $('#example tbody tr').each(function(k , v) {
+                    if($(this).find('.checkBoxDel').is(':checked')) {
+                        thisRowToDelArr.push($(this));
+                        id_hidden.push($(this).find('.bookId').val());
+                    }
+                });
+
+                var r = confirm("Are you sure!");
+                if (r == true) {
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        url:"{{url('deleteSelBook')}}" ,
+                        method:"get" ,
+                        data:{id_hidden:id_hidden } ,
+                        success:function (e) {
+                            alert("done");
+                            for(var i =0 ; i<thisRowToDelArr.length ; i++) {
+                                table
+                                    .row(thisRowToDelArr[i] )
+                                    .remove()
+                                    .draw();
+                            }
+                            $('.checkBoxDelThead').prop('checked' , false);
+                            $('#example_filter').find('.delSelRow').addClass('hidden');
+                        }
+
+                    });
+                }
+
+            });
+
         });
 
     </script>

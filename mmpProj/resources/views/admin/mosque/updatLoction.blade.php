@@ -256,7 +256,7 @@
                             <div class="card-body">
 
                                 <div class="alert alert-success hidden successMsg">
-                                    The Updating is done
+                                    The <Updating></Updating> is done
                                 </div>
                                 <div class="alert alert-danger print-error-msg" style="display:none; margin: 10px;">
                                     <ul></ul>

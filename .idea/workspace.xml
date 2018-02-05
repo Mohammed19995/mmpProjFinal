@@ -65,7 +65,7 @@
         <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/mosque/updatLoction.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="21">
-              <caret line="258" column="48" lean-forward="false" selection-start-line="258" selection-start-column="48" selection-end-line="258" selection-end-column="48" />
+              <caret line="258" column="50" lean-forward="false" selection-start-line="258" selection-start-column="50" selection-end-line="258" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -364,12 +364,12 @@
       <workItem from="1516439043616" duration="21181000" />
       <workItem from="1516615335969" duration="60124000" />
       <workItem from="1516804758404" duration="57358000" />
-      <workItem from="1517422670259" duration="29860000" />
+      <workItem from="1517422670259" duration="29989000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="232703000" />
+    <option name="totallyTimeSpent" value="232832000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -834,7 +834,7 @@
     <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/mosque/updatLoction.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
-          <caret line="258" column="48" lean-forward="false" selection-start-line="258" selection-start-column="48" selection-end-line="258" selection-end-column="48" />
+          <caret line="258" column="50" lean-forward="false" selection-start-line="258" selection-start-column="50" selection-end-line="258" selection-end-column="50" />
           <folding />
         </state>
       </provider>

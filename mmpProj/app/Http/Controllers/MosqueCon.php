@@ -176,7 +176,7 @@ class MosqueCon extends Controller
     {
 
         $arrDel = $request->id_hidden;
-        for ($i=0 ; $i<count($arrDel) ; $i++) {
+        for ($i = 0; $i < count($arrDel); $i++) {
             $this->objActivity->deleteActivity($arrDel[$i]);
         }
     }
@@ -278,5 +278,52 @@ class MosqueCon extends Controller
         return response()->json(['error' => $validator->errors()->all()]);
 
     }
+
+
+    //////////////////////////////////////////////////////////////
+
+    ///////////////////////// Mosque in user /////////////////////////////
+
+    public function nearestMosque($lat, $lng)
+    {
+
+        $getAllMoq = Mosque::all();
+        $arr = [];
+        foreach ($getAllMoq as $p) {
+            $arr[$p->id] = $this->getDistance($lat, $lng, $p->lat, $p->lng, 'k');
+        }
+        asort($arr);
+        /*
+        foreach ($arr as $i=>$v) {
+            $idMosque = $i;
+            $distance = $v;
+        }
+        */
+        return $arr;
+    }
+
+
+    public function getDistance($lat1, $lon1, $lat2, $lon2, $unit)
+    {
+
+        $theta = $lon1 - $lon2;
+        $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) + cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
+        $dist = acos($dist);
+        $dist = rad2deg($dist);
+        $miles = $dist * 60 * 1.1515;
+        $unit = strtoupper($unit);
+
+        if ($unit == "K") {
+            return ($miles * 1.609344);
+        } else if ($unit == "N") {
+            return ($miles * 0.8684);
+        } else {
+            return $miles;
+        }
+    }
+
+
+    //////////////////////////// End mosque in user /////////////////////////////
+
 
 }

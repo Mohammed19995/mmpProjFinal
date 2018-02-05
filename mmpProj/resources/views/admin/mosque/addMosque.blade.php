@@ -433,15 +433,17 @@
         var lat2;
         var lng2;
         var currCountry;
-
         var currPosition;
 
         function initMap() {
+
             map = new google.maps.Map(document.getElementById('map'), {
                 center: {lat: -34.397, lng: 150.644},
-                zoom: 6
+                zoom: 13
             });
+
             var geocoder = new google.maps.Geocoder;
+
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function (position) {
                     var pos = {
@@ -465,6 +467,7 @@
                     document.getElementById('lngH1').value = position.coords.longitude;
 
                     var latlng = {lat: position.coords.latitude, lng: position.coords.longitude};
+
                     geocoder.geocode({'location': latlng}, function (results, status) {
                         if (status === 'OK') {
                             if (results[0]) {

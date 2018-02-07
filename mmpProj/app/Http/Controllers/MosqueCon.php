@@ -288,10 +288,13 @@ class MosqueCon extends Controller
     {
         $getAllMoq = Mosque::all();
         $arr = [];
+
         foreach ($getAllMoq as $p) {
 
             $objMosq = new MosqueCon();
             $arr[$p->id] = $objMosq->getDistance($lat, $lng, $p->lat, $p->lng, 'k');
+
+
         }
         asort($arr);
         return $arr;

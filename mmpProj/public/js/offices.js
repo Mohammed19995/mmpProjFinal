@@ -48,5 +48,7 @@ var offices = [
         "description":"Spandauer Str. 27, Berlin  <br> Phone: (123) 546-7890",
         "link":"offices.html",
         "map_marker_icon":"fa-building-o"
-    }
+    },
+
+
 ];

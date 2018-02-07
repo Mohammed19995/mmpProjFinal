@@ -119,6 +119,7 @@ class MosqueCon extends Controller
         ]);
         $attributeNames = array(
             'mosqueId' => 'name of mosque',
+            'activityName' => 'content of activity'
 
         );
         $validator->setAttributeNames($attributeNames);
@@ -354,8 +355,6 @@ class MosqueCon extends Controller
             return $miles;
         }
     }
-
-
 
 
 

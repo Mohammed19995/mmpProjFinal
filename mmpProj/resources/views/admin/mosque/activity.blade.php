@@ -2,6 +2,18 @@
 @section('css')
     <link rel="stylesheet" href="{{asset('admin/dataTable/css/dataTable.css')}}">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css">
+    <link rel="stylesheet" href="{{asset('admin/froala/css/froala_editor.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/froala/css/froala_style.css')}}">
+
+    <link rel="stylesheet" href="{{asset('admin/froala/css/colors.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/froala/css/table.css')}}">
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+
+
+
     <style>
         #example_filter label {
             display: block;
@@ -21,7 +33,7 @@
         }
 
         section.forms form span {
-            color: #ffffff;
+            color: #000000;
         }
 
         .bootstrap-tagsinput .badge [data-role="remove"]:after {
@@ -228,6 +240,12 @@
             margin: 0;
             padding: 10px;
         }
+        #editor .fr-wrapper {
+          height: 250%;
+        }
+        #editor2 .fr-wrapper {
+
+        }
 
     </style>
 @endsection
@@ -249,12 +267,13 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="myModal2" role="dialog">
-        <div class="modal-dialog">
+
+    <div class="modal fade" id="myModal2" role="dialog" >
+        <div class="modal-dialog modal-lg">
 
             <input type="hidden" value="" class="fileBookIdIncHidden">
             <!-- Modal content-->
-            <div class="modal-content ">
+            <div class="modal-content " >
                 <div class="modal-header ">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h3 style="margin-right: 40%"><span class="fa fa-edit"></span> Update <span
@@ -296,10 +315,10 @@
                         <div class="col-sm-9">
                             <div class="form-group ">
 
-                                <input type="hidden" id="m_mosqueId" >
+                                <input type="hidden" id="m_mosqueId">
 
                                 <input id="m_mosque" autocomplete="off" list="mosquesM"
-                                       class="form-control" />
+                                       class="form-control"/>
 
 
                                 <datalist id="mosquesM">
@@ -325,8 +344,13 @@
 
                         <div class="col-sm-9">
                             <div class="form-group ">
-                                <textarea class="form-control" id="m_content"
-                                          style="width: 100%;height: 80px;"></textarea>
+
+                                <div id="editor2">
+                                    <div id="edit2" class="form-control"
+                                         style="width: 100%;height: 50%;">
+
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
@@ -428,12 +452,15 @@
                                         </div>
 
                                     </div>
-                                    <div class="form-group row">
+                                    <div class="form-group row" >
 
                                         <label class="col-sm-2 form-control-label ">Content</label>
                                         <div class="col-sm-9">
-                                            <textarea class="form-control" name="activityName"
-                                                      style="width: 100%;height: 100px;">{{old('activityName')}}</textarea>
+
+                                            <div id="editor">
+                                                   <textarea id="edit" class="form-control" name="activityName"
+                                                             style="width: 100%;height: 100%;">{{old('activityName')}}</textarea>
+                                            </div>
                                         </div>
 
                                     </div>
@@ -471,7 +498,8 @@
                                        width="100%">
                                     <thead>
                                     <tr>
-                                        <th><input type="checkbox" class="hand checkBoxDelThead" value="all" style="height: 17px;width: 17px;"></th>
+                                        <th><input type="checkbox" class="hand checkBoxDelThead" value="all"
+                                                   style="height: 17px;width: 17px;"></th>
                                         <th>Title</th>
                                         <th>Mosque</th>
                                         <th>Content</th>
@@ -506,7 +534,8 @@
 
                                         <input class="idHidden" type="hidden" value="<?php echo $a->id;?>">
                                         <input type="hidden" class="mosqueId" value="<?php echo $a->mosque_id;?>">
-                                        <td><input type="checkbox" class="hand checkBoxDel" style="width: 100%;height: 17px;"></td>
+                                        <td><input type="checkbox" class="hand checkBoxDel"
+                                                   style="width: 100%;height: 17px;"></td>
                                         <td class="title"><?php echo $a->title;?></td>
                                         <td class="mosque"><?php echo $mosqueName;?></td>
                                         <td class="content"><?php echo $a->content;?></td>
@@ -539,6 +568,7 @@
         <!-- Page Footer-->
     </div>
 
+
 @endsection
 
 
@@ -549,9 +579,34 @@
     <script src="{{asset('admin/dataTable/js/dataTablePdfMake.js')}}"></script>
     <script src="{{asset('admin/dataTable/js/dataTableFonts.js')}}"></script>
     <script src="{{asset('admin/dataTable/js/dataTableBtnHtml.js')}}"></script>
+    <!--
+    <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+    <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+    -->
+    <script src="{{asset('admin/froala/js/froala_editor.min.js')}}"></script>
+    <script src="{{asset('admin/froala/js/font_size.min.js')}}"></script>
+    <script src={{asset('admin/froala/js/font_family.min.js')}}></script>
+
+    <script src={{asset('admin/froala/js/link.min.js')}}></script>
+    <script src={{asset('admin/froala/js/lists.min.js')}}></script>
+    <script src={{asset('admin/froala/js/table.min.js')}}></script>
+    <script src={{asset('admin/froala/js/url.min.js')}}></script>
+    <script src={{asset('admin/froala/js/colors.min.js')}}></script>
+    <script>
+        $(function () {
+            $('#edit').froalaEditor({
+                zIndex: 10
+            });
+            $('#edit2').froalaEditor({
+                zIndex: 10
+            })
+        });
+    </script>
 
     <script>
+
         $(document).ready(function () {
+
 
             function printErrorMsg(msg) {
                 $('.successMsg').addClass('hidden');
@@ -574,7 +629,7 @@
                 language: {search: ""},
                 buttons: [],
                 order: [],
-                columnDefs: [ { orderable: false, targets: [0]}],
+                columnDefs: [{orderable: false, targets: [0]}],
                 // "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
                 "pageLength": 10,
                 initComplete: function () {
@@ -636,7 +691,7 @@
                 }
             });
 
-            var thisRowInTable ;
+            var thisRowInTable;
             var cellTitle;
             var cellMosque;
             var cellMosqueId;
@@ -655,22 +710,26 @@
                 var title = $(this).parents('tr').find('.title').text();
                 var mosque = $(this).parents('tr').find('.mosque').text();
                 var mosqueId = $(this).parents('tr').find('.mosqueId').val();
-                var content = $(this).parents('tr').find('.content').text();
+                var content = $(this).parents('tr').find('.content').html();
 
                 $('#myModal2').find('#id_hidden').val($(this).parents('tr').find('.idHidden').val());
                 $('#myModal2').find('#m_title0').text(title);
                 $('#myModal2').find('#m_title').val(title);
                 $('#myModal2').find('#m_mosque').val(mosque);
                 $('#myModal2').find('#m_mosqueId').val(mosqueId);
-                $('#myModal2').find('#m_content').val(content);
+                $('#edit2').find('.fr-element').html(content);
+
+
+
             });
 
             $('#myModal2').on('click', '.save', function () {
+
                 var id_hidden = $(this).parents('#myModal2').find('#id_hidden').val();
 
                 var title = $(this).parents('#myModal2').find('#m_title').val();
                 var mosqueId = $(this).parents('#myModal2').find('#m_mosqueId').val();
-                var contentData = $(this).parents('#myModal2').find('#m_content').val();
+                var contentData = $(this).parents('#myModal2').find('.fr-element').html();
 
                 $.ajaxSetup({
                     headers: {
@@ -678,20 +737,20 @@
                     }
                 });
                 $.ajax({
-                    url:"{{url('editActivity')}}" ,
-                    method:"get" ,
-                    data:{id_hidden:id_hidden , title:title ,mosqueId:mosqueId ,contentData:contentData } ,
-                    success:function (e) {
+                    url: "{{url('editActivity')}}",
+                    method: "get",
+                    data: {id_hidden: id_hidden, title: title, mosqueId: mosqueId, contentData: contentData},
+                    success: function (e) {
 
-                        if(e.success == 1) {
+                        if (e.success == 1) {
 
-                           $(".print-error-msg").hide();
-                           $('.successMsg').removeClass('hidden');
+                            $(".print-error-msg").hide();
+                            $('.successMsg').removeClass('hidden');
                             thisRowInTable.find('.mosqueId').val($('#myModal2').find('#m_mosqueId').val());
                             cellTitle.data($('#myModal2').find('#m_title').val());
                             cellMosque.data($('#myModal2').find('#m_mosque').val());
-                            cellContent.data($('#myModal2').find('#m_content').val());
-                        }else {
+                            cellContent.data($('#myModal2').find('.fr-element').html());
+                        } else {
                             printErrorMsg(e.error);
                         }
 
@@ -700,7 +759,7 @@
                 });
             });
 
-            $('#example').on('click', 'tr .delete', function (){
+            $('#example').on('click', 'tr .delete', function () {
 
 
                 var thisRowToDel = $(this).parents('tr');
@@ -713,13 +772,13 @@
                         }
                     });
                     $.ajax({
-                        url:"{{url('deleteActivity')}}" ,
-                        method:"get" ,
-                        data:{id_hidden:id_hidden } ,
-                        success:function (e) {
+                        url: "{{url('deleteActivity')}}",
+                        method: "get",
+                        data: {id_hidden: id_hidden},
+                        success: function (e) {
                             alert("done");
                             table
-                                .row(thisRowToDel )
+                                .row(thisRowToDel)
                                 .remove()
                                 .draw();
                         }
@@ -730,35 +789,34 @@
             });
 
 
+            $('.checkBoxDelThead').on('click', function () {
 
-            $('.checkBoxDelThead').on('click' , function() {
-
-                if($(this).is(':checked')) {
-                    $('#example tbody tr').each(function(k , v) {
-                        $(this).find('.checkBoxDel').prop('checked' , true);
+                if ($(this).is(':checked')) {
+                    $('#example tbody tr').each(function (k, v) {
+                        $(this).find('.checkBoxDel').prop('checked', true);
                         $('#example_filter').find('.delSelRow').removeClass('hidden');
                     });
 
-                }else {
-                    $('#example tbody tr').each(function(k , v) {
-                        $(this).find('.checkBoxDel').prop('checked' , false);
+                } else {
+                    $('#example tbody tr').each(function (k, v) {
+                        $(this).find('.checkBoxDel').prop('checked', false);
                         $('#example_filter').find('.delSelRow').addClass('hidden');
                     });
                 }
             });
 
 
-            $('#example ').on('click', 'tr .checkBoxDel', function (){
+            $('#example ').on('click', 'tr .checkBoxDel', function () {
 
                 $('#example_filter').find('.delSelRow').removeClass('hidden');
                 var t = 0;
-                $('#example tbody tr').each(function(k , v) {
-                    if($(this).find('.checkBoxDel').is(':checked')) {
-                        t = t +1 ;
+                $('#example tbody tr').each(function (k, v) {
+                    if ($(this).find('.checkBoxDel').is(':checked')) {
+                        t = t + 1;
                     }
                 });
 
-                if(t == 0 ){
+                if (t == 0) {
                     $('#example_filter').find('.delSelRow').addClass('hidden');
                 }
 
@@ -767,10 +825,10 @@
             $('.deleteSelect').on('click', function () {
 
 
-                var thisRowToDelArr =[] ;
+                var thisRowToDelArr = [];
                 var id_hidden = [];
-                $('#example tbody tr').each(function(k , v) {
-                    if($(this).find('.checkBoxDel').is(':checked')) {
+                $('#example tbody tr').each(function (k, v) {
+                    if ($(this).find('.checkBoxDel').is(':checked')) {
                         thisRowToDelArr.push($(this));
                         id_hidden.push($(this).find('.idHidden').val());
                     }
@@ -784,26 +842,24 @@
                         }
                     });
                     $.ajax({
-                        url:"{{url('deleteSelActivity')}}" ,
-                        method:"get" ,
-                        data:{id_hidden:id_hidden } ,
-                        success:function (e) {
+                        url: "{{url('deleteSelActivity')}}",
+                        method: "get",
+                        data: {id_hidden: id_hidden},
+                        success: function (e) {
                             alert("done");
-                            for(var i =0 ; i<thisRowToDelArr.length ; i++) {
+                            for (var i = 0; i < thisRowToDelArr.length; i++) {
                                 table
-                                    .row(thisRowToDelArr[i] )
+                                    .row(thisRowToDelArr[i])
                                     .remove()
                                     .draw();
                             }
-                            $('.checkBoxDelThead').prop('checked' , false);
+                            $('.checkBoxDelThead').prop('checked', false);
                             $('#example_filter').find('.delSelRow').addClass('hidden');
 
                         }
 
                     });
                 }
-
-
 
 
             });

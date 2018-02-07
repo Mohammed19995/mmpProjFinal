@@ -48,6 +48,7 @@
         </div>
     </div>
     <!-- END PAGE TITLE/BREADCRUMB -->
+
     <section id="our-offices">
         <div class="container">
             <div class="row">
@@ -58,6 +59,8 @@
 
                     <ul class="offices-grid">
                         <?php
+
+
                         $near = MosqueCon::nearestMosque(42.704090, 42.704090);
                         $count = 0;
                         foreach ($near as $i=>$p) {
@@ -163,6 +166,9 @@
             $(document).ready(function () {
                 //Create offices maps
                 // Rider.googleMap(offices, 'headquarters_map', 0);
+                var js_var = 123;
+                var php_var = <?php js_var ?>
+                        alert(php_var);
 
                 $('.aa').click(function () {
                     var a = $(this).parent().parent().find('.id_hidden').val();

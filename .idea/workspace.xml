@@ -14,22 +14,39 @@
       <file leaf-file-name="MosqueCon.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/MosqueCon.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5015">
-              <caret line="302" column="50" lean-forward="false" selection-start-line="302" selection-start-column="27" selection-end-line="302" selection-end-column="50" />
+            <state relative-caret-position="5032">
+              <caret line="303" column="50" lean-forward="false" selection-start-line="303" selection-start-column="50" selection-end-line="303" selection-end-column="50" />
               <folding>
                 <element signature="e#40#57#0#PHP" expanded="true" />
-                <marker date="1517928010569" expanded="true" signature="8622:8629" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mosque.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mosque.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mosque/mosque.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="179" column="0" lean-forward="false" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="85">
+              <caret line="168" column="26" lean-forward="false" selection-start-line="168" selection-start-column="20" selection-end-line="168" selection-end-column="26" />
+              <folding>
+                <marker date="1518010424772" expanded="true" signature="1108:4631" ph="..." />
+                <marker date="1518010424772" expanded="true" signature="1140:4616" ph="..." />
+                <marker date="1518010424772" expanded="true" signature="1170:2884" ph="..." />
+                <marker date="1518010424772" expanded="true" signature="1210:2865" ph="..." />
+                <marker date="1518010424772" expanded="true" signature="1252:1426" ph="..." />
+                <marker date="1518010424772" expanded="true" signature="1317:1420" ph="..." />
+                <marker date="1518010424772" expanded="true" signature="1473:2841" ph="..." />
+                <marker date="1518010424772" expanded="true" signature="1944:2657" ph="..." />
+                <marker date="1518010424772" expanded="true" signature="2502:2627" ph="..." />
+                <marker date="1518010424772" expanded="true" signature="2914:4601" ph="..." />
+                <marker date="1518010424772" expanded="true" signature="2954:4582" ph="..." />
+                <marker date="1518010424772" expanded="true" signature="2996:3170" ph="..." />
+                <marker date="1518010424772" expanded="true" signature="3061:3164" ph="..." />
+                <marker date="1518010424772" expanded="true" signature="3217:4558" ph="..." />
+                <marker date="1518010424772" expanded="true" signature="3694:4410" ph="..." />
+                <marker date="1518010424772" expanded="true" signature="4255:4380" ph="..." />
+                <marker date="1518010424772" expanded="true" signature="4840:4884" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -52,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="offices.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="offices.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mmpProj/public/mmp/js/offices.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="17">
+              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -65,7 +82,7 @@
       <file leaf-file-name="scripts.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mmpProj/public/mmp/js/scripts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="13464">
               <caret line="797" column="50" lean-forward="false" selection-start-line="797" selection-start-column="50" selection-end-line="797" selection-end-column="50" />
               <folding>
                 <marker date="1517852276162" expanded="true" signature="7696:7702" ph=" " />
@@ -206,8 +223,8 @@
         <option value="$PROJECT_DIR$/mmpProj/public/js/offices.js" />
         <option value="$PROJECT_DIR$/mmpProj/app/Http/Controllers/MosqueCon.php" />
         <option value="$PROJECT_DIR$/mmpProj/public/mmp/js/offices2.js" />
-        <option value="$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mosque/mosque.blade.php" />
         <option value="$PROJECT_DIR$/mmpProj/public/mmp/js/offices.js" />
+        <option value="$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mosque/mosque.blade.php" />
       </list>
     </option>
   </component>
@@ -239,6 +256,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -375,7 +393,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -432,12 +449,13 @@
       <workItem from="1517998938623" duration="1780000" />
       <workItem from="1518000756853" duration="2159000" />
       <workItem from="1518003154474" duration="1746000" />
-      <workItem from="1518004995612" duration="266000" />
+      <workItem from="1518004995612" duration="870000" />
+      <workItem from="1518009199040" duration="1224000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="260745000" />
+    <option name="totallyTimeSpent" value="262573000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
@@ -790,18 +808,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/MosqueCon.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5015">
-          <caret line="302" column="50" lean-forward="false" selection-start-line="302" selection-start-column="27" selection-end-line="302" selection-end-column="50" />
+        <state relative-caret-position="5032">
+          <caret line="303" column="50" lean-forward="false" selection-start-line="303" selection-start-column="50" selection-end-line="303" selection-end-column="50" />
           <folding>
             <element signature="e#40#57#0#PHP" expanded="true" />
-            <marker date="1517928010569" expanded="true" signature="8622:8629" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/public/mmp/js/scripts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="13464">
           <caret line="797" column="50" lean-forward="false" selection-start-line="797" selection-start-column="50" selection-end-line="797" selection-end-column="50" />
           <folding>
             <marker date="1517852276162" expanded="true" signature="7696:7702" ph=" " />
@@ -810,19 +827,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mosque/mosque.blade.php">
+    <entry file="file://$PROJECT_DIR$/mmpProj/public/mmp/js/offices.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="179" column="0" lean-forward="false" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
+        <state relative-caret-position="17">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/public/mmp/js/offices.js">
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mosque/mosque.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="85">
+          <caret line="168" column="26" lean-forward="false" selection-start-line="168" selection-start-column="20" selection-end-line="168" selection-end-column="26" />
+          <folding>
+            <marker date="1518010424772" expanded="true" signature="1108:4631" ph="..." />
+            <marker date="1518010424772" expanded="true" signature="1140:4616" ph="..." />
+            <marker date="1518010424772" expanded="true" signature="1170:2884" ph="..." />
+            <marker date="1518010424772" expanded="true" signature="1210:2865" ph="..." />
+            <marker date="1518010424772" expanded="true" signature="1252:1426" ph="..." />
+            <marker date="1518010424772" expanded="true" signature="1317:1420" ph="..." />
+            <marker date="1518010424772" expanded="true" signature="1473:2841" ph="..." />
+            <marker date="1518010424772" expanded="true" signature="1944:2657" ph="..." />
+            <marker date="1518010424772" expanded="true" signature="2502:2627" ph="..." />
+            <marker date="1518010424772" expanded="true" signature="2914:4601" ph="..." />
+            <marker date="1518010424772" expanded="true" signature="2954:4582" ph="..." />
+            <marker date="1518010424772" expanded="true" signature="2996:3170" ph="..." />
+            <marker date="1518010424772" expanded="true" signature="3061:3164" ph="..." />
+            <marker date="1518010424772" expanded="true" signature="3217:4558" ph="..." />
+            <marker date="1518010424772" expanded="true" signature="3694:4410" ph="..." />
+            <marker date="1518010424772" expanded="true" signature="4255:4380" ph="..." />
+            <marker date="1518010424772" expanded="true" signature="4840:4884" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

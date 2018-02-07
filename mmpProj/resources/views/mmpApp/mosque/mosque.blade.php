@@ -22,7 +22,36 @@
 
     </style>
 
+    <form method="get">
+        <input type="text" id="currLat" name="currLat" value="">
+    </form>
+
+    <script>
+
+
+        var t1;
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                document.getElementById('currLat').value = position.coords.latitude;
+
+
+            }, function () {
+
+            });
+
+        } else {
+            // Browser doesn't support Geolocation
+
+        }
+        //alert(t1);
+    </script>
+
 @endsection
+
 
 
 
@@ -31,8 +60,8 @@
     use App\Http\Controllers\MosqueCon;
     ?>
 
-    <input type="text" id="currLat" name="currLat" value="">
-    <input type="text" id="currLng" name="currLng" value="">
+
+
 
     <!-- BEGIN PAGE TITLE/BREADCRUMB -->
     <div id="page-title-2" class=" parallax dark-bg" data-stellar-background-ratio="0.5">
@@ -51,7 +80,10 @@
         </div>
     </div>
     <!-- END PAGE TITLE/BREADCRUMB -->
+    <?php
 
+
+    ?>
     <section id="our-offices">
         <div class="container">
             <div class="row">
@@ -90,7 +122,7 @@
 
                         <?php   }if ($count == 3) { ?>
 
-                               <?php break;
+                        <?php break;
                         } }}
 
                         ?>
@@ -194,8 +226,7 @@
                     <ul class="offices-grid">
                         <?php
 
-                        $currLat = "<script>document.writeln('aaaa');</script>";
-                        echo $currLat;
+
                         $near = MosqueCon::nearestMosqueWithFridayAndWomanPrayer(42.704090, 42.704090);
                         $count4 = 0;
                         foreach ($near as $i=>$p) {
@@ -262,9 +293,6 @@
             $(document).ready(function () {
                 //Create offices maps
                 // Rider.googleMap(offices, 'headquarters_map', 0);
-                var js_var = 123;
-                var php_var = <?php js_var ?>
-                        alert(php_var);
 
 
                 $('.aa').click(function () {

@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+
 @extends('mmpApp.mmpApp')
 
 @section('css')
@@ -23,7 +23,9 @@
 
     </style>
 
+
 @endsection
+
 
 
 
@@ -50,6 +52,10 @@
         </div>
     </div>
     <!-- END PAGE TITLE/BREADCRUMB -->
+    <?php
+
+
+    ?>
     <section id="our-offices">
         <div class="container">
             <div class="row">
@@ -61,6 +67,7 @@
                     <ul class="offices-grid">
                         <?php
                         $near = MosqueCon::nearestMosque($latLng[0]->lat, $latLng[0]->lng);
+
                         $count = 0;
                         foreach ($near as $i=>$p) {
 
@@ -86,7 +93,7 @@
 
                         <?php   }if ($count == 3) { ?>
 
-                               <?php break;
+                        <?php break;
                         } }}
 
                         ?>
@@ -188,6 +195,7 @@
                         <?php
 
                         $near = MosqueCon::nearestMosqueWithFridayAndWomanPrayer($latLng[0]->lat, $latLng[0]->lng);
+
                         $count4 = 0;
                         foreach ($near as $i=>$p) {
 

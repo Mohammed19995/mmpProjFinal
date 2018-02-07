@@ -115,6 +115,8 @@ Route::get('mosqueLoc' , function() {
     return view('mmpApp.mosque.mosqueLocation');
 });
 Route::get('addCurrLoc' , 'MosqueCon@addCurrLoc');
+
+Route::get('mosque', 'MosqueCon@getALlMosque');
 /////////////////////////////////////////////////////////////
 
 
@@ -189,5 +191,4 @@ Route::get('mail', function (\Illuminate\Http\Request $request) {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
 

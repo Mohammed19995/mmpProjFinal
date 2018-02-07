@@ -313,7 +313,11 @@ var Rider;
 
             createPrettyPhoto: function () {
                 if ($("a[data-gal^=\"prettyPhoto\"]").length && $.fn.prettyPhoto) {
-                    $("a[data-gal^=\"prettyPhoto\"]").prettyPhoto({theme: "rider", hook: "data-gal", social_tools: false});
+                    $("a[data-gal^=\"prettyPhoto\"]").prettyPhoto({
+                        theme: "rider",
+                        hook: "data-gal",
+                        social_tools: false
+                    });
                 }
             },
 
@@ -659,8 +663,7 @@ var Rider;
                                 sliderLayout: "fullwith",
                                 dottedOverlay: "none",
                                 delay: 9000,
-                                navigation: {
-                                },
+                                navigation: {},
                                 responsiveLevels: [1240, 1024, 778, 480],
                                 visibilityLevels: [1240, 1024, 778, 480],
                                 gridwidth: [1240, 1024, 778, 480],
@@ -750,7 +753,11 @@ var Rider;
                         positionProperty: "position"
                     });
                 } else {
-                    $(".parallax").css({"background-position": "0%", "background-size": "cover", "background-attachment": "scroll"});
+                    $(".parallax").css({
+                        "background-position": "0%",
+                        "background-size": "cover",
+                        "background-attachment": "scroll"
+                    });
                 }
             },
 
@@ -817,7 +824,8 @@ var Rider;
 
                 mapOptions = {
                     center: myLatlng,
-                    zoom: $tis.map_initialZoom,
+                    //  zoom: $tis.map_initialZoom,
+                    zoom: 5,
                     scrollwheel: false,
                     panControl: false,
                     mapTypeControl: false,
@@ -827,6 +835,34 @@ var Rider;
                     }
                 };
 
+                //////////////////////////////////////////////
+
+
+                    // Try HTML5 geolocation.
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(function (position) {
+                            var pos = {
+                                lat: position.coords.latitude,
+                                lng: position.coords.longitude
+                            };
+                            document.getElementById('currLat').value = position.coords.latitude;
+                            document.getElementById('currLng').value = position.coords.longitude;
+
+
+                            var currLat = 5;
+                        }, function () {
+
+                        });
+
+                    } else {
+                        // Browser doesn't support Geolocation
+
+                    }
+
+
+
+
+                ////////////////////////////////////////////
                 map = new google.maps.Map(document.getElementById(office_map_canvas), mapOptions);
 
                 map.mapTypes.set("map_style", styledMap);
@@ -860,7 +896,7 @@ var Rider;
                         alignBottom: true,
                         pixelOffset: new google.maps.Size(-85, -34),
                         closeBoxMargin: "10px 10px 10px 10px",
-                      //  closeBoxURL: "images/close_infobox.png",
+                        //  closeBoxURL: "images/close_infobox.png",
                         infoBoxClearance: new google.maps.Size(5, 5),
                         isHidden: false,
                         pane: "floatPane",

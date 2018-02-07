@@ -103,7 +103,18 @@ Route::get('test' , function() {
     return view('test');
 });
 
+////////////////////  mosque user //////////////
+/// Route::get('adminApp/mosque/viewMosque', 'MosqueCon@viewMosque');
+Route::post('editMosque', 'MosqueCon@editMosque');
+Route::get('deleteMosque', 'MosqueCon@deleteMosque');
+Route::get('adminApp/mosque/getUpdatLocation/{id}', 'MosqueCon@getUpdatLocation');
+Route::post('updateLocation', 'MosqueCon@updateLocation');
+Route::get('mosque', 'MosqueCon@getALlMosque');
 
+Route::get('mosqueLoc' , function() {
+    return view('mmpApp.mosque.mosqueLocation');
+});
+Route::get('addCurrLoc' , 'MosqueCon@addCurrLoc');
 /////////////////////////////////////////////////////////////
 
 
@@ -180,9 +191,3 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('adminApp/mosque/viewMosque', 'MosqueCon@viewMosque');
-Route::post('editMosque', 'MosqueCon@editMosque');
-Route::get('deleteMosque', 'MosqueCon@deleteMosque');
-Route::get('adminApp/mosque/getUpdatLocation/{id}', 'MosqueCon@getUpdatLocation');
-Route::post('updateLocation', 'MosqueCon@updateLocation');
-Route::get('mosque', 'MosqueCon@getALlMosque');

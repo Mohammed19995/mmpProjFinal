@@ -29,7 +29,9 @@
     <script>
 
 
-        var t1;
+
+
+
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
                 var pos = {
@@ -37,7 +39,8 @@
                     lng: position.coords.longitude
                 };
                 document.getElementById('currLat').value = position.coords.latitude;
-
+                var jvalue = position.coords.latitude;
+                <?php $abc = "<script>document.write(jvalue)</script>"?>
 
             }, function () {
 
@@ -80,9 +83,19 @@
         </div>
     </div>
     <!-- END PAGE TITLE/BREADCRUMB -->
-    <?php
 
+   <?php
+   echo  'php_'.$abc;
+  /*  $address =$_POST['address']; // Google HQ
+    $prepAddr = str_replace(' ','+',$address);
+    $geocode=file_get_contents('http://maps.google.com/maps/api/geocode/json?address='.$prepAddr.'&sensor=false');
+    $output= json_decode($geocode);
+    $latitude = $output->results[0]->geometry->location->lat;
+    $longitude = $output->results[0]->geometry->location->lng;
 
+    echo "latitude - ".$latitude;
+    echo "longitude - ".$longitude;
+  */
     ?>
     <section id="our-offices">
         <div class="container">

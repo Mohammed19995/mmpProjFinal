@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Activity;
+use App\Currlocation;
 use App\Mosque;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -281,6 +282,12 @@ class MosqueCon extends Controller
     }
 
 
+    public function addCurrLoc(Request $request) {
+
+        $objCurrLoc = new Currlocation();
+        $objCurrLoc->addCurrLocation($request->currLat , $request->currLng);
+
+    }
     //////////////////////////////////////////////////////////////
 
     ///////////////////////// Mosque in user /////////////////////////////
@@ -363,7 +370,12 @@ class MosqueCon extends Controller
 
     public function getALlMosque(){
         $allMosque = Mosque::all();
-        return view('mmpApp.mosque.mosque',['arr'=>$allMosque]);
+        $latLng = Currlocation::all();
+        if(session()->has('currLoc')) {
+            return view('mmpApp.mosque.mosque',['arr'=>$allMosque , 'latLng'=>$latLng]);
+        }else {
+            return redirect('mosqueLoc');
+        }
     }
 
 

@@ -1,3 +1,4 @@
+
 @extends('mmpApp.mmpApp')
 
 @section('css')
@@ -22,36 +23,7 @@
 
     </style>
 
-    <form method="get">
-        <input type="text" id="currLat" name="currLat" value="">
-    </form>
-
-    <script>
-
-
-
-
-
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                var pos = {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude
-                };
-                document.getElementById('currLat').value = position.coords.latitude;
-                var jvalue = position.coords.latitude;
-                <?php $abc = "<script>document.write(jvalue)</script>"?>
-
-            }, function () {
-
-            });
-
-        } else {
-            // Browser doesn't support Geolocation
-
-        }
-        //alert(t1);
-    </script>
+ 
 
 @endsection
 
@@ -62,8 +34,6 @@
     <?php
     use App\Http\Controllers\MosqueCon;
     ?>
-
-
 
 
     <!-- BEGIN PAGE TITLE/BREADCRUMB -->
@@ -102,14 +72,13 @@
             <div class="row">
                 <div class="col-sm-12">
 
-                    <div class="center"><h1 class="section-title" data-animation-direction="from-bottom"
-                                            data-animation-delay="50">Our <strong>Offices</strong></h1></div>
+                    <div class="center"><h1 class="section-title">Our <strong>Offices</strong></h1></div>
+
 
                     <ul class="offices-grid">
                         <?php
+                        $near = MosqueCon::nearestMosque($latLng[0]->lat, $latLng[0]->lng);
 
-
-                        $near = MosqueCon::nearestMosque(42.704090, 42.704090);
                         $count = 0;
                         foreach ($near as $i=>$p) {
 
@@ -120,7 +89,7 @@
 
                         ?>
 
-                        <li class="col-md-3" data-animation-direction="from-bottom" data-animation-delay="450">
+                        <li class="col-md-3">
                             <input type="hidden" value="<?php  echo $i ?>" class="id_hidden">
                             <input type="hidden" value="<?php echo $all->lat;?>" id="lat<?php echo $count;?>">
                             <input type="hidden" value="<?php echo $all->lng;?>" id="lng<?php echo $count;?>">
@@ -149,12 +118,11 @@
             <div class="row">
                 <div class="col-sm-12">
 
-                    <div class="center"><h1 class="section-title" data-animation-direction="from-bottom"
-                                            data-animation-delay="50">Our <strong>Offices</strong></h1></div>
+                    <div class="center"><h1 class="section-title">Our <strong>Offices</strong></h1></div>
 
                     <ul class="offices-grid">
                         <?php
-                        $near = MosqueCon::nearestMosqueWithFriday(42.704090, 42.704090);
+                        $near = MosqueCon::nearestMosqueWithFriday($latLng[0]->lat, $latLng[0]->lng);
                         $count2 = 0;
                         foreach ($near as $i=>$p) {
 
@@ -163,7 +131,7 @@
                         $count2++;
                         ?>
 
-                        <li class="col-md-3" data-animation-direction="from-bottom" data-animation-delay="450">
+                        <li class="col-md-3">
                             <input type="hidden" value="<?php  echo $i ?>" class="id_hidden">
                             <input type="hidden" value="<?php echo $all->lat;?>" id="lat2<?php echo $count2;?>">
                             <input type="hidden" value="<?php echo $all->lng;?>" id="lng2<?php echo $count2;?>">
@@ -191,12 +159,11 @@
             <div class="row">
                 <div class="col-sm-12">
 
-                    <div class="center"><h1 class="section-title" data-animation-direction="from-bottom"
-                                            data-animation-delay="50">Our <strong>Offices</strong></h1></div>
+                    <div class="center"><h1 class="section-title">Our <strong>Offices</strong></h1></div>
 
                     <ul class="offices-grid">
                         <?php
-                        $near = MosqueCon::nearestMosqueWithWomanPrayer(42.704090, 42.704090);
+                        $near = MosqueCon::nearestMosqueWithWomanPrayer($latLng[0]->lat, $latLng[0]->lng);
                         $count3 = 0;
                         foreach ($near as $i=>$p) {
 
@@ -205,7 +172,7 @@
                         $count3++;
                         ?>
 
-                        <li class="col-md-3" data-animation-direction="from-bottom" data-animation-delay="450">
+                        <li class="col-md-3">
                             <input type="hidden" value="<?php  echo $i ?>" class="id_hidden">
                             <input type="hidden" value="<?php echo $all->lat;?>" id="lat3<?php echo $count3;?>">
                             <input type="hidden" value="<?php echo $all->lng;?>" id="lng3<?php echo $count3;?>">
@@ -233,14 +200,13 @@
             <div class="row">
                 <div class="col-sm-12">
 
-                    <div class="center"><h1 class="section-title" data-animation-direction="from-bottom"
-                                            data-animation-delay="50">Our <strong>Offices</strong></h1></div>
+                    <div class="center"><h1 class="section-title">Our <strong>Offices</strong></h1></div>
 
                     <ul class="offices-grid">
                         <?php
 
+                        $near = MosqueCon::nearestMosqueWithFridayAndWomanPrayer($latLng[0]->lat, $latLng[0]->lng);
 
-                        $near = MosqueCon::nearestMosqueWithFridayAndWomanPrayer(42.704090, 42.704090);
                         $count4 = 0;
                         foreach ($near as $i=>$p) {
 
@@ -249,7 +215,7 @@
                         $count4++;
                         ?>
 
-                        <li class="col-md-3" data-animation-direction="from-bottom" data-animation-delay="450">
+                        <li class="col-md-3">
                             <input type="hidden" value="<?php  echo $i ?>" class="id_hidden">
                             <input type="hidden" value="<?php echo $all->lat;?>" id="lat4<?php echo $count4;?>">
                             <input type="hidden" value="<?php echo $all->lng;?>" id="lng4<?php echo $count4;?>">

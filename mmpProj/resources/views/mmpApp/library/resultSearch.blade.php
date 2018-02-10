@@ -5,6 +5,13 @@
         .active {
             color: #0d3625;
         }
+        .hand {
+            cursor: pointer;
+        }
+
+        .isLiked {
+            color: #0E7EB5;
+        }
     </style>
 @endsection
 <?php
@@ -53,9 +60,16 @@ use App\category;
                             $catName = category::getNameCatForBookId($p->cat_id);
                             $classCat = "cat" . $p->cat_id;
                             $rowNum = $rowNum + 1;
+                            $likeBook = 0;
+                            foreach ($getAllFavoriteForUser as $fav) {
+                                if ($fav->book_id == $p->id) {
+                                    $likeBook = 1;
+                                }
+                            }
                             ?>
 
                             <div class="item col-xs-12 col-sm-6 col-md-3  <?php echo $classCat;?>">
+                                <input type="hidden" class="BookIdHidden" value="<?php echo $p->id;?>">
                                 <div class="image">
                                     <a href={{asset("mmpApp/libraryDetail")."/".$p->id}}>
                                         <i class="fa fa-file-text-o"></i>
@@ -67,7 +81,9 @@ use App\category;
                                 <div class="info-blog">
                                     <ul class="top-info">
                                         <li><i class="fa fa-calendar"></i> {{$p->publish->format('M-d-Y')}}</li>
-                                        <li><i class="fa fa-comments-o"></i> 2</li>
+                                        <li>
+                                            <i class="fa {{$likeBook == 1 ? 'fa-thumbs-up isLiked':'fa-thumbs-o-up'}}  hand like"
+                                               style="font-size: 23px;"></i></li>
                                         <li><i class="fa fa-tags"></i> <?php echo $catName->name; ?></li>
                                     </ul>
                                     <h3>
@@ -75,10 +91,10 @@ use App\category;
                                     </h3>
                                 </div>
                             </div>
-                                <?php if($rowNum %4 == 0) {
-                                    echo "</div>";
-                                    echo "<div class='row'>";
-                                } ?>
+                            <?php if ($rowNum % 4 == 0) {
+                                echo "</div>";
+                                echo "<div class='row'>";
+                            } ?>
                             <?php }
                             ?>
 
@@ -110,7 +126,53 @@ use App\category;
     <script>
         $(document).ready(function () {
 
+            $('.like').on('click', function () {
+                var thisBoo = $(this).parents('.item');
+                var bookIdHidden = $(this).parents('.item').find('.BookIdHidden').val();
 
+                if($(this).hasClass('isLiked')) {
+                    $(this).removeClass('isLiked');
+                    $(this).addClass('fa-thumbs-o-up');
+                    $(this).removeClass('fa-thumbs-up');
+
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        url:"{{url('deleteFavoriteBook')}}" ,
+                        method:"get" ,
+                        data:{bookIdHidden:bookIdHidden} ,
+                        success:function (e) {
+                            thisBoo.hide('slow');
+                        }
+
+                    });
+
+                }else {
+                    $(this).addClass('isLiked');
+                    $(this).removeClass('fa-thumbs-o-up');
+                    $(this).addClass('fa-thumbs-up');
+
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        url:"{{url('addFavoriteBook')}}" ,
+                        method:"get" ,
+                        data:{bookIdHidden:bookIdHidden} ,
+                        success:function (e) {
+
+                        }
+
+                    });
+
+                }
+
+            });
         });
 
     </script>

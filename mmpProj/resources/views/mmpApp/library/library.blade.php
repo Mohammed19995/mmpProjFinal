@@ -4,7 +4,7 @@
     <style>
 
         .active {
-            color: #0d3625!important;
+            color: #0d3625 !important;
         }
 
         .search {
@@ -20,10 +20,16 @@
             background-color: inherit;
         }
 
+        .hand {
+            cursor: pointer;
+        }
+
+        .isLiked {
+            color: #0E7EB5;
+        }
     </style>
 
 @endsection
-
 <?php
 use App\category;
 use App\Http\Controllers\LibraryCon;
@@ -106,6 +112,12 @@ use App\Http\Controllers\LibraryCon;
                 <!-- BEGIN SIDEBAR sidebar -->
                 <div class="sidebar col-sm-3">
 
+                    <div style="padding-bottom: 40px;">
+                        <h3><a href="{{url('favoriteBook')}}" class="hand" style="color: #4d4f52; font-weight:600 "><img
+                                        src="{{asset('icons/library/fav.ico')}}" width="30" height="30"> Favorite
+                                book</a></h3>
+                    </div>
+
 
                     <input type="hidden" value="<?php echo $cat;?>" class="catIdHidden">
                     <div class="widget widget_categories">
@@ -175,7 +187,7 @@ use App\Http\Controllers\LibraryCon;
                                 <div class="panel-heading">
                                     <div class="panel-title ">
                                         <a class="{{$moreDetail == $d ? 'active':''}}"
-                                                href="{{url('mmpApp/libraryAchive')."/".$d}}" >
+                                           href="{{url('mmpApp/libraryAchive')."/".$d}}">
                                             <i class="fa fa-chevron-right "></i> <?php echo $d;?>
                                         </a>
                                     </div>
@@ -212,22 +224,54 @@ use App\Http\Controllers\LibraryCon;
                             $path = str_replace("public/", "", $p->img);
                             $catName = category::getNameCatForBookId($p->cat_id);
                             $classCat = "cat" . $p->cat_id;
-                            $numCol= $numCol+1;
+                            $numCol = $numCol + 1;
+
+                            //////////////////////
+                            $appUrl = App::make('url')->to('/');
+                            $appUrl = str_replace("public", "", $appUrl);
+                            $appUrl = $appUrl."storage/app/public/".$path;
+                          //  echo $appUrl;
+                            /// ////////////////
+                            if (\Illuminate\Support\Facades\Auth::check()) {
+                                $likeBook = 0;
+                                foreach ($getAllFavoriteForUser as $fav) {
+                                    if ($fav->book_id == $p->id) {
+                                        $likeBook = 1;
+                                    }
+                                }
+                            }
+
                             ?>
 
                             <div class="item col-xs-12 col-sm-6 col-md-3  <?php echo $classCat;?>">
+                                <input type="hidden" class="BookIdHidden" value="<?php echo $p->id; ?>">
                                 <div class="image">
                                     <a href={{asset("mmpApp/libraryDetail")."/".$p->id}}>
                                         <i class="fa fa-file-text-o"></i>
                                     </a>
+                                    <!--
                                     <img src="{{asset('storage')."/".$path}}" style="width: 180px; height: 200px;"
+                                         alt=""/>
+                                         http://localhost/mmpProjFinal/mmpProj/public/storage/book/img/Ozf1K4jCfcbY91Q2SNOZOk4fbloTijHWwJjqdS5z.jpeg
+                                         http://localhost/mmpProjFinal/mmpProj/storage/app/public/book/img/Ozf1K4jCfcbY91Q2SNOZOk4fbloTijHWwJjqdS5z.jpeg
+                                         -->
+                                    <img src="<?php echo $appUrl;?>"
+                                         style="width: 180px; height: 200px;"
                                          alt=""/>
 
                                 </div>
                                 <div class="info-blog">
                                     <ul class="top-info">
                                         <li><i class="fa fa-calendar"></i> {{$p->publish->format('M-d-Y')}}</li>
-                                        <li><i class="fa fa-comments-o"></i> 2</li>
+                                        @if(Auth::check())
+                                            <li>
+                                                <i class="fa {{$likeBook == 1 ? 'fa-thumbs-up isLiked':'fa-thumbs-o-up'}}  hand like"
+                                                   style="font-size: 23px;"></i>
+                                            </li>
+                                        @else
+
+                                        @endif
+
                                         <li><i class="fa fa-tags"></i> <?php echo $catName->name; ?></li>
                                     </ul>
                                     <h3>
@@ -235,10 +279,10 @@ use App\Http\Controllers\LibraryCon;
                                     </h3>
                                 </div>
                             </div>
-                                <?php if($numCol % 4 == 0) {
-                                    echo "</div>";
-                                    echo "<div class='row'>";
-                                } ?>
+                            <?php if ($numCol % 4 == 0) {
+                                echo "</div>";
+                                echo "<div class='row'>";
+                            } ?>
                             <?php }
                             ?>
 
@@ -343,6 +387,54 @@ use App\Http\Controllers\LibraryCon;
                     }
                 }
                 //
+            });
+
+
+            $('.like').on('click', function () {
+                var bookIdHidden = $(this).parents('.item').find('.BookIdHidden').val();
+
+                if ($(this).hasClass('isLiked')) {
+                    $(this).removeClass('isLiked');
+                    $(this).addClass('fa-thumbs-o-up');
+                    $(this).removeClass('fa-thumbs-up');
+
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        url: "{{url('deleteFavoriteBook')}}",
+                        method: "get",
+                        data: {bookIdHidden: bookIdHidden},
+                        success: function (e) {
+
+                        }
+
+                    });
+
+                } else {
+                    $(this).addClass('isLiked');
+                    $(this).removeClass('fa-thumbs-o-up');
+                    $(this).addClass('fa-thumbs-up');
+
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        url: "{{url('addFavoriteBook')}}",
+                        method: "get",
+                        data: {bookIdHidden: bookIdHidden},
+                        success: function (e) {
+
+                        }
+
+                    });
+
+                }
+
             });
         });
 

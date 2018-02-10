@@ -93,7 +93,8 @@ class Book extends Model
     {
         return $this::where('cat_id', $cat_id)
             ->where('id', '<>', $id)
-            ->get();
+            ->take(8)
+             ->get();
     }
 
     public function scopeSearchByKeyword($query, $keyword)

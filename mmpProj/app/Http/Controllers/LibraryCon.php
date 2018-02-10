@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Author;
 use App\Book;
 use App\category;
+use App\FavoriteBook;
 use App\Filebook;
 use App\Filelang;
 use App\Filetype;
@@ -16,6 +17,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Auth;
 
 class LibraryCon extends Controller
 {
@@ -445,8 +447,16 @@ class LibraryCon extends Controller
         $paginateBook = $this->objBook->getPaginateBook();
         $getAllCat = $this->obj->getAllCategory();
         $getAllYear = $this->getAllYear();
+        // Auth user
+        if(Auth::check()) {
+            $getAllFavoriteForUser = FavoriteBook::where('user_id' , Auth::user()->id)->get();
+        }else {
+            $getAllFavoriteForUser = "";
+        }
+
         $moreDetail = 0;
-        return view('mmpApp.library.library', ['paginateBook' => $paginateBook, 'getAllYear' => $getAllYear, 'getAllCat' => $getAllCat, 'cat' => 'all', 'moreDetail' => $moreDetail]);
+        return view('mmpApp.library.library', ['paginateBook' => $paginateBook, 'getAllYear' => $getAllYear, 'getAllCat' => $getAllCat,
+            'cat' => 'all', 'moreDetail' => $moreDetail , 'getAllFavoriteForUser' =>$getAllFavoriteForUser]);
     }
 
     public function ViewBookArchive($year)
@@ -458,7 +468,15 @@ class LibraryCon extends Controller
         $getAllCat = $this->getCatForYear($year);
         $getAllYear = $this->getAllYear();
         $moreDetail = $year;
-        return view('mmpApp.library.library', ['paginateBook' => $paginateBook, 'getAllYear' => $getAllYear, 'getAllCat' => $getAllCat, 'cat' => 'all', 'moreDetail' => $moreDetail]);
+        if(Auth::check()) {
+            $getAllFavoriteForUser = FavoriteBook::where('user_id' , Auth::user()->id)->get();
+        }else {
+            $getAllFavoriteForUser = "";
+        }
+
+        return view('mmpApp.library.library', ['paginateBook' => $paginateBook, 'getAllYear' => $getAllYear,
+            'getAllCat' => $getAllCat, 'cat' => 'all', 'moreDetail' => $moreDetail ,
+            'getAllFavoriteForUser' => $getAllFavoriteForUser]);
 
     }
 
@@ -469,7 +487,14 @@ class LibraryCon extends Controller
         $getAllCat = $this->getCatForYear($year);
         $getAllYear = $this->getAllYear();
         $moreDetail = $year;
-        return view('mmpApp.library.library', ['paginateBook' => $paginateBook, 'getAllYear' => $getAllYear, 'getAllCat' => $getAllCat, 'cat' => $cat_id, 'moreDetail' => $moreDetail]);
+        if(Auth::check()) {
+            $getAllFavoriteForUser = FavoriteBook::where('user_id' , Auth::user()->id)->get();
+        }else {
+            $getAllFavoriteForUser = "";
+        }
+        return view('mmpApp.library.library', ['paginateBook' => $paginateBook, 'getAllYear' => $getAllYear,
+            'getAllCat' => $getAllCat, 'cat' => $cat_id, 'moreDetail' => $moreDetail ,
+            'getAllFavoriteForUser' => $getAllFavoriteForUser]);
     }
 
     public function getAllYear()
@@ -490,7 +515,15 @@ class LibraryCon extends Controller
         $getAllCat = $this->obj->getAllCategory();
         $getAllYear = $this->getAllYear();
         $moreDetail = 0;
-        return view('mmpApp.library.library', ['paginateBook' => $paginateBook, 'getAllYear' => $getAllYear, 'getAllCat' => $getAllCat, 'cat' => $cat_id, 'moreDetail' => $moreDetail]);
+        if(Auth::check()) {
+            $getAllFavoriteForUser = FavoriteBook::where('user_id' , Auth::user()->id)->get();
+        }else {
+            $getAllFavoriteForUser = "";
+        }
+
+        return view('mmpApp.library.library', ['paginateBook' => $paginateBook, 'getAllYear' => $getAllYear,
+            'getAllCat' => $getAllCat, 'cat' => $cat_id, 'moreDetail' => $moreDetail ,
+            'getAllFavoriteForUser' => $getAllFavoriteForUser]);
     }
 
     public function getCatForYear($year)
@@ -530,8 +563,15 @@ class LibraryCon extends Controller
         $getFileBookData = $objFileBook->getDataFileForBook($id);
         $similarBooks = $this->resultSearchSimilarBook($getBook->id, $getBook->cat_id);
 
+        if(Auth::check()) {
+            $getAllFavoriteForUser = FavoriteBook::where('user_id' , Auth::user()->id)->get();
+        }else {
+            $getAllFavoriteForUser = "";
+        }
+
         return view('mmpApp.library.libraryDetail', ['getBook' => $getBook, 'author' => $author, 'outline' => $outline, 'keyword' => $keyword, 'nameCat' => $nameCat, 'getAllLang' => $getAllLang,
-            'getAllType' => $getAllType, 'getFileBookData' => $getFileBookData, 'similarBooks' => $similarBooks]);
+            'getAllType' => $getAllType, 'getFileBookData' => $getFileBookData,
+            'similarBooks' => $similarBooks , 'getAllFavoriteForUser' =>$getAllFavoriteForUser]);
     }
 
     public static function getCatName($id)
@@ -610,8 +650,9 @@ class LibraryCon extends Controller
             array_push($getBookData, $this->objBook->getBookData($item));
         }
 
-
-        return view('mmpApp.library.resultSearch', ['paginateBook' => $getBookData, 'keyword' => $keyword]);
+        $getAllFavoriteForUser = FavoriteBook::where('user_id' , Auth::user()->id)->get();
+        return view('mmpApp.library.resultSearch', ['paginateBook' => $getBookData, 'keyword' => $keyword ,
+            'getAllFavoriteForUser' => $getAllFavoriteForUser]);
 
     }
 
@@ -638,8 +679,9 @@ class LibraryCon extends Controller
             array_push($getBookData, $this->objBook->getBookData($item));
         }
 
-
-        return view('mmpApp.library.resultSearch', ['paginateBook' => $getBookData, 'keyword' => $keyword]);
+        $getAllFavoriteForUser = FavoriteBook::where('user_id' , 2)->get();
+        return view('mmpApp.library.resultSearch', ['paginateBook' => $getBookData, 'keyword' => $keyword ,
+            'getAllFavoriteForUser' =>$getAllFavoriteForUser]);
 
     }
 

@@ -94,8 +94,15 @@ Route::get('seed1', function() {
     $query = \App\Book::join('categories' , 'books.cat_id' , '=' , 'categories.id')
             ->select('books.id As IdBook' ,'categories.name As catName' , 'categories.id As IdCat')->get();
 */
+    /*
     $query = \App\Book::all()->groupBy('cat_id');
     dd($query[4]);
+    */
+    $bookId = \App\FavoriteBook::join('books' , 'favorite_books.user_id' , '=' , 'books.id')->where('favorite_books.user_id' , 2)
+        ->select('books.*')->paginate(8);
+    $bookId = \App\Book::join('favorite_books' , 'books.id' , '=' , '');
+
+    dd($bookId) ;
 
 });
 Route::get('testD' , 'MosqueCon@testNearestMosque');
@@ -119,6 +126,13 @@ Route::get('addCurrLoc' , 'MosqueCon@addCurrLoc');
 Route::get('mosque', 'MosqueCon@getALlMosque');
 /////////////////////////////////////////////////////////////
 
+//////////////////// Favorite book /////////////////////
+
+Route::get('addFavoriteBook' , 'Favorite@addFavoriteBook');
+Route::get('deleteFavoriteBook' , 'Favorite@deleteFavoriteBook');
+Route::get('favoriteBook' , 'Favorite@favoriteBook')->middleware('Login');
+Route::post('resultSearchLibFav' , 'Favorite@resultSearchLibFav');
+////////////////////////////////////
 
 
 

@@ -1,8 +1,23 @@
 @extends('mmpApp.mmpApp')
 
+
 <?php
 use App\category;
 ?>
+
+@section('css')
+
+    <style>
+
+        .hand {
+            cursor: pointer;
+        }
+
+        .isLiked {
+            color: #0E7EB5 !important;
+        }
+    </style>
+@endsection
 
 @section('content')
 
@@ -28,12 +43,21 @@ use App\category;
     <div class="content">
         <div class="container">
             <div class="row">
-
+                <input type="hidden" id="bookIdHidden" value="<?php echo $getBook->id;?>">
                 <!-- BEGIN SIDEBAR -->
                 <div class="main col-sm-8">
 
+
                     <?php
                     $path = str_replace('public', '', $getBook->img);
+
+                    $likeBook = 0;
+                    foreach ($getAllFavoriteForUser as $fav) {
+                        if ($fav->book_id == $getBook->id) {
+                            $likeBook = 1;
+                        }
+                    }
+
                     ?>
                     <img class="blog-main-image" style="width: 700px; height: 500px;"
                          src="{{asset('storage')."/".$path}}" alt=""/>
@@ -41,7 +65,12 @@ use App\category;
                     <ul class="blog-metas">
                         <li><i class="fa fa-pencil"></i><?php echo $getBook->name;?></li>
                         <li><i class="fa fa-calendar"></i> {{$getBook->publish->format('M-d-Y')}}</li>
-                        <li><i class="fa fa-comments-o"></i> 3 Comments</li>
+                        @if(Auth::check())
+                            <li><i class="fa {{$likeBook == 1 ? 'fa-thumbs-up isLiked':'fa-thumbs-o-up'}} hand like"
+                                   style="font-size: 23px;"></i>
+                            </li>
+                        @endif
+
                         <li><i class="fa fa-tags"></i> Tips, Travel, Best Deals</li>
                     </ul>
 
@@ -211,7 +240,7 @@ use App\category;
         </div>
 
     </div>
-    </div>
+
     <!-- END CONTENT WRAPPER -->
 @endsection
 
@@ -219,6 +248,7 @@ use App\category;
 @section('script')
     <script>
         $(document).ready(function () {
+
 
             $('.rd-navbar-nav-wrap ul li').each(function (e, v) {
                 $(this).removeClass('active');
@@ -232,6 +262,54 @@ use App\category;
                     $(this).addClass('hidden');
                 });
                 $('.getIconDownload' + thisVal).removeClass('hidden');
+            });
+
+            $('.like').on('click', function () {
+                var bookIdHidden = "{{$getBook->id}}";
+
+
+                if ($(this).hasClass('isLiked')) {
+                    $(this).removeClass('isLiked');
+                    $(this).addClass('fa-thumbs-o-up');
+                    $(this).removeClass('fa-thumbs-up');
+
+
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        url: "{{url('deleteFavoriteBook')}}",
+                        method: "get",
+                        data: {bookIdHidden: bookIdHidden},
+                        success: function (e) {
+
+                        }
+
+                    });
+
+                } else {
+                    $(this).addClass('isLiked');
+                    $(this).removeClass('fa-thumbs-o-up');
+                    $(this).addClass('fa-thumbs-up');
+
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        url: "{{url('addFavoriteBook')}}",
+                        method: "get",
+                        data: {bookIdHidden: bookIdHidden},
+                        success: function (e) {
+                        }
+
+                    });
+
+                }
+
             });
         });
 

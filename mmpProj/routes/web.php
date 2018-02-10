@@ -22,7 +22,7 @@ Route::get('mmpApp', function () {
     return view('mmpApp.mmpApp');
 });
 
-Route::get('mmpApp/index', function () {
+Route::get('home', function () {
     return view('mmpApp.index');
 });
 
@@ -210,5 +210,6 @@ Route::get('mail', function (\Illuminate\Http\Request $request) {
 });
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+// Route::get('/home', 'HomeController@index')->name('home');
 

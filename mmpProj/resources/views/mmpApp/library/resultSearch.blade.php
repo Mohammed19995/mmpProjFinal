@@ -1,4 +1,7 @@
 @extends('mmpApp.mmpApp')
+@section('title')
+    Library
+@endsection
 
 @section('css')
     <style>
@@ -125,7 +128,7 @@ use App\category;
 
     <script>
         $(document).ready(function () {
-
+            document.title = 'Library';
             $('.like').on('click', function () {
                 var thisBoo = $(this).parents('.item');
                 var bookIdHidden = $(this).parents('.item').find('.BookIdHidden').val();

@@ -1,5 +1,7 @@
 @extends('mmpApp.mmpApp')
-
+@section('title')
+    Library
+@endsection
 
 <?php
 use App\category;
@@ -249,6 +251,7 @@ use App\category;
     <script>
         $(document).ready(function () {
 
+            document.title = 'Library';
 
             $('.rd-navbar-nav-wrap ul li').each(function (e, v) {
                 $(this).removeClass('active');

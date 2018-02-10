@@ -1,5 +1,9 @@
 @extends('mmpApp.mmpApp')
 
+@section('title')
+   Library
+@endsection
+
 @section('css')
     <style>
 
@@ -229,7 +233,7 @@ use App\Http\Controllers\LibraryCon;
                             //////////////////////
                             $appUrl = App::make('url')->to('/');
                             $appUrl = str_replace("public", "", $appUrl);
-                            $appUrl = $appUrl."storage/app/public/".$path;
+                            $appUrl = $appUrl."/storage/app/public/".$path;
                           //  echo $appUrl;
                             /// ////////////////
                             if (\Illuminate\Support\Facades\Auth::check()) {
@@ -361,6 +365,7 @@ use App\Http\Controllers\LibraryCon;
 
     <script>
         $(document).ready(function () {
+
 
             $('.rd-navbar-nav-wrap ul li').each(function (e, v) {
                 $(this).removeClass('active');

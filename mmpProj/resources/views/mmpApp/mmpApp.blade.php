@@ -2,7 +2,7 @@
 <html class="wide wow-animation smoothscroll scrollTo" lang="en">
 <head>
     <!-- Site Title-->
-    <title>Home</title>
+    <title>@yield('title' , "home")</title>
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport"
@@ -183,7 +183,7 @@
                                 </div>
                                 <!-- RD Navbar Nav-->
                                 <ul class="rd-navbar-nav">
-                                    <li class="active"><a href="{{url('index')}}">Home</a>
+                                    <li class="active"><a href="{{url('home')}}">Home</a>
                                     </li>
 
                                     <li><a href="gallery-masonry.html">Mosque</a>

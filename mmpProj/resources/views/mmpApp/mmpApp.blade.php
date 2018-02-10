@@ -161,7 +161,7 @@
                             <div class="rd-navbar-mobile-scroll">
                                 <div class="rd-navbar-mobile-header-wrap">
                                     <!--Navbar Brand Mobile-->
-                                    <div class="rd-navbar-mobile-brand"><a href="{{url('mmpApp/index')}}"><img width='165'
+                                    <div class="rd-navbar-mobile-brand"><a href="{{url('index')}}"><img width='165'
                                                                                                   height='76'
                                                                                                   src='http://placehold.it/165x76'
                                                                                                   alt=''/></a><a
@@ -183,25 +183,25 @@
                                 </div>
                                 <!-- RD Navbar Nav-->
                                 <ul class="rd-navbar-nav">
-                                    <li class="active"><a href="{{url('mmpApp/index')}}">Home</a>
+                                    <li class="active"><a href="{{url('index')}}">Home</a>
                                     </li>
 
                                     <li><a href="gallery-masonry.html">Mosque</a>
 
                                     </li>
 
-                                    <li class="library"><a href="{{url('mmpApp/library')}}">Library</a>
+                                    <li class="library"><a href="{{url('library')}}">Library</a>
                                     </li>
 
                                     <li><a href="#">Courses</a>
                                     </li>
 
-                                    <li class="fatwa"><a href="{{asset('mmpApp/advisory')}}">Fatwa </a>
+                                    <li class="fatwa"><a href="{{asset('advisory')}}">Fatwa </a>
 
                                     </li>
                                     <li class="gallery"><a href="#">Activity</a>
                                         <ul class="rd-navbar-dropdown">
-                                            <li><a href="{{url('mmpApp/gallery')}}">Gallery</a>
+                                            <li><a href="{{url('gallery')}}">Gallery</a>
                                             </li>
                                             <li><a href="blog-2-columns-layout.html">videos</a>
                                             </li>
@@ -319,7 +319,7 @@
                                 href="http://www.wiselythemes.com" target="_blank">WiselyThemes</a>
 
                         <ul class="footer-links">
-                            <li><a href="{{url('mmpApp/index')}}">Home</a></li>
+                            <li><a href="{{url('index')}}">Home</a></li>
                             <li><a href="#">Mosque</a></li>
                             <li><a href="#">Library</a></li>
 

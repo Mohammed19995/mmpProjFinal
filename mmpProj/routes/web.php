@@ -14,7 +14,8 @@
 use Illuminate\Support\Facades\Response;
 
 Route::get('/', function () {
-    return view('welcome');
+   // return view('welcome');
+    return view('mmpApp.index');
 });
 
 Route::get('mmpApp', function () {
@@ -71,11 +72,11 @@ Route::get('downloadFile/{name}', function ($name) {
 });
 
 /////////////////////   library user    //////////////////////////////
-Route::get('mmpApp/library', 'LibraryCon@ViewBookUser');
-Route::get('mmpApp/library/{cat_id}', 'LibraryCon@ViewBookCatUser');
-Route::get('mmpApp/library/{year}/{cat_id}', 'LibraryCon@ViewBookCatYear');
-Route::get('mmpApp/libraryAchive/{year}', 'LibraryCon@ViewBookArchive');
-Route::get('mmpApp/libraryDetail/{id}', 'LibraryCon@viewUniqueBook');
+Route::get('library', 'LibraryCon@ViewBookUser');
+Route::get('library/{cat_id}', 'LibraryCon@ViewBookCatUser');
+Route::get('library/{year}/{cat_id}', 'LibraryCon@ViewBookCatYear');
+Route::get('libraryAchive/{year}', 'LibraryCon@ViewBookArchive');
+Route::get('libraryDetail/{id}', 'LibraryCon@viewUniqueBook');
 Route::post('resultSearchLib', 'LibraryCon@resultSearch');
 Route::get('resultSearchAuhtor/{author}', 'LibraryCon@resultSearchAuthor');
 Route::get('d/{year}', 'LibraryCon@getCatForYear');

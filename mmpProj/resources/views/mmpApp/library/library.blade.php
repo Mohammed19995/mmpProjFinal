@@ -128,7 +128,7 @@ use App\Http\Controllers\LibraryCon;
                             <?php
                             if ($moreDetail == 0) {
                             ?>
-                            <a href="{{url('mmpApp/library')}}" style="cursor: pointer;"
+                            <a href="{{url('library')}}" style="cursor: pointer;"
                                data-class="allCat">
                                 <li>All</li>
 
@@ -136,7 +136,7 @@ use App\Http\Controllers\LibraryCon;
                             <?php
                             } else {
                             ?>
-                            <a href="{{url('mmpApp/libraryAchive')."/".$moreDetail}}" style="cursor: pointer;"
+                            <a href="{{url('libraryAchive')."/".$moreDetail}}" style="cursor: pointer;"
                                data-class="allCat">
                                 <li>All</li>
 
@@ -157,7 +157,7 @@ use App\Http\Controllers\LibraryCon;
 
 
                             ?>
-                            <a class="" href="{{url('mmpApp/library')."/".$moreUrl}}" style="cursor: pointer;"
+                            <a class="" href="{{url('library')."/".$moreUrl}}" style="cursor: pointer;"
                                data-class="<?php echo $dataClass;?>">
                                 <li><?php echo $c->name;?>
                                     <span>(<?php echo $countBook;?>)</span>
@@ -173,7 +173,7 @@ use App\Http\Controllers\LibraryCon;
                             <div class="panel">
                                 <div class="panel-heading">
                                     <div class="panel-title">
-                                        <a href="{{url('mmpApp/library')}}" class="{{$moreDetail == 0 ? 'active':''}}">
+                                        <a href="{{url('library')}}" class="{{$moreDetail == 0 ? 'active':''}}">
                                             <i class="fa fa-chevron-right"></i> All
                                         </a>
                                     </div>
@@ -187,7 +187,7 @@ use App\Http\Controllers\LibraryCon;
                                 <div class="panel-heading">
                                     <div class="panel-title ">
                                         <a class="{{$moreDetail == $d ? 'active':''}}"
-                                           href="{{url('mmpApp/libraryAchive')."/".$d}}">
+                                           href="{{url('libraryAchive')."/".$d}}">
                                             <i class="fa fa-chevron-right "></i> <?php echo $d;?>
                                         </a>
                                     </div>
@@ -246,7 +246,7 @@ use App\Http\Controllers\LibraryCon;
                             <div class="item col-xs-12 col-sm-6 col-md-3  <?php echo $classCat;?>">
                                 <input type="hidden" class="BookIdHidden" value="<?php echo $p->id; ?>">
                                 <div class="image">
-                                    <a href={{asset("mmpApp/libraryDetail")."/".$p->id}}>
+                                    <a href={{asset("libraryDetail")."/".$p->id}}>
                                         <i class="fa fa-file-text-o"></i>
                                     </a>
                                     <!--
@@ -275,7 +275,7 @@ use App\Http\Controllers\LibraryCon;
                                         <li><i class="fa fa-tags"></i> <?php echo $catName->name; ?></li>
                                     </ul>
                                     <h3>
-                                        <a href="{{asset("mmpApp/libraryDetail")."/".$p->id}}"><?php echo $p->name; ?></a>
+                                        <a href="{{asset("libraryDetail")."/".$p->id}}"><?php echo $p->name; ?></a>
                                     </h3>
                                 </div>
                             </div>

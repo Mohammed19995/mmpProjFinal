@@ -118,12 +118,17 @@ Route::get('adminApp/mosque/getUpdatLocation/{id}', 'MosqueCon@getUpdatLocation'
 Route::post('updateLocation', 'MosqueCon@updateLocation');
 Route::get('mosque', 'MosqueCon@getALlMosque');
 
+
 Route::get('mosqueLoc' , function() {
     return view('mmpApp.mosque.mosqueLocation');
 });
 Route::get('addCurrLoc' , 'MosqueCon@addCurrLoc');
 
 Route::get('mosque', 'MosqueCon@getALlMosque');
+Route::get('Allmosque', 'MosqueCon@ALlMosque');
+Route::get('mmpApp/mosqueDetail/{id}', 'MosqueCon@mosqueDetail');
+
+Route::post('resultSearchMosque', 'MosqueCon@resultSearchMosque');
 /////////////////////////////////////////////////////////////
 
 //////////////////// Favorite book /////////////////////

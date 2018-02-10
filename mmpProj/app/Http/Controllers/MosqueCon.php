@@ -401,6 +401,28 @@ class MosqueCon extends Controller
         return response()->json($arr);
     }
 
+
+
+
+public function ALlMosque(){
+        $all = Mosque::all();
+        return view('mmpApp.mosque.Allmosque' , [ "allMosque"=>$all]);
+}
+
+    public function mosqueDetail($id){
+
+        $mosqueInfo=  Mosque::where('id',$id)->first();
+        return view('mmpApp.mosque.mosqueDetail' , ['id' => $id , 'mosqueInfo' =>$mosqueInfo]);
+    }
+
+
+    public function resultSearchMosque(Request $request)
+    {
+        $keyword = $request->search;
+        $result = Mosque::SearchByKeyword($keyword)->get();
+        return view('mmpApp.mosque.resultSearchMosque',['allMosque'=>$result, 'keyword'=>$keyword] );
+
+    }
     //////////////////////////// End mosque in user /////////////////////////////
 
 

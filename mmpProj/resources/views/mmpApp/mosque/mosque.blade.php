@@ -3,7 +3,9 @@
 
 @section('css')
     <style>
-
+        .hidden {
+            display: none;
+        }
         .active {
             color: #0d3625 !important;
         }
@@ -23,7 +25,7 @@
 
     </style>
 
- 
+
 
 @endsection
 
@@ -46,6 +48,7 @@
                     <ul class="breadcrumb">
                         <li><a href="">Home </a></li>
                         <li><a href="#">Mosque</a></li>
+                        <li><a href="#">Mosque Detail</a></li>
 
                     </ul>
                 </div>
@@ -53,23 +56,15 @@
         </div>
     </div>
     <!-- END PAGE TITLE/BREADCRUMB -->
+    <input type="hidden" id = "latDetail" value="0">
+    <input type="hidden" id = "lngDetail" value="0">
+    <input type="hidden" id = "nameMousque" value="0">
+    <img id = "path" class="hidden"
+         src=" " alt=""/>
 
-   <?php
-   echo  'php_'.$abc;
-  /*  $address =$_POST['address']; // Google HQ
-    $prepAddr = str_replace(' ','+',$address);
-    $geocode=file_get_contents('http://maps.google.com/maps/api/geocode/json?address='.$prepAddr.'&sensor=false');
-    $output= json_decode($geocode);
-    $latitude = $output->results[0]->geometry->location->lat;
-    $longitude = $output->results[0]->geometry->location->lng;
-
-    echo "latitude - ".$latitude;
-    echo "longitude - ".$longitude;
-  */
-    ?>
     <section id="our-offices">
         <div class="container">
-            <div class="row">
+            <div class="row" style="margin-top: 50px">
                 <div class="col-sm-12">
 
                     <div class="center"><h1 class="section-title">Our <strong>Offices</strong></h1></div>
@@ -85,20 +80,31 @@
                         foreach ($arr as $all) {
                         if($all->id == $i) {
                         $count++;
+                       ?>
 
 
-                        ?>
+
+
+
 
                         <li class="col-md-3">
                             <input type="hidden" value="<?php  echo $i ?>" class="id_hidden">
                             <input type="hidden" value="<?php echo $all->lat;?>" id="lat<?php echo $count;?>">
                             <input type="hidden" value="<?php echo $all->lng;?>" id="lng<?php echo $count;?>">
                             <input type="hidden" value="<?php  echo $p; ?>" id="dis<?php echo $count;?>">
+                            <?php
+                            $path = str_replace('public', '', $all->image);
+                            ?>
+                            <img id = "pathA<?php echo $count;?>" class="hidden"
+                                 src="{{asset('storage')."/".$path}}" alt=""/>
+
 
                             <div id="office_map<?php echo $count;?>" class="map"></div>
                             <div class="info">
 
-                                <button class="btn btn-default aa">More Details</button>
+                         <a href="{{url('mmpApp/mosqueDetail')."/".$all->id}}" class="btn btn-default aa">
+
+                             More Details </a>
                             </div>
                         </li>
 
@@ -136,10 +142,18 @@
                             <input type="hidden" value="<?php echo $all->lat;?>" id="lat2<?php echo $count2;?>">
                             <input type="hidden" value="<?php echo $all->lng;?>" id="lng2<?php echo $count2;?>">
                             <input type="hidden" value="<?php  echo $p; ?>" id="dis2<?php echo $count2;?>">
+                            <?php
+                            $path2 = str_replace('public', '', $all->image);
+                            ?>
+                            <img id = "pathB<?php echo $count2;?>" class="hidden"
+                                 src="{{asset('storage')."/".$path2}}" alt=""/>
+
                             <div id="office_map2<?php echo $count2;?>" class="map"></div>
                             <div class="info">
 
-                                <button class="btn btn-default aa">More Details</button>
+                                <a href="{{url('mmpApp/mosqueDetail')."/".$all->id}}" class="btn btn-default aa">
+
+                                    More Details </a>
                             </div>
                         </li>
 
@@ -177,10 +191,17 @@
                             <input type="hidden" value="<?php echo $all->lat;?>" id="lat3<?php echo $count3;?>">
                             <input type="hidden" value="<?php echo $all->lng;?>" id="lng3<?php echo $count3;?>">
                             <input type="hidden" value="<?php  echo $p; ?>" id="dis3<?php echo $count3;?>">
+                            <?php
+                            $path3 = str_replace('public', '', $all->image);
+                            ?>
+                            <img id = "pathC<?php echo $count3;?>" class="hidden"
+                                 src="{{asset('storage')."/".$path3}}" alt=""/>
                             <div id="office_map3<?php echo $count3;?>" class="map"></div>
                             <div class="info">
 
-                                <button class="btn btn-default aa">More Details</button>
+                                <a href="{{url('mmpApp/mosqueDetail')."/".$all->id}}" class="btn btn-default aa">
+
+                                    More Details </a>
                             </div>
                         </li>
 
@@ -220,10 +241,18 @@
                             <input type="hidden" value="<?php echo $all->lat;?>" id="lat4<?php echo $count4;?>">
                             <input type="hidden" value="<?php echo $all->lng;?>" id="lng4<?php echo $count4;?>">
                             <input type="hidden" value="<?php  echo $p; ?>" id="dis4<?php echo $count4;?>">
+
+                            <?php
+                            $path4 = str_replace('public', '', $all->image);
+                            ?>
+                            <img id = "pathE<?php echo $count4;?>" class="hidden"
+                                 src="{{asset('storage')."/".$path4}}" alt=""/>
                             <div id="office_map4<?php echo $count4;?>" class="map"></div>
                             <div class="info">
 
-                                <button class="btn btn-default aa">More Details</button>
+                                <a href="{{url('mmpApp/mosqueDetail')."/".$all->id}}" class="btn btn-default aa">
+
+                                    More Details </a>
                             </div>
                         </li>
 
@@ -274,14 +303,15 @@
                 // Rider.googleMap(offices, 'headquarters_map', 0);
 
 
+
+
+                /*
+
                 $('.aa').click(function () {
                     var a = $(this).parent().parent().find('.id_hidden').val();
                     var b = $(this).parent().parent().find('').val();
                     alert(a);
                 });
-
-
-                /*
                 Rider.googleMap(offices, 'office_map1', 1);
                 Rider.googleMap(offices, 'office_map2', 2);
                 Rider.googleMap(offices, 'office_map3', 3);

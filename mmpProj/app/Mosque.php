@@ -79,8 +79,16 @@ class Mosque extends Model
 
         ]);
     }
+    public function scopeSearchByKeyword($query, $keyword)
+    {
+        if ($keyword != '') {
+            $query->where(function ($query) use ($keyword) {
+                $query->where("name", "LIKE", "%$keyword%")->orwhere("imam_name", "LIKE", "%$keyword%")->orwhere("country", "LIKE", "%$keyword%")->orwhere("street", "LIKE", "%$keyword%")->orwhere("city", "LIKE", "%$keyword%");
 
-
+            });
+        }
+        return $query;
+    }
 }
 
 

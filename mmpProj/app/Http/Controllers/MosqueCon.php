@@ -412,7 +412,9 @@ public function ALlMosque(){
     public function mosqueDetail($id){
 
         $mosqueInfo=  Mosque::where('id',$id)->first();
-        return view('mmpApp.mosque.mosqueDetail' , ['id' => $id , 'mosqueInfo' =>$mosqueInfo]);
+        $activity = Activity::where('mosque_id',$id)->orderBy('created_at', 'desc')->take(20)->get();
+
+       return view('mmpApp.mosque.mosqueDetail' , ['id' => $id , 'mosqueInfo' =>$mosqueInfo, 'activity'=>$activity]);
     }
 
 

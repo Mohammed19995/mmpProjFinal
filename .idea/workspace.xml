@@ -11,31 +11,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MosqueCon.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/MosqueCon.php">
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mmpProj/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7004">
-              <caret line="420" column="33" lean-forward="false" selection-start-line="420" selection-start-column="33" selection-end-line="420" selection-end-column="33" />
+            <state relative-caret-position="17">
+              <caret line="74" column="19" lean-forward="false" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="resultSearchMosque.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mosque/resultSearchMosque.blade.php">
+      <file leaf-file-name="index-agency.html" pinned="false" current-in-tab="false">
+        <entry file="file://E:/htdocs/Rider-Template/Rider HTML5 Template/index-agency.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
-              <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="276">
+              <caret line="165" column="16" lean-forward="true" selection-start-line="165" selection-start-column="16" selection-end-line="199" selection-end-column="22" />
+              <folding>
+                <element signature="n#div#2;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Allmosque.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mosque/Allmosque.blade.php">
+      <file leaf-file-name="mosque.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mosque/mosque.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1190">
-              <caret line="70" column="59" lean-forward="false" selection-start-line="70" selection-start-column="41" selection-end-line="70" selection-end-column="59" />
+            <state relative-caret-position="654">
+              <caret line="210" column="105" lean-forward="true" selection-start-line="210" selection-start-column="18" selection-end-line="210" selection-end-column="105" />
               <folding />
             </state>
           </provider>
@@ -44,38 +46,22 @@
       <file leaf-file-name="mosqueDetail.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mosque/mosqueDetail.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1632">
-              <caret line="96" column="158" lean-forward="false" selection-start-line="96" selection-start-column="53" selection-end-line="96" selection-end-column="158" />
-              <folding />
+            <state relative-caret-position="136">
+              <caret line="151" column="0" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
+              <folding>
+                <element signature="e#2049#2073#0#HTML" expanded="true" />
+                <element signature="e#4837#4864#0#HTML" expanded="true" />
+                <element signature="e#5187#5226#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/routes/web.php">
+      <file leaf-file-name="MosqueCon.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/MosqueCon.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1105">
-              <caret line="74" column="19" lean-forward="false" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FatawiCon.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/FatawiCon.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1836">
-              <caret line="115" column="33" lean-forward="false" selection-start-line="115" selection-start-column="18" selection-end-line="115" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mosque.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mosque/mosque.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="49" column="15" lean-forward="false" selection-start-line="49" selection-start-column="15" selection-end-line="49" selection-end-column="15" />
+            <state relative-caret-position="300">
+              <caret line="414" column="92" lean-forward="false" selection-start-line="414" selection-start-column="92" selection-end-line="414" selection-end-column="92" />
               <folding />
             </state>
           </provider>
@@ -93,9 +79,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>nameBooknameBook</find>
-      <find>m_img</find>
-      <find>files</find>
       <find>imgBook</find>
       <find>editBook</find>
       <find>$imgPath</find>
@@ -123,10 +106,14 @@
       <find>resultSearch</find>
       <find>sea</find>
       <find>SearchByKeyword</find>
+      <find>.box</find>
+      <find>deta</find>
+      <find>strat</find>
     </findStrings>
     <replaceStrings>
       <replace>Two</replace>
       <replace>alert</replace>
+      <replace>.owl-carousel.box</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -149,7 +136,6 @@
         <option value="$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/resultSearchAdvisory.blade.php" />
         <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/allAdvisory.blade.php" />
         <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/category.blade.php" />
-        <option value="$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/fatwa.blade.php" />
         <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/fatawi/addFatwa.blade.php" />
         <option value="E:/htdocs/Rider-Template/Rider HTML5 Template/login.html" />
         <option value="E:/htdocs/Rider-Template/Rider HTML5 Template/register.html" />
@@ -178,14 +164,15 @@
         <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/mosque/location.blade.php.html" />
         <option value="$PROJECT_DIR$/mmpProj/resources/views/admin/mosque/location.blade.php" />
         <option value="$PROJECT_DIR$/mmpProj/public/mmp/js/scripts.js" />
-        <option value="$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mosque/mosqueDetail.blade.php" />
         <option value="$PROJECT_DIR$/mmpProj/public/mmp/js/offices.js" />
         <option value="$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mosque/resultSearchMosque.blade.php" />
         <option value="$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mosque/Allmosque.blade.php" />
         <option value="$PROJECT_DIR$/mmpProj/routes/web.php" />
-        <option value="$PROJECT_DIR$/mmpProj/app/Http/Controllers/MosqueCon.php" />
         <option value="$PROJECT_DIR$/mmpProj/app/Mosque.php" />
         <option value="$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mosque/mosque.blade.php" />
+        <option value="$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/fatwa.blade.php" />
+        <option value="$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mosque/mosqueDetail.blade.php" />
+        <option value="$PROJECT_DIR$/mmpProj/app/Http/Controllers/MosqueCon.php" />
       </list>
     </option>
   </component>
@@ -196,7 +183,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1378" />
@@ -217,8 +204,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -471,25 +458,28 @@
       <workItem from="1518268731840" duration="1633000" />
       <workItem from="1518270544495" duration="1856000" />
       <workItem from="1518272597675" duration="463000" />
+      <workItem from="1518462829358" duration="700000" />
+      <workItem from="1518514378833" duration="10823000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="299987000" />
+    <option name="totallyTimeSpent" value="311510000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19000757" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18925057" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32853898" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32853898" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.62908494" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -531,7 +521,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mmpProj/public/storage/mosque/img/gRgS87qnosEwX66TFkFVOtK90Pb5vEPFVXFn9MqS.jpeg" />
     <entry file="file://$PROJECT_DIR$/mmpProj/public/storage/mosque/img/gPM0MZoCsuT95gRz1BUXDLBZse3W3oWO8Vi05Ln4.jpeg" />
     <entry file="file://$PROJECT_DIR$/mmpProj/public/storage/mosque/img/HHpvYzV55zAaZ0H4MnTLnpCKr7ue81VaJ6nHvSj8.jpeg" />
     <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/admin/index.blade.php">
@@ -763,33 +752,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/fatwa.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="80" column="18" lean-forward="true" selection-start-line="80" selection-start-column="18" selection-end-line="89" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/resultSearchAdvisory.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-764">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mosque/resultSearchMosque.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/MosqueCon.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7004">
-          <caret line="420" column="33" lean-forward="false" selection-start-line="420" selection-start-column="33" selection-end-line="420" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -811,14 +777,6 @@
             <marker date="1518267996620" expanded="true" signature="2538:2648" ph="..." />
             <marker date="1518267996620" expanded="true" signature="2572:2647" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmpProj/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="74" column="19" lean-forward="false" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -845,26 +803,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mosque/resultSearchMosque.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mosque/Allmosque.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
+        <state relative-caret-position="17">
           <caret line="70" column="59" lean-forward="false" selection-start-line="70" selection-start-column="41" selection-end-line="70" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/fatwa/fatwa.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="83" column="21" lean-forward="false" selection-start-line="83" selection-start-column="21" selection-end-line="83" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="74" column="19" lean-forward="false" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/htdocs/Rider-Template/Rider HTML5 Template/index-agency.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="165" column="16" lean-forward="true" selection-start-line="165" selection-start-column="16" selection-end-line="199" selection-end-column="22" />
+          <folding>
+            <element signature="n#div#2;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mosque/mosqueDetail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1632">
-          <caret line="96" column="158" lean-forward="false" selection-start-line="96" selection-start-column="53" selection-end-line="96" selection-end-column="158" />
-          <folding />
+        <state relative-caret-position="136">
+          <caret line="151" column="0" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
+          <folding>
+            <element signature="e#2049#2073#0#HTML" expanded="true" />
+            <element signature="e#4837#4864#0#HTML" expanded="true" />
+            <element signature="e#5187#5226#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mmpProj/resources/views/mmpApp/mosque/mosque.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="49" column="15" lean-forward="false" selection-start-line="49" selection-start-column="15" selection-end-line="49" selection-end-column="15" />
+        <state relative-caret-position="654">
+          <caret line="210" column="105" lean-forward="true" selection-start-line="210" selection-start-column="18" selection-end-line="210" selection-end-column="105" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmpProj/app/Http/Controllers/MosqueCon.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="414" column="92" lean-forward="false" selection-start-line="414" selection-start-column="92" selection-end-line="414" selection-end-column="92" />
           <folding />
         </state>
       </provider>

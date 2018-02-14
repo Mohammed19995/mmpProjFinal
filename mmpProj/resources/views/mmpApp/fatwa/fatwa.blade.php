@@ -18,13 +18,16 @@
         .pagination {
             margin-left: 35%;
         }
-        .panel-heading .muft a{
-            text-decoration:none;
+
+        .panel-heading .muft a {
+            text-decoration: none;
         }
-        .panel-group .panel .panel-heading .panel-title  a .aa::after{
-background-color: red;
+
+        .panel-group .panel .panel-heading .panel-title a .aa::after {
+            background-color: red;
         }
-        .panel-group .panel .panel-heading .panel-title > a.collapsed::after{
+
+        .panel-group .panel .panel-heading .panel-title > a.collapsed::after {
             content: "\f128";
         }
 
@@ -35,14 +38,14 @@ background-color: red;
 
     use App\Http\Controllers\FatawiCon;
     $valueInput = 0;
-    if(isset($_GET['r'])) {
+    if (isset($_GET['r'])) {
         $valueInput = 1;
-    }else {
+    } else {
         $valueInput = 2;
     }
     ?>
 
-<input type="hidden" class="getInput" value="<?php echo $valueInput?>">
+    <input type="hidden" class="getInput" value="<?php echo $valueInput?>">
     <div id="page-title" class="parallax dark-bg" data-stellar-background-ratio="0.5">
         <div class="container">
             <div class="row">
@@ -137,11 +140,11 @@ background-color: red;
                 <div class="col-sm-8">
                     <div class="row">
 
-                        <div  class="panel-group">
+                        <div class="panel-group">
                             @if(auth()->check())
                                 <div id="accordion" class="private hidden">
-                                <?php
-                                foreach ($userFatwa as $arr2){ ?>
+                                    <?php
+                                    foreach ($userFatwa as $arr2){ ?>
                                     <div class="panel ">
                                         <div class="panel-heading">
                                             <h4 class="panel-title" data-toggle="tooltip" data-placement="right"
@@ -160,9 +163,9 @@ background-color: red;
                                             <div class="row muft">
                                                 <div class="col-sm-3" style="  cursor: pointer; border-left: 6px solid #02baa6;
                                                  background-color: lightgrey; margin-left: 15px;">
-                                                    <a  href="{{url('mmpApp/advisory2')."/".$arr2->mufti}}">
+                                                    <a href="{{url('mmpApp/advisory2')."/".$arr2->mufti}}">
                                                         <span style="font-family: bold ; font-size: 1.075em; color: #172646">
-                                                            <?php echo "Mufti : ".$arr2->mufti?></span></a></div>
+                                                            <?php echo "Mufti : " . $arr2->mufti?></span></a></div>
                                                 <div class="col-sm-7"></div>
                                                 <div class="col-sm-2" style="  cursor: pointer; border-right: 6px solid #02baa6;
                                                  background-color: lightgrey; margin-left: 452px;">
@@ -188,10 +191,10 @@ background-color: red;
                                         </div>
 
                                     </div>
-                                <?php  }       ?>
+                                    <?php  }       ?>
                                     {{$userFatwa->links()}}
 
-                            </div>
+                                </div>
                             @endif
                             <div id="accordion2" class="public hidden">
                                 <?php
@@ -209,16 +212,16 @@ background-color: red;
                                                href="#"
                                                class="collapsed  aa">
                                                 <?php   echo $arr->question?>
-                                                    <span class=" hidden id_toggel"><?php echo $arr->id; ?></span>
+                                                <span class=" hidden id_toggel"><?php echo $arr->id; ?></span>
 
                                             </a>
                                         </h4>
                                         <div class="row muft">
                                             <div class="col-sm-3" style="  cursor: pointer; border-left: 6px solid #02baa6;
                                                  background-color: lightgrey; margin-left: 15px;">
-                                                <a  href="{{url('mmpApp/advisory2')."/".$arr->mufti}}">
+                                                <a href="{{url('mmpApp/advisory2')."/".$arr->mufti}}">
                                                         <span style="font-family: bold ; font-size: 1.075em; color: #172646">
-                                                            <?php echo "Mufti : ".$arr->mufti?></span></a></div>
+                                                            <?php echo "Mufti : " . $arr->mufti?></span></a></div>
                                             <div class="col-sm-7"></div>
                                             <div class="col-sm-2" style="  cursor: pointer; border-right: 6px solid #02baa6;
                                                  background-color: lightgrey; margin-left: 452px;">
@@ -250,57 +253,57 @@ background-color: red;
                             </div>
 
 
-
+                        </div>
                     </div>
+                    <div class="col-sm-1"></div>
                 </div>
-                <div class="col-sm-1"></div>
-            </div>
 
 
-            <div class="row" style="margin-bottom: 30px">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8 contacts">
-                    <div class=" row" style="text-align: center ;margin-top: 15px">
-                        <h2 class="section-title">Ask your <strong>Question</strong></h2>
-                    </div>
-
-                    <div class="row">
-                        <div class="alert alert-danger print-error-msg" style="display:none; margin: 10px;">
-                            <ul></ul>
+                <div class="row" style="margin-bottom: 30px">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8 contacts">
+                        <div class=" row" style="text-align: center ;margin-top: 15px">
+                            <h2 class="section-title">Ask your <strong>Question</strong></h2>
                         </div>
 
-                        <form>
+                        <div class="row">
+                            <div class="alert alert-danger print-error-msg" style="display:none; margin: 10px;">
+                                <ul></ul>
+                            </div>
+
+                            <form>
 
 
-                            <div class="col-sm-12">
+                                <div class="col-sm-12">
 
                                 <textarea name="Message" placeholder="Message"
                                           class="form-control required Message"></textarea>
-                                <select class="form-control " id="optionCat">
-                                    <option value="0">Select your Category</option>
-                                    <?php
-                                    foreach ($allCat as $arr){
-                                    ?>
-                                    <option value=<?php echo $arr->id ?> ><?php echo $arr->name ?></option>
-                                    <?php    }
-                                    ?>
-                                </select>
-                                <div class="checkbox " style="margin-top: 30px">
-                                    <label><input type="checkbox" id="myCheckbox" value="cc">private Message</label>
+                                    <select class="form-control " id="optionCat">
+                                        <option value="0">Select your Category</option>
+                                        <?php
+                                        foreach ($allCat as $arr){
+                                        ?>
+                                        <option value=<?php echo $arr->id ?> ><?php echo $arr->name ?></option>
+                                        <?php    }
+                                        ?>
+                                    </select>
+                                    <div class="checkbox " style="margin-top: 30px">
+                                        <label><input type="checkbox" id="myCheckbox" value="cc">private Message</label>
+                                    </div>
+
                                 </div>
 
-                            </div>
-
-                            <div class="center">
-                                <input type="button" class="btn btn-default submit_form sendFatwa" value="Send Message">
-                            </div>
-                        </form>
+                                <div class="center">
+                                    <input type="button" class="btn btn-default submit_form sendFatwa"
+                                           value="Send Message">
+                                </div>
+                            </form>
+                        </div>
                     </div>
+                    <div class="col-sm-2"></div>
                 </div>
-                <div class="col-sm-2"></div>
             </div>
         </div>
-    </div>
     </div>
 
     <!-- END CONTENT WRAPPER -->
@@ -312,31 +315,32 @@ background-color: red;
     <script>
         $(document).ready(function () {
 
-             function printErrorMsg(msg) {
+            function printErrorMsg(msg) {
                 $(".print-error-msg").find("ul").html('');
                 $(".print-error-msg").css('display', 'block');
                 $.each(msg, function (key, value) {
                     $(".print-error-msg").find("ul").append('<li>' + value + '</li>');
                 });
             }
-       //     $('.panel-group .panel .panel-heading .panel-title > a.collapsed::after').css('color','red');
+
+            //     $('.panel-group .panel .panel-heading .panel-title > a.collapsed::after').css('color','red');
 
             $('.aa').click(function () {
-           var check =   $(this).parent().find('a[aria-expanded]').attr('aria-expanded');
-                var check2 =   $(this).parent().find('.id_toggel').text();
-                var check3 = "#collapseOne"+check2;
+                var check = $(this).parent().find('a[aria-expanded]').attr('aria-expanded');
+                var check2 = $(this).parent().find('.id_toggel').text();
+                var check3 = "#collapseOne" + check2;
 
 
-    $(this).parents('.panel').find('#collapseOne' + check2).toggle( "slow" );
-   // $(this).parents('.panel').find('#collapseOne' + check2).addClass('collapse');
+                $(this).parents('.panel').find('#collapseOne' + check2).toggle("slow");
+                // $(this).parents('.panel').find('#collapseOne' + check2).addClass('collapse');
 
             });
             $('.bb').click(function () {
-                var check2 =   $(this).parent().find('.id_toggel2').text();
-                var check3 = "#collapseTwo"+check2;
+                var check2 = $(this).parent().find('.id_toggel2').text();
+                var check3 = "#collapseTwo" + check2;
 
 
-                $(this).parents('.panel').find('#collapseTwo' + check2).toggle( "slow" );
+                $(this).parents('.panel').find('#collapseTwo' + check2).toggle("slow");
                 // $(this).parents('.panel').find('#collapseOne' + check2).addClass('collapse');
 
             });
@@ -412,13 +416,13 @@ background-color: red;
                 });
 
             });
-            var a =$('.getInput').val();
+            var a = $('.getInput').val();
 
 
-            if(a == 2) {
+            if (a == 2) {
                 $('.public').removeClass('hidden');
                 $('.privateFatwa').click(function () {
-                       $(this).addClass('active');
+                    $(this).addClass('active');
                     $('.publicFatwa').removeClass('active');
                     $('.public').addClass('hidden');
                     $('.private').removeClass('hidden');
@@ -429,7 +433,7 @@ background-color: red;
                     $('.public').removeClass('hidden');
                     $('.private').addClass('hidden');
                 });
-            }else if(a==1){
+            } else if (a == 1) {
                 $('.public').addClass('hidden');
                 $('.private').removeClass('hidden');
                 $('.privateFatwa').click(function () {

@@ -3,6 +3,9 @@
 
 @section('css')
     <style>
+
+
+
         .hidden {
             display: none;
         }
@@ -25,6 +28,13 @@
         .meta-attributes{
            margin-top: 10px;
         }
+        .carousel-style-2{
+            padding: 0px;
+        }
+        .owl-carousel .owl-dots{
+        bottom:-60px;
+        }
+
 
     </style>
 
@@ -130,6 +140,39 @@
                 </div>
 
             </div>
+
+            <div class="row">
+                <div class="center"><h1 class="section-title"> <strong>ACTIVITY</strong></h1></div>
+            </div>
+
+            <div class="row" style="margin-bottom: 80px">
+                <div class="col-sm-12">
+                    <div id="agency-carousel" class="owl-carousel carousel-style-2">
+                        <?php
+
+                        foreach ($activity as $arr){?>
+
+
+                        <div class="item" data-animation-direction="from-bottom" data-animation-delay="150" style="overflow-y: auto; height:250px;">
+                            <h1><?php echo $arr->title; ?></h1>
+                            <p><?php echo $arr->content; ?></p>
+                        </div>
+
+                            <?php
+                            }
+
+                            ?>
+
+
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
         </div>
     </section>
     <!-- END HEADQUARTERS -->
@@ -163,7 +206,6 @@
             $(document).ready(function () {
                 //Create offices maps
                  Rider.googleMap(offices5, 'headquarters_map', 0);
-
 
 
               //  Rider.googleMap(officesDetail, 'Detail_map', 1);

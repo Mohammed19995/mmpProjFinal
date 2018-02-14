@@ -205,14 +205,19 @@ use App\category;
                             $path = str_replace("public/", "", $p->img);
                             $catName = category::getNameCatForBookId($p->cat_id);
                             $classCat = "cat" . $p->cat_id;
+
+                            $appUrl = App::make('url')->to('/');
+                            $appUrl = str_replace("public", "", $appUrl);
+                            $appUrl = $appUrl."/storage/app/public/".$path;
+
                             ?>
 
                             <div class="item col-xs-12 col-sm-6 col-md-3  <?php echo $classCat;?>">
                                 <div class="image">
-                                    <a href={{asset("mmpApp/libraryDetail")."/".$p->id}}>
+                                    <a href={{asset("libraryDetail")."/".$p->id}}>
                                         <i class="fa fa-file-text-o"></i>
                                     </a>
-                                    <img src="{{asset('storage')."/".$path}}" style="width:200px; height: 200px;"
+                                    <img src="<?php echo $appUrl;?>" style="width:200px; height: 200px;"
                                          alt=""/>
 
                                 </div>
@@ -223,7 +228,7 @@ use App\category;
                                         <li><i class="fa fa-tags"></i> <?php echo $catName->name; ?></li>
                                     </ul>
                                     <h3>
-                                        <a href="{{asset("mmpApp/libraryDetail")."/".$p->id}}"><?php echo $p->name; ?></a>
+                                        <a href="{{asset("libraryDetail")."/".$p->id}}"><?php echo $p->name; ?></a>
                                     </h3>
                                 </div>
                             </div>

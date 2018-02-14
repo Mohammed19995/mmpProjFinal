@@ -650,7 +650,11 @@ class LibraryCon extends Controller
             array_push($getBookData, $this->objBook->getBookData($item));
         }
 
-        $getAllFavoriteForUser = FavoriteBook::where('user_id' , Auth::user()->id)->get();
+        if(Auth::check()) {
+            $getAllFavoriteForUser = FavoriteBook::where('user_id' , Auth::user()->id)->get();
+        }else {
+            $getAllFavoriteForUser = "";
+        }
         return view('mmpApp.library.resultSearch', ['paginateBook' => $getBookData, 'keyword' => $keyword ,
             'getAllFavoriteForUser' => $getAllFavoriteForUser]);
 

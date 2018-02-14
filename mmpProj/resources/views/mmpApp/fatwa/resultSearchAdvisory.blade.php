@@ -1,5 +1,7 @@
 @extends('mmpApp.mmpApp')
-
+@section('title')
+    Fatwa
+@endsection
 @section('css')
     <style>
         .active {

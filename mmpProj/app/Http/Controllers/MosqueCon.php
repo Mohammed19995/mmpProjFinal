@@ -282,17 +282,19 @@ class MosqueCon extends Controller
     }
 
 
-    public function addCurrLoc(Request $request) {
+    public function addCurrLoc(Request $request)
+    {
 
         $objCurrLoc = new Currlocation();
-        $objCurrLoc->addCurrLocation($request->currLat , $request->currLng);
+        $objCurrLoc->addCurrLocation($request->currLat, $request->currLng);
+
 
     }
     //////////////////////////////////////////////////////////////
 
     ///////////////////////// Mosque in user /////////////////////////////
 
-    public static function  nearestMosque($lat, $lng)
+    public static function nearestMosque($lat, $lng)
     {
         $getAllMoq = Mosque::all();
         $arr = [];
@@ -367,28 +369,33 @@ class MosqueCon extends Controller
     }
 
 
-
-    public function getALlMosque(){
+    public function getNearMosque(Request $request)
+    {
+        $lat =  $request->lat;
+        $lng = $request->lng;
         $allMosque = Mosque::all();
+        return view('mmpApp.mosque.mosque', ['arr' => $allMosque, 'lat' => $lat , 'lng' =>$lng ]);
+        /*
+
         $latLng = Currlocation::all();
-        if(session()->has('currLoc')) {
-            return view('mmpApp.mosque.mosque',['arr'=>$allMosque , 'latLng'=>$latLng]);
-        }else {
+        if (session()->has('currLoc') && (count($latLng) > 0)) {
+            return view('mmpApp.mosque.mosque', ['arr' => $allMosque, 'latLng' => $latLng]);
+        } else {
             return redirect('mosqueLoc');
         }
+        */
+
     }
 
 
-
-
-    public  function testNearestMosque($lat=41.871940, $lng=12.567380)
+    public function testNearestMosque($lat = 41.871940, $lng = 12.567380)
     {
         $getAllMoq = Mosque::all();
         $arr = [];
-        foreach ($getAllMoq as $i=>$p) {
+        foreach ($getAllMoq as $i => $p) {
             $objMosq = new MosqueCon();
-            $objJson = ['id'=>$p->id , 'name' => $p->name , 'distance' =>$objMosq->getDistance($lat, $lng, $p->lat, $p->lng, 'k')
-              , 'lat' =>$p->lat."" , 'lng' => $p->lng];
+            $objJson = ['id' => $p->id, 'name' => $p->name, 'distance' => $objMosq->getDistance($lat, $lng, $p->lat, $p->lng, 'k')
+                , 'lat' => $p->lat . "", 'lng' => $p->lng];
             $getAllAct = Activity::take(2)->get();
             $arrAct = [];
             foreach ($getAllAct as $d) {
@@ -402,30 +409,46 @@ class MosqueCon extends Controller
     }
 
 
-
-
-public function ALlMosque(){
+    public function ALlMosque()
+    {
         $all = Mosque::all();
-        return view('mmpApp.mosque.Allmosque' , [ "allMosque"=>$all]);
-}
+        $getAllMoq = Mosque::all();
+        return view('mmpApp.mosque.Allmosque', ["allMosque" => $all , 'city' => 'no' , 'getAllMoq' =>$getAllMoq]);
+    }
 
-    public function mosqueDetail($id){
+    public function mosqueDetail($id)
+    {
 
-        $mosqueInfo=  Mosque::where('id',$id)->first();
-        return view('mmpApp.mosque.mosqueDetail' , ['id' => $id , 'mosqueInfo' =>$mosqueInfo]);
+        $mosqueInfo = Mosque::where('id', $id)->first();
+        return view('mmpApp.mosque.mosqueDetail', ['id' => $id, 'mosqueInfo' => $mosqueInfo]);
     }
 
 
     public function resultSearchMosque(Request $request)
     {
         $keyword = $request->search;
+
         $result = Mosque::SearchByKeyword($keyword)->get();
-        return view('mmpApp.mosque.resultSearchMosque',['allMosque'=>$result, 'keyword'=>$keyword] );
+        return view('mmpApp.mosque.resultSearchMosque', ['allMosque' => $result, 'keyword' => $keyword]);
 
     }
+
+    public function resultSearchMosqueCity(Request $request , $city)
+    {
+        $keyword = $request->search;
+        $result = Mosque::SearchByKeywordMosqueCity($keyword , $city)->get();
+        return view('mmpApp.mosque.resultSearchMosque', ['allMosque' => $result, 'keyword' => $keyword]);
+
+    }
+
+    public function getMosqueForCity(Request $request) {
+
+        $keyword = $request->city;
+        $getAllMoq = Mosque::all();
+        $result = Mosque::SearchByKeywordCity($keyword)->get();
+        return view('mmpApp.mosque.Allmosque', ["allMosque" => $result , 'city' =>$keyword , 'getAllMoq' => $getAllMoq]);
+    }
     //////////////////////////// End mosque in user /////////////////////////////
-
-
 
 
 }

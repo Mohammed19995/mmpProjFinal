@@ -838,8 +838,6 @@ var Rider;
                 //////////////////////////////////////////////
 
 
-
-
                 ////////////////////////////////////////////
                 map = new google.maps.Map(document.getElementById(office_map_canvas), mapOptions);
 
@@ -860,7 +858,7 @@ var Rider;
                             content: "<div class=\"marker\"><i class=\"fa " + obj.map_marker_icon + "\"></i></div>"
                         }),
 
-                        content = "<div class=\"infoWindowOffice\">" + "<h3>" + obj.title + "</h3>" + "<img src=\"" + obj.image + "\" alt=\"" + obj.title + "\">"+"<a href=\"" + obj.link + "\"></a>" + "<div class=\"description\">" + obj.description + "</div>";
+                        content = "<div class=\"infoWindowOffice\">" + "<h3>" + obj.title + "</h3>" + "<img src=\"" + obj.image + "\" alt=\"" + obj.title + "\">" + "<a href=\"" + obj.link + "\"></a>" + "<div class=\"description\">" + obj.description + "</div>";
 
                     if (obj.link !== "" && obj.link !== undefined) {
                         content += "<div class=\"center\"><a class=\"btn btn-color btn-small\" href=\"" + obj.link + "\">" + $tis.map_viewMoreButton + "</a></div></div>";
@@ -881,6 +879,7 @@ var Rider;
                         enableEventPropagation: false
                     };
 
+
                     mapMarkers.push(marker);
 
                     mapMarkers[mapMarkers.length - 1].infobox = new InfoBox(myOptions);
@@ -893,12 +892,20 @@ var Rider;
                         this.infobox.open(map, this);
                     });
                 };
-
+                /*
+                                mapMarkers.forEach(function(mapMarkers) {
+                                    mapMarkers.setMap(null);
+                                });
+                                mapMarkers = [];
+                                */
+                createMarker(markers[office_id]);
+                /*
                 for (i = 0; i < markers.length; i += 1) {
                     if (markers[i] !== undefined) {
                         createMarker(markers[i]);
                     }
                 }
+                */
             },
 
             windowResize: function () {

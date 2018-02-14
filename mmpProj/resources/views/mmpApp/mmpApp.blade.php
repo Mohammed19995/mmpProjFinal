@@ -186,7 +186,7 @@
                                     <li class="active"><a href="{{url('home')}}">Home</a>
                                     </li>
 
-                                    <li><a href="gallery-masonry.html">Mosque</a>
+                                    <li class="mosque"><a href="{{asset('mosque')}}">Mosque</a>
 
                                     </li>
 
@@ -196,7 +196,7 @@
                                     <li><a href="#">Courses</a>
                                     </li>
 
-                                    <li class="fatwa"><a href="{{asset('advisory')}}">Fatwa </a>
+                                    <li class="fatwa"><a href="{{asset('Fatwa')}}">Fatwa </a>
 
                                     </li>
                                     <li class="gallery"><a href="#">Activity</a>

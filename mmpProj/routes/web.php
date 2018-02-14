@@ -14,7 +14,7 @@
 use Illuminate\Support\Facades\Response;
 
 Route::get('/', function () {
-   // return view('welcome');
+    // return view('welcome');
     return view('mmpApp.index');
 });
 
@@ -35,7 +35,6 @@ Route::get('mmpApp/galleryDetail', function () {
 });
 
 
-Route::get('mmpApp/advisory', 'FatawiCon@getIndex');
 
 Route::get('adminApp', function () {
     return view('admin.app');
@@ -60,17 +59,29 @@ Route::post('addBook', 'LibraryCon@addBook');
 Route::get('adminApp/lib/viewBook', 'LibraryCon@viewBook');
 Route::post('editBook', 'LibraryCon@editBook');
 Route::get('deleteBook', 'LibraryCon@deleteBook');
-Route::get('deleteSelBook'  ,'LibraryCon@deleteSelBook');
+Route::get('deleteSelBook', 'LibraryCon@deleteSelBook');
 Route::get('getPlusData', 'LibraryCon@getPlusData');
 Route::get('editFileTypeLang', 'LibraryCon@editFileTypeLang');
 Route::get('delFileDetail', 'LibraryCon@delFileDetail');
 Route::post('addNewFileBookPlus', 'LibraryCon@addNewFileBookPlus');
 
 Route::get('downloadFile/{name}', function ($name) {
+    /*
     $a = public_path() . "/storage/book/typeFile/" . $name;
     return response()->download($a);
-});
+    */
+    $appUrl = App::make('url')->to('/');
+    $appUrl = str_replace("public", "", $appUrl);
+    $appUrl = $appUrl . "storage/app/public/book/typeFile/" . $name;
+   // return $appUrl;
+    return redirect()->to($appUrl);
+    //return response()->download($appUrl);
 
+});
+Route::get('downloadTest', function () {
+
+
+});
 /////////////////////   library user    //////////////////////////////
 Route::get('library', 'LibraryCon@ViewBookUser');
 Route::get('library/{cat_id}', 'LibraryCon@ViewBookCatUser');
@@ -84,12 +95,12 @@ Route::get('d/{year}', 'LibraryCon@getCatForYear');
 //////////////////////  Mosque admin    ////////////////////////
 Route::get('adminApp/mosque/addMosque', 'MosqueCon@viewAddMosque');
 Route::post('addMosque', 'MosqueCon@addMosque');
-Route::get('adminApp/mosque/activity' , 'MosqueCon@viewActivity');
-Route::post('Mosque/addActivity' , 'MosqueCon@addActivity');
-Route::get('editActivity' ,'MosqueCon@editActivity');
-Route::get('deleteActivity' ,'MosqueCon@deleteActivity');
-Route::get('deleteSelActivity' ,'MosqueCon@deleteSelActivity');
-Route::get('seed1', function() {
+Route::get('adminApp/mosque/activity', 'MosqueCon@viewActivity');
+Route::post('Mosque/addActivity', 'MosqueCon@addActivity');
+Route::get('editActivity', 'MosqueCon@editActivity');
+Route::get('deleteActivity', 'MosqueCon@deleteActivity');
+Route::get('deleteSelActivity', 'MosqueCon@deleteSelActivity');
+Route::get('seed1', function () {
 
     /*
     $query = \App\Book::join('categories' , 'books.cat_id' , '=' , 'categories.id')
@@ -99,63 +110,48 @@ Route::get('seed1', function() {
     $query = \App\Book::all()->groupBy('cat_id');
     dd($query[4]);
     */
-    $bookId = \App\FavoriteBook::join('books' , 'favorite_books.user_id' , '=' , 'books.id')->where('favorite_books.user_id' , 2)
+    $bookId = \App\FavoriteBook::join('books', 'favorite_books.user_id', '=', 'books.id')->where('favorite_books.user_id', 2)
         ->select('books.*')->paginate(8);
-    $bookId = \App\Book::join('favorite_books' , 'books.id' , '=' , '');
+    $bookId = \App\Book::join('favorite_books', 'books.id', '=', '');
 
-    dd($bookId) ;
+    dd($bookId);
 
 });
-Route::get('testD' , 'MosqueCon@testNearestMosque');
-Route::get('test' , function() {
+Route::get('testD', 'MosqueCon@testNearestMosque');
+Route::get('test', function () {
     return view('test');
 });
 
 ////////////////////  mosque user //////////////
-/// Route::get('adminApp/mosque/viewMosque', 'MosqueCon@viewMosque');
+ Route::get('adminApp/mosque/viewMosque', 'MosqueCon@viewMosque');
 Route::post('editMosque', 'MosqueCon@editMosque');
 Route::get('deleteMosque', 'MosqueCon@deleteMosque');
 Route::get('adminApp/mosque/getUpdatLocation/{id}', 'MosqueCon@getUpdatLocation');
 Route::post('updateLocation', 'MosqueCon@updateLocation');
-Route::get('mosque', 'MosqueCon@getALlMosque');
+//Route::get('nearMosque', 'MosqueCon@getNearMosque');
+Route::post('getNearMosque' , 'MosqueCon@getNearMosque');
 
-
-Route::get('mosqueLoc' , function() {
+Route::get('mosqueLoc', function () {
     return view('mmpApp.mosque.mosqueLocation');
 });
-Route::get('addCurrLoc' , 'MosqueCon@addCurrLoc');
+Route::get('addCurrLoc', 'MosqueCon@addCurrLoc');
 
-Route::get('mosque', 'MosqueCon@getALlMosque');
-Route::get('Allmosque', 'MosqueCon@ALlMosque');
-Route::get('mmpApp/mosqueDetail/{id}', 'MosqueCon@mosqueDetail');
+Route::get('mosque', 'MosqueCon@ALlMosque');
+Route::get('mosqueDetail/{id}', 'MosqueCon@mosqueDetail');
 
 Route::post('resultSearchMosque', 'MosqueCon@resultSearchMosque');
+Route::post('resultSearchMosque/{city}', 'MosqueCon@resultSearchMosqueCity');
+
+Route::post('getMosqueForCity' , 'MosqueCon@getMosqueForCity');
 /////////////////////////////////////////////////////////////
 
 //////////////////// Favorite book /////////////////////
 
-Route::get('addFavoriteBook' , 'Favorite@addFavoriteBook');
-Route::get('deleteFavoriteBook' , 'Favorite@deleteFavoriteBook');
-Route::get('favoriteBook' , 'Favorite@favoriteBook')->middleware('Login');
-Route::post('resultSearchLibFav' , 'Favorite@resultSearchLibFav');
+Route::get('addFavoriteBook', 'Favorite@addFavoriteBook');
+Route::get('deleteFavoriteBook', 'Favorite@deleteFavoriteBook');
+Route::get('favoriteBook', 'Favorite@favoriteBook')->middleware('Login');
+Route::post('resultSearchLibFav', 'Favorite@resultSearchLibFav');
 ////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ////////////////////    Fatawi     /////////////////////
@@ -167,6 +163,8 @@ Route::get('delFatawiCat', 'FatawiCon@delCategory')->middleware('adminPage');
 Route::get('editFatawiCat', 'FatawiCon@editCategory')->middleware('adminPage');
 
 //////////  user section   /////////////
+///
+Route::get('Fatwa', 'FatawiCon@getIndex');
 Route::get('addMessege', 'FatawiCon@addMessage');
 Route::get('getUserFatwa', 'FatawiCon@getUserFatwa');
 Route::get('mmpApp/advisory/{cat_id}', 'FatawiCon@viewAdvisoryCat');

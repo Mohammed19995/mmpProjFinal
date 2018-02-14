@@ -8,6 +8,7 @@
         .active {
             color: #0d3625;
         }
+
         .hand {
             cursor: pointer;
         }
@@ -63,34 +64,46 @@ use App\category;
                             $catName = category::getNameCatForBookId($p->cat_id);
                             $classCat = "cat" . $p->cat_id;
                             $rowNum = $rowNum + 1;
-                            $likeBook = 0;
-                            foreach ($getAllFavoriteForUser as $fav) {
-                                if ($fav->book_id == $p->id) {
-                                    $likeBook = 1;
+
+                            $appUrl = App::make('url')->to('/');
+                            $appUrl = str_replace("public", "", $appUrl);
+                            $appUrl = $appUrl . "/storage/app/public/" . $path;
+
+                            if (\Illuminate\Support\Facades\Auth::check()) {
+                                $likeBook = 0;
+                                foreach ($getAllFavoriteForUser as $fav) {
+                                    if ($fav->book_id == $p->id) {
+                                        $likeBook = 1;
+                                    }
                                 }
                             }
+
                             ?>
 
                             <div class="item col-xs-12 col-sm-6 col-md-3  <?php echo $classCat;?>">
                                 <input type="hidden" class="BookIdHidden" value="<?php echo $p->id;?>">
                                 <div class="image">
-                                    <a href={{asset("mmpApp/libraryDetail")."/".$p->id}}>
+                                    <a href={{asset("libraryDetail")."/".$p->id}}>
                                         <i class="fa fa-file-text-o"></i>
                                     </a>
-                                    <img src="{{asset('storage')."/".$path}}" style="width: 180px; height: 200px;"
+                                    <img src="<?php echo $appUrl;?>" style="width: 180px; height: 200px;"
                                          alt=""/>
 
                                 </div>
                                 <div class="info-blog">
                                     <ul class="top-info">
                                         <li><i class="fa fa-calendar"></i> {{$p->publish->format('M-d-Y')}}</li>
-                                        <li>
-                                            <i class="fa {{$likeBook == 1 ? 'fa-thumbs-up isLiked':'fa-thumbs-o-up'}}  hand like"
-                                               style="font-size: 23px;"></i></li>
+                                        @if(Auth::check())
+                                            <li>
+                                                <i class="fa {{$likeBook == 1 ? 'fa-thumbs-up isLiked':'fa-thumbs-o-up'}}  hand like"
+                                                   style="font-size: 23px;"></i>
+                                            </li>
+                                        @else
+                                        @endif
                                         <li><i class="fa fa-tags"></i> <?php echo $catName->name; ?></li>
                                     </ul>
                                     <h3>
-                                        <a href="{{asset("mmpApp/libraryDetail")."/".$p->id}}"><?php echo $p->name; ?></a>
+                                        <a href="{{asset("libraryDetail")."/".$p->id}}"><?php echo $p->name; ?></a>
                                     </h3>
                                 </div>
                             </div>
@@ -133,7 +146,7 @@ use App\category;
                 var thisBoo = $(this).parents('.item');
                 var bookIdHidden = $(this).parents('.item').find('.BookIdHidden').val();
 
-                if($(this).hasClass('isLiked')) {
+                if ($(this).hasClass('isLiked')) {
                     $(this).removeClass('isLiked');
                     $(this).addClass('fa-thumbs-o-up');
                     $(this).removeClass('fa-thumbs-up');
@@ -144,16 +157,16 @@ use App\category;
                         }
                     });
                     $.ajax({
-                        url:"{{url('deleteFavoriteBook')}}" ,
-                        method:"get" ,
-                        data:{bookIdHidden:bookIdHidden} ,
-                        success:function (e) {
+                        url: "{{url('deleteFavoriteBook')}}",
+                        method: "get",
+                        data: {bookIdHidden: bookIdHidden},
+                        success: function (e) {
                             thisBoo.hide('slow');
                         }
 
                     });
 
-                }else {
+                } else {
                     $(this).addClass('isLiked');
                     $(this).removeClass('fa-thumbs-o-up');
                     $(this).addClass('fa-thumbs-up');
@@ -164,10 +177,10 @@ use App\category;
                         }
                     });
                     $.ajax({
-                        url:"{{url('addFavoriteBook')}}" ,
-                        method:"get" ,
-                        data:{bookIdHidden:bookIdHidden} ,
-                        success:function (e) {
+                        url: "{{url('addFavoriteBook')}}",
+                        method: "get",
+                        data: {bookIdHidden: bookIdHidden},
+                        success: function (e) {
 
                         }
 

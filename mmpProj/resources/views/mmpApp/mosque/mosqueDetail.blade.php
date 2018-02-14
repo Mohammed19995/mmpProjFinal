@@ -1,11 +1,13 @@
-
 @extends('mmpApp.mmpApp')
-
+@section('title')
+    Mosque
+@endsection
 @section('css')
     <style>
         .hidden {
             display: none;
         }
+
         .active {
             color: #0d3625 !important;
         }
@@ -22,8 +24,9 @@
             border: none;
             background-color: inherit;
         }
-        .meta-attributes{
-           margin-top: 10px;
+
+        .meta-attributes {
+            margin-top: 10px;
         }
 
     </style>
@@ -46,7 +49,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <h1 class="page-title">Library</h1>
+                    <h1 class="page-title">Mosque</h1>
 
                     <ul class="breadcrumb">
                         <li><a href="">Home </a></li>
@@ -66,20 +69,22 @@
     <input type="hidden" id="count3" value="2">
     <input type="hidden" id="count4" value="3 ">
 
-         <input type="hidden" id = "latDetail" value="<?php echo  $mosqueInfo->lat ?>">
-    <input type="hidden" id = "lngDetail" value="<?php echo  $mosqueInfo->lng ?>">
-    <input type="hidden" id = "nameMousque" value="<?php echo  $mosqueInfo->name ?>">
+    <input type="hidden" id="latDetail" value="<?php echo $mosqueInfo->lat ?>">
+    <input type="hidden" id="lngDetail" value="<?php echo $mosqueInfo->lng ?>">
+    <input type="hidden" id="nameMousque" value="<?php echo $mosqueInfo->name ?>">
 
     <?php
     $path = str_replace('public', '', $mosqueInfo->image);
-
+    $appUrl = App::make('url')->to('/');
+    $appUrl = str_replace("public", "", $appUrl);
+    $appUrl = $appUrl."/storage/app/public/".$path;
     ?>
-    <img id = "path" class="hidden"
-         src="{{asset('storage')."/".$path}}" alt=""/>
+    <img id="path" class="hidden"
+         src="<?php echo $appUrl;?>" alt=""/>
 
 
     <!-- BEGIN HEADQUARTERS -->
-    <section id="headquarters" class="no-padding-bottom"style="margin-top: 30px" >
+    <section id="headquarters" class="no-padding-bottom" style="margin-top: 30px">
         <div class="container">
             <div class="row">
 
@@ -89,38 +94,45 @@
 
                 <div class="col-sm-4">
 
-                    <h1 class="section-title"><strong><?php echo  $mosqueInfo->name ?></strong></h1>
+                    <h1 class="section-title"><strong><?php echo $mosqueInfo->name ?></strong></h1>
 
                     <ul class="meta-attributes">
                         <li>
                             <div class="attr-name"><i class="fa fa-building"></i> Address:</div>
-                            <div class="attr-detail"><?php echo  $mosqueInfo->street ?> ,<?php echo  $mosqueInfo->country ?> ,<?php echo  $mosqueInfo->city ?></div>
+                            <div class="attr-detail"><?php echo $mosqueInfo->street ?>
+                                ,<?php echo $mosqueInfo->country ?> ,<?php echo $mosqueInfo->city ?></div>
                         </li>
                         <li>
-                            <div class="attr-name"><img class="mosque2"   src="{{asset('icons/mosque/arab-man.png')}}"> Emamm Name:</div>
-                            <div class="attr-detail"><?php echo  $mosqueInfo->imam_name ?></div>
+                            <div class="attr-name"><img class="mosque2" src="{{asset('icons/mosque/arab-man.png')}}">
+                                Emamm Name:
+                            </div>
+                            <div class="attr-detail"><?php echo $mosqueInfo->imam_name ?></div>
                         </li>
                         <li>
                             <div class="attr-name"><i class="fa fa-phone"></i> Phone Number:</div>
-                            <div class="attr-detail"><?php echo  $mosqueInfo->phone ?></div>
+                            <div class="attr-detail"><?php echo $mosqueInfo->phone ?></div>
                         </li>
                         <li>
                             <div class="attr-name"><i class="fa fa-envelope"></i> E-Mail:</div>
-                            <div class="attr-detail"><a href="mailto:support@wiselythemes.com"><?php echo  $mosqueInfo->email ?></a></div>
+                            <div class="attr-detail"><a
+                                        href="mailto:support@wiselythemes.com"><?php echo $mosqueInfo->email ?></a>
+                            </div>
                         </li>
                         <li>
                             <div class="attr-name"><i class="fa fa-envelope"></i> Friday Prayer:</div>
-                            <div class="attr-detail"><a href="mailto:support@wiselythemes.com"><?php   if($mosqueInfo->friday_prayer ==1){
-                                echo "Yes";
-                                    }else{
-                                echo "No";
+                            <div class="attr-detail"><a
+                                        href="mailto:support@wiselythemes.com"><?php   if ($mosqueInfo->friday_prayer == 1) {
+                                        echo "Yes";
+                                    } else {
+                                        echo "No";
                                     } ?></a></div>
                         </li>
                         <li>
                             <div class="attr-name"><i class="fa fa-envelope"></i> Women's Chapel:</div>
-                            <div class="attr-detail"><a href="mailto:support@wiselythemes.com"><?php if($mosqueInfo->woman_chapel == 1){
+                            <div class="attr-detail"><a
+                                        href="mailto:support@wiselythemes.com"><?php if ($mosqueInfo->woman_chapel == 1) {
                                         echo "Yes";
-                                    }else{
+                                    } else {
                                         echo "No";
                                     } ?></a></div>
                         </li>
@@ -162,15 +174,16 @@
 
             $(document).ready(function () {
                 //Create offices maps
-                 Rider.googleMap(offices5, 'headquarters_map', 0);
+                Rider.googleMap(offices5, 'headquarters_map', 0);
 
 
+                //  Rider.googleMap(officesDetail, 'Detail_map', 1);
 
-              //  Rider.googleMap(officesDetail, 'Detail_map', 1);
+                $('.rd-navbar-nav-wrap ul li').each(function (e, v) {
+                    $(this).removeClass('active');
+                });
 
-
-
-
+                $('.rd-navbar-nav-wrap li.mosque ').addClass('active');
             });
         })(jQuery);
     </script>

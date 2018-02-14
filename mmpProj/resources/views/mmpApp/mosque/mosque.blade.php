@@ -1,5 +1,8 @@
-
 @extends('mmpApp.mmpApp')
+
+@section('title')
+    Mosque
+@endsection
 
 @section('css')
     <style>
@@ -43,12 +46,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <h1 class="page-title">Library</h1>
+                    <h1 class="page-title">Mosque</h1>
 
                     <ul class="breadcrumb">
                         <li><a href="">Home </a></li>
                         <li><a href="#">Mosque</a></li>
-                        <li><a href="#">Mosque Detail</a></li>
+                        <li><a href="#">Near Mosque</a></li>
 
                     </ul>
                 </div>
@@ -72,7 +75,7 @@
 
                     <ul class="offices-grid">
                         <?php
-                        $near = MosqueCon::nearestMosque($latLng[0]->lat, $latLng[0]->lng);
+                        $near = MosqueCon::nearestMosque($lat, $lng);
 
                         $count = 0;
                         foreach ($near as $i=>$p) {
@@ -81,11 +84,6 @@
                         if($all->id == $i) {
                         $count++;
                        ?>
-
-
-
-
-
 
                         <li class="col-md-3">
                             <input type="hidden" value="<?php  echo $i ?>" class="id_hidden">
@@ -102,7 +100,7 @@
                             <div id="office_map<?php echo $count;?>" class="map"></div>
                             <div class="info">
 
-                         <a href="{{url('mmpApp/mosqueDetail')."/".$all->id}}" class="btn btn-default aa">
+                         <a href="{{url('mosqueDetail')."/".$all->id}}" class="btn btn-default aa">
 
                              More Details </a>
                             </div>
@@ -128,7 +126,7 @@
 
                     <ul class="offices-grid">
                         <?php
-                        $near = MosqueCon::nearestMosqueWithFriday($latLng[0]->lat, $latLng[0]->lng);
+                        $near = MosqueCon::nearestMosqueWithFriday($lat, $lng);
                         $count2 = 0;
                         foreach ($near as $i=>$p) {
 
@@ -151,7 +149,7 @@
                             <div id="office_map2<?php echo $count2;?>" class="map"></div>
                             <div class="info">
 
-                                <a href="{{url('mmpApp/mosqueDetail')."/".$all->id}}" class="btn btn-default aa">
+                                <a href="{{url('mosqueDetail')."/".$all->id}}" class="btn btn-default aa">
 
                                     More Details </a>
                             </div>
@@ -177,7 +175,7 @@
 
                     <ul class="offices-grid">
                         <?php
-                        $near = MosqueCon::nearestMosqueWithWomanPrayer($latLng[0]->lat, $latLng[0]->lng);
+                        $near = MosqueCon::nearestMosqueWithWomanPrayer($lat, $lng);
                         $count3 = 0;
                         foreach ($near as $i=>$p) {
 
@@ -199,7 +197,7 @@
                             <div id="office_map3<?php echo $count3;?>" class="map"></div>
                             <div class="info">
 
-                                <a href="{{url('mmpApp/mosqueDetail')."/".$all->id}}" class="btn btn-default aa">
+                                <a href="{{url('mosqueDetail')."/".$all->id}}" class="btn btn-default aa">
 
                                     More Details </a>
                             </div>
@@ -226,7 +224,7 @@
                     <ul class="offices-grid">
                         <?php
 
-                        $near = MosqueCon::nearestMosqueWithFridayAndWomanPrayer($latLng[0]->lat, $latLng[0]->lng);
+                        $near = MosqueCon::nearestMosqueWithFridayAndWomanPrayer($lat, $lng);
 
                         $count4 = 0;
                         foreach ($near as $i=>$p) {
@@ -250,7 +248,7 @@
                             <div id="office_map4<?php echo $count4;?>" class="map"></div>
                             <div class="info">
 
-                                <a href="{{url('mmpApp/mosqueDetail')."/".$all->id}}" class="btn btn-default aa">
+                                <a href="{{url('mosqueDetail')."/".$all->id}}" class="btn btn-default aa">
 
                                     More Details </a>
                             </div>
@@ -299,10 +297,15 @@
             "use strict";
 
             $(document).ready(function () {
+
+                $('.rd-navbar-nav-wrap ul li').each(function (e, v) {
+                    $(this).removeClass('active');
+                });
+
+                $('.rd-navbar-nav-wrap li.mosque ').addClass('active');
+
                 //Create offices maps
                 // Rider.googleMap(offices, 'headquarters_map', 0);
-
-
 
 
                 /*

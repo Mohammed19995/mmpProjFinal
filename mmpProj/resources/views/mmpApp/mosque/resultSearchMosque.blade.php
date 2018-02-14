@@ -1,6 +1,8 @@
 
 @extends('mmpApp.mmpApp')
-
+@section('title')
+    Mosque
+@endsection
 @section('css')
     <style>
         .hidden {
@@ -94,7 +96,7 @@
                                     <label><?php echo  $all->country ?> ,<?php echo  $all->city ?></label>
                                 </div>
                                 <div class="row">
-                         <a href="{{url('mmpApp/mosqueDetail')."/".$all->id}}" class="btn btn-default aa">
+                         <a href="{{url('mosqueDetail')."/".$all->id}}" class="btn btn-default aa">
 
                              More Details </a>
                                 </div>

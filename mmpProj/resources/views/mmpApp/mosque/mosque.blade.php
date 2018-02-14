@@ -25,6 +25,71 @@
             border: none;
             background-color: inherit;
         }
+         button{
+            color:#fff;
+            text-align: center;
+
+        }
+
+
+
+
+        .main{
+padding-top: 0px        }
+
+
+         .button-two{
+            text-align: center;
+            cursor: pointer;
+            font-size:17px;
+             padding: 7px;
+
+        }
+
+
+a{
+    color: white;
+}
+        a:hover{
+            color: white;
+        }
+
+
+        /*Button Two*/
+        .button-two {
+            border-radius: 4px;
+            background-color:#02baa6;
+            border: none;
+            width: 220px;
+            transition: all 0.5s;
+        }
+
+
+        .button-two  span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button-two span:after {
+            content: '»';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button-two:hover span {
+            padding-right: 25px;
+        }
+
+        .button-two:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
 
     </style>
 
@@ -68,9 +133,28 @@
     <section id="our-offices">
         <div class="container">
             <div class="row" style="margin-top: 50px">
+
                 <div class="col-sm-12">
 
-                    <div class="center"><h1 class="section-title">Our <strong>Offices</strong></h1></div>
+                    <div class="center row">
+                        <div class="col-sm-2">
+                            <div class="main">
+
+
+                                <button class="button-two">
+                                    <a href="{{url('Allmosque')}}"> <span>  Show All Mosque</span></a>
+                                            </button>
+
+                            </div>
+                         </div>
+                        <div class="col-sm-8" >
+                        <h1 class="section-title">Our <strong>Offices</strong></h1>
+                        </div>
+                        <div class="col-sm-2">
+
+                        </div>
+
+                    </div>
 
 
                     <ul class="offices-grid">

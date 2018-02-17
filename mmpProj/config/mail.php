@@ -17,6 +17,7 @@ return [
     */
 
     'driver' => env('MAIL_DRIVER', 'smtp'),
+    //'driver' => 'smtp',
 
     /*
     |--------------------------------------------------------------------------
@@ -29,7 +30,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
+    'host' => env('MAIL_HOST'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,7 +57,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'mohamg1995@gmail.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'moham1995@hotmail.com'),
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
@@ -72,7 +73,7 @@ return [
     */
 
     'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-
+    // 'encryption' => 'ssl',
     /*
     |--------------------------------------------------------------------------
     | SMTP Server Username
@@ -112,11 +113,13 @@ return [
     |
     */
     'stream' => [
+
         'ssl' => [
             'verify_peer' => false,
             'verify_peer_name' => false,
             'allow_self_signed' => true,
         ],
+
     ],
 
 

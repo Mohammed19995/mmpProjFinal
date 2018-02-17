@@ -424,7 +424,7 @@ class MosqueCon extends Controller
         $activity = Activity::where('mosque_id',$id)->orderBy('created_at', 'desc')->take(20)->get();
 
        return view('mmpApp.mosque.mosqueDetail' , ['id' => $id , 'mosqueInfo' =>$mosqueInfo, 'activity'=>$activity]);
- 
+
     }
 
 

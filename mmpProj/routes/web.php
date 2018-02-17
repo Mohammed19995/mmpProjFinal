@@ -206,6 +206,14 @@ Route::get('mail', function (\Illuminate\Http\Request $request) {
     echo("The massage email has been send");
 
 });
+
+
+Route::get('send_test_email', function(){
+    Mail::raw('Sending emails with Mailgun and Laravel is easy!', function($message)
+    {
+        $message->to('mohamg1995@gmail.com');
+    });
+});
 Auth::routes();
 
 

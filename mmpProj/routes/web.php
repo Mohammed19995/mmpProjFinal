@@ -212,3 +212,43 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+
+Route::get('mmpApp/europeanIslam', function () {
+    // return view('welcome');
+    return view('mmpApp.indexDetail.europeanIslam');
+});
+
+Route::get('mmpApp/discoverIslam', function () {
+    // return view('welcome');
+    return view('mmpApp.indexDetail.discoverIslam');
+});
+Route::get('mmpApp/friendIslam', function () {
+    // return view('welcome');
+    return view('mmpApp.indexDetail.friendsIslam');
+});
+Route::get('mmpApp/questionAndAnswer', function () {
+    // return view('welcome');
+    return view('mmpApp.indexDetail.questionAndAnswer');
+});
+Route::get('mmpApp/mosquesAndIslamic', function () {
+    // return view('welcome');
+    return view('mmpApp.indexDetail.mosquesAndIslamic');
+});
+Route::get('mmpApp/training', function () {
+    // return view('welcome');
+    return view('mmpApp.indexDetail.training');
+});
+Route::get('mmpApp/training', function () {
+    // return view('welcome');
+    return view('mmpApp.indexDetail.training');
+});
+Route::get('mmpApp/digitalLibrary', function () {
+    // return view('welcome');
+    return view('mmpApp.indexDetail.digitalLibrary');
+});
+Route::get('mmpApp/greatPerson', function () {
+    // return view('welcome');
+    return view('mmpApp.indexDetail.greatPerson
+');
+});

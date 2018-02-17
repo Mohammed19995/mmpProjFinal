@@ -138,57 +138,123 @@
                     <div class="item col-sm-3" data-animation-direction="from-bottom" data-animation-delay="250">
                         <i class="fa fa-fort-awesome"></i>
                         <h3>European Islam</h3>
-                        <p class="hidden">Describe what it called “European Islam”, which is combine the duties and
-                            principles of true Islam with the contemporary European cultures.</p>
+                        <p class="hidden ">
+                        <?php
+                                $string ="Despite the media, political and intellectual debate over whether the term
+                                 applies or does not apply to the nature of contemporary Islamic presence in Europe and the West, there is more than one indication that the concept of European Islam is today a reality that can not be ignored or repealed. The figures show that the Islamic spectrum is strikingly present in European pluralism, not only demographically and humanly, but through various forms of tangible and tangible contribution, at the level of formal education, civil society, social work, scientific research, political participation and economic investment. Therefore, the concept of European Islam derives its existential reality from its extended presence in the structure of European societies, a presence that does not conflict with the nature of the Islamic religion, which
+                                 is based on dialogue, tolerance, diversity and openness to different cultures, languages ​​and races.";
+
+
+
+                            echo substr($string, 0, 150).'...<a href="europeanIslam">Read More</a>';
+                              ?>
+                        </p>
                     </div>
-                    <div class="item col-sm-3" data-animation-direction="from-bottom" data-animation-delay="450">
+                    <div class="item col-sm-3" data-animation-direction="from-bottom" data-animation-delay="350">
                         <i class="fa fa-pencil"></i>
                         <h3>Discover Islam</h3>
-                        <p class="hidden">Information about civilized Islam, It has educational materials (Mobile Apps)
-                            for children to explain proper Islam.</p>
-                    </div>
-                    <div class="item col-sm-3" data-animation-direction="from-bottom" data-animation-delay="650">
-                        <i ><img class="mosque1" style="margin-bottom: 15px; " src="{{asset('icons/mosque/mosque.ico')}}">
-                            <img class="mosque2 hidden" style="margin-bottom: 15px " src="{{asset('icons/mosque/mosque2.ico')}}">
-                        </i>
-                        <h3>Mosques and Islamic institutions</h3>
-                        <p class="hidden">A comprehensive portal includes detailed information about mosques & Islamic
-                            institutions in Belgium, and also indicates the quality of services provided by them.</p>
-                    </div>
-                    <div class="item col-sm-3" data-animation-direction="from-bottom" data-animation-delay="850">
-                        <i class="fa fa-line-chart"></i>
-                        <h3>Intellectual and jurisprudence revisions</h3>
-                        <p class="hidden">This section includes the intellectual and jurisprudence revisions. It clarify
-                            the root of the legitimate and stop the violence and to indicate doctrinal errors and
-                            correct it.</p>
-                    </div>
-                </div>
-                <div class="services mar-top">
-                    <div class="item col-sm-3" data-animation-direction="from-bottom" data-animation-delay="250">
-                        <i class="fa fa-book"></i>
-                        <h3>Digital Library</h3>
-                        <p class="hidden">Section contains books, photographs, films, audio and video recordings.</p>
-                    </div>
-                    <div class="item col-sm-3" data-animation-direction="from-bottom" data-animation-delay="650">
-                        <i class="fa fa-question"></i>
-                        <h3>Question and Answer - Consulting</h3>
-                        <p class="hidden">that aims to provide intelligent, authoritative responses to anyone's question
-                            about Islam or any issue of interest to all the people in Europe.</p>
+                        <p class="hidden">
+                            <?php
+                            $string ="The friction of the Christian West with Islam is
+                            not born today; it has been for centuries that each
+                            side tried to discover and recognize the other.
+                             However, the need for further discovery remains both existing and sensitive.
+                             The emphasis is usually on introducing Islam on the doctrinal and ritual aspects at the expense of other historical, scientific, intellectual, architectural and architectural aspects. This is contrary to the message of Islam, which focuses on the use of reason and seeking knowledge and create a balance between what is mundane and Acharawi. The more the European and the non-Muslim Western can
+                             access these cultural aspects of Islam, accept Islam and strive to identify deeply and seriously.";
+                            // Starts at the beginning of the string and ends after 100 characters
+                            echo substr($string, 0, 150).'...<a href="discoverIslam">Read More</a>';
+                            ?>
+                        </p>
                     </div>
                     <div class="item col-sm-3" data-animation-direction="from-bottom" data-animation-delay="450">
                         <i class="fa fa-hand-rock-o"></i>
                         <h3>Friends of Islam</h3>
-                        <p class="hidden">List and information about people who are friends of Islam..</p>
+                        <p class="hidden">
+                            <?php
+                            $string ="There is a Western sect
+                             that treats Muslims on the basis of tolerance,
+                             respect and charity. In the Western media and intellectual literature,
+                              they are called 'the wise men of the West,' because they strive to bring cultures, religions and races closer together and reject the clash of civilizations theory that calls for conflict and confrontation. This wise slice reminds us of the author whose hearts Islam gave them to share the zakat, and by telling the people of the book that it is the best and the good preaching, as stipulated by the Holy Quran. These Western wise men, whose interests and specialties vary, are present in most European and Western societies. In this regard we refer to the names of Hans Kung,
+                            Prince Charles, Karen Armstrong, Jürgen Nielsen, Anna Marie Schimmel, van Kuninsfeld .";
+                            // Starts at the beginning of the string and ends after 100 characters
+                            echo substr($string, 0, 150).'...<a href="friendIslam">Read More</a>';
+                            ?>
+                        </p>
                     </div>
-                    <div class="item col-sm-3" data-animation-direction="from-bottom" data-animation-delay="850">
-                        <i class="fa fa-picture-o"></i>
-                        <h3>Gellary and Vedios</h3>
-                        <p class="hidden">Figures and popular human models who have a significant imprint in the lives
-                            of humans.</p>
+
+                    <div class="item col-sm-3" data-animation-direction="from-bottom" data-animation-delay="550">
+                        <i class="fa fa-question"></i>
+                        <h3>Question and Answer - Consulting</h3>
+                        <p class="hidden">
+                            <?php
+                            $string ="The reality of the consultation of Muslims in Europe is a mess, which requires the urgency of organizing it through the formulation of a digital space that responds to the expectations and questions of the European Muslim. Consultations here are not limited to what is a fatwa of fatwas, but rather what is legal, social, moral, economic and medical. A team of experts and specialists
+                             responds objectively and scientifically to the European context in which the target groups live..";
+                            // Starts at the beginning of the string and ends after 100 characters
+                            echo substr($string, 0, 90).'...<a href="questionAndAnswer">Read More</a>';
+                            ?>
+                        </p>
                     </div>
                 </div>
+                </div>
+                <div class="row">
+                <div class="services ">
+                    <div class="item col-sm-3" data-animation-direction="from-bottom" data-animation-delay="250">
+                        <i ><img class="mosque1" style="margin-bottom: 15px; " src="{{asset('icons/mosque/mosque.ico')}}">
+                            <img class="mosque2 hidden" style="margin-bottom: 15px " src="{{asset('icons/mosque/mosque2.ico')}}">
+                        </i>
+                        <h3>Mosques and Islamic institutions</h3>
+                        <p class="hidden">
+                            <?php
+                            $string ="The number of mosques and Islamic institutions in Europe is estimated at thousands and offers its varied services to millions of Muslims across the continent. However, they are in constant need of continuous coordination among them at the level of religious and cultural activities, systematic educational cooperation, media communication, . The way in which Islam is represented by these institutions is very flawed, which raises a lot of misunderstandings and dissatisfaction with the official European and governmental bodies. The European Observatory for Moderate Islam aspires to bring this huge momentum of mosques and Islamic institutions to Europe in the form of a comprehensive information bank listing the data, activities and projects of each institution,
+                             focusing on the moderate discourse advocated by most Muslim institutions operating in Europe.";
+                            // Starts at the beginning of the string and ends after 100 characters
+                            echo substr($string, 0, 90).'...<a href="mosquesAndIslamic">Read More</a>';
+                            ?>
+                        </p>
+                    </div>
+                    <div class="item col-sm-3" data-animation-direction="from-bottom" data-animation-delay="350">
+                        <i class="fa fa-universal-access"></i>
+                        <h3>Training and Human Development</h3>
+                        <p class="hidden">
+                            <?php
+                            $string ="The training and human development mechanism is one of the most important practical mechanisms adopted by the Observatory to rehabilitate the European Muslim and the advancement of the Islamic community. The training is organized by Western and Muslim experts and specialists with high experience in the field of human development. These exercises include various fields of debt, media, education, health,
+                             law and governance, benefiting the groups of imams, teachers, educators, media professionals, managers, etc..";
+                            // Starts at the beginning of the string and ends after 100 characters
+                            echo substr($string, 0, 80).'...<a href="training">Read More</a>';
+                            ?>
+                        </p>
+                    </div>
+                    <div class="item col-sm-3" data-animation-direction="from-bottom" data-animation-delay="450">
+                        <i class="fa fa-book"></i>
+                        <h3>Digital Library</h3>
+                        <p class="hidden">
+                            <?php
+                            $string ="The European Observatory aims to establish a digital library that includes two types of sources, the first of which includes books, periodicals, newspapers, CDs, documentaries and educational films. The second is related to publications and publications of the Observatory in partnership with various scientific institutions, universities, research centers, experts, writers and researchers. The focus of these sources is on the European Observatory's vision of various issues of Islam and the West, such as moderation, tolerance, dialogue, innovation, human development, and so on. The digital library is accessible to various segments of society:
+                             students, researchers, teachers, media professionals, imams, counselors, politicians and others.";
+                            // Starts at the beginning of the string and ends after 100 characters
+                            echo substr($string, 0, 100).'...<a href="digitalLibrary">Read More</a>';
+                            ?>
+                        </p>
+                    </div>
+                    <div class="item col-sm-3" data-animation-direction="from-bottom" data-animation-delay="550">
+                        <i class="fa fa-male"></i>
+                        <h3>Great person</h3>
+                        <p class="hidden">
+                            <?php
+                            $string ="This angle is unique to the various leading Islamic
+                             figures who have come to balance in the history of Islamic civilization
+                              in ancient and modern times. They include various fields and disciplines of religion,
+                               literature, philosophy, history, mathematics, medicine, physics, These figures contributed to
+                               the formation of the features of Islamic civilization, and even exceeded the impact of the border to other Eastern and Western nations, which is a great cultural Islam of modern Renaissance, and the testimony of thinkers and philosophers who recognize the historical and cultural role played by Islam in the history of humanity. There are many distinguished names in our Islamic civilization which have a distinctive impact on the Western man, who has appreciation and admiration. Perhaps the work of presenting these Islamic figures objectively, smoothly and differently would know more about Islam, religion, civilization and history. The yellow platforms, whose editorial line is based on rumor, exaggeration and misinformation.
+";
+                            // Starts at the beginning of the string and ends after 100 characters
+                            echo substr($string, 0, 115).'...<a href="greatPerson">Read More</a>';
+                            ?>
+                        </p>
+                    </div>
+                </div>
+                </div>
 
-            </div>
         </div>
     </section>
     <!-- END OUR SERVICES -->

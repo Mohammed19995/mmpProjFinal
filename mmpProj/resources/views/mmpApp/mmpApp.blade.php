@@ -201,7 +201,7 @@
                                     </li>
                                     <li class="gallery"><a href="#">Activity</a>
                                         <ul class="rd-navbar-dropdown">
-                                            <li><a href="{{url('gallery')}}">Gallery</a>
+                                            <li><a href="{{url('galleryUser')}}">Gallery</a>
                                             </li>
                                             <li><a href="blog-2-columns-layout.html">videos</a>
                                             </li>

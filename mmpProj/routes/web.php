@@ -26,9 +26,7 @@ Route::get('mmpApp/index', function () {
     return view('mmpApp.index');
 });
 
-Route::get('mmpApp/gallery', function () {
-    return view('mmpApp.gallery');
-});
+
 
 Route::get('mmpApp/galleryDetail', function () {
     return view('mmpApp.galleryDetail');
@@ -252,3 +250,10 @@ Route::get('mmpApp/greatPerson', function () {
     return view('mmpApp.indexDetail.greatPerson
 ');
 });
+
+
+Route::get( 'Gallary' , 'gallaryCon@index');
+Route::post( 'addPhoto' , 'gallaryCon@addPhoto');
+
+Route::get( 'deletePhoto' , 'gallaryCon@deletePhoto');
+Route::get('galleryUser', 'gallaryCon@galleryUser');

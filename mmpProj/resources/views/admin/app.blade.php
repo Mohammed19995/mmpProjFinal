@@ -202,6 +202,13 @@
 
                     </ul>
                 </li>
+
+                <li>
+
+                    <a href="{{url('Gallary')}}" > <i
+                                class="fa fa-photo"></i>Gallary </a>
+
+                </li>
             </ul>
 
             </li>

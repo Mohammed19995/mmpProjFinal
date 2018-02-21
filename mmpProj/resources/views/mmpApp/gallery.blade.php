@@ -36,180 +36,27 @@
                         <!-- BEGIN GALLERY GRID -->
                         <div id="gallery-grid" class="grid-style clearfix">
                             <div class="row">
+                                <?php
+                                foreach ($allGallary as $arr ){
+                                    $imgPath = str_replace("public/", "", $arr->path);
+                                }
+
+                                ?>
                                 <div class="item col-sm-4">
                                     <div class="image">
                                         <div class="gallery-info">
                                             <div>
-                                                <h3>Project Name<small>Creative | Design</small></h3>
-
-                                                <a href="{{url('mmpApp/galleryDetail')}}"><i class="fa fa-link"></i></a>
                                                 <a href="http://placehold.it/766x515" data-gal="prettyPhoto[gallery]" title="Lorem ipsum"><i class="fa fa-search"></i></a>
                                             </div>
                                         </div>
-                                        <img src="http://placehold.it/766x515" alt="" />
+                                        <img width="200" height="300"
+                                             src="{{asset('storage/'.$imgPath)}}">
                                     </div>
                                 </div>
 
-                                <div class="item col-sm-4">
-                                    <div class="image">
-                                        <div class="gallery-info">
-                                            <div>
-                                                <h3>Project Name<small>Creative | Design</small></h3>
 
-                                                <a href="gallery-detail.html"><i class="fa fa-link"></i></a>
-                                                <a href="http://placehold.it/766x515" data-gal="prettyPhoto[gallery]" title="Lorem ipsum"><i class="fa fa-search"></i></a>
-                                            </div>
-                                        </div>
-                                        <img src="http://placehold.it/766x515" alt="" />
-                                    </div>
-                                </div>
-
-                                <div class="item col-sm-4">
-                                    <div class="image">
-                                        <div class="gallery-info">
-                                            <div>
-                                                <h3>Project Name<small>Creative | Design</small></h3>
-
-                                                <a href="gallery-detail.html"><i class="fa fa-link"></i></a>
-                                                <a href="http://placehold.it/766x515" data-gal="prettyPhoto[gallery]" title="Lorem ipsum"><i class="fa fa-search"></i></a>
-                                            </div>
-                                        </div>
-                                        <img src="http://placehold.it/766x515" alt="" />
-                                    </div>
-                                </div>
                             </div>
 
-                            <div class="row">
-                                <div class="item col-sm-4">
-                                    <div class="image">
-                                        <div class="gallery-info">
-                                            <div>
-                                                <h3>Project Name<small>Creative | Design</small></h3>
-
-                                                <a href="gallery-detail.html"><i class="fa fa-link"></i></a>
-                                                <a href="http://placehold.it/766x515" data-gal="prettyPhoto[gallery]" title="Lorem ipsum"><i class="fa fa-search"></i></a>
-                                            </div>
-                                        </div>
-                                        <img src="http://placehold.it/766x515" alt="" />
-                                    </div>
-                                </div>
-
-                                <div class="item col-sm-4">
-                                    <div class="image">
-                                        <div class="gallery-info">
-                                            <div>
-                                                <h3>Project Name<small>Creative | Design</small></h3>
-
-                                                <a href="gallery-detail.html"><i class="fa fa-link"></i></a>
-                                                <a href="http://placehold.it/766x515" data-gal="prettyPhoto[gallery]" title="Lorem ipsum"><i class="fa fa-search"></i></a>
-                                            </div>
-                                        </div>
-                                        <img src="http://placehold.it/766x515" alt="" />
-                                    </div>
-                                </div>
-
-                                <div class="item col-sm-4">
-                                    <div class="image">
-                                        <div class="gallery-info">
-                                            <div>
-                                                <h3>Project Name<small>Creative | Design</small></h3>
-
-                                                <a href="gallery-detail.html"><i class="fa fa-link"></i></a>
-                                                <a href="http://placehold.it/766x515" data-gal="prettyPhoto[gallery]" title="Lorem ipsum"><i class="fa fa-search"></i></a>
-                                            </div>
-                                        </div>
-                                        <img src="http://placehold.it/766x515" alt="" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="item col-sm-4">
-                                    <div class="image">
-                                        <div class="gallery-info">
-                                            <div>
-                                                <h3>Project Name<small>Creative | Design</small></h3>
-
-                                                <a href="gallery-detail.html"><i class="fa fa-link"></i></a>
-                                                <a href="http://placehold.it/766x515" data-gal="prettyPhoto[gallery]" title="Lorem ipsum"><i class="fa fa-search"></i></a>
-                                            </div>
-                                        </div>
-                                        <img src="http://placehold.it/766x515" alt="" />
-                                    </div>
-                                </div>
-
-                                <div class="item col-sm-4">
-                                    <div class="image">
-                                        <div class="gallery-info">
-                                            <div>
-                                                <h3>Project Name<small>Creative | Design</small></h3>
-
-                                                <a href="gallery-detail.html"><i class="fa fa-link"></i></a>
-                                                <a href="http://placehold.it/766x515" data-gal="prettyPhoto[gallery]" title="Lorem ipsum"><i class="fa fa-search"></i></a>
-                                            </div>
-                                        </div>
-                                        <img src="http://placehold.it/766x515" alt="" />
-                                    </div>
-                                </div>
-
-                                <div class="item col-sm-4">
-                                    <div class="image">
-                                        <div class="gallery-info">
-                                            <div>
-                                                <h3>Project Name<small>Creative | Design</small></h3>
-
-                                                <a href="gallery-detail.html"><i class="fa fa-link"></i></a>
-                                                <a href="http://placehold.it/766x515" data-gal="prettyPhoto[gallery]" title="Lorem ipsum"><i class="fa fa-search"></i></a>
-                                            </div>
-                                        </div>
-                                        <img src="http://placehold.it/766x515" alt="" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="item col-sm-4">
-                                    <div class="image">
-                                        <div class="gallery-info">
-                                            <div>
-                                                <h3>Project Name<small>Creative | Design</small></h3>
-
-                                                <a href="gallery-detail.html"><i class="fa fa-link"></i></a>
-                                                <a href="http://placehold.it/766x515" data-gal="prettyPhoto[gallery]" title="Lorem ipsum"><i class="fa fa-search"></i></a>
-                                            </div>
-                                        </div>
-                                        <img src="http://placehold.it/766x515" alt="" />
-                                    </div>
-                                </div>
-
-                                <div class="item col-sm-4">
-                                    <div class="image">
-                                        <div class="gallery-info">
-                                            <div>
-                                                <h3>Project Name<small>Creative | Design</small></h3>
-
-                                                <a href="gallery-detail.html"><i class="fa fa-link"></i></a>
-                                                <a href="http://placehold.it/766x515" data-gal="prettyPhoto[gallery]" title="Lorem ipsum"><i class="fa fa-search"></i></a>
-                                            </div>
-                                        </div>
-                                        <img src="http://placehold.it/766x515" alt="" />
-                                    </div>
-                                </div>
-
-                                <div class="item col-sm-4">
-                                    <div class="image">
-                                        <div class="gallery-info">
-                                            <div>
-                                                <h3>Project Name<small>Creative | Design</small></h3>
-
-                                                <a href="gallery-detail.html"><i class="fa fa-link"></i></a>
-                                                <a href="http://placehold.it/766x515" data-gal="prettyPhoto[gallery]" title="Lorem ipsum"><i class="fa fa-search"></i></a>
-                                            </div>
-                                        </div>
-                                        <img src="http://placehold.it/766x515" alt="" />
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <!-- END GALLERY GRID -->
 

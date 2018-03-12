@@ -247,7 +247,6 @@
                                     </div>
 
                                 </div>
-
                                 <?php  }       ?>
                                 {{$allAnswer->links()}}
                             </div>
@@ -311,7 +310,6 @@
 
 
 @section('script')
-
     <script>
         $(document).ready(function () {
 

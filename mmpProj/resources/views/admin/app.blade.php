@@ -205,6 +205,19 @@
 
                 <li>
 
+                    <a href="#dashvariants7" aria-expanded="false" data-toggle="collapse"> <i
+                                class="fa fa-newspaper-o"></i>News </a>
+                    <ul id="dashvariants7" class="collapse list-unstyled">
+                        <li><a href="{{url('admin/news')}}"><i class="fa fa-tags"></i> Add new</a></li>
+                        <li><a href="{{url('admin/viewNews')}}"><i class="fa fa-eye"></i> View news</a></li>
+
+
+
+                    </ul>
+                </li>
+
+                <li>
+
                     <a href="{{url('Gallary')}}" > <i
                                 class="fa fa-photo"></i>Gallary </a>
 

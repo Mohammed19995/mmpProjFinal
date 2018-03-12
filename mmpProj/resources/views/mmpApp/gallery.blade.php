@@ -38,22 +38,21 @@
                             <div class="row">
                                 <?php
                                 foreach ($allGallary as $arr ){
-                                    $imgPath = str_replace("public/", "", $arr->path);
-                                }
-
-                                ?>
+                                    $imgPath = str_replace("public/", "", $arr->path);?>
                                 <div class="item col-sm-4">
                                     <div class="image">
                                         <div class="gallery-info">
                                             <div>
-                                                <a href="http://placehold.it/766x515" data-gal="prettyPhoto[gallery]" title="Lorem ipsum"><i class="fa fa-search"></i></a>
+                                                <a href="{{asset('storage/'.$imgPath)}}" data-gal="prettyPhoto[gallery]" title="Lorem ipsum"><i class="fa fa-search"></i></a>
                                             </div>
                                         </div>
                                         <img width="200" height="300"
                                              src="{{asset('storage/'.$imgPath)}}">
                                     </div>
                                 </div>
+  <?php }
 
+                                ?>
 
                             </div>
 

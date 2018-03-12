@@ -275,103 +275,44 @@
                         </div>
 
                         <div class="row">
+                            <?php
+
+foreach ($news as $arr){
+                            $path = str_replace("public/", "", $arr->path);
+    ?>
+
+
+
                             <div class="item col-md-3" data-animation-direction="from-bottom"
                                  data-animation-delay="250">
                                 <div class="image">
                                     <a href="blog-detail.html">
                                         <i class="fa fa-file-text-o"></i>
                                     </a>
-                                    <img src="http://placehold.it/720x448" alt=""/>
+                                    <img src="{{asset('storage')."/".$path}}" alt=""/>
                                 </div>
 
                                 <div class="info-blog">
                                     <ul class="top-info">
-                                        <li><i class="fa fa-calendar"></i> <a href="#">July 30, 2014</a></li>
-                                        <li><i class="fa fa-comments-o"></i> <a href="#">2</a></li>
-                                        <li><i class="fa fa-tags"></i> <a href="#">Tips</a>, <a href="#">Travel</a>, <a
-                                                    href="#">Best Deals</a></li>
+                                        <li><i class="fa fa-calendar"></i> <a href="#"><?php echo  $arr->created_at->format('M-d-Y')?></a></li>
                                     </ul>
                                     <h3>
-                                        <a href="blog-detail.html">News 1</a>
+                                        <a href="blog-detail.html"><?php echo  $arr->titel?></a>
                                     </h3>
-                                    <p>Sed rutrum urna id tellus euismod gravida. Praesent placerat, mauris ac
-                                        pellentesque
-                                        fringilla, tortor libero condimen.</p>
-                                </div>
-                            </div>
-                            <div class="item col-md-3" data-animation-direction="from-bottom"
-                                 data-animation-delay="450">
-                                <div class="image">
-                                    <a href="blog-detail.html">
-                                        <i class="fa fa-film"></i>
-                                    </a>
-                                    <img src="http://placehold.it/720x448" alt=""/>
-                                </div>
+                                    <p><?php
+                                        $string = $arr->discretion;
+                                        // Starts at the beginning of the string and ends after 100 characters
+                                        echo substr($string, 0, 100).'...';?>
+                                        <a href="{{url('newsDetail')."/".$arr->id}}" >
 
-                                <div class="info-blog">
-                                    <ul class="top-info">
-                                        <li><i class="fa fa-calendar"></i> <a href="#">July 30, 2014</a></li>
-                                        <li><i class="fa fa-comments-o"></i> <a href="#">2</a></li>
-                                        <li><i class="fa fa-tags"></i> <a href="#">Tips</a>, <a href="#">Travel</a>, <a
-                                                    href="#">Best Deals</a></li>
-                                    </ul>
-                                    <h3>
-                                        <a href="blog-detail.html">News 2</a>
-                                    </h3>
-                                    <p>Sed rutrum urna id tellus euismod gravida. Praesent placerat, mauris ac
-                                        pellentesque
-                                        fringilla, tortor libero condimen.</p>
-                                </div>
-                            </div>
-                            <div class="item col-md-3" data-animation-direction="from-bottom"
-                                 data-animation-delay="650">
-                                <div class="image">
-                                    <a href="blog-detail.html">
-                                        <i class="fa fa-file-text-o"></i>
-                                    </a>
-                                    <img src="http://placehold.it/720x448" alt=""/>
-                                </div>
-
-                                <div class="info-blog">
-                                    <ul class="top-info">
-                                        <li><i class="fa fa-calendar"></i> <a href="#">July 30, 2014</a></li>
-                                        <li><i class="fa fa-comments-o"></i> <a href="#">2</a></li>
-                                        <li><i class="fa fa-tags"></i> <a href="#">Tips</a>, <a href="#">Travel</a>, <a
-                                                    href="#">Best Deals</a></li>
-                                    </ul>
-                                    <h3>
-                                        <a href="blog-detail.html">News 3</a>
-                                    </h3>
-                                    <p>Sed rutrum urna id tellus euismod gravida. Praesent placerat, mauris ac
-                                        pellentesque
-                                        fringilla, tortor libero condimen.</p>
-                                </div>
-                            </div>
-                            <div class="item col-md-3" data-animation-direction="from-bottom"
-                                 data-animation-delay="650">
-                                <div class="image">
-                                    <a href="blog-detail.html">
-                                        <i class="fa fa-file-text-o"></i>
-                                    </a>
-                                    <img src="http://placehold.it/720x448" alt=""/>
-                                </div>
-
-                                <div class="info-blog">
-                                    <ul class="top-info">
-                                        <li><i class="fa fa-calendar"></i> <a href="#">July 30, 2014</a></li>
-                                        <li><i class="fa fa-comments-o"></i> <a href="#">2</a></li>
-                                        <li><i class="fa fa-tags"></i> <a href="#">Tips</a>, <a href="#">Travel</a>, <a
-                                                    href="#">Best Deals</a></li>
-                                    </ul>
-                                    <h3>
-                                        <a href="blog-detail.html">News 4</a>
-                                    </h3>
-                                    <p>Sed rutrum urna id tellus euismod gravida. Praesent placerat, mauris ac
-                                        pellentesque
-                                        fringilla, tortor libero condimen.</p>
+                                        Read More  </a>
+                                    </p>
                                 </div>
                             </div>
 
+                                <?php
+                                }
+                                ?>
                         </div>
 
                     </div>
@@ -533,6 +474,7 @@
 @endsection
 
 @section('script')
+    <script id="dsq-count-scr" src="//eomi.disqus.com/count.js" async></script>
 
     <script>
         $(document).ready(function () {

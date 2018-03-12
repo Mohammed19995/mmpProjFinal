@@ -23,7 +23,8 @@ Route::get('mmpApp', function () {
 });
 
 Route::get('mmpApp/index', function () {
-    return view('mmpApp.index');
+   $news =  \App\news::orderBy('created_at','desc')->take(4)->get();
+    return view('mmpApp.index' , ['news'=>$news]);
 });
 
 
@@ -33,7 +34,7 @@ Route::get('mmpApp/galleryDetail', function () {
 });
 
 
-Route::get('mmpApp/advisory', 'FatawiCon@getIndex');
+Route::get('advisory', 'FatawiCon@getIndex');
 
 Route::get('adminApp', function () {
     return view('admin.app');
@@ -257,3 +258,21 @@ Route::post( 'addPhoto' , 'gallaryCon@addPhoto');
 
 Route::get( 'deletePhoto' , 'gallaryCon@deletePhoto');
 Route::get('galleryUser', 'gallaryCon@galleryUser');
+
+
+Route::get( 'admin/news' , 'newsCon@adminNews');
+Route::post( 'addNews' , 'newsCon@addNews');
+Route::get( 'admin/viewNews' , 'newsCon@viewNews');
+Route::post( 'editNews' , 'newsCon@editNews');
+
+Route::get( 'deleteNews' , 'newsCon@deleteNews');
+
+Route::get( 'newsDetail/{id}' , 'newsCon@newsDetail');
+
+
+
+
+
+
+
+
